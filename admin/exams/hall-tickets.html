@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hall Tickets · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <style>
+    .hall-ticket { border: 1px solid var(--ink-300); border-radius: 12px; padding: 16px; background: #fff; max-width: 400px; }
+    .hall-ticket-header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 12px; border-bottom: 1px solid var(--ink-200); margin-bottom: 12px; }
+    .hall-ticket-school { font-size: 14px; font-weight: 700; }
+    .hall-ticket-exam { font-size: 12px; color: var(--ink-500); margin-top: 2px; }
+    .hall-ticket-photo { width: 60px; height: 60px; border-radius: 6px; background: var(--ink-100); display: flex; align-items: center; justify-content: center; color: var(--ink-400); font-size: 10px; text-align: center; padding: 4px; }
+    @media print { .sidebar, .main-header, .page-actions, .controls { display: none !important; } .main { margin-left: 0; } .hall-ticket { page-break-inside: avoid; } }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        Exams &amp; Results
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="list.html">All exams</a>
+        <a href="hall-tickets.html" style="color:var(--primary-600);">Hall tickets</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Exams</a><span class="separator">/</span><span class="current">Hall Tickets</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-secondary btn-sm" onclick="window.print()">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2z"/></svg>
+          Print all
+        </button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Hall Tickets</h1>
+            <p class="page-subtitle">Mid-Term Examination 2081 · Grade 8 · Section A</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-secondary">Download all PDF</button>
+            <button class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/></svg>
+              Email to parents
+            </button>
+          </div>
+        </div>
+
+        <div class="card controls" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;">
+            <div style="flex:1;min-width:140px;">
+              <label class="label">Exam</label>
+              <select class="select"><option>Mid-Term 2081</option></select>
+            </div>
+            <div style="flex:1;min-width:120px;">
+              <label class="label">Class</label>
+              <select class="select"><option>Grade 8</option></select>
+            </div>
+            <div style="flex:1;min-width:100px;">
+              <label class="label">Section</label>
+              <select class="select"><option>A</option><option>B</option><option>C</option></select>
+            </div>
+            <button class="btn btn-primary">Load tickets</button>
+          </div>
+        </div>
+
+        <!-- Tickets grid -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px;">
+
+          <!-- Ticket 1 -->
+          <div class="hall-ticket">
+            <div class="hall-ticket-header">
+              <div>
+                <div class="hall-ticket-school">Little Angels School</div>
+                <div class="hall-ticket-exam">Mid-Term Examination 2081</div>
+                <div class="hall-ticket-exam">24–30 Ashoj 2081</div>
+              </div>
+              <div class="hall-ticket-photo">Photo</div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;">
+              <div>
+                <p style="color:var(--ink-500);font-weight:600;font-size:10px;text-transform:uppercase;">Name</p>
+                <p style="font-weight:600;margin-top:2px;font-size:13px;">Aarav Shrestha</p>
+              </div>
+              <div>
+                <p style="color:var(--ink-500);font-weight:600;font-size:10px;text-transform:uppercase;">Roll No.</p>
+                <p style="font-family:'JetBrains Mono',monospace;font-weight:600;margin-top:2px;font-size:13px;">08-014</p>
+              </div>
+              <div>
+                <p style="color:var(--ink-500);font-weight:600;font-size:10px;text-transform:uppercase;">Admission No.</p>
+                <p style="font-family:'JetBrains Mono',monospace;margin-top:2px;font-size:12px;">ADM-2081-0001</p>
+              </div>
+              <div>
+                <p style="color:var(--ink-500);font-weight:600;font-size:10px;text-transform:uppercase;">Class · Section</p>
+                <p style="margin-top:2px;font-size:13px;">Grade 8 · A</p>
+              </div>
+            </div>
+
+            <div style="margin-top:12px;padding-top:12px;border-top:1px dashed var(--ink-200);">
+              <p style="font-size:10px;font-weight:600;color:var(--ink-500);text-transform:uppercase;margin-bottom:6px;">Exam schedule</p>
+              <div style="font-size:11px;display:flex;flex-direction:column;gap:4px;">
+                <div style="display:flex;justify-content:space-between;"><span>Math</span><span>24 Ashoj · 10:00 AM</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>Science</span><span>25 Ashoj · 10:00 AM</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>English</span><span>26 Ashoj · 10:00 AM</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>Nepali</span><span>27 Ashoj · 10:00 AM</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>Social</span><span>28 Ashoj · 10:00 AM</span></div>
+              </div>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:12px;padding-top:12px;border-top:1px dashed var(--ink-200);">
+              <div style="font-size:10px;color:var(--ink-500);">
+                <p>Hall: Room 201</p>
+                <p style="margin-top:2px;">Seat: 14</p>
+              </div>
+              <div style="text-align:center;">
+                <div style="width:100px;height:36px;border:1px solid var(--ink-300);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-400);">QR CODE</div>
+                <p style="font-size:9px;color:var(--ink-500);margin-top:3px;">Exam controller signature</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ticket 2 -->
+          <div class="hall-ticket">
+            <div class="hall-ticket-header">
+              <div>
+                <div class="hall-ticket-school">Little Angels School</div>
+                <div class="hall-ticket-exam">Mid-Term Examination 2081</div>
+                <div class="hall-ticket-exam">24–30 Ashoj 2081</div>
+              </div>
+              <div class="hall-ticket-photo">Photo</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;">
+              <div><p style="color:var(--ink-500);font-weight:600;font-size:10px;text-transform:uppercase;">Name</p><p style="font-weight:600;margin-top:2px;font-size:13px;">Sita Thapa</p></div>
+              <div><p style="color:var(--ink-500);font-weight:600;font-size:10px;text-transform:uppercase;">Roll No.</p><p style="font-family:'JetBrains Mono',monospace;font-weight:600;margin-top:2px;font-size:13px;">08-015</p></div>
+              <div><p style="color:var(--ink-500);font-weight:600;font-size:10px;text-transform:uppercase;">Admission No.</p><p style="font-family:'JetBrains Mono',monospace;margin-top:2px;font-size:12px;">ADM-2081-0002</p></div>
+              <div><p style="color:var(--ink-500);font-weight:600;font-size:10px;text-transform:uppercase;">Class · Section</p><p style="margin-top:2px;font-size:13px;">Grade 8 · A</p></div>
+            </div>
+            <div style="margin-top:12px;padding-top:12px;border-top:1px dashed var(--ink-200);">
+              <p style="font-size:10px;font-weight:600;color:var(--ink-500);text-transform:uppercase;margin-bottom:6px;">Exam schedule</p>
+              <div style="font-size:11px;display:flex;flex-direction:column;gap:4px;">
+                <div style="display:flex;justify-content:space-between;"><span>Math</span><span>24 Ashoj · 10:00 AM</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>Science</span><span>25 Ashoj · 10:00 AM</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>English</span><span>26 Ashoj · 10:00 AM</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>Nepali</span><span>27 Ashoj · 10:00 AM</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>Social</span><span>28 Ashoj · 10:00 AM</span></div>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:12px;padding-top:12px;border-top:1px dashed var(--ink-200);">
+              <div style="font-size:10px;color:var(--ink-500);"><p>Hall: Room 201</p><p style="margin-top:2px;">Seat: 15</p></div>
+              <div style="text-align:center;"><div style="width:100px;height:36px;border:1px solid var(--ink-300);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-400);">QR CODE</div></div>
+            </div>
+          </div>
+
+          <!-- Ticket 3 -->
+          <div class="hall-ticket">
+            <div class="hall-ticket-header">
+              <div>
+                <div class="hall-ticket-school">Little Angels School</div>
+                <div class="hall-ticket-exam">Mid-Term Examination 2081</div>
+                <div class="hall-ticket-exam">24–30 Ashoj 2081</div>
+              </div>
+              <div class="hall-ticket-photo">Photo</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;">
+              <div><p style="color:var(--ink-500);font-weight:600;font-size:10px;text-transform:uppercase;">Name</p><p style="font-weight:600;margin-top:2px;font-size:13px;">Bikash Karki</p></div>
+              <div><p style="color:var(--ink-500);font-weight:600;font-size:10px;text-transform:uppercase;">Roll No.</p><p style="font-family:'JetBrains Mono',monospace;font-weight:600;margin-top:2px;font-size:13px;">08-016</p></div>
+              <div><p style="color:var(--ink-500);font-weight:600;font-size:10px;text-transform:uppercase;">Admission No.</p><p style="font-family:'JetBrains Mono',monospace;margin-top:2px;font-size:12px;">ADM-2081-0003</p></div>
+              <div><p style="color:var(--ink-500);font-weight:600;font-size:10px;text-transform:uppercase;">Class · Section</p><p style="margin-top:2px;font-size:13px;">Grade 8 · A</p></div>
+            </div>
+            <div style="margin-top:12px;padding-top:12px;border-top:1px dashed var(--ink-200);">
+              <p style="font-size:10px;font-weight:600;color:var(--ink-500);text-transform:uppercase;margin-bottom:6px;">Exam schedule</p>
+              <div style="font-size:11px;display:flex;flex-direction:column;gap:4px;">
+                <div style="display:flex;justify-content:space-between;"><span>Math</span><span>24 Ashoj · 10:00 AM</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>Science</span><span>25 Ashoj · 10:00 AM</span></div>
+                <div style="display:flex;justify-content:space-between;"><span>English</span><span>26 Ashoj · 10:00 AM</span></div>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:12px;padding-top:12px;border-top:1px dashed var(--ink-200);">
+              <div style="font-size:10px;color:var(--ink-500);"><p>Hall: Room 201</p><p style="margin-top:2px;">Seat: 16</p></div>
+              <div style="text-align:center;"><div style="width:100px;height:36px;border:1px solid var(--ink-300);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-400);">QR CODE</div></div>
+            </div>
+          </div>
+
+        </div>
+
+        <p style="text-align:center;font-size:12px;color:var(--ink-500);margin-top:20px;">Showing 3 of 42 tickets · <a href="#" style="color:var(--primary-600);">Load more</a></p>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Messages · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <style>
+    .inbox { display: grid; grid-template-columns: 340px 1fr; gap: 16px; height: calc(100vh - 180px); }
+    .inbox-list { background: #fff; border: 1px solid var(--ink-200); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+    .inbox-thread { background: #fff; border: 1px solid var(--ink-200); border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; }
+    .conv-item { padding: 14px 16px; border-bottom: 1px solid var(--ink-100); cursor: pointer; transition: background 0.15s; }
+    .conv-item:hover { background: var(--ink-50); }
+    .conv-item.active { background: var(--primary-50); border-left: 3px solid var(--primary-500); }
+    .message-bubble { max-width: 70%; padding: 10px 14px; border-radius: 12px; font-size: 14px; line-height: 1.5; }
+    .bubble-in { background: var(--ink-100); color: var(--ink-900); border-bottom-left-radius: 4px; }
+    .bubble-out { background: var(--primary-500); color: #fff; border-bottom-right-radius: 4px; margin-left: auto; }
+    @media (max-width: 1023px) { .inbox { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/></svg>
+        Communication
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="announcements.html">Announcements</a>
+        <a href="messages.html" style="color:var(--primary-600);">Messages</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><span class="current">Messages</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Messages</h1>
+            <p class="page-subtitle">Direct communication with parents and staff</p>
+          </div>
+        </div>
+
+        <div class="inbox">
+          <!-- Conversation list -->
+          <div class="inbox-list">
+            <div style="padding:12px 16px;border-bottom:1px solid var(--ink-100);">
+              <div style="position:relative;">
+                <svg style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--ink-400);" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                <input type="text" class="input" style="padding-left:34px;height:34px;font-size:13px;" placeholder="Search messages...">
+              </div>
+            </div>
+
+            <div class="conv-item active">
+              <div style="display:flex;gap:10px;align-items:flex-start;">
+                <div class="avatar avatar-md avatar-primary">RS</div>
+                <div style="flex:1;min-width:0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;">
+                    <p style="font-size:13px;font-weight:600;">Ramesh Shrestha</p>
+                    <span style="font-size:11px;color:var(--ink-500);">12m</span>
+                  </div>
+                  <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Parent of Aarav (Grade 8A)</p>
+                  <p style="font-size:13px;color:var(--ink-700);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Thank you for the update on Aarav's progress...</p>
+                </div>
+                <span style="width:8px;height:8px;border-radius:50%;background:var(--primary-500);flex-shrink:0;margin-top:6px;"></span>
+              </div>
+            </div>
+
+            <div class="conv-item">
+              <div style="display:flex;gap:10px;align-items:flex-start;">
+                <div class="avatar avatar-md avatar-blue">GT</div>
+                <div style="flex:1;min-width:0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;">
+                    <p style="font-size:13px;font-weight:600;">Gita Thapa</p>
+                    <span style="font-size:11px;color:var(--ink-500);">2h</span>
+                  </div>
+                  <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Parent of Sita (Grade 8A)</p>
+                  <p style="font-size:13px;color:var(--ink-700);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Can you share the exam schedule for next week?</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="conv-item">
+              <div style="display:flex;gap:10px;align-items:flex-start;">
+                <div class="avatar avatar-md avatar-amber">SK</div>
+                <div style="flex:1;min-width:0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;">
+                    <p style="font-size:13px;font-weight:600;">Sunita Karki</p>
+                    <span style="font-size:11px;color:var(--ink-500);">Yesterday</span>
+                  </div>
+                  <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Parent of Bikash (Grade 6B)</p>
+                  <p style="font-size:13px;color:var(--ink-700);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">We will clear the pending fee by this Friday.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="conv-item">
+              <div style="display:flex;gap:10px;align-items:flex-start;">
+                <div class="avatar avatar-md avatar-green">SS</div>
+                <div style="flex:1;min-width:0;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;">
+                    <p style="font-size:13px;font-weight:600;">Sunita Sharma</p>
+                    <span style="font-size:11px;color:var(--ink-500);">2d</span>
+                  </div>
+                  <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Principal</p>
+                  <p style="font-size:13px;color:var(--ink-700);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Please review the Grade 10 result analysis report.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thread -->
+          <div class="inbox-thread">
+            <div style="padding:16px 20px;border-bottom:1px solid var(--ink-200);display:flex;align-items:center;gap:12px;">
+              <div class="avatar avatar-md avatar-primary">RS</div>
+              <div style="flex:1;">
+                <p style="font-size:14px;font-weight:600;">Ramesh Shrestha</p>
+                <p style="font-size:12px;color:var(--ink-500);">Parent · +977 9812345678 · Aarav's father</p>
+              </div>
+              <button class="btn btn-ghost btn-icon"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v.01M12 12v.01M12 19v.01"/></svg></button>
+            </div>
+
+            <div style="flex:1;padding:20px;display:flex;flex-direction:column;gap:14px;overflow-y:auto;">
+              <div style="text-align:center;font-size:11px;color:var(--ink-400);">Today</div>
+
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div class="message-bubble bubble-in">
+                  Good morning. I wanted to follow up on Aarav's mid-term results. How is he doing overall?
+                </div>
+                <div style="font-size:11px;color:var(--ink-500);">Ramesh · 10:24 AM</div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div class="message-bubble bubble-out">
+                  Good morning! Aarav has done exceptionally well. His GPA is 3.8 with an A grade overall — ranked #3 in the class of 42. Strong in Math and Science particularly.
+                </div>
+                <div style="font-size:11px;color:var(--ink-500);text-align:right;">You · 10:26 AM</div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div class="message-bubble bubble-in">
+                  That's great to hear! Should we enroll him for the optional mathematics class next term?
+                </div>
+                <div style="font-size:11px;color:var(--ink-500);">Ramesh · 10:28 AM</div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div class="message-bubble bubble-out">
+                  Absolutely — I'd recommend it. He has a strong aptitude. You can opt in through the parent portal under "Optional subjects". I'll also send you the syllabus.
+                </div>
+                <div style="font-size:11px;color:var(--ink-500);text-align:right;">You · 10:30 AM</div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div class="message-bubble bubble-in">
+                  Thank you for the update on Aarav's progress. I'll do that right away.
+                </div>
+                <div style="font-size:11px;color:var(--ink-500);">Ramesh · 12 minutes ago</div>
+              </div>
+            </div>
+
+            <!-- Composer -->
+            <div style="padding:14px 16px;border-top:1px solid var(--ink-200);">
+              <div style="display:flex;gap:8px;align-items:flex-end;">
+                <button class="btn btn-ghost btn-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg></button>
+                <textarea class="textarea" rows="1" style="min-height:40px;flex:1;" placeholder="Type your message..."></textarea>
+                <button class="btn btn-primary btn-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

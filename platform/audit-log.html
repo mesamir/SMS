@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audit Log · Platform</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    .platform-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 6px; background: var(--ink-900); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .platform-sidebar { background: #0F172A; border-right-color: #1E293B; }
+    .platform-sidebar .sidebar-logo { background: linear-gradient(135deg, #C41FB8, #7C3AED); }
+    .platform-sidebar .sidebar-brand { color: #fff; }
+    .platform-sidebar .sidebar-brand span { color: #DD6FD0; }
+    .platform-sidebar .sidebar-user { border-bottom-color: #1E293B; }
+    .platform-sidebar .sidebar-user-info .role { color: #64748B; }
+    .platform-sidebar .sidebar-user-info .name { color: #F1F5F9; }
+    .platform-sidebar .sidebar-search { border-bottom-color: #1E293B; }
+    .platform-sidebar .sidebar-search input { background: #1E293B; color: #F1F5F9; }
+    .platform-sidebar .sidebar-search input::placeholder { color: #64748B; }
+    .platform-sidebar .nav-item { color: #94A3B8; }
+    .platform-sidebar .nav-item:hover { background: #1E293B; color: #F1F5F9; }
+    .platform-sidebar .nav-item.active { background: rgba(196,31,184,0.15); color: #DD6FD0; }
+    .platform-sidebar .sidebar-group-label { color: #475569; }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar platform-sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 8.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+      <span class="sidebar-brand">School<span>SaaS</span></span>
+      <span class="platform-badge" style="margin-left:auto;background:#C41FB8;">Platform</span>
+    </div>
+    <div class="sidebar-user">
+      <div class="avatar avatar-md" style="background:linear-gradient(135deg,#C41FB8,#7C3AED);color:#fff;">SA</div>
+      <div class="sidebar-user-info"><p class="role">Super Admin</p><p class="name">Sujan Adhikari</p></div>
+    </div>
+    <div class="sidebar-search">
+      <div style="position:relative;">
+        <svg style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#64748B;" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" placeholder="Search platform..." style="width:100%;height:36px;padding:0 12px 0 34px;border:1px solid transparent;border-radius:8px;font-size:13px;">
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Platform</p>
+      <a href="dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3m10-11v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>Dashboard</a>
+      <a href="tenants.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5"/></svg>Tenants</a>
+      <a href="plans.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Plans &amp; Pricing</a>
+      <a href="feature-flags.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>Feature Flags</a>
+      <p class="sidebar-group-label">Security</p>
+      <a href="users.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-5.13a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Platform Users</a>
+      <a href="audit-log.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>Audit Log</a>
+      <p class="sidebar-group-label">Operations</p>
+      <a href="system-health.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>System Health</a>
+      <a href="support-tickets.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Support Tickets</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="dashboard.html">Platform</a><span class="separator">/</span><span class="current">Audit Log</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg></button>
+        <div class="dropdown">
+          <button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown>
+            <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#C41FB8,#7C3AED);color:#fff;">SA</div>
+            <span style="font-size:13px;font-weight:500;">Sujan</span>
+            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" style="color:var(--ink-400);"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="dropdown-menu"><a href="../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Audit Log</h1>
+            <p class="page-subtitle">Complete record of sensitive platform operations</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Export
+            </button>
+            <button class="btn btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Retention policy
+            </button>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:grid;grid-template-columns:1fr;gap:12px;" class="audit-filters">
+            <style>@media (min-width:768px){.audit-filters{grid-template-columns:2fr 1fr 1fr 1fr!important;}}</style>
+            <div style="position:relative;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-400);" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <input type="text" class="input" style="padding-left:36px;" placeholder="Search by user, entity, or action...">
+            </div>
+            <select class="select">
+              <option>All actions</option>
+              <option>Tenant created</option>
+              <option>Tenant suspended</option>
+              <option>Subscription changed</option>
+              <option>Feature flag toggled</option>
+              <option>Impersonation started</option>
+              <option>User login</option>
+            </select>
+            <select class="select">
+              <option>All tenants</option>
+              <option>Little Angels School</option>
+              <option>GEMS Institute</option>
+              <option>Rato Bangala</option>
+            </select>
+            <select class="select">
+              <option>Last 24 hours</option>
+              <option>Last 7 days</option>
+              <option>Last 30 days</option>
+              <option>Custom range</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th" style="width:180px;">Timestamp</th>
+                  <th class="table-th">Actor</th>
+                  <th class="table-th">Action</th>
+                  <th class="table-th">Entity</th>
+                  <th class="table-th">Tenant</th>
+                  <th class="table-th">IP</th>
+                  <th class="table-th" style="width:40px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">2026-09-10 14:23:18</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#C41FB8,#7C3AED);color:#fff;font-size:11px;">SA</div>
+                      <span style="font-size:13px;">Sujan Adhikari</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-primary">feature_flag.toggle</span></td>
+                  <td class="table-td" style="font-size:13px;">ai_performance_insights</td>
+                  <td class="table-td" style="font-size:13px;color:var(--ink-500);">—</td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">202.51.68.42</td>
+                  <td class="table-td"><button class="btn btn-ghost btn-icon"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></button></td>
+                </tr>
+
+                <tr>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">2026-09-10 14:18:02</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="avatar avatar-sm" style="background:#DBEAFE;color:#1E40AF;font-size:11px;">PP</div>
+                      <span style="font-size:13px;">Priya Poudel</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-warning">tenant.impersonate</span></td>
+                  <td class="table-td" style="font-size:13px;">Little Angels School</td>
+                  <td class="table-td" style="font-size:13px;">littleangels</td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">202.51.68.42</td>
+                  <td class="table-td"><button class="btn btn-ghost btn-icon"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></button></td>
+                </tr>
+
+                <tr>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">2026-09-10 14:12:47</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#C41FB8,#7C3AED);color:#fff;font-size:11px;">SA</div>
+                      <span style="font-size:13px;">Sujan Adhikari</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-success">tenant.create</span></td>
+                  <td class="table-td" style="font-size:13px;">Shree Secondary School</td>
+                  <td class="table-td" style="font-size:13px;">shree-bkt</td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">202.51.68.42</td>
+                  <td class="table-td"><button class="btn btn-ghost btn-icon"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></button></td>
+                </tr>
+
+                <tr>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">2026-09-10 14:04:11</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="avatar avatar-sm" style="background:#FEF3C7;color:#92400E;font-size:11px;">AK</div>
+                      <span style="font-size:13px;">Anil Karki</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-info">subscription.change</span></td>
+                  <td class="table-td" style="font-size:13px;">GEMS Institute — Professional → Standard</td>
+                  <td class="table-td" style="font-size:13px;">gems</td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">202.51.68.44</td>
+                  <td class="table-td"><button class="btn btn-ghost btn-icon"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></button></td>
+                </tr>
+
+                <tr>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">2026-09-10 13:58:33</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#C41FB8,#7C3AED);color:#fff;font-size:11px;">SA</div>
+                      <span style="font-size:13px;">Sujan Adhikari</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-danger">tenant.suspend</span></td>
+                  <td class="table-td" style="font-size:13px;">Buddha Academy</td>
+                  <td class="table-td" style="font-size:13px;">buddha</td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">202.51.68.42</td>
+                  <td class="table-td"><button class="btn btn-ghost btn-icon"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></button></td>
+                </tr>
+
+                <tr>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">2026-09-10 13:41:09</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="avatar avatar-sm" style="background:#DCFCE7;color:#166534;font-size:11px;">MS</div>
+                      <span style="font-size:13px;">Manisha Shakya</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-gray">auth.login</span></td>
+                  <td class="table-td" style="font-size:13px;">Session started</td>
+                  <td class="table-td" style="font-size:13px;color:var(--ink-500);">—</td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">202.51.68.51</td>
+                  <td class="table-td"><button class="btn btn-ghost btn-icon"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></button></td>
+                </tr>
+
+                <tr>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">2026-09-10 13:22:56</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#C41FB8,#7C3AED);color:#fff;font-size:11px;">SA</div>
+                      <span style="font-size:13px;">Sujan Adhikari</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-primary">plan.update</span></td>
+                  <td class="table-td" style="font-size:13px;">Professional — student_limit 1200 → 1500</td>
+                  <td class="table-td" style="font-size:13px;color:var(--ink-500);">—</td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">202.51.68.42</td>
+                  <td class="table-td"><button class="btn btn-ghost btn-icon"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--ink-100);">
+            <p style="font-size:14px;color:var(--ink-500);">Showing <strong style="color:var(--ink-700);">1–7</strong> of <strong style="color:var(--ink-700);">2,847</strong> entries</p>
+            <div class="pagination">
+              <button disabled>«</button><button disabled>‹</button>
+              <span style="padding:0 12px;font-size:13px;color:var(--ink-700);">Page <strong>1</strong> of <strong>407</strong></span>
+              <button>›</button><button>»</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/sidebar.js"></script>
+<script src="../assets/js/dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit Certificate Template · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <style>
+    .merge-field { display: inline-flex; padding: 6px 10px; background: var(--primary-50); border: 1px solid var(--primary-300); border-radius: 6px; font-size: 12px; margin: 3px; cursor: pointer; font-family: 'JetBrains Mono', monospace; }
+    .merge-field:hover { background: var(--primary-100); }
+    .cert-preview { background: #fff; border: 1px solid var(--ink-300); border-radius: 8px; padding: 40px; min-height: 500px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.02); }
+    .cert-border { border: 8px double var(--primary-500); padding: 30px; height: 100%; }
+    .cert-logo-slot { width: 60px; height: 60px; margin: 0 auto 16px; border-radius: 50%; background: var(--primary-100); color: var(--primary-600); display: flex; align-items: center; justify-content: center; }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
+        Certificates
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="templates.html">Templates</a>
+        <a href="template-edit.html" style="color:var(--primary-600);">Edit</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="templates.html">Templates</a><span class="separator">/</span><span class="current">Edit</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-secondary btn-sm">Preview PDF</button>
+        <button class="btn btn-primary btn-sm" onclick="window.toast('Template saved','success')">Save template</button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Edit certificate template</h1>
+            <p class="page-subtitle">Character Certificate</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:20px;" class="layout">
+          <style>@media (min-width:1024px){.layout{grid-template-columns:1fr 1fr!important;}}</style>
+
+          <!-- LEFT: Editor -->
+          <div style="display:flex;flex-direction:column;gap:16px;">
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Template settings</h3></div>
+              <div class="card-body" style="display:grid;gap:14px;">
+                <div>
+                  <label class="label">Template name</label>
+                  <input type="text" class="input" value="Character Certificate">
+                </div>
+                <div>
+                  <label class="label">Template type</label>
+                  <select class="select"><option>Character</option><option>Transfer</option><option>Bonafide</option><option>Achievement</option></select>
+                </div>
+                <div>
+                  <label class="label">Orientation</label>
+                  <select class="select"><option>Portrait</option><option>Landscape</option></select>
+                </div>
+                <div>
+                  <label class="label">Paper size</label>
+                  <select class="select"><option>A4</option><option>Letter</option><option>A5</option></select>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Merge fields</h3></div>
+              <div class="card-body">
+                <p style="font-size:12px;color:var(--ink-500);margin-bottom:10px;">Click to insert at cursor</p>
+                <div>
+                  <span class="merge-field">{student_name}</span>
+                  <span class="merge-field">{admission_no}</span>
+                  <span class="merge-field">{class}</span>
+                  <span class="merge-field">{section}</span>
+                  <span class="merge-field">{roll_number}</span>
+                  <span class="merge-field">{dob}</span>
+                  <span class="merge-field">{guardian_name}</span>
+                  <span class="merge-field">{address}</span>
+                  <span class="merge-field">{academic_year}</span>
+                  <span class="merge-field">{school_name}</span>
+                  <span class="merge-field">{principal_name}</span>
+                  <span class="merge-field">{issue_date}</span>
+                  <span class="merge-field">{certificate_no}</span>
+                  <span class="merge-field">{purpose}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Body text</h3></div>
+              <div class="card-body">
+                <textarea class="textarea" rows="8" style="font-size:13px;">This is to certify that {student_name}, son/daughter of {guardian_name}, is a bona fide student of {school_name} studying in {class} - {section} during the academic year {academic_year}.
+
+His/Her conduct and character during this period have been found to be excellent. This certificate is issued upon request for {purpose}.
+
+Issued on {issue_date}.</textarea>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT: Preview -->
+          <div class="card" style="padding:16px;">
+            <h3 class="card-title" style="margin-bottom:12px;">Preview</h3>
+            <div class="cert-preview">
+              <div class="cert-border">
+                <div class="cert-logo-slot">
+                  <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
+                </div>
+                <p style="text-align:center;font-size:18px;font-weight:700;color:var(--primary-700);">Little Angels School</p>
+                <p style="text-align:center;font-size:11px;color:var(--ink-500);margin-top:2px;">Hattiban, Lalitpur, Nepal</p>
+
+                <p style="text-align:center;font-size:16px;font-weight:700;margin-top:24px;letter-spacing:0.1em;">CHARACTER CERTIFICATE</p>
+                <p style="text-align:center;font-size:11px;color:var(--ink-500);margin-top:4px;">Certificate No: <span style="font-family:'JetBrains Mono',monospace;">CERT-2081-0249</span></p>
+
+                <p style="font-size:12px;line-height:1.8;margin-top:24px;text-align:justify;">This is to certify that <strong>Aarav Shrestha</strong>, son/daughter of <strong>Ramesh Shrestha</strong>, is a bona fide student of <strong>Little Angels School</strong> studying in <strong>Grade 8 - A</strong> during the academic year <strong>2081 BS</strong>.</p>
+
+                <p style="font-size:12px;line-height:1.8;margin-top:12px;text-align:justify;">His/Her conduct and character during this period have been found to be excellent. This certificate is issued upon request for <strong>higher education enrollment</strong>.</p>
+
+                <div style="display:flex;justify-content:space-between;margin-top:40px;">
+                  <div>
+                    <div style="width:100px;height:36px;border-bottom:1px solid var(--ink-900);"></div>
+                    <p style="font-size:10px;margin-top:4px;">Class Teacher</p>
+                  </div>
+                  <div style="text-align:center;">
+                    <div style="width:100px;height:36px;border:1px solid var(--ink-300);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-400);font-family:'JetBrains Mono',monospace;">QR CODE</div>
+                  </div>
+                  <div style="text-align:right;">
+                    <div style="width:100px;height:36px;border-bottom:1px solid var(--ink-900);"></div>
+                    <p style="font-size:10px;margin-top:4px;">Principal</p>
+                  </div>
+                </div>
+
+                <p style="text-align:center;font-size:9px;color:var(--ink-400);margin-top:24px;">Issued on 15 Ashoj 2081</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

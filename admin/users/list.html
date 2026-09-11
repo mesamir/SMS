@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Users · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-5.13a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        Users & Roles
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="list.html" style="color:var(--primary-600);">Users</a>
+        <a href="../roles/list.html">Roles</a>
+        <a href="../roles/permission-matrix.html">Permissions</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><span class="current">Users</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Users</h1>
+            <p class="page-subtitle">Staff and portal accounts</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/></svg>
+              Bulk invite
+            </button>
+            <a href="create.html" class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              Invite user
+            </a>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Total users</p><p style="font-size:22px;font-weight:700;margin-top:6px;">186</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Staff</p><p style="font-size:22px;font-weight:700;margin-top:6px;">112</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Parents</p><p style="font-size:22px;font-weight:700;margin-top:6px;">62</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Pending invite</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#92400E;">12</p></div>
+        </div>
+
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+            <div style="position:relative;flex:1;min-width:240px;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-400);" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <input type="text" class="input" style="padding-left:36px;" placeholder="Search by name or email...">
+            </div>
+            <select class="select" style="width:auto;min-width:160px;"><option>All roles</option><option>Principal</option><option>Teacher</option><option>Accountant</option><option>Parent</option></select>
+            <select class="select" style="width:auto;min-width:140px;"><option>All statuses</option><option>Active</option><option>Pending</option><option>Suspended</option></select>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">User</th>
+                  <th class="table-th">Role</th>
+                  <th class="table-th">MFA</th>
+                  <th class="table-th">Last login</th>
+                  <th class="table-th">Status</th>
+                  <th class="table-th" style="width:40px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-md avatar-primary">SS</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Sunita Sharma</p>
+                        <p style="font-size:11px;color:var(--ink-500);">sunita.sharma@littleangels.edu.np</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-primary">Principal</span></td>
+                  <td class="table-td"><span class="badge badge-success">Enabled</span></td>
+                  <td class="table-td" style="font-size:12px;">2 hours ago</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">View</a><a href="#" class="dropdown-item">Change role</a><a href="#" class="dropdown-item">Reset password</a><div class="dropdown-divider"></div><a href="#" class="dropdown-item dropdown-danger">Suspend</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-md avatar-blue">RR</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Ramesh Rai</p>
+                        <p style="font-size:11px;color:var(--ink-500);">ramesh.rai@littleangels.edu.np</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-info">Teacher</span></td>
+                  <td class="table-td"><span class="badge badge-success">Enabled</span></td>
+                  <td class="table-td" style="font-size:12px;">Today 8:24 AM</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">View</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-md avatar-amber">AP</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Anjali Pradhan</p>
+                        <p style="font-size:11px;color:var(--ink-500);">anjali.p@littleangels.edu.np</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-warning">Accountant</span></td>
+                  <td class="table-td"><span class="badge badge-success">Enabled</span></td>
+                  <td class="table-td" style="font-size:12px;">Today 9:45 AM</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">View</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-md avatar-green">RS</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Ramesh Shrestha</p>
+                        <p style="font-size:11px;color:var(--ink-500);">ramesh.s@example.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-gray">Parent</span></td>
+                  <td class="table-td"><span class="badge badge-warning">Not enabled</span></td>
+                  <td class="table-td" style="font-size:12px;">Yesterday</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">View</a><a href="#" class="dropdown-item">Reset password</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-md" style="background:#F3F4F6;color:#6B7280;">KT</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Kamala Tamang</p>
+                        <p style="font-size:11px;color:var(--ink-500);">kamala.t@littleangels.edu.np</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-info">Teacher</span></td>
+                  <td class="table-td"><span class="badge badge-gray">Pending</span></td>
+                  <td class="table-td" style="font-size:12px;color:var(--ink-500);">Never</td>
+                  <td class="table-td"><span class="badge badge-warning">Invited</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Resend invite</a><a href="#" class="dropdown-item dropdown-danger">Cancel</a></div></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--ink-100);">
+            <p style="font-size:14px;color:var(--ink-500);">Showing <strong style="color:var(--ink-700);">1–5</strong> of <strong style="color:var(--ink-700);">186</strong> users</p>
+            <div class="pagination"><button disabled>«</button><button disabled>‹</button><span style="padding:0 12px;font-size:13px;">Page <strong>1</strong> of <strong>19</strong></span><button>›</button><button>»</button></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

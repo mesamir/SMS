@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invoices · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2"/></svg>
+        Fees
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="categories.html">Categories</a>
+        <a href="structures.html">Structures</a>
+        <a href="invoices.html" style="color:var(--primary-600);">Invoices</a>
+        <a href="discounts.html">Discounts</a>
+        <a href="scholarships.html">Scholarships</a>
+        <a href="outstanding.html">Outstanding</a>
+        <a href="reports.html">Reports</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="#">Fees</a><span class="separator">/</span><span class="current">Invoices</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Fee Invoices</h1>
+            <p class="page-subtitle">All issued invoices for academic year 2081</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Export
+            </button>
+            <a href="invoice-bulk-generate.html" class="btn btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2"/></svg>
+              Bulk generate
+            </a>
+            <a href="invoice-create.html" class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              New invoice
+            </a>
+          </div>
+        </div>
+
+        <!-- KPI cards -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Total issued</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;">8,142</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Total value</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;">NPR 8.4 Cr</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Paid</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">NPR 6.2 Cr</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Outstanding</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;color:#92400E;">NPR 2.1 Cr</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Overdue</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;color:#991B1B;">NPR 42 L</p>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+            <div style="position:relative;flex:1;min-width:240px;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-400);" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <input type="text" class="input" style="padding-left:36px;" placeholder="Search by invoice no., student name, or admission no...">
+            </div>
+            <select class="select" style="width:auto;min-width:140px;"><option>All classes</option><option>Grade 6</option><option>Grade 8</option><option>Grade 10</option></select>
+            <select class="select" style="width:auto;min-width:140px;"><option>All statuses</option><option>Paid</option><option>Partial</option><option>Unpaid</option><option>Overdue</option></select>
+            <select class="select" style="width:auto;min-width:150px;"><option>Ashoj 2081</option><option>Bhadra 2081</option><option>Shrawan 2081</option></select>
+            <button class="btn btn-secondary">Reset</button>
+          </div>
+        </div>
+
+        <!-- Invoice table -->
+        <div class="card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th" style="width:40px;"><input type="checkbox" class="checkbox" data-select-all></th>
+                  <th class="table-th">Invoice</th>
+                  <th class="table-th">Student</th>
+                  <th class="table-th">Class</th>
+                  <th class="table-th">Amount</th>
+                  <th class="table-th">Paid</th>
+                  <th class="table-th">Balance</th>
+                  <th class="table-th">Due</th>
+                  <th class="table-th">Status</th>
+                  <th class="table-th" style="width:40px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-row-href="invoice-detail.html">
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">INV-2081-08652</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-primary">AS</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Aarav Shrestha</p>
+                        <p style="font-size:11px;color:var(--ink-500);">ADM-2081-0001</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 8 · A</td>
+                  <td class="table-td">NPR 13,500</td>
+                  <td class="table-td" style="color:#166534;">NPR 13,500</td>
+                  <td class="table-td" style="color:#166534;">NPR 0</td>
+                  <td class="table-td" style="font-size:12px;">5 Ashoj 2081</td>
+                  <td class="table-td"><span class="badge badge-success">Paid</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="invoice-detail.html" class="dropdown-item">View</a><a href="#" class="dropdown-item">Print receipt</a><a href="#" class="dropdown-item">Email to parent</a></div></div></td>
+                </tr>
+                <tr data-row-href="invoice-detail.html">
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">INV-2081-08653</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-blue">ST</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Sita Thapa</p>
+                        <p style="font-size:11px;color:var(--ink-500);">ADM-2081-0002</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 8 · A</td>
+                  <td class="table-td">NPR 13,500</td>
+                  <td class="table-td" style="color:#92400E;">NPR 8,000</td>
+                  <td class="table-td" style="color:#991B1B;">NPR 5,500</td>
+                  <td class="table-td" style="font-size:12px;">5 Ashoj 2081</td>
+                  <td class="table-td"><span class="badge badge-warning">Partial</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="invoice-detail.html" class="dropdown-item">View</a><a href="#" class="dropdown-item">Record payment</a><a href="#" class="dropdown-item">Send reminder</a></div></div></td>
+                </tr>
+                <tr data-row-href="invoice-detail.html" style="background:#FEE2E2;">
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">INV-2081-08654</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-amber">BK</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Bikash Karki</p>
+                        <p style="font-size:11px;color:var(--ink-500);">ADM-2081-0003</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 6 · B</td>
+                  <td class="table-td">NPR 11,000</td>
+                  <td class="table-td" style="color:var(--ink-500);">NPR 0</td>
+                  <td class="table-td" style="color:#991B1B;font-weight:600;">NPR 11,000</td>
+                  <td class="table-td" style="font-size:12px;color:#991B1B;">5 Ashoj 2081 (10 days overdue)</td>
+                  <td class="table-td"><span class="badge badge-danger">Overdue</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="invoice-detail.html" class="dropdown-item">View</a><a href="#" class="dropdown-item">Send reminder</a><a href="#" class="dropdown-item">Apply late fee</a><a href="#" class="dropdown-item">Call parent</a></div></div></td>
+                </tr>
+                <tr data-row-href="invoice-detail.html">
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">INV-2081-08655</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-green">PG</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Priya Gurung</p>
+                        <p style="font-size:11px;color:var(--ink-500);">ADM-2081-0004</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 9 · A</td>
+                  <td class="table-td">NPR 15,000</td>
+                  <td class="table-td" style="color:#166534;">NPR 15,000</td>
+                  <td class="table-td" style="color:#166534;">NPR 0</td>
+                  <td class="table-td" style="font-size:12px;">5 Ashoj 2081</td>
+                  <td class="table-td"><span class="badge badge-success">Paid</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="invoice-detail.html" class="dropdown-item">View</a></div></div></td>
+                </tr>
+                <tr data-row-href="invoice-detail.html">
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">INV-2081-08656</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-primary">RT</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Rohan Tamang</p>
+                        <p style="font-size:11px;color:var(--ink-500);">ADM-2081-0005</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 10 · A</td>
+                  <td class="table-td">NPR 15,000</td>
+                  <td class="table-td" style="color:var(--ink-500);">NPR 0</td>
+                  <td class="table-td" style="color:#991B1B;">NPR 15,000</td>
+                  <td class="table-td" style="font-size:12px;">5 Ashoj 2081</td>
+                  <td class="table-td"><span class="badge badge-warning">Unpaid</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="invoice-detail.html" class="dropdown-item">View</a><a href="#" class="dropdown-item">Record payment</a></div></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Bulk actions bar (hidden) -->
+          <div id="bulkBar" style="display:none;padding:12px 20px;border-top:1px solid var(--ink-100);background:var(--primary-50);align-items:center;gap:12px;">
+            <span style="font-size:13px;font-weight:500;color:var(--primary-700);"><span id="bulkCount">0</span> selected</span>
+            <div style="flex:1;"></div>
+            <button class="btn btn-secondary btn-sm">Print</button>
+            <button class="btn btn-secondary btn-sm">Send reminders</button>
+            <button class="btn btn-secondary btn-sm">Export PDF</button>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--ink-100);">
+            <p style="font-size:14px;color:var(--ink-500);">Showing <strong style="color:var(--ink-700);">1–5</strong> of <strong style="color:var(--ink-700);">8,142</strong> invoices</p>
+            <div class="pagination">
+              <button disabled>«</button><button disabled>‹</button>
+              <span style="padding:0 12px;font-size:13px;color:var(--ink-700);">Page <strong>1</strong> of <strong>815</strong></span>
+              <button>›</button><button>»</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+<script src="../../assets/js/table.js"></script>
+<script>
+  document.querySelectorAll('[data-select-all], .table tbody input[type=checkbox]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const count = document.querySelectorAll('.table tbody input[type=checkbox]:checked').length;
+      document.getElementById('bulkCount').textContent = count;
+      document.getElementById('bulkBar').style.display = count > 0 ? 'flex' : 'none';
+    });
+  });
+</script>
+</body>
+</html>

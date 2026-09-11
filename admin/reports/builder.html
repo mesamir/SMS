@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report Builder · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <style>
+    .builder-layout { display: grid; grid-template-columns: 280px 1fr 280px; gap: 16px; min-height: 600px; }
+    .palette-item { padding: 8px 12px; border: 1px solid var(--ink-200); border-radius: 6px; font-size: 13px; cursor: grab; background: #fff; margin-bottom: 6px; }
+    .palette-item:hover { border-color: var(--primary-400); background: var(--primary-50); }
+    .field-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; background: var(--primary-50); border: 1px solid var(--primary-300); border-radius: 6px; font-size: 12px; margin: 3px; }
+    .preview-table th, .preview-table td { padding: 8px 12px; border-bottom: 1px solid var(--ink-100); font-size: 12px; text-align: left; }
+    .preview-table th { background: var(--ink-50); font-weight: 600; font-size: 11px; text-transform: uppercase; }
+    @media (max-width: 1023px) { .builder-layout { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7"/></svg>
+        Reports
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="builder.html" style="color:var(--primary-600);">Builder</a>
+        <a href="viewer.html">Viewer</a>
+        <a href="scheduled.html">Scheduled</a>
+        <a href="history.html">History</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="dashboard.html">Reports</a><span class="separator">/</span><span class="current">Builder</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-secondary btn-sm">Save as template</button>
+        <button class="btn btn-primary btn-sm" onclick="window.toast('Report generated','success')">Run report</button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Report Builder</h1>
+            <p class="page-subtitle">Create a custom report by selecting data source and fields</p>
+          </div>
+        </div>
+
+        <div class="builder-layout">
+
+          <!-- LEFT: Data source palette -->
+          <div class="card" style="padding:16px;">
+            <h3 class="card-title" style="margin-bottom:12px;">1. Data source</h3>
+            <div style="margin-bottom:20px;">
+              <select class="select" style="height:36px;font-size:13px;">
+                <option>Students</option>
+                <option>Attendance</option>
+                <option>Results</option>
+                <option>Fees</option>
+                <option>Payments</option>
+                <option>Staff</option>
+              </select>
+            </div>
+
+            <h3 class="card-title" style="margin-bottom:12px;">2. Available fields</h3>
+            <div style="max-height:400px;overflow-y:auto;">
+              <div class="palette-item">Full name</div>
+              <div class="palette-item">Admission number</div>
+              <div class="palette-item">Roll number</div>
+              <div class="palette-item">Class</div>
+              <div class="palette-item">Section</div>
+              <div class="palette-item">Gender</div>
+              <div class="palette-item">Date of birth</div>
+              <div class="palette-item">Blood group</div>
+              <div class="palette-item">Guardian name</div>
+              <div class="palette-item">Guardian phone</div>
+              <div class="palette-item">Address</div>
+              <div class="palette-item">Enrollment date</div>
+              <div class="palette-item">Status</div>
+            </div>
+          </div>
+
+          <!-- MIDDLE: Preview -->
+          <div class="card" style="padding:20px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+              <h3 class="card-title">3. Preview</h3>
+              <select class="select" style="height:32px;font-size:12px;width:auto;">
+                <option>Table</option>
+                <option>Bar chart</option>
+                <option>Line chart</option>
+                <option>Pie chart</option>
+              </select>
+            </div>
+
+            <!-- Selected fields -->
+            <div style="padding:12px;background:var(--ink-50);border-radius:8px;margin-bottom:14px;min-height:52px;">
+              <p style="font-size:10px;color:var(--ink-500);text-transform:uppercase;font-weight:600;margin-bottom:6px;">Selected columns</p>
+              <div>
+                <span class="field-pill">Full name <button style="background:none;border:none;color:var(--ink-500);cursor:pointer;">×</button></span>
+                <span class="field-pill">Admission no. <button style="background:none;border:none;color:var(--ink-500);cursor:pointer;">×</button></span>
+                <span class="field-pill">Class <button style="background:none;border:none;color:var(--ink-500);cursor:pointer;">×</button></span>
+                <span class="field-pill">Guardian phone <button style="background:none;border:none;color:var(--ink-500);cursor:pointer;">×</button></span>
+                <span class="field-pill" style="border-style:dashed;background:transparent;color:var(--ink-400);">+ Drag field here</span>
+              </div>
+            </div>
+
+            <!-- Preview table -->
+            <div style="border:1px solid var(--ink-200);border-radius:8px;overflow:hidden;overflow-x:auto;">
+              <table class="preview-table" style="width:100%;">
+                <thead>
+                  <tr>
+                    <th>Full name</th>
+                    <th>Admission no.</th>
+                    <th>Class</th>
+                    <th>Guardian phone</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Aarav Shrestha</td><td>ADM-2081-0001</td><td>Grade 8 · A</td><td>+977 9812345678</td></tr>
+                  <tr><td>Sita Thapa</td><td>ADM-2081-0002</td><td>Grade 8 · A</td><td>+977 9876543210</td></tr>
+                  <tr><td>Bikash Karki</td><td>ADM-2081-0003</td><td>Grade 6 · B</td><td>+977 9811111111</td></tr>
+                  <tr><td>Priya Gurung</td><td>ADM-2081-0004</td><td>Grade 9 · A</td><td>+977 9822222222</td></tr>
+                  <tr><td>Rohan Tamang</td><td>ADM-2081-0005</td><td>Grade 10 · A</td><td>+977 9833333333</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p style="font-size:11px;color:var(--ink-500);margin-top:10px;">Preview shows first 5 rows · Actual report will contain 1,248 rows</p>
+          </div>
+
+          <!-- RIGHT: Configuration -->
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="card" style="padding:16px;">
+              <h3 class="card-title" style="margin-bottom:12px;">Filters</h3>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div>
+                  <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Class</label>
+                  <select class="select" style="height:32px;font-size:12px;margin-top:4px;">
+                    <option>All classes</option>
+                    <option>Grade 8</option>
+                    <option>Grade 9</option>
+                  </select>
+                </div>
+                <div>
+                  <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Status</label>
+                  <select class="select" style="height:32px;font-size:12px;margin-top:4px;">
+                    <option>Active only</option>
+                    <option>All</option>
+                  </select>
+                </div>
+                <button class="btn btn-secondary btn-sm" style="margin-top:4px;">+ Add filter</button>
+              </div>
+            </div>
+
+            <div class="card" style="padding:16px;">
+              <h3 class="card-title" style="margin-bottom:12px;">Sorting</h3>
+              <select class="select" style="height:32px;font-size:12px;">
+                <option>Admission no. (asc)</option>
+                <option>Full name (asc)</option>
+                <option>Class (asc)</option>
+              </select>
+            </div>
+
+            <div class="card" style="padding:16px;">
+              <h3 class="card-title" style="margin-bottom:12px;">Output</h3>
+              <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;">
+                <label style="display:flex;align-items:center;gap:8px;"><input type="checkbox" class="checkbox" checked> Table view</label>
+                <label style="display:flex;align-items:center;gap:8px;"><input type="checkbox" class="checkbox" checked> Export PDF</label>
+                <label style="display:flex;align-items:center;gap:8px;"><input type="checkbox" class="checkbox" checked> Export Excel</label>
+                <label style="display:flex;align-items:center;gap:8px;"><input type="checkbox" class="checkbox"> Schedule weekly</label>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-block" onclick="window.toast('Report generated','success')">Run report</button>
+          </div>
+
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

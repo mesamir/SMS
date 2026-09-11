@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leave Requests · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
+        Attendance
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="mark.html">Mark attendance</a>
+        <a href="summary.html">Summary</a>
+        <a href="leave-requests.html" style="color:var(--primary-600);">Leave requests</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="#">Attendance</a><span class="separator">/</span><span class="current">Leave Requests</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Leave Requests</h1>
+            <p class="page-subtitle">Pending and historical leave applications</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Export
+            </button>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs" style="margin-bottom:20px;">
+          <div class="tab active">Pending (7)</div>
+          <div class="tab">Approved</div>
+          <div class="tab">Rejected</div>
+          <div class="tab">All</div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Pending review</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;color:#92400E;">7</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Approved this month</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">32</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Rejected this month</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;color:#991B1B;">4</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Avg response time</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;">3.2h</p>
+          </div>
+        </div>
+
+        <!-- Filter -->
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+            <div style="position:relative;flex:1;min-width:200px;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-400);" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <input type="text" class="input" style="padding-left:36px;" placeholder="Search student...">
+            </div>
+            <select class="select" style="width:auto;min-width:140px;"><option>All classes</option><option>Grade 8</option><option>Grade 9</option></select>
+            <select class="select" style="width:auto;min-width:150px;"><option>All types</option><option>Sick leave</option><option>Casual leave</option><option>Family emergency</option></select>
+          </div>
+        </div>
+
+        <!-- Leave cards -->
+        <div style="display:flex;flex-direction:column;gap:12px;">
+
+          <div class="card" style="padding:18px 20px;">
+            <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;justify-content:space-between;">
+              <div style="display:flex;gap:14px;flex:1;min-width:280px;">
+                <div class="avatar avatar-lg avatar-primary">AS</div>
+                <div style="flex:1;">
+                  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                    <p style="font-size:14px;font-weight:600;">Aarav Shrestha</p>
+                    <span class="badge badge-info">Grade 8 · A</span>
+                    <span class="badge badge-warning">Pending</span>
+                  </div>
+                  <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Sick leave · 2 days</p>
+                  <div style="margin-top:10px;padding:10px 12px;background:var(--ink-50);border-radius:8px;">
+                    <p style="font-size:11px;font-weight:600;color:var(--ink-500);text-transform:uppercase;">Dates</p>
+                    <p style="font-size:13px;margin-top:2px;">16 Ashoj 2081 — 17 Ashoj 2081</p>
+                    <p style="font-size:11px;font-weight:600;color:var(--ink-500);text-transform:uppercase;margin-top:8px;">Reason</p>
+                    <p style="font-size:13px;margin-top:2px;">Fever and cold — doctor advised rest</p>
+                  </div>
+                  <p style="font-size:11px;color:var(--ink-500);margin-top:8px;">Requested 3 hours ago by Ramesh Shrestha</p>
+                </div>
+              </div>
+              <div style="display:flex;gap:8px;">
+                <button class="btn btn-secondary btn-sm" onclick="window.toast('Leave rejected','info')">Reject</button>
+                <button class="btn btn-primary btn-sm" onclick="window.toast('Leave approved. Parent notified.','success')">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Approve
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding:18px 20px;">
+            <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;justify-content:space-between;">
+              <div style="display:flex;gap:14px;flex:1;min-width:280px;">
+                <div class="avatar avatar-lg avatar-blue">ST</div>
+                <div style="flex:1;">
+                  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                    <p style="font-size:14px;font-weight:600;">Sita Thapa</p>
+                    <span class="badge badge-info">Grade 8 · A</span>
+                    <span class="badge badge-warning">Pending</span>
+                  </div>
+                  <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Family emergency · 3 days</p>
+                  <div style="margin-top:10px;padding:10px 12px;background:var(--ink-50);border-radius:8px;">
+                    <p style="font-size:11px;font-weight:600;color:var(--ink-500);text-transform:uppercase;">Dates</p>
+                    <p style="font-size:13px;margin-top:2px;">15 Ashoj 2081 — 17 Ashoj 2081</p>
+                    <p style="font-size:11px;font-weight:600;color:var(--ink-500);text-transform:uppercase;margin-top:8px;">Reason</p>
+                    <p style="font-size:13px;margin-top:2px;">Grandmother hospitalized — travelling to Pokhara</p>
+                  </div>
+                  <p style="font-size:11px;color:var(--ink-500);margin-top:8px;">Requested 1 day ago by Gita Thapa</p>
+                </div>
+              </div>
+              <div style="display:flex;gap:8px;">
+                <button class="btn btn-secondary btn-sm">Reject</button>
+                <button class="btn btn-primary btn-sm">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Approve
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding:18px 20px;">
+            <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;justify-content:space-between;">
+              <div style="display:flex;gap:14px;flex:1;min-width:280px;">
+                <div class="avatar avatar-lg avatar-amber">BK</div>
+                <div style="flex:1;">
+                  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                    <p style="font-size:14px;font-weight:600;">Bikash Karki</p>
+                    <span class="badge badge-info">Grade 6 · B</span>
+                    <span class="badge badge-warning">Pending</span>
+                  </div>
+                  <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Casual leave · 1 day</p>
+                  <div style="margin-top:10px;padding:10px 12px;background:var(--ink-50);border-radius:8px;">
+                    <p style="font-size:11px;font-weight:600;color:var(--ink-500);text-transform:uppercase;">Date</p>
+                    <p style="font-size:13px;margin-top:2px;">18 Ashoj 2081</p>
+                    <p style="font-size:11px;font-weight:600;color:var(--ink-500);text-transform:uppercase;margin-top:8px;">Reason</p>
+                    <p style="font-size:13px;margin-top:2px;">Attending cousin's wedding ceremony</p>
+                  </div>
+                  <p style="font-size:11px;color:var(--ink-500);margin-top:8px;">Requested 5 hours ago by Sunita Karki</p>
+                </div>
+              </div>
+              <div style="display:flex;gap:8px;">
+                <button class="btn btn-secondary btn-sm">Reject</button>
+                <button class="btn btn-primary btn-sm">Approve</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px;">
+          <p style="font-size:14px;color:var(--ink-500);">Showing <strong style="color:var(--ink-700);">1–3</strong> of <strong style="color:var(--ink-700);">7</strong> pending</p>
+          <div class="pagination">
+            <button disabled>«</button><button disabled>‹</button>
+            <span style="padding:0 12px;font-size:13px;color:var(--ink-700);">Page <strong>1</strong> of <strong>3</strong></span>
+            <button>›</button><button>»</button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

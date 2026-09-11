@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Classes · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div>
+      <span class="sidebar-brand">School<span>SaaS</span></span>
+    </div>
+    <div class="sidebar-user">
+      <div class="avatar avatar-md avatar-gradient">N</div>
+      <div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div>
+    </div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16"/></svg>
+        Schools
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu"><a href="../schools/list.html">All Schools</a></div>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
+        Academics
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="academic-years.html">Academic Years</a>
+        <a href="classes.html" style="color:var(--primary-600);">Classes</a>
+        <a href="sections.html">Sections</a>
+        <a href="subjects.html">Subjects</a>
+        <a href="streams.html">Streams</a>
+        <a href="shifts.html">Shifts</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="calendar.html">Calendar</a>
+      </div>
+      <a href="../students/list.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87"/></svg>Students</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="#">Academics</a><span class="separator">/</span><span class="current">Classes</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg></button>
+        <div class="dropdown">
+          <button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown>
+            <div class="avatar avatar-sm avatar-gradient">N</div>
+            <span style="font-size:13px;font-weight:500;">Nabin</span>
+            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" style="color:var(--ink-400);"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Classes</h1>
+            <p class="page-subtitle">Grades and class groups · Academic year 2081</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              New class
+            </button>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+            <div style="position:relative;flex:1;min-width:240px;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-400);" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <input type="text" class="input" style="padding-left:36px;" placeholder="Search classes...">
+            </div>
+            <select class="select" style="width:auto;min-width:140px;"><option>All levels</option><option>Primary</option><option>Lower secondary</option><option>Secondary</option><option>Higher secondary</option></select>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">Class</th>
+                  <th class="table-th">Level</th>
+                  <th class="table-th">Sections</th>
+                  <th class="table-th">Subjects</th>
+                  <th class="table-th">Students</th>
+                  <th class="table-th">Class teacher</th>
+                  <th class="table-th">Status</th>
+                  <th class="table-th" style="width:40px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Nursery</strong></td>
+                  <td class="table-td"><span class="badge badge-primary">Pre-primary</span></td>
+                  <td class="table-td">2</td>
+                  <td class="table-td">5</td>
+                  <td class="table-td">48</td>
+                  <td class="table-td">Anita Thapa</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td">
+                    <div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a><a href="sections.html" class="dropdown-item">Manage sections</a><a href="subjects.html" class="dropdown-item">Manage subjects</a></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">LKG</strong></td>
+                  <td class="table-td"><span class="badge badge-primary">Pre-primary</span></td>
+                  <td class="table-td">2</td>
+                  <td class="table-td">6</td>
+                  <td class="table-td">52</td>
+                  <td class="table-td">Suman Rai</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">UKG</strong></td>
+                  <td class="table-td"><span class="badge badge-primary">Pre-primary</span></td>
+                  <td class="table-td">2</td>
+                  <td class="table-td">6</td>
+                  <td class="table-td">54</td>
+                  <td class="table-td">Kiran Tamang</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Grade 1</strong></td>
+                  <td class="table-td"><span class="badge badge-info">Primary</span></td>
+                  <td class="table-td">3</td>
+                  <td class="table-td">7</td>
+                  <td class="table-td">96</td>
+                  <td class="table-td">Gita Karki</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Grade 2</strong></td>
+                  <td class="table-td"><span class="badge badge-info">Primary</span></td>
+                  <td class="table-td">3</td>
+                  <td class="table-td">8</td>
+                  <td class="table-td">98</td>
+                  <td class="table-td">Ram Prasad Adhikari</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Grade 3</strong></td>
+                  <td class="table-td"><span class="badge badge-info">Primary</span></td>
+                  <td class="table-td">3</td>
+                  <td class="table-td">8</td>
+                  <td class="table-td">104</td>
+                  <td class="table-td">Kamala Tamang</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Grade 4</strong></td>
+                  <td class="table-td"><span class="badge badge-info">Primary</span></td>
+                  <td class="table-td">3</td>
+                  <td class="table-td">9</td>
+                  <td class="table-td">108</td>
+                  <td class="table-td">Manisha Shakya</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Grade 5</strong></td>
+                  <td class="table-td"><span class="badge badge-info">Primary</span></td>
+                  <td class="table-td">3</td>
+                  <td class="table-td">9</td>
+                  <td class="table-td">112</td>
+                  <td class="table-td">Ramesh Rai</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Grade 6</strong></td>
+                  <td class="table-td"><span class="badge badge-warning">Lower secondary</span></td>
+                  <td class="table-td">3</td>
+                  <td class="table-td">10</td>
+                  <td class="table-td">118</td>
+                  <td class="table-td">Sunita Sharma</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Grade 7</strong></td>
+                  <td class="table-td"><span class="badge badge-warning">Lower secondary</span></td>
+                  <td class="table-td">3</td>
+                  <td class="table-td">10</td>
+                  <td class="table-td">122</td>
+                  <td class="table-td">Anil Karki</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Grade 8</strong></td>
+                  <td class="table-td"><span class="badge badge-warning">Lower secondary</span></td>
+                  <td class="table-td">3</td>
+                  <td class="table-td">11</td>
+                  <td class="table-td">126</td>
+                  <td class="table-td">Kamala Tamang</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Grade 9</strong></td>
+                  <td class="table-td"><span class="badge badge-danger">Secondary</span></td>
+                  <td class="table-td">3</td>
+                  <td class="table-td">11</td>
+                  <td class="table-td">118</td>
+                  <td class="table-td">Pratima Shrestha</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Grade 10</strong></td>
+                  <td class="table-td"><span class="badge badge-danger">Secondary</span></td>
+                  <td class="table-td">3</td>
+                  <td class="table-td">11</td>
+                  <td class="table-td">112</td>
+                  <td class="table-td">Hari Bahadur Thapa</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--ink-100);">
+            <p style="font-size:13px;color:var(--ink-500);">13 classes · 1,240 students total</p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Parent · School SaaS</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    .mobile-page { max-width: 480px; margin: 0 auto; min-height: 100vh; padding-bottom: 80px; }
+    .child-pill { flex-shrink: 0; display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--ink-200); border-radius: 12px; padding: 10px 12px; min-width: 180px; cursor: pointer; transition: all 0.15s; }
+    .child-pill.active { border: 2px solid var(--primary-500); }
+    .fee-card { border-radius: 12px; background: linear-gradient(135deg, var(--primary-500), var(--primary-700)); color: #fff; padding: 20px; box-shadow: 0 10px 25px -5px rgba(196,31,184,0.3); }
+  </style>
+</head>
+<body>
+
+<div class="mobile-page">
+
+  <!-- Header -->
+  <header style="position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--ink-100);">
+    <div style="padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="avatar avatar-sm" style="background:linear-gradient(135deg,var(--primary-500),var(--primary-700));color:#fff;">SS</div>
+        <div>
+          <p style="font-size:11px;color:var(--ink-500);line-height:1;">Welcome back,</p>
+          <p style="font-size:14px;font-weight:600;line-height:1.2;">Ramesh Shrestha</p>
+        </div>
+      </div>
+      <button class="btn btn-ghost btn-icon" style="position:relative;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+        <span style="position:absolute;top:6px;right:6px;width:8px;height:8px;background:var(--primary-500);border-radius:50%;border:2px solid #fff;"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Child switcher -->
+  <div style="padding:16px 20px 8px;">
+    <div style="display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;">
+      <div class="child-pill active">
+        <div class="avatar avatar-md avatar-primary">AS</div>
+        <div>
+          <p style="font-size:14px;font-weight:600;line-height:1.2;">Aarav Shrestha</p>
+          <p style="font-size:12px;color:var(--ink-500);line-height:1.2;">Grade 8 · A</p>
+        </div>
+      </div>
+      <div class="child-pill">
+        <div class="avatar avatar-md avatar-blue">SS</div>
+        <div>
+          <p style="font-size:14px;font-weight:600;line-height:1.2;">Sita Shrestha</p>
+          <p style="font-size:12px;color:var(--ink-500);line-height:1.2;">Grade 5 · B</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fee card -->
+  <div style="padding:16px 20px;">
+    <div class="fee-card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div>
+          <p style="font-size:12px;opacity:0.7;font-weight:500;">Ashoj fees due</p>
+          <p style="font-size:30px;font-weight:700;margin-top:4px;">NPR 12,500</p>
+          <p style="font-size:12px;opacity:0.7;margin-top:4px;">Due by 30 Ashoj 2081</p>
+        </div>
+        <div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;">
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+      </div>
+      <a href="pay-fees.html" class="btn btn-block" style="margin-top:16px;background:#fff;color:var(--primary-600);">Pay now</a>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div style="padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+    <div class="card" style="padding:12px;text-align:center;">
+      <p style="font-size:24px;font-weight:700;color:#166534;">94%</p>
+      <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Attendance</p>
+    </div>
+    <div class="card" style="padding:12px;text-align:center;">
+      <p style="font-size:24px;font-weight:700;color:var(--primary-600);">A+</p>
+      <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Last result</p>
+    </div>
+    <div class="card" style="padding:12px;text-align:center;">
+      <p style="font-size:24px;font-weight:700;color:#1E40AF;">3</p>
+      <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Homework</p>
+    </div>
+  </div>
+
+  <!-- Today's classes -->
+  <div style="padding:20px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+      <h2 style="font-size:16px;font-weight:600;">Today's classes</h2>
+      <a href="timetable.html" style="font-size:13px;font-weight:500;color:var(--primary-600);">See all</a>
+    </div>
+    <div class="card">
+      <div style="padding:16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--ink-100);">
+        <div style="width:4px;align-self:stretch;border-radius:9999px;background:var(--primary-500);"></div>
+        <div style="width:56px;text-align:center;">
+          <p style="font-size:11px;color:var(--ink-500);">Period 1</p>
+          <p style="font-size:12px;font-weight:500;">10:00</p>
+        </div>
+        <div style="flex:1;">
+          <p style="font-size:14px;font-weight:500;">Mathematics</p>
+          <p style="font-size:12px;color:var(--ink-500);">Mr. Sharma · Room 201</p>
+        </div>
+      </div>
+      <div style="padding:16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--ink-100);">
+        <div style="width:4px;align-self:stretch;border-radius:9999px;background:#3B82F6;"></div>
+        <div style="width:56px;text-align:center;">
+          <p style="font-size:11px;color:var(--ink-500);">Period 2</p>
+          <p style="font-size:12px;font-weight:500;">10:45</p>
+        </div>
+        <div style="flex:1;">
+          <p style="font-size:14px;font-weight:500;">Science</p>
+          <p style="font-size:12px;color:var(--ink-500);">Mrs. Rai · Lab 1</p>
+        </div>
+      </div>
+      <div style="padding:16px;display:flex;align-items:center;gap:12px;">
+        <div style="width:4px;align-self:stretch;border-radius:9999px;background:#F59E0B;"></div>
+        <div style="width:56px;text-align:center;">
+          <p style="font-size:11px;color:var(--ink-500);">Period 3</p>
+          <p style="font-size:12px;font-weight:500;">11:30</p>
+        </div>
+        <div style="flex:1;">
+          <p style="font-size:14px;font-weight:500;">Nepali</p>
+          <p style="font-size:12px;color:var(--ink-500);">Mrs. Tamang · Room 201</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notices -->
+  <div style="padding:0 20px 20px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+      <h2 style="font-size:16px;font-weight:600;">Notices</h2>
+      <a href="notices.html" style="font-size:13px;font-weight:500;color:var(--primary-600);">See all</a>
+    </div>
+    <div class="card" style="padding:16px;">
+      <div style="display:flex;gap:12px;">
+        <div style="width:36px;height:36px;flex-shrink:0;border-radius:8px;background:var(--primary-100);color:var(--primary-600);display:flex;align-items:center;justify-content:center;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+        </div>
+        <div style="flex:1;">
+          <p style="font-size:14px;font-weight:500;">Dashain vacation</p>
+          <p style="font-size:13px;color:var(--ink-600);margin-top:4px;">School will be closed from 25 Ashoj to 5 Kartik.</p>
+          <p style="font-size:11px;color:var(--ink-400);margin-top:8px;">2 hours ago</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom nav -->
+  <nav class="mobile-nav">
+    <div class="mobile-nav-grid">
+      <a href="dashboard.html" class="mobile-nav-item active">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3m10-11v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        Home
+      </a>
+      <a href="attendance.html" class="mobile-nav-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Attendance
+      </a>
+      <a href="fees.html" class="mobile-nav-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Fees
+      </a>
+      <a href="results.html" class="mobile-nav-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        Results
+      </a>
+      <a href="messages.html" class="mobile-nav-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        Chat
+      </a>
+    </div>
+  </nav>
+
+</div>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

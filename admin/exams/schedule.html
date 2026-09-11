@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exam Schedule · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        Exams &amp; Results
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="list.html">All exams</a>
+        <a href="schedule.html" style="color:var(--primary-600);">Schedule</a>
+        <a href="marks-entry.html">Marks entry</a>
+        <a href="marks-verification.html">Verification</a>
+        <a href="grade-scales.html">Grade scales</a>
+        <a href="hall-tickets.html">Hall tickets</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Exams</a><span class="separator">/</span><span class="current">Schedule</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-secondary btn-sm" onclick="window.print()">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2z"/></svg>
+          Print
+        </button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Exam Schedule</h1>
+            <p class="page-subtitle">Mid-Term Examination 2081 · 24–30 Ashoj 2081</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-secondary">Publish schedule</button>
+            <button class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              Add subject
+            </button>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;">
+            <div style="flex:1;min-width:160px;">
+              <label class="label">Class</label>
+              <select class="select"><option>All grades</option><option>Grade 6</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option></select>
+            </div>
+            <div style="flex:1;min-width:200px;">
+              <label class="label">Date range</label>
+              <select class="select"><option>Full exam period (24–30 Ashoj)</option><option>Day 1 (24 Ashoj)</option><option>Day 2 (25 Ashoj)</option></select>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">Date</th>
+                  <th class="table-th">Time</th>
+                  <th class="table-th">Subject</th>
+                  <th class="table-th">Classes</th>
+                  <th class="table-th">Full marks</th>
+                  <th class="table-th">Duration</th>
+                  <th class="table-th">Room</th>
+                  <th class="table-th">Invigilator</th>
+                  <th class="table-th" style="width:40px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background:var(--primary-50);">
+                  <td colspan="9" class="table-td" style="font-weight:600;color:var(--primary-700);">Wednesday, 24 Ashoj 2081</td>
+                </tr>
+                <tr>
+                  <td class="table-td">24 Ashoj</td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">10:00 AM — 12:00 PM</td>
+                  <td class="table-td"><strong>Mathematics</strong></td>
+                  <td class="table-td">Grade 6–10</td>
+                  <td class="table-td">100</td>
+                  <td class="table-td">2 hrs</td>
+                  <td class="table-td">Rooms 201–210</td>
+                  <td class="table-td">S. Sharma, R. Rai</td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a><a href="#" class="dropdown-item dropdown-danger">Delete</a></div></div></td>
+                </tr>
+                <tr style="background:var(--primary-50);">
+                  <td colspan="9" class="table-td" style="font-weight:600;color:var(--primary-700);">Thursday, 25 Ashoj 2081</td>
+                </tr>
+                <tr>
+                  <td class="table-td">25 Ashoj</td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">10:00 AM — 12:00 PM</td>
+                  <td class="table-td"><strong>Science</strong></td>
+                  <td class="table-td">Grade 6–10</td>
+                  <td class="table-td">100</td>
+                  <td class="table-td">2 hrs</td>
+                  <td class="table-td">Rooms 201–210</td>
+                  <td class="table-td">R. Rai, M. Shakya</td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr style="background:var(--primary-50);">
+                  <td colspan="9" class="table-td" style="font-weight:600;color:var(--primary-700);">Friday, 26 Ashoj 2081</td>
+                </tr>
+                <tr>
+                  <td class="table-td">26 Ashoj</td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">10:00 AM — 12:00 PM</td>
+                  <td class="table-td"><strong>English</strong></td>
+                  <td class="table-td">Grade 6–10</td>
+                  <td class="table-td">100</td>
+                  <td class="table-td">2 hrs</td>
+                  <td class="table-td">Rooms 201–210</td>
+                  <td class="table-td">A. Karki, K. Tamang</td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr style="background:var(--primary-50);">
+                  <td colspan="9" class="table-td" style="font-weight:600;color:var(--primary-700);">Saturday, 27 Ashoj 2081</td>
+                </tr>
+                <tr>
+                  <td class="table-td">27 Ashoj</td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">10:00 AM — 12:00 PM</td>
+                  <td class="table-td"><strong>Nepali</strong></td>
+                  <td class="table-td">Grade 6–10</td>
+                  <td class="table-td">100</td>
+                  <td class="table-td">2 hrs</td>
+                  <td class="table-td">Rooms 201–210</td>
+                  <td class="table-td">K. Tamang, P. Shrestha</td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr style="background:var(--primary-50);">
+                  <td colspan="9" class="table-td" style="font-weight:600;color:var(--primary-700);">Sunday, 28 Ashoj 2081</td>
+                </tr>
+                <tr>
+                  <td class="table-td">28 Ashoj</td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">10:00 AM — 12:00 PM</td>
+                  <td class="table-td"><strong>Social Studies</strong></td>
+                  <td class="table-td">Grade 6–10</td>
+                  <td class="table-td">100</td>
+                  <td class="table-td">2 hrs</td>
+                  <td class="table-td">Rooms 201–210</td>
+                  <td class="table-td">P. Shrestha, S. Sharma</td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td">28 Ashoj</td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">1:00 PM — 3:00 PM</td>
+                  <td class="table-td"><strong>Computer</strong></td>
+                  <td class="table-td">Grade 6–10</td>
+                  <td class="table-td">100</td>
+                  <td class="table-td">2 hrs</td>
+                  <td class="table-td">Lab 1–2</td>
+                  <td class="table-td">M. Shakya</td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr style="background:var(--primary-50);">
+                  <td colspan="9" class="table-td" style="font-weight:600;color:var(--primary-700);">Monday, 29 Ashoj 2081</td>
+                </tr>
+                <tr>
+                  <td class="table-td">29 Ashoj</td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">10:00 AM — 12:00 PM</td>
+                  <td class="table-td"><strong>Optional Mathematics</strong></td>
+                  <td class="table-td">Grade 9–10</td>
+                  <td class="table-td">100</td>
+                  <td class="table-td">2 hrs</td>
+                  <td class="table-td">Rooms 301–304</td>
+                  <td class="table-td">S. Sharma</td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

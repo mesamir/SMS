@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mid-Term Examination 2081 · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        Exams &amp; Results
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="list.html" style="color:var(--primary-600);">All exams</a>
+        <a href="create.html">Create exam</a>
+        <a href="grade-scales.html">Grade scales</a>
+        <a href="hall-tickets.html">Hall tickets</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Exams</a><span class="separator">/</span><span class="current">Mid-Term 2081</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="card" style="padding:24px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;">
+            <div>
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <h1 style="font-size:22px;font-weight:700;">Mid-Term Examination 2081</h1>
+                <span class="badge badge-primary">In progress</span>
+                <span class="badge badge-info">Mid-term</span>
+              </div>
+              <p style="font-size:13px;color:var(--ink-500);margin-top:4px;">Grade 6–10 · 24 Ashoj — 30 Ashoj 2081</p>
+              <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Academic year 2081 · Term 2 · 11 subjects</p>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <a href="schedule.html" class="btn btn-secondary">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                Schedule
+              </a>
+              <a href="marks-entry.html" class="btn btn-primary">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                Enter marks
+              </a>
+              <div class="dropdown"><button class="btn btn-secondary btn-icon" data-dropdown><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v.01M12 12v.01M12 19v.01"/></svg></button>
+                <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit exam</a><a href="#" class="dropdown-item">Publish schedule</a><a href="hall-tickets.html" class="dropdown-item">Generate hall tickets</a><div class="dropdown-divider"></div><a href="#" class="dropdown-item dropdown-danger">Delete exam</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabs" style="margin-bottom:20px;">
+          <div class="tab active">Overview</div>
+          <div class="tab">Schedule</div>
+          <div class="tab">Marks entry</div>
+          <div class="tab">Verification</div>
+          <div class="tab">Results</div>
+        </div>
+
+        <!-- KPI row -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Students</p><p style="font-size:22px;font-weight:700;margin-top:6px;">582</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Subjects</p><p style="font-size:22px;font-weight:700;margin-top:6px;">11</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Papers entered</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:var(--primary-600);">7 / 11</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Verified</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">3 / 11</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Days remaining</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#92400E;">4</p></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="layout">
+          <style>@media (min-width:1024px){.layout{grid-template-columns:2fr 1fr!important;}}</style>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Subject-wise progress</h3></div>
+              <div class="table-wrap">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="table-th">Subject</th>
+                      <th class="table-th">Date</th>
+                      <th class="table-th">Full marks</th>
+                      <th class="table-th">Marks entered</th>
+                      <th class="table-th">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="table-td">Mathematics</td>
+                      <td class="table-td" style="font-size:12px;">24 Ashoj</td>
+                      <td class="table-td">100</td>
+                      <td class="table-td">582 / 582</td>
+                      <td class="table-td"><span class="badge badge-success">Verified</span></td>
+                    </tr>
+                    <tr>
+                      <td class="table-td">Science</td>
+                      <td class="table-td" style="font-size:12px;">25 Ashoj</td>
+                      <td class="table-td">100</td>
+                      <td class="table-td">582 / 582</td>
+                      <td class="table-td"><span class="badge badge-success">Verified</span></td>
+                    </tr>
+                    <tr>
+                      <td class="table-td">English</td>
+                      <td class="table-td" style="font-size:12px;">26 Ashoj</td>
+                      <td class="table-td">100</td>
+                      <td class="table-td">582 / 582</td>
+                      <td class="table-td"><span class="badge badge-success">Verified</span></td>
+                    </tr>
+                    <tr>
+                      <td class="table-td">Nepali</td>
+                      <td class="table-td" style="font-size:12px;">27 Ashoj</td>
+                      <td class="table-td">100</td>
+                      <td class="table-td">582 / 582</td>
+                      <td class="table-td"><span class="badge badge-info">Entered</span></td>
+                    </tr>
+                    <tr>
+                      <td class="table-td">Social Studies</td>
+                      <td class="table-td" style="font-size:12px;">28 Ashoj</td>
+                      <td class="table-td">100</td>
+                      <td class="table-td">542 / 582</td>
+                      <td class="table-td"><span class="badge badge-warning">In progress</span></td>
+                    </tr>
+                    <tr>
+                      <td class="table-td">Computer</td>
+                      <td class="table-td" style="font-size:12px;">28 Ashoj</td>
+                      <td class="table-td">100</td>
+                      <td class="table-td">420 / 582</td>
+                      <td class="table-td"><span class="badge badge-warning">In progress</span></td>
+                    </tr>
+                    <tr>
+                      <td class="table-td">Optional Math</td>
+                      <td class="table-td" style="font-size:12px;">29 Ashoj</td>
+                      <td class="table-td">100</td>
+                      <td class="table-td">0 / 582</td>
+                      <td class="table-td"><span class="badge badge-gray">Not started</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Recent activity</h3></div>
+              <ul style="list-style:none;">
+                <li style="padding:12px 20px;display:flex;gap:12px;border-bottom:1px solid var(--ink-100);">
+                  <div class="avatar avatar-sm avatar-green">✓</div>
+                  <div style="flex:1;">
+                    <p style="font-size:13px;">S. Sharma verified <strong>Mathematics</strong> marks</p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">2 hours ago</p>
+                  </div>
+                </li>
+                <li style="padding:12px 20px;display:flex;gap:12px;border-bottom:1px solid var(--ink-100);">
+                  <div class="avatar avatar-sm avatar-primary">📝</div>
+                  <div style="flex:1;">
+                    <p style="font-size:13px;">R. Rai entered <strong>Science</strong> marks (582 students)</p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">5 hours ago</p>
+                  </div>
+                </li>
+                <li style="padding:12px 20px;display:flex;gap:12px;border-bottom:1px solid var(--ink-100);">
+                  <div class="avatar avatar-sm avatar-blue">📅</div>
+                  <div style="flex:1;">
+                    <p style="font-size:13px;">Exam schedule published</p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Yesterday</p>
+                  </div>
+                </li>
+                <li style="padding:12px 20px;display:flex;gap:12px;">
+                  <div class="avatar avatar-sm avatar-amber">✏️</div>
+                  <div style="flex:1;">
+                    <p style="font-size:13px;">Exam created by Dr. Sunita Sharma</p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">3 days ago</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Exam info</h3></div>
+              <div class="card-body" style="display:flex;flex-direction:column;gap:14px;">
+                <div>
+                  <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Exam type</p>
+                  <p style="font-size:13px;margin-top:4px;">Mid-term</p>
+                </div>
+                <div>
+                  <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Term</p>
+                  <p style="font-size:13px;margin-top:4px;">Term 2 · Academic year 2081</p>
+                </div>
+                <div>
+                  <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Duration</p>
+                  <p style="font-size:13px;margin-top:4px;">7 days (24–30 Ashoj)</p>
+                </div>
+                <div>
+                  <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Full marks</p>
+                  <p style="font-size:13px;margin-top:4px;">100 per subject</p>
+                </div>
+                <div>
+                  <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Pass marks</p>
+                  <p style="font-size:13px;margin-top:4px;">40 per subject</p>
+                </div>
+                <div>
+                  <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Grade scale</p>
+                  <p style="font-size:13px;margin-top:4px;">Default A+ to F</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Quick actions</h3></div>
+              <div style="padding:6px;">
+                <a href="schedule.html" class="dropdown-item" style="padding:10px 12px;">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  Manage schedule
+                </a>
+                <a href="marks-entry.html" class="dropdown-item" style="padding:10px 12px;">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                  Marks entry
+                </a>
+                <a href="marks-verification.html" class="dropdown-item" style="padding:10px 12px;">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  Verify marks
+                </a>
+                <a href="hall-tickets.html" class="dropdown-item" style="padding:10px 12px;">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg>
+                  Hall tickets
+                </a>
+                <a href="../results/publish.html" class="dropdown-item" style="padding:10px 12px;">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                  Publish results
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

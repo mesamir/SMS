@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>System Health · Platform</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    .platform-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 6px; background: var(--ink-900); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .platform-sidebar { background: #0F172A; border-right-color: #1E293B; }
+    .platform-sidebar .sidebar-logo { background: linear-gradient(135deg, #C41FB8, #7C3AED); }
+    .platform-sidebar .sidebar-brand { color: #fff; }
+    .platform-sidebar .sidebar-brand span { color: #DD6FD0; }
+    .platform-sidebar .sidebar-user { border-bottom-color: #1E293B; }
+    .platform-sidebar .sidebar-user-info .role { color: #64748B; }
+    .platform-sidebar .sidebar-user-info .name { color: #F1F5F9; }
+    .platform-sidebar .sidebar-search { border-bottom-color: #1E293B; }
+    .platform-sidebar .sidebar-search input { background: #1E293B; color: #F1F5F9; }
+    .platform-sidebar .sidebar-search input::placeholder { color: #64748B; }
+    .platform-sidebar .nav-item { color: #94A3B8; }
+    .platform-sidebar .nav-item:hover { background: #1E293B; color: #F1F5F9; }
+    .platform-sidebar .nav-item.active { background: rgba(196,31,184,0.15); color: #DD6FD0; }
+    .platform-sidebar .sidebar-group-label { color: #475569; }
+    .service-card { padding: 16px; border: 1px solid var(--ink-200); border-radius: 12px; background: #fff; }
+    .service-status { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .metric-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--ink-100); font-size: 13px; }
+    .metric-row:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar platform-sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 8.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+      <span class="sidebar-brand">School<span>SaaS</span></span>
+      <span class="platform-badge" style="margin-left:auto;background:#C41FB8;">Platform</span>
+    </div>
+    <div class="sidebar-user">
+      <div class="avatar avatar-md" style="background:linear-gradient(135deg,#C41FB8,#7C3AED);color:#fff;">SA</div>
+      <div class="sidebar-user-info"><p class="role">Super Admin</p><p class="name">Sujan Adhikari</p></div>
+    </div>
+    <div class="sidebar-search">
+      <div style="position:relative;">
+        <svg style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#64748B;" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" placeholder="Search platform..." style="width:100%;height:36px;padding:0 12px 0 34px;border:1px solid transparent;border-radius:8px;font-size:13px;">
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Platform</p>
+      <a href="dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3m10-11v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>Dashboard</a>
+      <a href="tenants.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5"/></svg>Tenants</a>
+      <a href="plans.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Plans &amp; Pricing</a>
+      <a href="feature-flags.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>Feature Flags</a>
+      <p class="sidebar-group-label">Security</p>
+      <a href="users.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-5.13a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Platform Users</a>
+      <a href="audit-log.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>Audit Log</a>
+      <p class="sidebar-group-label">Operations</p>
+      <a href="system-health.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>System Health</a>
+      <a href="support-tickets.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Support Tickets</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="dashboard.html">Platform</a><span class="separator">/</span><span class="current">System Health</span></nav>
+      </div>
+      <div class="main-header-right">
+        <span class="badge badge-success" style="gap:6px;"><span class="status-dot" style="background:#22C55E;"></span>All systems operational</span>
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg></button>
+        <div class="dropdown">
+          <button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown>
+            <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#C41FB8,#7C3AED);color:#fff;">SA</div>
+            <span style="font-size:13px;font-weight:500;">Sujan</span>
+            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" style="color:var(--ink-400);"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="dropdown-menu"><a href="../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">System Health</h1>
+            <p class="page-subtitle">Live status of infrastructure, workers, and integrations</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              Refresh
+            </button>
+          </div>
+        </div>
+
+        <!-- Overall status -->
+        <div class="card" style="padding:24px;margin-bottom:24px;background:linear-gradient(135deg,#F0FDF4,#FFFFFF);border-color:#BBF7D0;">
+          <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+            <div style="width:64px;height:64px;border-radius:16px;background:#22C55E;color:#fff;display:flex;align-items:center;justify-content:center;">
+              <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div style="flex:1;min-width:240px;">
+              <p style="font-size:20px;font-weight:700;color:#166534;">All systems operational</p>
+              <p style="font-size:13px;color:#166534;opacity:0.8;margin-top:4px;">Last checked 30 seconds ago · 99.97% uptime (30 days)</p>
+            </div>
+            <div style="text-align:right;">
+              <p style="font-size:28px;font-weight:700;color:#166534;">99.97%</p>
+              <p style="font-size:12px;color:#166534;opacity:0.8;">Last 30 days</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service cards -->
+        <h3 style="font-size:14px;font-weight:600;color:var(--ink-500);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px;">Core services</h3>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:24px;">
+
+          <div class="service-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <p style="font-size:13px;font-weight:600;">API Server</p>
+              <span class="service-status" style="color:#22C55E;"><span class="status-dot" style="background:#22C55E;"></span>Healthy</span>
+            </div>
+            <p style="font-size:24px;font-weight:700;margin-top:12px;">124 ms</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Avg response · p95 287 ms</p>
+          </div>
+
+          <div class="service-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <p style="font-size:13px;font-weight:600;">PostgreSQL</p>
+              <span class="service-status" style="color:#22C55E;"><span class="status-dot" style="background:#22C55E;"></span>Healthy</span>
+            </div>
+            <p style="font-size:24px;font-weight:700;margin-top:12px;">42 / 200</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Active connections</p>
+          </div>
+
+          <div class="service-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <p style="font-size:13px;font-weight:600;">Redis</p>
+              <span class="service-status" style="color:#22C55E;"><span class="status-dot" style="background:#22C55E;"></span>Healthy</span>
+            </div>
+            <p style="font-size:24px;font-weight:700;margin-top:12px;">1.2 GB</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">of 4 GB used · 32% </p>
+          </div>
+
+          <div class="service-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <p style="font-size:13px;font-weight:600;">Celery Workers</p>
+              <span class="service-status" style="color:#22C55E;"><span class="status-dot" style="background:#22C55E;"></span>Healthy</span>
+            </div>
+            <p style="font-size:24px;font-weight:700;margin-top:12px;">8 / 8</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Workers online · 12 tasks queued</p>
+          </div>
+
+        </div>
+
+        <h3 style="font-size:14px;font-weight:600;color:var(--ink-500);text-transform:uppercase;letter-spacing:0.05em;margin:24px 0 12px;">External integrations</h3>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:24px;">
+
+          <div class="service-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <p style="font-size:13px;font-weight:600;">ConnectIPS</p>
+              <span class="service-status" style="color:#22C55E;"><span class="status-dot" style="background:#22C55E;"></span>Operational</span>
+            </div>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:10px;">Last sync: 30s ago</p>
+          </div>
+
+          <div class="service-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <p style="font-size:13px;font-weight:600;">eSewa</p>
+              <span class="service-status" style="color:#22C55E;"><span class="status-dot" style="background:#22C55E;"></span>Operational</span>
+            </div>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:10px;">Last sync: 30s ago</p>
+          </div>
+
+          <div class="service-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <p style="font-size:13px;font-weight:600;">Khalti</p>
+              <span class="service-status" style="color:#22C55E;"><span class="status-dot" style="background:#22C55E;"></span>Operational</span>
+            </div>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:10px;">Last sync: 30s ago</p>
+          </div>
+
+          <div class="service-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <p style="font-size:13px;font-weight:600;">Sparrow SMS</p>
+              <span class="service-status" style="color:#F59E0B;"><span class="status-dot" style="background:#F59E0B;"></span>Degraded</span>
+            </div>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:10px;">Elevated latency · 4.2s avg</p>
+          </div>
+
+        </div>
+
+        <!-- Response time chart -->
+        <div class="card" style="margin-bottom:24px;">
+          <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <h3 class="card-title">API response time</h3>
+              <p class="card-subtitle">Last 24 hours</p>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;font-size:12px;">
+              <span style="display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:2px;background:#C41FB8;"></span>p50</span>
+              <span style="display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:2px;background:#F59E0B;"></span>p95</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div style="height:240px;"><canvas id="apiChart"></canvas></div>
+          </div>
+        </div>
+
+        <!-- Two column: DB + Worker stats -->
+        <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="lg-health">
+          <style>@media (min-width:1024px){.lg-health{grid-template-columns:1fr 1fr!important;}}</style>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Database metrics</h3>
+            </div>
+            <div class="card-body">
+              <div class="metric-row"><span style="color:var(--ink-600);">Database size</span><strong>12.4 GB</strong></div>
+              <div class="metric-row"><span style="color:var(--ink-600);">Active connections</span><strong>42 / 200</strong></div>
+              <div class="metric-row"><span style="color:var(--ink-600);">Slow queries (24h)</span><strong>3</strong></div>
+              <div class="metric-row"><span style="color:var(--ink-600);">Cache hit ratio</span><strong>98.2%</strong></div>
+              <div class="metric-row"><span style="color:var(--ink-600);">Replication lag</span><strong>0.4s</strong></div>
+              <div class="metric-row"><span style="color:var(--ink-600);">Last backup</span><strong>2 hours ago</strong></div>
+              <div class="metric-row"><span style="color:var(--ink-600);">Backup size</span><strong>3.8 GB</strong></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Background jobs</h3>
+            </div>
+            <div class="card-body">
+              <div class="metric-row"><span style="color:var(--ink-600);">Tasks processed (24h)</span><strong>18,247</strong></div>
+              <div class="metric-row"><span style="color:var(--ink-600);">Success rate</span><strong style="color:#166534;">99.6%</strong></div>
+              <div class="metric-row"><span style="color:var(--ink-600);">Failed tasks (24h)</span><strong style="color:#991B1B;">73</strong></div>
+              <div class="metric-row"><span style="color:var(--ink-600);">Queue depth</span><strong>12</strong></div>
+              <div class="metric-row"><span style="color:var(--ink-600);">Avg task duration</span><strong>1.8s</strong></div>
+              <div class="metric-row"><span style="color:var(--ink-600);">Scheduled jobs</span><strong>24</strong></div>
+              <div class="metric-row"><span style="color:var(--ink-600);">Beat scheduler</span><strong style="color:#166534;">Running</strong></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/sidebar.js"></script>
+<script src="../assets/js/dropdown.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('apiChart');
+    if (!ctx || !window.Chart) return;
+    const labels = [];
+    const p50 = [];
+    const p95 = [];
+    for (let h = 0; h < 24; h++) {
+      labels.push(`${h.toString().padStart(2,'0')}:00`);
+      p50.push(90 + Math.sin(h/2)*30 + Math.random()*20);
+      p95.push(240 + Math.sin(h/2)*60 + Math.random()*40);
+    }
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          { label: 'p50', data: p50, borderColor: '#C41FB8', backgroundColor: 'rgba(196,31,184,0.1)', fill: true, tension: 0.4, borderWidth: 2, pointRadius: 0, pointHoverRadius: 5 },
+          { label: 'p95', data: p95, borderColor: '#F59E0B', backgroundColor: 'transparent', fill: false, tension: 0.4, borderWidth: 2, borderDash: [4,4], pointRadius: 0, pointHoverRadius: 5 },
+        ],
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: '#6B7280', font: { size: 11 } } },
+          y: { grid: { color: '#E5E7EB' }, ticks: { color: '#6B7280', font: { size: 11 }, callback: v => v + ' ms' }, border: { display: false } },
+        },
+      },
+    });
+  });
+</script>
+</body>
+</html>

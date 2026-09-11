@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schools · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 8.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+      <span class="sidebar-brand">School<span>SaaS</span></span>
+    </div>
+    <div class="sidebar-user">
+      <div class="avatar avatar-md avatar-gradient">N</div>
+      <div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div>
+    </div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3m10-11v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>Dashboard</a>
+
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5"/></svg>
+        Schools
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="list.html" style="color:var(--primary-600);">All Schools</a>
+        <a href="create.html">Add School</a>
+      </div>
+
+      <div class="nav-item" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
+        Academics
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="../academics/academic-years.html">Academic Years</a>
+        <a href="../academics/classes.html">Classes</a>
+        <a href="../academics/sections.html">Sections</a>
+        <a href="../academics/subjects.html">Subjects</a>
+        <a href="../academics/streams.html">Streams</a>
+        <a href="../academics/shifts.html">Shifts</a>
+        <a href="../academics/rooms.html">Rooms</a>
+        <a href="../academics/calendar.html">Calendar</a>
+      </div>
+
+      <a href="../students/list.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-5.13a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Students</a>
+      <a href="../parents/list.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>Parents</a>
+      <a href="../teachers/list.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>Teachers</a>
+      <a href="../admissions/inquiries.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1z"/></svg>Admissions</a>
+      <a href="../attendance/mark.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Attendance</a>
+      <a href="../timetable/grid.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Timetable</a>
+      <a href="../exams/list.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>Exams &amp; Results</a>
+      <a href="../fees/invoices.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Fees</a>
+      <a href="../payments/list.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>Payments</a>
+
+      <p class="sidebar-group-label">Other</p>
+      <a href="../communication/announcements.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Communication</a>
+      <a href="../reports/dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2"/></svg>Reports</a>
+      <a href="../settings/profile.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37"/></svg>Settings</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="#">Schools</a><span class="separator">/</span><span class="current">All</span></nav>
+      </div>
+      <div class="main-header-right">
+        <div class="dropdown">
+          <button class="btn btn-secondary btn-sm" data-dropdown>
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16"/></svg>
+            KTM Main
+            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-item">✓ KTM Main</div>
+            <div class="dropdown-item">Pokhara Branch</div>
+          </div>
+        </div>
+        <button class="btn btn-ghost btn-icon" style="position:relative;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+          <span style="position:absolute;top:6px;right:6px;width:8px;height:8px;background:var(--primary-500);border-radius:50%;border:2px solid #fff;"></span>
+        </button>
+        <div class="dropdown">
+          <button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown>
+            <div class="avatar avatar-sm avatar-gradient">N</div>
+            <span style="font-size:13px;font-weight:500;">Nabin</span>
+            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" style="color:var(--ink-400);"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="dropdown-menu"><a href="../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Schools</h1>
+            <p class="page-subtitle">Manage all school branches and campuses</p>
+          </div>
+          <div class="page-actions">
+            <a href="create.html" class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              Add School
+            </a>
+          </div>
+        </div>
+
+        <!-- Stat strip -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:20px;">
+          <div class="card" style="padding:16px;">
+            <p style="font-size:12px;color:var(--ink-500);font-weight:500;">Total schools</p>
+            <p style="font-size:24px;font-weight:700;margin-top:6px;">3</p>
+          </div>
+          <div class="card" style="padding:16px;">
+            <p style="font-size:12px;color:var(--ink-500);font-weight:500;">Total students</p>
+            <p style="font-size:24px;font-weight:700;margin-top:6px;">2,148</p>
+          </div>
+          <div class="card" style="padding:16px;">
+            <p style="font-size:12px;color:var(--ink-500);font-weight:500;">Total staff</p>
+            <p style="font-size:24px;font-weight:700;margin-top:6px;">186</p>
+          </div>
+          <div class="card" style="padding:16px;">
+            <p style="font-size:12px;color:var(--ink-500);font-weight:500;">Active campuses</p>
+            <p style="font-size:24px;font-weight:700;margin-top:6px;">3</p>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+            <div style="position:relative;flex:1;min-width:240px;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-400);" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <input type="text" class="input" style="padding-left:36px;" placeholder="Search schools by name or code...">
+            </div>
+            <select class="select" style="width:auto;min-width:140px;"><option>All types</option><option>Main campus</option><option>Branch</option><option>Annex</option></select>
+            <select class="select" style="width:auto;min-width:140px;"><option>All statuses</option><option>Active</option><option>Inactive</option></select>
+            <button class="btn btn-secondary">Reset</button>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th" style="width:40px;"><input type="checkbox" class="checkbox" data-select-all></th>
+                  <th class="table-th">School</th>
+                  <th class="table-th">Code</th>
+                  <th class="table-th">Type</th>
+                  <th class="table-th">Students</th>
+                  <th class="table-th">Staff</th>
+                  <th class="table-th">Principal</th>
+                  <th class="table-th">Status</th>
+                  <th class="table-th" style="width:40px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-row-href="detail.html">
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-md avatar-primary">KM</div>
+                      <div>
+                        <p style="font-weight:500;color:var(--ink-900);font-size:13px;">KTM Main Campus</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Hattiban, Lalitpur</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">KTM-01</td>
+                  <td class="table-td"><span class="badge badge-primary">Main</span></td>
+                  <td class="table-td">1,240</td>
+                  <td class="table-td">112</td>
+                  <td class="table-td">
+                    <p style="font-size:13px;">Dr. Sunita Sharma</p>
+                    <p style="font-size:11px;color:var(--ink-500);">+977 9812345678</p>
+                  </td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td">
+                    <div class="dropdown">
+                      <button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      <div class="dropdown-menu">
+                        <a href="detail.html" class="dropdown-item">View details</a>
+                        <a href="#" class="dropdown-item">Edit</a>
+                        <a href="../academics/academic-years.html" class="dropdown-item">Manage academics</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item dropdown-item-danger">Deactivate</a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr data-row-href="detail.html">
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-md avatar-blue">PK</div>
+                      <div>
+                        <p style="font-weight:500;color:var(--ink-900);font-size:13px;">Pokhara Branch</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Lakeside, Pokhara</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">PKR-01</td>
+                  <td class="table-td"><span class="badge badge-info">Branch</span></td>
+                  <td class="table-td">620</td>
+                  <td class="table-td">48</td>
+                  <td class="table-td">
+                    <p style="font-size:13px;">Anil Karki</p>
+                    <p style="font-size:11px;color:var(--ink-500);">+977 9823456789</p>
+                  </td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td">
+                    <div class="dropdown">
+                      <button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      <div class="dropdown-menu"><a href="detail.html" class="dropdown-item">View details</a><a href="#" class="dropdown-item">Edit</a></div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr data-row-href="detail.html">
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-md avatar-amber">BR</div>
+                      <div>
+                        <p style="font-weight:500;color:var(--ink-900);font-size:13px;">Biratnagar Branch</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Biratnagar-5, Morang</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">BRT-01</td>
+                  <td class="table-td"><span class="badge badge-info">Branch</span></td>
+                  <td class="table-td">288</td>
+                  <td class="table-td">26</td>
+                  <td class="table-td">
+                    <p style="font-size:13px;">Ram Prasad Adhikari</p>
+                    <p style="font-size:11px;color:var(--ink-500);">+977 9834567890</p>
+                  </td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td">
+                    <div class="dropdown">
+                      <button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      <div class="dropdown-menu"><a href="detail.html" class="dropdown-item">View details</a><a href="#" class="dropdown-item">Edit</a></div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--ink-100);">
+            <p style="font-size:14px;color:var(--ink-500);">Showing <strong style="color:var(--ink-700);">1–3</strong> of <strong style="color:var(--ink-700);">3</strong> schools</p>
+            <div class="pagination">
+              <button disabled>«</button><button disabled>‹</button>
+              <span style="padding:0 12px;font-size:13px;color:var(--ink-700);">Page <strong>1</strong> of <strong>1</strong></span>
+              <button disabled>›</button><button disabled>»</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+<script src="../../assets/js/table.js"></script>
+</body>
+</html>

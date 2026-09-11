@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Platform Dashboard · School SaaS</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    .platform-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 8px; border-radius: 6px;
+      background: var(--ink-900); color: #fff;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .platform-sidebar {
+      background: #0F172A;
+      border-right-color: #1E293B;
+    }
+    .platform-sidebar .sidebar-logo { background: linear-gradient(135deg, #C41FB8, #7C3AED); }
+    .platform-sidebar .sidebar-brand { color: #fff; }
+    .platform-sidebar .sidebar-brand span { color: #DD6FD0; }
+    .platform-sidebar .sidebar-user { border-bottom-color: #1E293B; }
+    .platform-sidebar .sidebar-user-info .role { color: #64748B; }
+    .platform-sidebar .sidebar-user-info .name { color: #F1F5F9; }
+    .platform-sidebar .sidebar-search { border-bottom-color: #1E293B; }
+    .platform-sidebar .sidebar-search input { background: #1E293B; color: #F1F5F9; }
+    .platform-sidebar .sidebar-search input::placeholder { color: #64748B; }
+    .platform-sidebar .nav-item { color: #94A3B8; }
+    .platform-sidebar .nav-item:hover { background: #1E293B; color: #F1F5F9; }
+    .platform-sidebar .nav-item.active { background: rgba(196,31,184,0.15); color: #DD6FD0; }
+    .platform-sidebar .nav-item.active:hover { background: rgba(196,31,184,0.15); }
+    .platform-sidebar .sidebar-group-label { color: #475569; }
+    .platform-sidebar .nav-submenu a { color: #64748B; }
+    .platform-sidebar .nav-submenu a:hover { color: #F1F5F9; background: #1E293B; }
+    .stat-trend-up { color: #22C55E; }
+    .stat-trend-down { color: #EF4444; }
+    .health-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  </style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ═══ PLATFORM SIDEBAR ═══ -->
+  <aside class="sidebar platform-sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 8.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+      </div>
+      <span class="sidebar-brand">School<span>SaaS</span></span>
+      <span class="platform-badge" style="margin-left:auto;background:#C41FB8;">Platform</span>
+    </div>
+
+    <div class="sidebar-user">
+      <div class="avatar avatar-md" style="background:linear-gradient(135deg,#C41FB8,#7C3AED);color:#fff;">SA</div>
+      <div class="sidebar-user-info">
+        <p class="role">Super Admin</p>
+        <p class="name">Sujan Adhikari</p>
+      </div>
+    </div>
+
+    <div class="sidebar-search">
+      <div style="position:relative;">
+        <svg style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#64748B;" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <input type="text" placeholder="Search platform..." style="width:100%;height:36px;padding:0 12px 0 34px;border:1px solid transparent;border-radius:8px;font-size:13px;">
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Platform</p>
+
+      <a href="dashboard.html" class="nav-item active">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3m10-11v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        Dashboard
+      </a>
+
+      <a href="tenants.html" class="nav-item">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5"/></svg>
+        Tenants
+      </a>
+
+      <a href="plans.html" class="nav-item">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Plans &amp; Pricing
+      </a>
+
+      <a href="feature-flags.html" class="nav-item">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        Feature Flags
+      </a>
+
+      <p class="sidebar-group-label">Security</p>
+
+      <a href="users.html" class="nav-item">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-5.13a4 4 0 11-8 0 4 4 0 018 0zm6 0a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Platform Users
+      </a>
+
+      <a href="audit-log.html" class="nav-item">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+        Audit Log
+      </a>
+
+      <p class="sidebar-group-label">Operations</p>
+
+      <a href="system-health.html" class="nav-item">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        System Health
+      </a>
+
+      <a href="support-tickets.html" class="nav-item">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        Support Tickets
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ═══ MAIN ═══ -->
+  <div class="main">
+
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <nav class="breadcrumbs">
+          <span class="current">Platform Dashboard</span>
+        </nav>
+        <span class="platform-badge">Super Admin</span>
+      </div>
+
+      <div class="main-header-right">
+        <button class="btn btn-secondary btn-sm">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          Refresh
+        </button>
+
+        <button class="btn btn-ghost btn-icon" style="position:relative;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+          <span style="position:absolute;top:6px;right:6px;width:8px;height:8px;background:var(--primary-500);border-radius:50%;border:2px solid #fff;"></span>
+        </button>
+
+        <div class="dropdown">
+          <button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown>
+            <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#C41FB8,#7C3AED);color:#fff;">SA</div>
+            <span style="font-size:13px;font-weight:500;">Sujan</span>
+            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" style="color:var(--ink-400);"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">My account</a>
+            <a href="#" class="dropdown-item">Platform settings</a>
+            <div class="dropdown-divider"></div>
+            <a href="../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <!-- Page header -->
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Platform Dashboard</h1>
+            <p class="page-subtitle">Real-time overview of all tenants, subscriptions, and system health</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Export
+            </button>
+            <a href="tenant-create.html" class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              New tenant
+            </a>
+          </div>
+        </div>
+
+        <!-- KPI cards -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:24px;">
+
+          <div class="card" style="padding:20px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:13px;font-weight:500;color:var(--ink-500);">Active tenants</span>
+              <div style="width:36px;height:36px;border-radius:8px;background:var(--primary-100);color:var(--primary-600);display:flex;align-items:center;justify-content:center;">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5"/></svg>
+              </div>
+            </div>
+            <p style="font-size:32px;font-weight:700;margin-top:12px;line-height:1;">47</p>
+            <p style="font-size:12px;margin-top:6px;"><span class="badge badge-success">↑ 6</span> <span style="color:var(--ink-500);margin-left:4px;">this month</span></p>
+          </div>
+
+          <div class="card" style="padding:20px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:13px;font-weight:500;color:var(--ink-500);">Monthly revenue (MRR)</span>
+              <div style="width:36px;height:36px;border-radius:8px;background:#DCFCE7;color:#166534;display:flex;align-items:center;justify-content:center;">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/></svg>
+              </div>
+            </div>
+            <p style="font-size:32px;font-weight:700;margin-top:12px;line-height:1;">NPR 6.8L</p>
+            <p style="font-size:12px;margin-top:6px;"><span class="badge badge-success">↑ 12.4%</span> <span style="color:var(--ink-500);margin-left:4px;">vs last month</span></p>
+          </div>
+
+          <div class="card" style="padding:20px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:13px;font-weight:500;color:var(--ink-500);">Total students</span>
+              <div style="width:36px;height:36px;border-radius:8px;background:#DBEAFE;color:#1E40AF;display:flex;align-items:center;justify-content:center;">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-5.13a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+              </div>
+            </div>
+            <p style="font-size:32px;font-weight:700;margin-top:12px;line-height:1;">38,241</p>
+            <p style="font-size:12px;margin-top:6px;"><span style="color:var(--ink-500);">across all schools</span></p>
+          </div>
+
+          <div class="card" style="padding:20px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:13px;font-weight:500;color:var(--ink-500);">System health</span>
+              <div style="width:36px;height:36px;border-radius:8px;background:#DCFCE7;color:#166534;display:flex;align-items:center;justify-content:center;">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+            </div>
+            <p style="font-size:32px;font-weight:700;margin-top:12px;line-height:1;">99.97%</p>
+            <p style="font-size:12px;margin-top:6px;"><span class="health-dot" style="background:#22C55E;"></span> <span style="color:var(--ink-500);margin-left:4px;">All systems operational</span></p>
+          </div>
+
+        </div>
+
+        <!-- Charts row -->
+        <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:24px;" class="lg-charts">
+          <style>@media (min-width:1024px){.lg-charts{grid-template-columns:2fr 1fr!important;}}</style>
+
+          <div class="card">
+            <div class="card-header" style="display:flex;align-items:center;justify-content:space-between;">
+              <div>
+                <h3 class="card-title">Revenue &amp; tenant growth</h3>
+                <p class="card-subtitle">Last 12 months</p>
+              </div>
+              <select class="select" style="height:32px;font-size:13px;width:auto;">
+                <option>Last 12 months</option>
+                <option>Last 6 months</option>
+                <option>Last 30 days</option>
+              </select>
+            </div>
+            <div class="card-body">
+              <div style="height:280px;"><canvas id="revenueChart"></canvas></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Plan distribution</h3>
+              <p class="card-subtitle">Active subscriptions</p>
+            </div>
+            <div class="card-body">
+              <div style="height:180px;margin-bottom:16px;"><canvas id="planChart"></canvas></div>
+              <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;">
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <span style="width:10px;height:10px;border-radius:2px;background:#C41FB8;"></span>
+                  <span style="flex:1;">Enterprise</span>
+                  <strong>8</strong>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <span style="width:10px;height:10px;border-radius:2px;background:#7C3AED;"></span>
+                  <span style="flex:1;">Professional</span>
+                  <strong>18</strong>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <span style="width:10px;height:10px;border-radius:2px;background:#3B82F6;"></span>
+                  <span style="flex:1;">Standard</span>
+                  <strong>16</strong>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <span style="width:10px;height:10px;border-radius:2px;background:#9CA3AF;"></span>
+                  <span style="flex:1;">Starter</span>
+                  <strong>5</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom row: activity + recent tenants -->
+        <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="lg-bottom">
+          <style>@media (min-width:1024px){.lg-bottom{grid-template-columns:1.2fr 1fr!important;}}</style>
+
+          <div class="card">
+            <div class="card-header" style="display:flex;align-items:center;justify-content:space-between;">
+              <h3 class="card-title">Recent tenants</h3>
+              <a href="tenants.html" class="btn btn-ghost btn-sm">View all</a>
+            </div>
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="table-th">Tenant</th>
+                    <th class="table-th">Plan</th>
+                    <th class="table-th">Students</th>
+                    <th class="table-th">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="table-td">
+                      <div style="display:flex;align-items:center;gap:10px;">
+                        <div class="avatar avatar-sm" style="background:var(--primary-100);color:var(--primary-700);">LP</div>
+                        <div>
+                          <p style="font-weight:500;font-size:13px;">Little Angels School</p>
+                          <p style="font-size:11px;color:var(--ink-500);">littleangels.schoolsaas.np</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="table-td"><span class="badge badge-primary">Enterprise</span></td>
+                    <td class="table-td">2,148</td>
+                    <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td class="table-td">
+                      <div style="display:flex;align-items:center;gap:10px;">
+                        <div class="avatar avatar-sm" style="background:#DBEAFE;color:#1E40AF;">GX</div>
+                        <div>
+                          <p style="font-weight:500;font-size:13px;">GEMS Institute</p>
+                          <p style="font-size:11px;color:var(--ink-500);">gems.schoolsaas.np</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="table-td"><span class="badge badge-info">Professional</span></td>
+                    <td class="table-td">1,420</td>
+                    <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td class="table-td">
+                      <div style="display:flex;align-items:center;gap:10px;">
+                        <div class="avatar avatar-sm" style="background:#FEF3C7;color:#92400E;">RB</div>
+                        <div>
+                          <p style="font-weight:500;font-size:13px;">Rato Bangala</p>
+                          <p style="font-size:11px;color:var(--ink-500);">ratobangala.schoolsaas.np</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="table-td"><span class="badge badge-info">Professional</span></td>
+                    <td class="table-td">1,204</td>
+                    <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td class="table-td">
+                      <div style="display:flex;align-items:center;gap:10px;">
+                        <div class="avatar avatar-sm" style="background:#F3F4F6;color:#6B7280;">SS</div>
+                        <div>
+                          <p style="font-weight:500;font-size:13px;">Shree Secondary School</p>
+                          <p style="font-size:11px;color:var(--ink-500);">shree-bhaktapur.schoolsaas.np</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="table-td"><span class="badge badge-gray">Starter</span></td>
+                    <td class="table-td">218</td>
+                    <td class="table-td"><span class="badge badge-warning">Trial</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" style="display:flex;align-items:center;justify-content:space-between;">
+              <h3 class="card-title">Recent activity</h3>
+              <a href="audit-log.html" class="btn btn-ghost btn-sm">View all</a>
+            </div>
+            <ul style="list-style:none;">
+              <li style="padding:14px 20px;display:flex;gap:12px;border-bottom:1px solid var(--ink-100);">
+                <div style="width:32px;height:32px;flex-shrink:0;border-radius:8px;background:#DCFCE7;color:#166534;display:flex;align-items:center;justify-content:center;">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div style="flex:1;min-width:0;">
+                  <p style="font-size:13px;"><strong>GEMS Institute</strong> subscribed to Professional plan</p>
+                  <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">10 minutes ago</p>
+                </div>
+              </li>
+              <li style="padding:14px 20px;display:flex;gap:12px;border-bottom:1px solid var(--ink-100);">
+                <div style="width:32px;height:32px;flex-shrink:0;border-radius:8px;background:#DBEAFE;color:#1E40AF;display:flex;align-items:center;justify-content:center;">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                </div>
+                <div style="flex:1;min-width:0;">
+                  <p style="font-size:13px;">New tenant <strong>Shree Secondary</strong> created</p>
+                  <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">28 minutes ago</p>
+                </div>
+              </li>
+              <li style="padding:14px 20px;display:flex;gap:12px;border-bottom:1px solid var(--ink-100);">
+                <div style="width:32px;height:32px;flex-shrink:0;border-radius:8px;background:#FEF3C7;color:#92400E;display:flex;align-items:center;justify-content:center;">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                </div>
+                <div style="flex:1;min-width:0;">
+                  <p style="font-size:13px;">Payment reconciliation flagged 3 discrepancies</p>
+                  <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">1 hour ago</p>
+                </div>
+              </li>
+              <li style="padding:14px 20px;display:flex;gap:12px;">
+                <div style="width:32px;height:32px;flex-shrink:0;border-radius:8px;background:#F3F4F6;color:#6B7280;display:flex;align-items:center;justify-content:center;">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div style="flex:1;min-width:0;">
+                  <p style="font-size:13px;">Scheduled backup completed successfully</p>
+                  <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">3 hours ago</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">
+      © 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.
+    </footer>
+
+  </div>
+
+</div>
+
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/sidebar.js"></script>
+<script src="../assets/js/dropdown.js"></script>
+<script src="../assets/js/charts.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Revenue chart
+    const ctx = document.getElementById('revenueChart');
+    if (ctx && window.Chart) {
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct'],
+          datasets: [
+            {
+              label: 'MRR (NPR Lakh)',
+              data: [3.2, 3.6, 4.1, 4.4, 4.8, 5.1, 5.5, 5.9, 6.1, 6.4, 6.6, 6.8],
+              borderColor: '#C41FB8',
+              backgroundColor: 'rgba(196,31,184,0.1)',
+              fill: true, tension: 0.4, borderWidth: 2,
+              pointBackgroundColor: '#C41FB8', pointRadius: 4,
+              yAxisID: 'y',
+            },
+            {
+              label: 'Tenants',
+              data: [18, 21, 24, 27, 30, 33, 36, 39, 41, 44, 45, 47],
+              borderColor: '#3B82F6',
+              backgroundColor: 'rgba(59,130,246,0.05)',
+              fill: false, tension: 0.4, borderWidth: 2,
+              borderDash: [5, 5],
+              pointBackgroundColor: '#3B82F6', pointRadius: 4,
+              yAxisID: 'y1',
+            }
+          ],
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: { legend: { position: 'bottom', labels: { font: { family: "'Inter', sans-serif", size: 12 }, usePointStyle: true, boxWidth: 8 } } },
+          scales: {
+            x: { grid: { display: false }, ticks: { color: '#6B7280' } },
+            y: { position: 'left', grid: { color: '#E5E7EB' }, ticks: { color: '#6B7280' }, border: { display: false }, title: { display: true, text: 'MRR (Lakh)', color: '#6B7280', font: { size: 11 } } },
+            y1: { position: 'right', grid: { display: false }, ticks: { color: '#6B7280' }, border: { display: false }, title: { display: true, text: 'Tenants', color: '#6B7280', font: { size: 11 } } },
+          },
+        },
+      });
+    }
+
+    // Plan chart
+    const planCtx = document.getElementById('planChart');
+    if (planCtx && window.Chart) {
+      new Chart(planCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Enterprise', 'Professional', 'Standard', 'Starter'],
+          datasets: [{
+            data: [8, 18, 16, 5],
+            backgroundColor: ['#C41FB8', '#7C3AED', '#3B82F6', '#9CA3AF'],
+            borderWidth: 0,
+            cutout: '65%',
+          }],
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+        },
+      });
+    }
+  });
+</script>
+</body>
+</html>

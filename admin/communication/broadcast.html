@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Broadcast · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/></svg>
+        Communication
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="announcements.html">Announcements</a>
+        <a href="broadcast.html" style="color:var(--primary-600);">Broadcast</a>
+        <a href="sms-composer.html">SMS</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><span class="current">Broadcast</span></nav>
+      </div>
+      <div class="main-header-right">
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Broadcast</h1>
+            <p class="page-subtitle">Send multi-channel message to a large audience</p>
+          </div>
+        </div>
+
+        <form onsubmit="event.preventDefault();window.toast('Broadcast scheduled','success');setTimeout(()=>window.location.href='announcements.html',1200);">
+          <div style="display:grid;grid-template-columns:1fr;gap:24px;" class="layout">
+            <style>@media (min-width:1024px){.layout{grid-template-columns:2fr 1fr!important;}}</style>
+
+            <div style="display:flex;flex-direction:column;gap:20px;">
+
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Message template</h2></div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div>
+                    <label class="label">Template</label>
+                    <select class="select">
+                      <option>Fee due reminder</option>
+                      <option>Exam schedule notice</option>
+                      <option>Attendance alert (bulk)</option>
+                      <option>Event announcement</option>
+                      <option>Result published</option>
+                      <option>Custom message</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="label">Message body <span style="color:var(--danger);">*</span></label>
+                    <textarea class="textarea" rows="6" required>Dear Parent, this is a reminder that the fee for {month} is due on {due_date}. Amount: NPR {amount}. Please pay via the parent app or at the school counter.</textarea>
+                    <p class="help">Use placeholders: {name}, {student_name}, {class}, {amount}, {due_date}, {month}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Audience filter</h2></div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <style>@media (min-width:640px){.g2{grid-template-columns:1fr 1fr!important;}}</style>
+                    <div>
+                      <label class="label">Class</label>
+                      <select class="select"><option>All classes</option><option>Grade 6</option><option>Grade 8</option></select>
+                    </div>
+                    <div>
+                      <label class="label">Filter by</label>
+                      <select class="select"><option>All students</option><option>Fee defaulters only</option><option>Attendance &lt; 80%</option><option>Transport users</option></select>
+                    </div>
+                  </div>
+                  <div style="padding:12px;background:var(--primary-50);border-radius:8px;">
+                    <p style="font-size:13px;color:var(--primary-700);font-weight:500;">📢 <strong>328 recipients</strong> match this filter</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Channels</h2></div>
+                <div class="card-body" style="display:grid;gap:12px;">
+                  <label style="display:flex;align-items:center;gap:10px;font-size:13px;padding:12px;border:1px solid var(--ink-200);border-radius:8px;">
+                    <input type="checkbox" class="checkbox" checked>
+                    <div style="flex:1;"><p style="font-weight:500;">In-app notification</p><p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Free · instant delivery</p></div>
+                  </label>
+                  <label style="display:flex;align-items:center;gap:10px;font-size:13px;padding:12px;border:1px solid var(--ink-200);border-radius:8px;">
+                    <input type="checkbox" class="checkbox" checked>
+                    <div style="flex:1;"><p style="font-weight:500;">Push notification</p><p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Free · mobile devices</p></div>
+                  </label>
+                  <label style="display:flex;align-items:center;gap:10px;font-size:13px;padding:12px;border:1px solid var(--ink-200);border-radius:8px;">
+                    <input type="checkbox" class="checkbox" checked>
+                    <div style="flex:1;"><p style="font-weight:500;">SMS</p><p style="font-size:11px;color:var(--ink-500);margin-top:2px;">NPR 1 per SMS · 328 × 1 = NPR 328</p></div>
+                  </label>
+                  <label style="display:flex;align-items:center;gap:10px;font-size:13px;padding:12px;border:1px solid var(--ink-200);border-radius:8px;">
+                    <input type="checkbox" class="checkbox">
+                    <div style="flex:1;"><p style="font-weight:500;">Email</p><p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Free · requires email on file</p></div>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <div class="card" style="padding:20px;">
+                <h3 class="card-title" style="margin-bottom:12px;">Preview</h3>
+                <div style="padding:12px;background:var(--ink-50);border-radius:8px;font-size:12px;line-height:1.6;">
+                  Dear Parent, this is a reminder that the fee for <strong>Ashoj 2081</strong> is due on <strong>30 Ashoj 2081</strong>. Amount: NPR <strong>12,500</strong>. Please pay via the parent app or at the school counter.
+                </div>
+              </div>
+
+              <div class="card" style="padding:20px;">
+                <h3 class="card-title" style="margin-bottom:12px;">Send when</h3>
+                <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;">
+                  <label style="display:flex;align-items:center;gap:8px;"><input type="radio" name="when" class="radio" checked> Send now</label>
+                  <label style="display:flex;align-items:center;gap:8px;"><input type="radio" name="when" class="radio"> Schedule</label>
+                  <input type="text" class="input" placeholder="2081-06-20 10:00 AM" style="margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:12px;">
+                </div>
+              </div>
+
+              <div class="card" style="padding:20px;">
+                <h3 class="card-title" style="margin-bottom:12px;">Summary</h3>
+                <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;">
+                  <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Recipients</span><strong>328</strong></div>
+                  <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Channels</span><strong>3</strong></div>
+                  <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">SMS cost</span><strong>NPR 328</strong></div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                Send broadcast
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

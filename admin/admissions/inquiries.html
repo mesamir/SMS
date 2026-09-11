@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admission Inquiries · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <a href="../students/list.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87"/></svg>Students</a>
+      <a href="inquiries.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1z"/></svg>Admissions</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="#">Admissions</a><span class="separator">/</span><span class="current">Inquiries</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Admission Inquiries</h1>
+            <p class="page-subtitle">Track prospect families and convert to applications</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+              Funnel view
+            </button>
+            <a href="inquiry-create.html" class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              New inquiry
+            </a>
+          </div>
+        </div>
+
+        <!-- Funnel stats -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:16px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">This month</p>
+            <p style="font-size:24px;font-weight:700;margin-top:6px;">84</p>
+            <p style="font-size:11px;color:#166534;margin-top:2px;">↑ 18% vs last month</p>
+          </div>
+          <div class="card" style="padding:16px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">New</p>
+            <p style="font-size:24px;font-weight:700;margin-top:6px;color:var(--primary-600);">32</p>
+          </div>
+          <div class="card" style="padding:16px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Contacted</p>
+            <p style="font-size:24px;font-weight:700;margin-top:6px;color:#1E40AF;">28</p>
+          </div>
+          <div class="card" style="padding:16px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Applied</p>
+            <p style="font-size:24px;font-weight:700;margin-top:6px;color:#92400E;">18</p>
+          </div>
+          <div class="card" style="padding:16px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Enrolled</p>
+            <p style="font-size:24px;font-weight:700;margin-top:6px;color:#166534;">6</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+            <div style="position:relative;flex:1;min-width:240px;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-400);" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <input type="text" class="input" style="padding-left:36px;" placeholder="Search by name, phone, or grade...">
+            </div>
+            <select class="select" style="width:auto;min-width:140px;"><option>All sources</option><option>Walk-in</option><option>Phone</option><option>Website</option><option>Referral</option></select>
+            <select class="select" style="width:auto;min-width:140px;"><option>All statuses</option><option>New</option><option>Contacted</option><option>Applied</option><option>Enrolled</option><option>Lost</option></select>
+            <select class="select" style="width:auto;min-width:140px;"><option>All grades</option><option>Nursery</option><option>Grade 6</option><option>Grade 8</option><option>Grade 11</option></select>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th" style="width:40px;"><input type="checkbox" class="checkbox" data-select-all></th>
+                  <th class="table-th">Prospect</th>
+                  <th class="table-th">Grade</th>
+                  <th class="table-th">Source</th>
+                  <th class="table-th">Contact</th>
+                  <th class="table-th">Inquired</th>
+                  <th class="table-th">Follow-up</th>
+                  <th class="table-th">Status</th>
+                  <th class="table-th" style="width:40px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-md avatar-primary">BG</div>
+                      <div>
+                        <p style="font-weight:500;color:var(--ink-900);font-size:13px;">Bikash Gurung</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Parent: Hari Gurung</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 6</td>
+                  <td class="table-td"><span class="badge badge-info">Walk-in</span></td>
+                  <td class="table-td" style="font-size:13px;">+977 9812345678</td>
+                  <td class="table-td" style="font-size:12px;color:var(--ink-500);">2 hours ago</td>
+                  <td class="table-td" style="font-size:12px;color:#92400E;">Today 4:00 PM</td>
+                  <td class="table-td"><span class="badge badge-primary">New</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">View details</a><a href="#" class="dropdown-item">Call</a><a href="#" class="dropdown-item">Send SMS</a><a href="#" class="dropdown-item">Convert to application</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-md avatar-blue">PS</div>
+                      <div>
+                        <p style="font-weight:500;color:var(--ink-900);font-size:13px;">Priya Sharma</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Parent: Anil Sharma</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 8</td>
+                  <td class="table-td"><span class="badge badge-warning">Referral</span></td>
+                  <td class="table-td" style="font-size:13px;">+977 9876543210</td>
+                  <td class="table-td" style="font-size:12px;color:var(--ink-500);">Yesterday</td>
+                  <td class="table-td" style="font-size:12px;color:#92400E;">Tomorrow 10:00 AM</td>
+                  <td class="table-td"><span class="badge badge-info">Contacted</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">View details</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-md avatar-amber">AT</div>
+                      <div>
+                        <p style="font-weight:500;color:var(--ink-900);font-size:13px;">Aarav Thapa</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Parent: Kiran Thapa</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td">Nursery</td>
+                  <td class="table-td"><span class="badge badge-gray">Website</span></td>
+                  <td class="table-td" style="font-size:13px;">+977 9821111111</td>
+                  <td class="table-td" style="font-size:12px;color:var(--ink-500);">3 days ago</td>
+                  <td class="table-td" style="font-size:12px;color:#166534;">Completed</td>
+                  <td class="table-td"><span class="badge badge-warning">Applied</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">View details</a><a href="#" class="dropdown-item">View application</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-md avatar-green">MK</div>
+                      <div>
+                        <p style="font-weight:500;color:var(--ink-900);font-size:13px;">Maya Karki</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Parent: Sita Karki</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 11</td>
+                  <td class="table-td"><span class="badge badge-info">Walk-in</span></td>
+                  <td class="table-td" style="font-size:13px;">+977 9833333333</td>
+                  <td class="table-td" style="font-size:12px;color:var(--ink-500);">5 days ago</td>
+                  <td class="table-td" style="font-size:12px;color:#166534;">Completed</td>
+                  <td class="table-td"><span class="badge badge-success">Enrolled</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">View student</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-md" style="background:#F3F4F6;color:#6B7280;">RS</div>
+                      <div>
+                        <p style="font-weight:500;color:var(--ink-900);font-size:13px;">Riya Shrestha</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Parent: Deepak Shrestha</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 4</td>
+                  <td class="table-td"><span class="badge badge-gray">Phone</span></td>
+                  <td class="table-td" style="font-size:13px;">+977 9844444444</td>
+                  <td class="table-td" style="font-size:12px;color:var(--ink-500);">1 week ago</td>
+                  <td class="table-td" style="font-size:12px;color:var(--ink-400);">No follow-up</td>
+                  <td class="table-td"><span class="badge badge-danger">Lost</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">View details</a><a href="#" class="dropdown-item">Reopen</a></div></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--ink-100);">
+            <p style="font-size:14px;color:var(--ink-500);">Showing <strong style="color:var(--ink-700);">1–5</strong> of <strong style="color:var(--ink-700);">84</strong> inquiries</p>
+            <div class="pagination">
+              <button disabled>«</button><button disabled>‹</button>
+              <span style="padding:0 12px;font-size:13px;color:var(--ink-700);">Page <strong>1</strong> of <strong>17</strong></span>
+              <button>›</button><button>»</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+<script src="../../assets/js/table.js"></script>
+</body>
+</html>

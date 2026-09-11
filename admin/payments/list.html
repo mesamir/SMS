@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payments · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <a href="list.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>Payments</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><span class="current">Payments</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Payments</h1>
+            <p class="page-subtitle">All payments received · Academic year 2081</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Export
+            </button>
+            <button class="btn btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9"/></svg>
+              Reconcile
+            </button>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Total received</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">NPR 6.24 Cr</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Today</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;">NPR 4.2L</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Pending</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;color:#92400E;">24</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Failed</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;color:#991B1B;">8</p>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+            <div style="position:relative;flex:1;min-width:240px;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-400);" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <input type="text" class="input" style="padding-left:36px;" placeholder="Search by transaction ID or student...">
+            </div>
+            <select class="select" style="width:auto;min-width:140px;"><option>All providers</option><option>Khalti</option><option>eSewa</option><option>ConnectIPS</option><option>Cash</option></select>
+            <select class="select" style="width:auto;min-width:140px;"><option>All statuses</option><option>Success</option><option>Pending</option><option>Failed</option><option>Refunded</option></select>
+            <select class="select" style="width:auto;min-width:140px;"><option>Today</option><option>This week</option><option>This month</option><option>Custom range</option></select>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">Transaction</th>
+                  <th class="table-th">Student</th>
+                  <th class="table-th">Provider</th>
+                  <th class="table-th">Amount</th>
+                  <th class="table-th">Invoice</th>
+                  <th class="table-th">Date</th>
+                  <th class="table-th">Status</th>
+                  <th class="table-th" style="width:40px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-row-href="detail.html">
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">TXN-KH-20241015-0892</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-primary">AS</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Aarav Shrestha</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Grade 8 · A</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-primary">Khalti</span></td>
+                  <td class="table-td"><strong>NPR 13,500</strong></td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">INV-2081-08652</td>
+                  <td class="table-td" style="font-size:12px;">12 min ago</td>
+                  <td class="table-td"><span class="badge badge-success">Success</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="detail.html" class="dropdown-item">View details</a><a href="#" class="dropdown-item">Print receipt</a><a href="#" class="dropdown-item">Refund</a></div></div></td>
+                </tr>
+                <tr data-row-href="detail.html">
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">TXN-ES-20241015-0341</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-blue">ST</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Sita Thapa</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Grade 8 · A</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-success">eSewa</span></td>
+                  <td class="table-td"><strong>NPR 8,000</strong></td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">INV-2081-08653</td>
+                  <td class="table-td" style="font-size:12px;">1 hour ago</td>
+                  <td class="table-td"><span class="badge badge-success">Success</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="detail.html" class="dropdown-item">View details</a></div></div></td>
+                </tr>
+                <tr data-row-href="detail.html">
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">TXN-CI-20241015-0088</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-green">PG</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Priya Gurung</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Grade 9 · A</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-info">ConnectIPS</span></td>
+                  <td class="table-td"><strong>NPR 15,000</strong></td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">INV-2081-08655</td>
+                  <td class="table-td" style="font-size:12px;">2 hours ago</td>
+                  <td class="table-td"><span class="badge badge-success">Success</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="detail.html" class="dropdown-item">View details</a></div></div></td>
+                </tr>
+                <tr data-row-href="detail.html" style="background:#FEF3C7;">
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">TXN-KH-20241015-0893</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-amber">BK</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Bikash Karki</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Grade 6 · B</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-primary">Khalti</span></td>
+                  <td class="table-td"><strong>NPR 11,000</strong></td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">INV-2081-08654</td>
+                  <td class="table-td" style="font-size:12px;">15 min ago</td>
+                  <td class="table-td"><span class="badge badge-warning">Pending</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="detail.html" class="dropdown-item">View details</a><a href="#" class="dropdown-item">Verify</a></div></div></td>
+                </tr>
+                <tr data-row-href="detail.html" style="background:#FEE2E2;">
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">TXN-ES-20241015-0342</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm" style="background:#F3F4F6;color:#6B7280;">RT</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Rohan Tamang</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Grade 10 · A</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-success">eSewa</span></td>
+                  <td class="table-td"><strong>NPR 15,000</strong></td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">INV-2081-08656</td>
+                  <td class="table-td" style="font-size:12px;">30 min ago</td>
+                  <td class="table-td"><span class="badge badge-danger">Failed</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="detail.html" class="dropdown-item">View details</a><a href="#" class="dropdown-item">Retry</a></div></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--ink-100);">
+            <p style="font-size:14px;color:var(--ink-500);">Showing <strong style="color:var(--ink-700);">1–5</strong> of <strong style="color:var(--ink-700);">6,214</strong> payments</p>
+            <div class="pagination">
+              <button disabled>«</button><button disabled>‹</button>
+              <span style="padding:0 12px;font-size:13px;color:var(--ink-700);">Page <strong>1</strong> of <strong>623</strong></span>
+              <button>›</button><button>»</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+<script src="../../assets/js/table.js"></script>
+</body>
+</html>

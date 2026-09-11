@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scholarships · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2"/></svg>
+        Fees
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="invoices.html">Invoices</a>
+        <a href="discounts.html">Discounts</a>
+        <a href="scholarships.html" style="color:var(--primary-600);">Scholarships</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="#">Fees</a><span class="separator">/</span><span class="current">Scholarships</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Scholarships</h1>
+            <p class="page-subtitle">Sponsored scholarships for deserving students</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              New scholarship
+            </button>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Active programs</p><p style="font-size:22px;font-weight:700;margin-top:6px;">6</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Sponsored students</p><p style="font-size:22px;font-weight:700;margin-top:6px;">86</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Total funding (yr)</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">NPR 42.8L</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Pending review</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#92400E;">12</p></div>
+        </div>
+
+        <!-- Scholarship cards -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;">
+
+          <div class="card" style="padding:20px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
+              <div>
+                <h3 style="font-size:16px;font-weight:600;">Full Merit Scholarship</h3>
+                <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Sponsored by: School Trust</p>
+              </div>
+              <span class="badge badge-success">Active</span>
+            </div>
+            <p style="font-size:13px;color:var(--ink-600);">100% tuition waiver for top 3 students per grade (GPA 3.9+)</p>
+            <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--ink-100);display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;">
+              <div>
+                <p style="color:var(--ink-500);">Coverage</p>
+                <p style="font-weight:600;margin-top:2px;">100% tuition</p>
+              </div>
+              <div>
+                <p style="color:var(--ink-500);">Duration</p>
+                <p style="font-weight:600;margin-top:2px;">Full year</p>
+              </div>
+              <div>
+                <p style="color:var(--ink-500);">Students</p>
+                <p style="font-weight:600;margin-top:2px;">28</p>
+              </div>
+              <div>
+                <p style="color:var(--ink-500);">Annual value</p>
+                <p style="font-weight:600;margin-top:2px;color:#166534;">NPR 18.4L</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:14px;">
+              <button class="btn btn-secondary btn-sm" style="flex:1;">View students</button>
+              <button class="btn btn-primary btn-sm" style="flex:1;">Manage</button>
+            </div>
+          </div>
+
+          <div class="card" style="padding:20px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
+              <div>
+                <h3 style="font-size:16px;font-weight:600;">Needy Student Fund</h3>
+                <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Sponsored by: XYZ Foundation</p>
+              </div>
+              <span class="badge badge-success">Active</span>
+            </div>
+            <p style="font-size:13px;color:var(--ink-600);">50% tuition + uniform support for financially disadvantaged students</p>
+            <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--ink-100);display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;">
+              <div>
+                <p style="color:var(--ink-500);">Coverage</p>
+                <p style="font-weight:600;margin-top:2px;">50% tuition</p>
+              </div>
+              <div>
+                <p style="color:var(--ink-500);">Duration</p>
+                <p style="font-weight:600;margin-top:2px;">Full year</p>
+              </div>
+              <div>
+                <p style="color:var(--ink-500);">Students</p>
+                <p style="font-weight:600;margin-top:2px;">42</p>
+              </div>
+              <div>
+                <p style="color:var(--ink-500);">Annual value</p>
+                <p style="font-weight:600;margin-top:2px;color:#166534;">NPR 18.2L</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:14px;">
+              <button class="btn btn-secondary btn-sm" style="flex:1;">View students</button>
+              <button class="btn btn-primary btn-sm" style="flex:1;">Manage</button>
+            </div>
+          </div>
+
+          <div class="card" style="padding:20px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
+              <div>
+                <h3 style="font-size:16px;font-weight:600;">Sports Excellence Award</h3>
+                <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Sponsored by: District Sports Council</p>
+              </div>
+              <span class="badge badge-success">Active</span>
+            </div>
+            <p style="font-size:13px;color:var(--ink-600);">30% tuition waiver for students representing school at provincial/national level</p>
+            <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--ink-100);display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;">
+              <div>
+                <p style="color:var(--ink-500);">Coverage</p>
+                <p style="font-weight:600;margin-top:2px;">30% tuition</p>
+              </div>
+              <div>
+                <p style="color:var(--ink-500);">Duration</p>
+                <p style="font-weight:600;margin-top:2px;">Season-based</p>
+              </div>
+              <div>
+                <p style="color:var(--ink-500);">Students</p>
+                <p style="font-weight:600;margin-top:2px;">14</p>
+              </div>
+              <div>
+                <p style="color:var(--ink-500);">Annual value</p>
+                <p style="font-weight:600;margin-top:2px;color:#166534;">NPR 5.2L</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:14px;">
+              <button class="btn btn-secondary btn-sm" style="flex:1;">View students</button>
+              <button class="btn btn-primary btn-sm" style="flex:1;">Manage</button>
+            </div>
+          </div>
+
+          <div class="card" style="padding:20px;opacity:0.7;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
+              <div>
+                <h3 style="font-size:16px;font-weight:600;">Girls in STEM</h3>
+                <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Sponsored by: Tech Nepal</p>
+              </div>
+              <span class="badge badge-gray">Inactive</span>
+            </div>
+            <p style="font-size:13px;color:var(--ink-600);">40% tuition waiver for female students pursuing Science stream (Grade 11–12)</p>
+            <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--ink-100);display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;">
+              <div>
+                <p style="color:var(--ink-500);">Coverage</p>
+                <p style="font-weight:600;margin-top:2px;">40% tuition</p>
+              </div>
+              <div>
+                <p style="color:var(--ink-500);">Students</p>
+                <p style="font-weight:600;margin-top:2px;">2 (pilot)</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:14px;">
+              <button class="btn btn-secondary btn-sm" style="flex:1;">Reactivate</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

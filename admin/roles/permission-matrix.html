@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Permission Matrix · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <style>
+    .perm-table th, .perm-table td { padding: 10px 12px; border-bottom: 1px solid var(--ink-100); font-size: 12px; text-align: center; }
+    .perm-table th:first-child, .perm-table td:first-child { text-align: left; }
+    .perm-table thead th { background: var(--ink-50); font-size: 11px; text-transform: uppercase; letter-spacing: 0.03em; font-weight: 600; }
+    .perm-table tbody tr:hover { background: var(--ink-50); }
+    .perm-check { width: 16px; height: 16px; accent-color: var(--primary-500); cursor: pointer; }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87"/></svg>
+        Users & Roles
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="../users/list.html">Users</a>
+        <a href="list.html">Roles</a>
+        <a href="permission-matrix.html" style="color:var(--primary-600);">Permissions</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="#">Roles</a><span class="separator">/</span><span class="current">Permission Matrix</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-secondary btn-sm">Reset</button>
+        <button class="btn btn-primary btn-sm" onclick="window.toast('Permissions saved','success')">Save changes</button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Permission Matrix</h1>
+            <p class="page-subtitle">Assign permissions to each role across all modules</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+            <div style="position:relative;flex:1;min-width:240px;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-400);" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <input type="text" class="input" style="padding-left:36px;" placeholder="Search permissions...">
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="overflow-x:auto;">
+          <table class="perm-table" style="width:100%;min-width:800px;">
+            <thead>
+              <tr>
+                <th style="min-width:280px;">Permission</th>
+                <th>Principal</th>
+                <th>Vice Principal</th>
+                <th>Teacher</th>
+                <th>Accountant</th>
+                <th>Librarian</th>
+                <th>Parent</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:var(--ink-50);font-weight:600;">
+                <td colspan="7" style="padding:10px 12px;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink-600);">Students</td>
+              </tr>
+              <tr><td>View students</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check" checked disabled></td></tr>
+              <tr><td>Create students</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check" disabled></td></tr>
+              <tr><td>Edit students</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check" disabled></td></tr>
+              <tr><td>Delete students</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check" disabled></td></tr>
+
+              <tr style="background:var(--ink-50);font-weight:600;">
+                <td colspan="7" style="padding:10px 12px;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink-600);">Attendance</td>
+              </tr>
+              <tr><td>View attendance</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check" checked disabled></td></tr>
+              <tr><td>Mark attendance</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check" disabled></td></tr>
+              <tr><td>Approve leave</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check" disabled></td></tr>
+
+              <tr style="background:var(--ink-50);font-weight:600;">
+                <td colspan="7" style="padding:10px 12px;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink-600);">Exams & Results</td>
+              </tr>
+              <tr><td>View exams</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td></tr>
+              <tr><td>Enter marks</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td></tr>
+              <tr><td>Publish results</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td></tr>
+              <tr><td>Revise results</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td></tr>
+
+              <tr style="background:var(--ink-50);font-weight:600;">
+                <td colspan="7" style="padding:10px 12px;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink-600);">Fees & Payments</td>
+              </tr>
+              <tr><td>View fee structures</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td></tr>
+              <tr><td>Generate invoices</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td></tr>
+              <tr><td>Record payment</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td></tr>
+              <tr><td>Apply discounts</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td></tr>
+              <tr><td>Initiate refunds</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td></tr>
+
+              <tr style="background:var(--ink-50);font-weight:600;">
+                <td colspan="7" style="padding:10px 12px;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink-600);">Communication</td>
+              </tr>
+              <tr><td>Send announcements</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td></tr>
+              <tr><td>Message parents</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check" checked disabled></td></tr>
+              <tr><td>Send bulk SMS</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td></tr>
+
+              <tr style="background:var(--ink-50);font-weight:600;">
+                <td colspan="7" style="padding:10px 12px;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:var(--ink-600);">Reports & Admin</td>
+              </tr>
+              <tr><td>View reports</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td></tr>
+              <tr><td>Manage users</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td></tr>
+              <tr><td>Manage school settings</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td></tr>
+              <tr><td>View audit logs</td><td><input type="checkbox" class="perm-check" checked></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td><td><input type="checkbox" class="perm-check"></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:16px;">
+          <button class="btn btn-secondary">Reset</button>
+          <button class="btn btn-primary" onclick="window.toast('Permissions saved','success')">Save changes</button>
+        </div>
+
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

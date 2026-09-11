@@ -1,0 +1,110 @@
+<!-- inside admin shell .main-content-inner -->
+<div class="page-header">
+  <div>
+    <h1 class="page-title">Marks entry</h1>
+    <p class="page-subtitle">Mid-term Exam 2081 · Grade 8 · Mathematics</p>
+  </div>
+  <div class="page-actions">
+    <button class="btn btn-secondary">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+      Import
+    </button>
+    <button class="btn btn-primary">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+      Save marks
+    </button>
+  </div>
+</div>
+
+<div class="card" style="padding:16px 20px;margin-bottom:20px;">
+  <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;">
+    <div><span style="font-size:12px;color:var(--ink-500);">Full marks:</span> <strong>100</strong></div>
+    <div><span style="font-size:12px;color:var(--ink-500);">Pass marks:</span> <strong>40</strong></div>
+    <div><span style="font-size:12px;color:var(--ink-500);">Theory:</span> <strong>70</strong></div>
+    <div><span style="font-size:12px;color:var(--ink-500);">Practical:</span> <strong>30</strong></div>
+    <div style="flex:1;"></div>
+    <span class="badge badge-warning">Draft — not submitted</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="table-wrap">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="table-th" style="width:60px;">Roll</th>
+          <th class="table-th">Student</th>
+          <th class="table-th" style="width:120px;">Theory (70)</th>
+          <th class="table-th" style="width:120px;">Practical (30)</th>
+          <th class="table-th" style="width:100px;">Total (100)</th>
+          <th class="table-th" style="width:100px;">Grade</th>
+          <th class="table-th" style="width:80px;">Absent?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="table-td" style="font-family:'JetBrains Mono',monospace;">08-014</td>
+          <td class="table-td">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div class="avatar avatar-sm avatar-primary">AS</div>
+              <span style="font-weight:500;">Aarav Shrestha</span>
+            </div>
+          </td>
+          <td class="table-td"><input type="number" class="input" style="height:36px;" value="58" min="0" max="70" oninput="calcRow(this)"></td>
+          <td class="table-td"><input type="number" class="input" style="height:36px;" value="26" min="0" max="30" oninput="calcRow(this)"></td>
+          <td class="table-td" style="font-weight:600;">84</td>
+          <td class="table-td"><span class="badge badge-success">A</span></td>
+          <td class="table-td"><input type="checkbox" class="checkbox"></td>
+        </tr>
+        <tr>
+          <td class="table-td" style="font-family:'JetBrains Mono',monospace;">08-015</td>
+          <td class="table-td">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div class="avatar avatar-sm avatar-blue">ST</div>
+              <span style="font-weight:500;">Sita Thapa</span>
+            </div>
+          </td>
+          <td class="table-td"><input type="number" class="input" style="height:36px;" value="62" min="0" max="70" oninput="calcRow(this)"></td>
+          <td class="table-td"><input type="number" class="input" style="height:36px;" value="28" min="0" max="30" oninput="calcRow(this)"></td>
+          <td class="table-td" style="font-weight:600;">90</td>
+          <td class="table-td"><span class="badge badge-success">A+</span></td>
+          <td class="table-td"><input type="checkbox" class="checkbox"></td>
+        </tr>
+        <tr>
+          <td class="table-td" style="font-family:'JetBrains Mono',monospace;">08-016</td>
+          <td class="table-td">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div class="avatar avatar-sm avatar-amber">BK</div>
+              <span style="font-weight:500;">Bikash Karki</span>
+            </div>
+          </td>
+          <td class="table-td"><input type="number" class="input" style="height:36px;" value="38" min="0" max="70" oninput="calcRow(this)"></td>
+          <td class="table-td"><input type="number" class="input" style="height:36px;" value="18" min="0" max="30" oninput="calcRow(this)"></td>
+          <td class="table-td" style="font-weight:600;">56</td>
+          <td class="table-td"><span class="badge badge-warning">C</span></td>
+          <td class="table-td"><input type="checkbox" class="checkbox"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  function calcRow(input) {
+    const row = input.closest('tr');
+    const theory = parseFloat(row.cells[2].querySelector('input').value) || 0;
+    const practical = parseFloat(row.cells[3].querySelector('input').value) || 0;
+    const total = theory + practical;
+    row.cells[4].textContent = total;
+    const gradeCell = row.cells[5].querySelector('span');
+    let grade = 'F', badge = 'badge-danger';
+    if (total >= 90) { grade = 'A+'; badge = 'badge-success'; }
+    else if (total >= 80) { grade = 'A'; badge = 'badge-success'; }
+    else if (total >= 70) { grade = 'B+'; badge = 'badge-info'; }
+    else if (total >= 60) { grade = 'B'; badge = 'badge-info'; }
+    else if (total >= 50) { grade = 'C+'; badge = 'badge-warning'; }
+    else if (total >= 40) { grade = 'C'; badge = 'badge-warning'; }
+    gradeCell.textContent = grade;
+    gradeCell.className = 'badge ' + badge;
+  }
+</script>

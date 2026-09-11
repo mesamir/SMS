@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document Detail · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <a href="list.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>Documents</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Documents</a><span class="separator">/</span><span class="current">Birth_certificate_Aarav.pdf</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-secondary btn-sm">Download</button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div style="display:grid;grid-template-columns:1fr;gap:20px;" class="layout">
+          <style>@media (min-width:1024px){.layout{grid-template-columns:2fr 1fr!important;}}</style>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Preview</h3></div>
+              <div style="padding:16px;">
+                <div style="height:520px;background:var(--ink-100);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;border:1px solid var(--ink-200);">
+                  <svg width="56" height="56" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" style="color:var(--ink-400);"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  <p style="font-size:14px;color:var(--ink-500);">PDF viewer renders here</p>
+                  <button class="btn btn-secondary btn-sm">Open full screen</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="card" style="padding:20px;">
+              <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px;">
+                <div style="width:40px;height:40px;border-radius:8px;background:#FEE2E2;color:#991B1B;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">PDF</div>
+                <div>
+                  <p style="font-size:14px;font-weight:600;">Birth_certificate_Aarav.pdf</p>
+                  <p style="font-size:11px;color:var(--ink-500);">1.2 MB</p>
+                </div>
+              </div>
+              <span class="badge badge-success">Verified</span>
+            </div>
+
+            <div class="card" style="padding:20px;">
+              <h3 class="card-title" style="margin-bottom:12px;">Document info</h3>
+              <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;">
+                <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Type</span><strong>Student document</strong></div>
+                <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Owner</span><strong>Aarav Shrestha</strong></div>
+                <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Class</span><strong>Grade 8 · A</strong></div>
+                <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Uploaded</span><strong>15 Baisakh 2081</strong></div>
+                <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Uploaded by</span><strong>Anjali Pradhan</strong></div>
+                <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Verified</span><strong style="color:#166534;">15 Baisakh 2081</strong></div>
+                <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Expires</span><strong>Never</strong></div>
+              </div>
+            </div>
+
+            <div class="card" style="padding:20px;">
+              <h3 class="card-title" style="margin-bottom:12px;">Actions</h3>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <button class="btn btn-primary btn-block">Download</button>
+                <button class="btn btn-secondary btn-block">Replace file</button>
+                <button class="btn btn-secondary btn-block">Re-verify</button>
+                <button class="btn btn-secondary btn-block">Update access</button>
+                <button class="btn btn-ghost btn-block" style="color:#991B1B;">Delete</button>
+              </div>
+            </div>
+
+            <div class="card" style="padding:16px;background:var(--ink-50);">
+              <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Access log</p>
+              <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px;font-size:12px;">
+                <div><span style="color:var(--ink-500);">Today 9:12 AM ·</span> Nabin Sharma viewed</div>
+                <div><span style="color:var(--ink-500);">Yesterday ·</span> Ramesh Shrestha (parent) downloaded</div>
+                <div><span style="color:var(--ink-500);">15 Baisakh ·</span> Anjali Pradhan verified</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

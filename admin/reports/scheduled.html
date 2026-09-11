@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scheduled Reports · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7"/></svg>
+        Reports
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="scheduled.html" style="color:var(--primary-600);">Scheduled</a>
+        <a href="history.html">History</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="dashboard.html">Reports</a><span class="separator">/</span><span class="current">Scheduled</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-primary btn-sm">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          New schedule
+        </button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Scheduled Reports</h1>
+            <p class="page-subtitle">Automatic report generation and email delivery</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">Report</th>
+                  <th class="table-th">Frequency</th>
+                  <th class="table-th">Recipients</th>
+                  <th class="table-th">Format</th>
+                  <th class="table-th">Next run</th>
+                  <th class="table-th">Status</th>
+                  <th class="table-th" style="width:40px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td">
+                    <p style="font-weight:500;font-size:13px;">Daily attendance summary</p>
+                    <p style="font-size:11px;color:var(--ink-500);">All classes · Previous day</p>
+                  </td>
+                  <td class="table-td"><span class="badge badge-info">Daily at 6:00 AM</span></td>
+                  <td class="table-td" style="font-size:12px;">Principal, Coordinators (3)</td>
+                  <td class="table-td">PDF + Excel</td>
+                  <td class="table-td" style="font-size:12px;">Tomorrow 6:00 AM</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a><a href="#" class="dropdown-item">Run now</a><a href="#" class="dropdown-item">Pause</a><div class="dropdown-divider"></div><a href="#" class="dropdown-item dropdown-danger">Delete</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td">
+                    <p style="font-weight:500;font-size:13px;">Weekly fee collection</p>
+                    <p style="font-size:11px;color:var(--ink-500);">Collections, outstanding, trend</p>
+                  </td>
+                  <td class="table-td"><span class="badge badge-primary">Every Friday 5:00 PM</span></td>
+                  <td class="table-td" style="font-size:12px;">Accountant, Principal, Owner (3)</td>
+                  <td class="table-td">PDF</td>
+                  <td class="table-td" style="font-size:12px;">Fri 20 Ashoj · 5:00 PM</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a><a href="#" class="dropdown-item">Run now</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td">
+                    <p style="font-weight:500;font-size:13px;">Monthly enrollment report</p>
+                    <p style="font-size:11px;color:var(--ink-500);">Full enrollment breakdown</p>
+                  </td>
+                  <td class="table-td"><span class="badge badge-warning">1st of month</span></td>
+                  <td class="table-td" style="font-size:12px;">Principal, Owner (2)</td>
+                  <td class="table-td">Excel</td>
+                  <td class="table-td" style="font-size:12px;">1 Kartik · 8:00 AM</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td">
+                    <p style="font-weight:500;font-size:13px;">Quarterly performance analysis</p>
+                    <p style="font-size:11px;color:var(--ink-500);">Exams, results, teacher ratings</p>
+                  </td>
+                  <td class="table-td"><span class="badge badge-gray">Quarterly</span></td>
+                  <td class="table-td" style="font-size:12px;">Owner, Principal (2)</td>
+                  <td class="table-td">PDF</td>
+                  <td class="table-td" style="font-size:12px;">Next quarter</td>
+                  <td class="table-td"><span class="badge badge-gray">Paused</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Resume</a></div></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

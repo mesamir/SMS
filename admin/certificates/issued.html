@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Issued Certificates · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
+        Certificates
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="templates.html">Templates</a>
+        <a href="issued.html" style="color:var(--primary-600);">Issued</a>
+        <a href="issue.html">Issue</a>
+        <a href="verify.html">Verify</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><span class="current">Issued Certificates</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Issued Certificates</h1>
+            <p class="page-subtitle">Log of all certificates issued</p>
+          </div>
+          <div class="page-actions">
+            <a href="issue.html" class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              Issue certificate
+            </a>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+            <div style="position:relative;flex:1;min-width:240px;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-400);" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <input type="text" class="input" style="padding-left:36px;" placeholder="Search by student or certificate number...">
+            </div>
+            <select class="select" style="width:auto;min-width:180px;"><option>All types</option><option>Character</option><option>Transfer</option><option>Bonafide</option><option>Achievement</option></select>
+            <select class="select" style="width:auto;min-width:140px;"><option>All time</option><option>This month</option><option>This year</option></select>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">Certificate No.</th>
+                  <th class="table-th">Type</th>
+                  <th class="table-th">Student</th>
+                  <th class="table-th">Issued by</th>
+                  <th class="table-th">Issued on</th>
+                  <th class="table-th">Status</th>
+                  <th class="table-th" style="width:40px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">CERT-2081-0248</td>
+                  <td class="table-td"><span class="badge badge-info">Bonafide</span></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-primary">AS</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Aarav Shrestha</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Grade 8 · A</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td" style="font-size:13px;">Anjali Pradhan</td>
+                  <td class="table-td" style="font-size:12px;">15 Ashoj 2081</td>
+                  <td class="table-td"><span class="badge badge-success">Issued</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">View PDF</a><a href="#" class="dropdown-item">Download</a><a href="#" class="dropdown-item">Resend to parent</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">CERT-2081-0247</td>
+                  <td class="table-td"><span class="badge badge-warning">Transfer</span></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-blue">BK</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Bikash Karki</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Grade 6 · B</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td" style="font-size:13px;">Dr. Sunita Sharma</td>
+                  <td class="table-td" style="font-size:12px;">14 Ashoj 2081</td>
+                  <td class="table-td"><span class="badge badge-success">Issued</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">View PDF</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">CERT-2081-0246</td>
+                  <td class="table-td"><span class="badge badge-primary">Character</span></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-green">PG</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Priya Gurung</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Grade 9 · A</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td" style="font-size:13px;">Dr. Sunita Sharma</td>
+                  <td class="table-td" style="font-size:12px;">13 Ashoj 2081</td>
+                  <td class="table-td"><span class="badge badge-success">Issued</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">View PDF</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">CERT-2081-0245</td>
+                  <td class="table-td"><span class="badge badge-danger">Achievement</span></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-amber">RT</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Rohan Tamang</p>
+                        <p style="font-size:11px;color:var(--ink-500);">Grade 10 · A</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td" style="font-size:13px;">Sports Coordinator</td>
+                  <td class="table-td" style="font-size:12px;">12 Ashoj 2081</td>
+                  <td class="table-td"><span class="badge badge-success">Issued</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">View PDF</a></div></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--ink-100);">
+            <p style="font-size:14px;color:var(--ink-500);">Showing <strong style="color:var(--ink-700);">1–4</strong> of <strong style="color:var(--ink-700);">464</strong> issued certificates</p>
+            <div class="pagination"><button disabled>«</button><button disabled>‹</button><span style="padding:0 12px;font-size:13px;">Page <strong>1</strong> of <strong>47</strong></span><button>›</button><button>»</button></div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

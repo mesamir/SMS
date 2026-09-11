@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homework · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/></svg>
+        Homework
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="list.html" style="color:var(--primary-600);">All homework</a>
+        <a href="create.html">Create</a>
+        <a href="submissions.html">Submissions</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><span class="current">Homework</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Homework & Assignments</h1>
+            <p class="page-subtitle">All assignments across classes</p>
+          </div>
+          <div class="page-actions">
+            <a href="create.html" class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              Assign homework
+            </a>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Active</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:var(--primary-600);">28</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Due today</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#92400E;">6</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Overdue</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#991B1B;">3</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Submissions</p><p style="font-size:22px;font-weight:700;margin-top:6px;">842</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Avg. rate</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">87%</p></div>
+        </div>
+
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+            <div style="position:relative;flex:1;min-width:240px;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-400);" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <input type="text" class="input" style="padding-left:36px;" placeholder="Search homework...">
+            </div>
+            <select class="select" style="width:auto;min-width:140px;"><option>All classes</option><option>Grade 6</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option></select>
+            <select class="select" style="width:auto;min-width:150px;"><option>All subjects</option><option>Mathematics</option><option>Science</option><option>English</option><option>Nepali</option></select>
+            <select class="select" style="width:auto;min-width:130px;"><option>All statuses</option><option>Active</option><option>Due today</option><option>Overdue</option></select>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">Homework</th>
+                  <th class="table-th">Class</th>
+                  <th class="table-th">Subject</th>
+                  <th class="table-th">Assigned</th>
+                  <th class="table-th">Due</th>
+                  <th class="table-th">Submissions</th>
+                  <th class="table-th">Status</th>
+                  <th class="table-th" style="width:40px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-row-href="detail.html">
+                  <td class="table-td">
+                    <p style="font-weight:500;font-size:13px;">Quadratic equations practice</p>
+                    <p style="font-size:11px;color:var(--ink-500);">Attachments: 1 PDF</p>
+                  </td>
+                  <td class="table-td">Grade 8 · A</td>
+                  <td class="table-td"><span class="badge badge-info">Mathematics</span></td>
+                  <td class="table-td" style="font-size:12px;">S. Sharma · 14 Ashoj</td>
+                  <td class="table-td" style="font-size:12px;">17 Ashoj</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:40px;"><div class="progress-bar" style="width:78%;"></div></div>
+                      <span style="font-size:12px;">33/42</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="detail.html" class="dropdown-item">View</a><a href="submissions.html" class="dropdown-item">Submissions</a><a href="#" class="dropdown-item">Edit</a><a href="#" class="dropdown-item">Remind students</a></div></div></td>
+                </tr>
+                <tr data-row-href="detail.html">
+                  <td class="table-td">
+                    <p style="font-weight:500;font-size:13px;">Photosynthesis lab report</p>
+                    <p style="font-size:11px;color:var(--ink-500);">Lab manual + template</p>
+                  </td>
+                  <td class="table-td">Grade 8 · A</td>
+                  <td class="table-td"><span class="badge badge-success">Science</span></td>
+                  <td class="table-td" style="font-size:12px;">R. Rai · 14 Ashoj</td>
+                  <td class="table-td" style="font-size:12px;color:#991B1B;">Today</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:40px;"><div class="progress-bar" style="width:60%;background:#F59E0B;"></div></div>
+                      <span style="font-size:12px;">25/42</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-warning">Due today</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="detail.html" class="dropdown-item">View</a><a href="submissions.html" class="dropdown-item">Submissions</a></div></div></td>
+                </tr>
+                <tr data-row-href="detail.html">
+                  <td class="table-td">
+                    <p style="font-weight:500;font-size:13px;">Essay on Dashain traditions</p>
+                    <p style="font-size:11px;color:var(--ink-500);">1,000 words</p>
+                  </td>
+                  <td class="table-td">Grade 6 · B</td>
+                  <td class="table-td"><span class="badge badge-warning">Nepali</span></td>
+                  <td class="table-td" style="font-size:12px;">K. Tamang · 13 Ashoj</td>
+                  <td class="table-td" style="font-size:12px;">20 Ashoj</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:40px;"><div class="progress-bar" style="width:22%;background:#22C55E;"></div></div>
+                      <span style="font-size:12px;">11/50</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="detail.html" class="dropdown-item">View</a></div></div></td>
+                </tr>
+                <tr data-row-href="detail.html">
+                  <td class="table-td">
+                    <p style="font-weight:500;font-size:13px;">Trigonometric identities worksheet</p>
+                    <p style="font-size:11px;color:var(--ink-500);">20 practice problems</p>
+                  </td>
+                  <td class="table-td">Grade 10 · A</td>
+                  <td class="table-td"><span class="badge badge-info">Mathematics</span></td>
+                  <td class="table-td" style="font-size:12px;">S. Sharma · 12 Ashoj</td>
+                  <td class="table-td" style="font-size:12px;color:#991B1B;">15 Ashoj (3 days late)</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:40px;"><div class="progress-bar" style="width:90%;background:#EF4444;"></div></div>
+                      <span style="font-size:12px;">34/38</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-danger">Overdue</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="detail.html" class="dropdown-item">View</a><a href="submissions.html" class="dropdown-item">Submissions</a></div></div></td>
+                </tr>
+                <tr data-row-href="detail.html">
+                  <td class="table-td">
+                    <p style="font-weight:500;font-size:13px;">English comprehension — Chapter 5</p>
+                    <p style="font-size:11px;color:var(--ink-500);">Read + answer questions</p>
+                  </td>
+                  <td class="table-td">Grade 9 · A</td>
+                  <td class="table-td"><span class="badge badge-warning">English</span></td>
+                  <td class="table-td" style="font-size:12px;">A. Karki · 14 Ashoj</td>
+                  <td class="table-td" style="font-size:12px;">18 Ashoj</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:40px;"><div class="progress-bar" style="width:65%;"></div></div>
+                      <span style="font-size:12px;">26/40</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="detail.html" class="dropdown-item">View</a></div></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--ink-100);">
+            <p style="font-size:14px;color:var(--ink-500);">Showing <strong style="color:var(--ink-700);">1–5</strong> of <strong style="color:var(--ink-700);">42</strong> homework</p>
+            <div class="pagination">
+              <button disabled>«</button><button disabled>‹</button>
+              <span style="padding:0 12px;font-size:13px;color:var(--ink-700);">Page <strong>1</strong> of <strong>9</strong></span>
+              <button>›</button><button>»</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+<script src="../../assets/js/table.js"></script>
+</body>
+</html>

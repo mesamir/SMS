@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Application · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <style>
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before { content: ''; position: absolute; left: 11px; top: 8px; bottom: 8px; width: 2px; background: var(--ink-200); }
+    .timeline-item { position: relative; margin-bottom: 20px; }
+    .timeline-dot { position: absolute; left: -32px; top: 2px; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; }
+    .timeline-dot.done { background: #22C55E; color: #fff; }
+    .timeline-dot.active { background: var(--primary-500); color: #fff; }
+    .timeline-dot.pending { background: var(--ink-200); color: var(--ink-500); }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <a href="applications.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1z"/></svg>Admissions</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="applications.html">Applications</a><span class="separator">/</span><span class="current">APP-2081-0842</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <!-- Header card -->
+        <div class="card" style="padding:24px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;">
+            <div style="display:flex;align-items:center;gap:16px;">
+              <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--primary-500),var(--primary-700));color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;">PS</div>
+              <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                  <h1 style="font-size:20px;font-weight:700;">Priya Sharma</h1>
+                  <span class="badge badge-warning">Under review</span>
+                  <span class="badge badge-info">Grade 8</span>
+                </div>
+                <p style="font-size:13px;color:var(--ink-500);margin-top:4px;">Applied for Grade 8 · Section A</p>
+                <p style="font-size:12px;color:var(--ink-500);margin-top:2px;font-family:'JetBrains Mono',monospace;">APP-2081-0842 · Submitted 2 days ago</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <button class="btn btn-secondary">Print application</button>
+              <button class="btn btn-secondary">Email applicant</button>
+              <button class="btn btn-primary">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                Approve &amp; enroll
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="detail-grid">
+          <style>@media (min-width:1024px){.detail-grid{grid-template-columns:2fr 1fr!important;}}</style>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+
+            <!-- Applicant info -->
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Applicant information</h3></div>
+              <div class="card-body">
+                <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="info">
+                  <style>@media (min-width:640px){.info{grid-template-columns:1fr 1fr!important;}}</style>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Full name</p><p style="font-size:13px;margin-top:4px;">Priya Sharma</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Date of birth</p><p style="font-size:13px;margin-top:4px;">2065-08-12 BS (28 Nov 2008)</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Gender</p><p style="font-size:13px;margin-top:4px;">Female</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Previous school</p><p style="font-size:13px;margin-top:4px;">Gyanodaya Secondary School</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Last grade completed</p><p style="font-size:13px;margin-top:4px;">Grade 7 (GPA 3.6)</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Transfer reason</p><p style="font-size:13px;margin-top:4px;">Family relocated</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Guardian -->
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Guardian details</h3></div>
+              <div class="card-body">
+                <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="info">
+                  <style>@media (min-width:640px){.info{grid-template-columns:1fr 1fr!important;}}</style>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Name</p><p style="font-size:13px;margin-top:4px;">Anil Sharma</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Relation</p><p style="font-size:13px;margin-top:4px;">Father</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Phone</p><p style="font-size:13px;margin-top:4px;">+977 9876543210</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Email</p><p style="font-size:13px;margin-top:4px;">anil.sharma@example.com</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Occupation</p><p style="font-size:13px;margin-top:4px;">Bank officer</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Address</p><p style="font-size:13px;margin-top:4px;">Baneshwor, Ward 10, Kathmandu</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Documents -->
+            <div class="card">
+              <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
+                <h3 class="card-title">Submitted documents</h3>
+                <span class="badge badge-success">4 of 4 verified</span>
+              </div>
+              <div class="card-body" style="display:flex;flex-direction:column;gap:10px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border:1px solid var(--ink-200);border-radius:8px;">
+                  <div style="display:flex;gap:10px;align-items:center;">
+                    <div style="width:32px;height:32px;border-radius:6px;background:#FEE2E2;color:#991B1B;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">PDF</div>
+                    <div>
+                      <p style="font-size:13px;font-weight:500;">Birth certificate</p>
+                      <p style="font-size:11px;color:var(--ink-500);">Uploaded 2 days ago</p>
+                    </div>
+                  </div>
+                  <span class="badge badge-success">Verified</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border:1px solid var(--ink-200);border-radius:8px;">
+                  <div style="display:flex;gap:10px;align-items:center;">
+                    <div style="width:32px;height:32px;border-radius:6px;background:#FEE2E2;color:#991B1B;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">PDF</div>
+                    <div>
+                      <p style="font-size:13px;font-weight:500;">Grade 7 report card</p>
+                      <p style="font-size:11px;color:var(--ink-500);">Uploaded 2 days ago</p>
+                    </div>
+                  </div>
+                  <span class="badge badge-success">Verified</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border:1px solid var(--ink-200);border-radius:8px;">
+                  <div style="display:flex;gap:10px;align-items:center;">
+                    <div style="width:32px;height:32px;border-radius:6px;background:#FEE2E2;color:#991B1B;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">PDF</div>
+                    <div>
+                      <p style="font-size:13px;font-weight:500;">Transfer certificate</p>
+                      <p style="font-size:11px;color:var(--ink-500);">Uploaded 2 days ago</p>
+                    </div>
+                  </div>
+                  <span class="badge badge-success">Verified</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border:1px solid var(--ink-200);border-radius:8px;">
+                  <div style="display:flex;gap:10px;align-items:center;">
+                    <div style="width:32px;height:32px;border-radius:6px;background:#FEE2E2;color:#991B1B;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">JPG</div>
+                    <div>
+                      <p style="font-size:13px;font-weight:500;">Recent photograph</p>
+                      <p style="font-size:11px;color:var(--ink-500);">Uploaded 2 days ago</p>
+                    </div>
+                  </div>
+                  <span class="badge badge-success">Verified</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reviewer notes -->
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Reviewer notes</h3></div>
+              <div class="card-body" style="display:flex;flex-direction:column;gap:12px;">
+                <textarea class="textarea" rows="4" placeholder="Add internal notes about this applicant...">Strong academic record (GPA 3.6). Previous school is well-regarded. Docs verified. Recommend for interview stage.</textarea>
+                <div style="display:flex;gap:8px;justify-content:flex-end;">
+                  <button class="btn btn-secondary">Save note</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sidebar -->
+          <div style="display:flex;flex-direction:column;gap:16px;">
+
+            <!-- Progress timeline -->
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Application progress</h3></div>
+              <div class="card-body">
+                <div class="timeline">
+
+                  <div class="timeline-item">
+                    <div class="timeline-dot done">✓</div>
+                    <p style="font-size:13px;font-weight:600;">Application submitted</p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">2 days ago · 3:15 PM</p>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-dot done">✓</div>
+                    <p style="font-size:13px;font-weight:600;">Documents verified</p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Yesterday · 11:00 AM</p>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-dot active">3</div>
+                    <p style="font-size:13px;font-weight:600;">Interview scheduled</p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Tomorrow · 10:00 AM</p>
+                    <p style="font-size:11px;color:var(--primary-600);margin-top:2px;">With: Dr. Sunita Sharma</p>
+                  </div>
+
+                  <div class="timeline-item">
+                    <div class="timeline-dot pending">4</div>
+                    <p style="font-size:13px;font-weight:600;color:var(--ink-500);">Selection decision</p>
+                    <p style="font-size:11px;color:var(--ink-400);margin-top:2px;">Pending interview</p>
+                  </div>
+
+                  <div class="timeline-item" style="margin-bottom:0;">
+                    <div class="timeline-dot pending">5</div>
+                    <p style="font-size:13px;font-weight:600;color:var(--ink-500);">Enrollment</p>
+                    <p style="font-size:11px;color:var(--ink-400);margin-top:2px;">Awaiting decision</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick actions -->
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Actions</h3></div>
+              <div class="card-body" style="display:flex;flex-direction:column;gap:8px;">
+                <button class="btn btn-primary btn-block">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  Reschedule interview
+                </button>
+                <button class="btn btn-secondary btn-block">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  Mark selected
+                </button>
+                <button class="btn btn-secondary btn-block">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9"/></svg>
+                  Move to waiting list
+                </button>
+                <button class="btn btn-secondary btn-block" style="color:#991B1B;border-color:#FECACA;">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                  Reject application
+                </button>
+              </div>
+            </div>
+
+            <!-- Interview panel -->
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Interview panel</h3></div>
+              <div class="card-body" style="display:flex;flex-direction:column;gap:10px;">
+                <div style="display:flex;gap:10px;align-items:center;">
+                  <div class="avatar avatar-sm avatar-primary">SS</div>
+                  <div>
+                    <p style="font-size:13px;font-weight:500;">Dr. Sunita Sharma</p>
+                    <p style="font-size:11px;color:var(--ink-500);">Principal</p>
+                  </div>
+                </div>
+                <div style="display:flex;gap:10px;align-items:center;">
+                  <div class="avatar avatar-sm avatar-blue">PK</div>
+                  <div>
+                    <p style="font-size:13px;font-weight:500;">Pratima Karki</p>
+                    <p style="font-size:11px;color:var(--ink-500);">Grade 8 Coordinator</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

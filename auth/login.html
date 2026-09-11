@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in · School SaaS</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <style>
+    .auth { display: grid; min-height: 100vh; grid-template-columns: 1fr; }
+    @media (min-width: 1024px) { .auth { grid-template-columns: 1fr 1fr; } }
+
+    .auth-hero {
+      display: none;
+      flex-direction: column; justify-content: space-between;
+      padding: 48px;
+      background: linear-gradient(135deg, var(--primary-600), var(--primary-500) 50%, var(--primary-700));
+      color: #fff; position: relative; overflow: hidden;
+    }
+    @media (min-width: 1024px) { .auth-hero { display: flex; } }
+    .auth-hero::before, .auth-hero::after {
+      content: ''; position: absolute; border-radius: 50%;
+      background: rgba(255,255,255,0.08); filter: blur(60px);
+    }
+    .auth-hero::before { width: 400px; height: 400px; top: -100px; right: -100px; }
+    .auth-hero::after { width: 300px; height: 300px; bottom: -100px; left: -100px; }
+
+    .auth-hero-content { position: relative; }
+    .auth-hero h1 { font-size: 40px; font-weight: 700; line-height: 1.15; }
+    .auth-hero p { font-size: 16px; color: rgba(255,255,255,0.8); margin-top: 16px; line-height: 1.6; }
+    .auth-hero ul { list-style: none; margin-top: 32px; display: flex; flex-direction: column; gap: 12px; }
+    .auth-hero li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.9); }
+    .auth-check { width: 20px; height: 20px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 11px; }
+
+    .auth-form-wrap { display: flex; align-items: center; justify-content: center; padding: 24px; }
+    .auth-form { width: 100%; max-width: 380px; }
+  </style>
+</head>
+<body>
+<div class="auth">
+
+  <aside class="auth-hero">
+    <div class="auth-hero-content" style="display:flex;align-items:center;gap:12px;">
+      <div style="width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 8.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+      </div>
+      <span style="font-size:18px;font-weight:600;">School SaaS</span>
+    </div>
+
+    <div class="auth-hero-content" style="max-width:440px;">
+      <h1>One platform.<br>Every school.</h1>
+      <p>Admissions, attendance, exams, fees and payments — built for private, boarding, community and multi-branch schools across Nepal.</p>
+      <ul>
+        <li><span class="auth-check">✓</span>Bikram Sambat dates</li>
+        <li><span class="auth-check">✓</span>ConnectIPS · eSewa · Khalti</li>
+        <li><span class="auth-check">✓</span>Multi-branch &amp; multi-campus</li>
+      </ul>
+    </div>
+
+    <p class="auth-hero-content" style="font-size:12px;color:rgba(255,255,255,0.6);">© 2026 School SaaS. All rights reserved.</p>
+  </aside>
+
+  <main class="auth-form-wrap">
+    <div class="auth-form">
+
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:40px;" class="lg-hidden">
+        <div style="width:40px;height:40px;border-radius:12px;background:var(--primary-500);display:flex;align-items:center;justify-content:center;color:#fff;">
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 8.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+        </div>
+        <span style="font-weight:600;">School SaaS</span>
+      </div>
+
+      <h2 style="font-size:24px;font-weight:700;">Welcome back</h2>
+      <p style="font-size:14px;color:var(--ink-500);margin-top:6px;">Sign in to your account to continue</p>
+
+      <form style="margin-top:32px;display:flex;flex-direction:column;gap:20px;" onsubmit="event.preventDefault();window.location.href='../admin/dashboard.html';">
+
+        <div>
+          <label class="label" for="email">Email or phone</label>
+          <input id="email" type="text" class="input" placeholder="you@school.edu.np" required>
+        </div>
+
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <label class="label" for="password" style="margin-bottom:0;">Password</label>
+            <a href="forgot-password.html" style="font-size:12px;font-weight:500;color:var(--primary-600);">Forgot?</a>
+          </div>
+          <input id="password" type="password" class="input" placeholder="••••••••" required>
+        </div>
+
+        <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink-600);">
+          <input type="checkbox" class="checkbox"> Remember me on this device
+        </label>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          Sign in
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </button>
+
+      </form>
+
+      <p style="text-align:center;font-size:14px;color:var(--ink-500);margin-top:32px;">
+        Don't have an account? <a href="#" style="font-weight:500;color:var(--primary-600);">Contact your school</a>
+      </p>
+
+      <p style="text-align:center;font-size:12px;color:var(--ink-400);margin-top:32px;">
+        Protected by Argon2 · JWT · MFA-ready
+      </p>
+
+    </div>
+  </main>
+
+</div>
+</body>
+</html>

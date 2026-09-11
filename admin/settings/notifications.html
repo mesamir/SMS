@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notifications · Admin</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <a href="notifications.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>Notifications</a>
+      <a href="audit-log.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/></svg>Audit Log</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="dashboard.html">Dashboard</a><span class="separator">/</span><span class="current">Notifications</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-secondary btn-sm">Mark all read</button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Notifications</h1>
+            <p class="page-subtitle">Recent activity in your school</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;">
+          <button class="btn btn-primary btn-sm">All (12)</button>
+          <button class="btn btn-secondary btn-sm">Unread (4)</button>
+          <button class="btn btn-secondary btn-sm">Fees</button>
+          <button class="btn btn-secondary btn-sm">Attendance</button>
+          <button class="btn btn-secondary btn-sm">Results</button>
+        </div>
+
+        <div class="card">
+          <ul style="list-style:none;">
+
+            <li style="padding:16px 20px;display:flex;gap:12px;align-items:flex-start;border-bottom:1px solid var(--ink-100);background:#FDF4FC;">
+              <div class="avatar avatar-md avatar-green" style="background:#DCFCE7;color:#166534;">✓</div>
+              <div style="flex:1;min-width:0;">
+                <p style="font-size:14px;font-weight:500;">Payment received from Ramesh Shrestha</p>
+                <p style="font-size:13px;color:var(--ink-600);margin-top:4px;">NPR 13,500 for INV-2081-08652 paid via Khalti. Receipt sent to parent.</p>
+                <p style="font-size:11px;color:var(--ink-500);margin-top:6px;">12 minutes ago</p>
+              </div>
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--primary-500);flex-shrink:0;margin-top:8px;"></span>
+            </li>
+
+            <li style="padding:16px 20px;display:flex;gap:12px;align-items:flex-start;border-bottom:1px solid var(--ink-100);background:#FDF4FC;">
+              <div class="avatar avatar-md avatar-amber" style="background:#FEF3C7;color:#92400E;">!</div>
+              <div style="flex:1;min-width:0;">
+                <p style="font-size:14px;font-weight:500;">3 payment discrepancies detected</p>
+                <p style="font-size:13px;color:var(--ink-600);margin-top:4px;">Reconciliation found 3 mismatches. Review and resolve.</p>
+                <p style="font-size:11px;color:var(--ink-500);margin-top:6px;">2 hours ago</p>
+              </div>
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--primary-500);flex-shrink:0;margin-top:8px;"></span>
+            </li>
+
+            <li style="padding:16px 20px;display:flex;gap:12px;align-items:flex-start;border-bottom:1px solid var(--ink-100);background:#FDF4FC;">
+              <div class="avatar avatar-md avatar-blue" style="background:#DBEAFE;color:#1E40AF;">📝</div>
+              <div style="flex:1;min-width:0;">
+                <p style="font-size:14px;font-weight:500;">Marks verification pending for 4 subjects</p>
+                <p style="font-size:13px;color:var(--ink-600);margin-top:4px;">Mid-Term 2081 marks submitted by teachers need your review.</p>
+                <p style="font-size:11px;color:var(--ink-500);margin-top:6px;">3 hours ago</p>
+              </div>
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--primary-500);flex-shrink:0;margin-top:8px;"></span>
+            </li>
+
+            <li style="padding:16px 20px;display:flex;gap:12px;align-items:flex-start;border-bottom:1px solid var(--ink-100);background:#FDF4FC;">
+              <div class="avatar avatar-md avatar-primary">👤</div>
+              <div style="flex:1;min-width:0;">
+                <p style="font-size:14px;font-weight:500;">New admission application — Grade 6</p>
+                <p style="font-size:13px;color:var(--ink-600);margin-top:4px;">Bikash Gurung applied for Grade 6. Documents uploaded.</p>
+                <p style="font-size:11px;color:var(--ink-500);margin-top:6px;">Yesterday</p>
+              </div>
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--primary-500);flex-shrink:0;margin-top:8px;"></span>
+            </li>
+
+            <li style="padding:16px 20px;display:flex;gap:12px;align-items:flex-start;border-bottom:1px solid var(--ink-100);">
+              <div class="avatar avatar-md avatar-green">✓</div>
+              <div style="flex:1;min-width:0;">
+                <p style="font-size:14px;font-weight:500;">Results published for Grade 9</p>
+                <p style="font-size:13px;color:var(--ink-600);margin-top:4px;">Mid-Term 2081 results published and parents notified.</p>
+                <p style="font-size:11px;color:var(--ink-500);margin-top:6px;">2 days ago</p>
+              </div>
+            </li>
+
+            <li style="padding:16px 20px;display:flex;gap:12px;align-items:flex-start;">
+              <div class="avatar avatar-md avatar-primary">💳</div>
+              <div style="flex:1;min-width:0;">
+                <p style="font-size:14px;font-weight:500;">Subscription renews on 12 Baisakh 2082</p>
+                <p style="font-size:13px;color:var(--ink-600);margin-top:4px;">Your Professional plan will renew in 24 days.</p>
+                <p style="font-size:11px;color:var(--ink-500);margin-top:6px;">3 days ago</p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/sidebar.js"></script>
+<script src="../assets/js/dropdown.js"></script>
+</body>
+</html>

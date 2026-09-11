@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fee Categories · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2"/></svg>
+        Fees
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="categories.html" style="color:var(--primary-600);">Categories</a>
+        <a href="structures.html">Structures</a>
+        <a href="invoices.html">Invoices</a>
+        <a href="discounts.html">Discounts</a>
+        <a href="scholarships.html">Scholarships</a>
+        <a href="outstanding.html">Outstanding</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="#">Fees</a><span class="separator">/</span><span class="current">Categories</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Fee Categories</h1>
+            <p class="page-subtitle">Define fee types that can be applied to students</p>
+          </div>
+          <div class="page-actions">
+            <a href="category-create.html" class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              New category
+            </a>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Total categories</p><p style="font-size:22px;font-weight:700;margin-top:6px;">12</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Recurring</p><p style="font-size:22px;font-weight:700;margin-top:6px;">5</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">One-time</p><p style="font-size:22px;font-weight:700;margin-top:6px;">7</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Active</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">11</p></div>
+        </div>
+
+        <div class="card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">Category</th>
+                  <th class="table-th">Type</th>
+                  <th class="table-th">Frequency</th>
+                  <th class="table-th">Applied to</th>
+                  <th class="table-th">Students</th>
+                  <th class="table-th">Status</th>
+                  <th class="table-th" style="width:40px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Tuition Fee</strong></td>
+                  <td class="table-td"><span class="badge badge-primary">Academic</span></td>
+                  <td class="table-td">Monthly</td>
+                  <td class="table-td">All grades</td>
+                  <td class="table-td">1,248</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a><a href="#" class="dropdown-item">View structures</a><a href="#" class="dropdown-item">View invoices</a><div class="dropdown-divider"></div><a href="#" class="dropdown-item dropdown-danger">Deactivate</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Admission Fee</strong></td>
+                  <td class="table-td"><span class="badge badge-info">One-time</span></td>
+                  <td class="table-td">On admission</td>
+                  <td class="table-td">New students</td>
+                  <td class="table-td">186</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Annual Fee</strong></td>
+                  <td class="table-td"><span class="badge badge-primary">Academic</span></td>
+                  <td class="table-td">Yearly</td>
+                  <td class="table-td">All grades</td>
+                  <td class="table-td">1,248</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Examination Fee</strong></td>
+                  <td class="table-td"><span class="badge badge-primary">Academic</span></td>
+                  <td class="table-td">Termly</td>
+                  <td class="table-td">Grade 1–10</td>
+                  <td class="table-td">1,124</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Transport Fee</strong></td>
+                  <td class="table-td"><span class="badge badge-warning">Service</span></td>
+                  <td class="table-td">Monthly</td>
+                  <td class="table-td">Opted students</td>
+                  <td class="table-td">418</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Hostel Fee</strong></td>
+                  <td class="table-td"><span class="badge badge-warning">Service</span></td>
+                  <td class="table-td">Monthly</td>
+                  <td class="table-td">Hostellers</td>
+                  <td class="table-td">182</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Library Fee</strong></td>
+                  <td class="table-td"><span class="badge badge-warning">Service</span></td>
+                  <td class="table-td">Yearly</td>
+                  <td class="table-td">All grades</td>
+                  <td class="table-td">1,248</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Sports Fee</strong></td>
+                  <td class="table-td"><span class="badge badge-gray">Activity</span></td>
+                  <td class="table-td">Yearly</td>
+                  <td class="table-td">All grades</td>
+                  <td class="table-td">1,248</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong style="font-size:13px;">Uniform Fee</strong></td>
+                  <td class="table-td"><span class="badge badge-gray">Misc</span></td>
+                  <td class="table-td">One-time</td>
+                  <td class="table-td">New students</td>
+                  <td class="table-td">186</td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Edit</a></div></div></td>
+                </tr>
+                <tr style="opacity:0.6;">
+                  <td class="table-td"><strong style="font-size:13px;">ID Card Fee</strong></td>
+                  <td class="table-td"><span class="badge badge-gray">Misc</span></td>
+                  <td class="table-td">One-time</td>
+                  <td class="table-td">New students</td>
+                  <td class="table-td">0</td>
+                  <td class="table-td"><span class="badge badge-gray">Inactive</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="#" class="dropdown-item">Activate</a></div></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security Settings · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317"/></svg>
+        Settings
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="profile.html">Profile</a>
+        <a href="security.html" style="color:var(--primary-600);">Security</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="#">Settings</a><span class="separator">/</span><span class="current">Security</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Security</h1>
+            <p class="page-subtitle">Password, MFA, and active sessions</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:20px;">
+
+          <!-- Password -->
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">Change password</h3></div>
+            <div class="card-body" style="display:grid;gap:16px;">
+              <div>
+                <label class="label">Current password</label>
+                <input type="password" class="input" placeholder="••••••••">
+              </div>
+              <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                <style>@media (min-width:640px){.g2{grid-template-columns:1fr 1fr!important;}}</style>
+                <div>
+                  <label class="label">New password</label>
+                  <input type="password" class="input" placeholder="••••••••">
+                </div>
+                <div>
+                  <label class="label">Confirm new password</label>
+                  <input type="password" class="input" placeholder="••••••••">
+                </div>
+              </div>
+              <p class="help">Minimum 8 characters with uppercase, lowercase, number and symbol</p>
+              <div style="display:flex;justify-content:flex-end;">
+                <button class="btn btn-primary">Update password</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- MFA -->
+          <div class="card">
+            <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
+              <h3 class="card-title">Two-factor authentication</h3>
+              <span class="badge badge-success">Enabled</span>
+            </div>
+            <div class="card-body">
+              <div style="display:flex;gap:14px;align-items:flex-start;">
+                <div style="width:40px;height:40px;border-radius:10px;background:#DCFCE7;color:#166534;display:flex;align-items:center;justify-content:center;">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                </div>
+                <div style="flex:1;">
+                  <p style="font-size:14px;font-weight:500;">Authenticator app (TOTP)</p>
+                  <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Configured on 15 Baisakh 2081 · 10 recovery codes remaining</p>
+                  <div style="display:flex;gap:8px;margin-top:12px;">
+                    <button class="btn btn-secondary btn-sm">Regenerate recovery codes</button>
+                    <button class="btn btn-secondary btn-sm" style="color:#991B1B;border-color:#FECACA;">Disable MFA</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sessions -->
+          <div class="card">
+            <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
+              <h3 class="card-title">Active sessions</h3>
+              <button class="btn btn-secondary btn-sm" onclick="window.toast('All other sessions revoked','info')">Revoke all others</button>
+            </div>
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="table-th">Device</th>
+                    <th class="table-th">Location</th>
+                    <th class="table-th">Last active</th>
+                    <th class="table-th">Status</th>
+                    <th class="table-th" style="width:120px;"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="table-td">
+                      <div style="display:flex;gap:10px;align-items:center;">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" style="color:var(--ink-500);"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <div>
+                          <p style="font-size:13px;font-weight:500;">Chrome on MacOS</p>
+                          <p style="font-size:11px;color:var(--ink-500);">Kathmandu · 202.51.68.42</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="table-td">Kathmandu, Nepal</td>
+                    <td class="table-td" style="font-size:12px;">Just now</td>
+                    <td class="table-td"><span class="badge badge-success">Current</span></td>
+                    <td class="table-td"></td>
+                  </tr>
+                  <tr>
+                    <td class="table-td">
+                      <div style="display:flex;gap:10px;align-items:center;">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" style="color:var(--ink-500);"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        <div>
+                          <p style="font-size:13px;font-weight:500;">Mobile app (Android)</p>
+                          <p style="font-size:11px;color:var(--ink-500);">Kathmandu · 202.51.68.42</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="table-td">Kathmandu, Nepal</td>
+                    <td class="table-td" style="font-size:12px;">2 hours ago</td>
+                    <td class="table-td"><span class="badge badge-gray">Active</span></td>
+                    <td class="table-td"><button class="btn btn-secondary btn-sm">Revoke</button></td>
+                  </tr>
+                  <tr>
+                    <td class="table-td">
+                      <div style="display:flex;gap:10px;align-items:center;">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" style="color:var(--ink-500);"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18"/></svg>
+                        <div>
+                          <p style="font-size:13px;font-weight:500;">Safari on iPhone</p>
+                          <p style="font-size:11px;color:var(--ink-500);">Pokhara · 27.34.19.8</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="table-td">Pokhara, Nepal</td>
+                    <td class="table-td" style="font-size:12px;">Yesterday</td>
+                    <td class="table-td"><span class="badge badge-gray">Active</span></td>
+                    <td class="table-td"><button class="btn btn-secondary btn-sm">Revoke</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

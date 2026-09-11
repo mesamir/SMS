@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Applications · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <style>
+    .kanban { display: grid; grid-template-columns: repeat(5, minmax(280px, 1fr)); gap: 16px; overflow-x: auto; padding-bottom: 8px; }
+    .kanban-col { background: var(--ink-50); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 10px; min-height: 400px; }
+    .kanban-col-head { display: flex; justify-content: space-between; align-items: center; padding: 4px 4px 10px; }
+    .kanban-col-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-600); }
+    .kanban-count { font-size: 11px; font-weight: 700; background: var(--ink-200); color: var(--ink-700); padding: 2px 8px; border-radius: 9999px; }
+    .kanban-card { background: #fff; border: 1px solid var(--ink-200); border-radius: 10px; padding: 12px; cursor: grab; transition: box-shadow 0.15s; }
+    .kanban-card:hover { box-shadow: var(--shadow-pop); }
+    .view-toggle { display: flex; gap: 2px; padding: 3px; background: var(--ink-100); border-radius: 8px; }
+    .view-toggle button { padding: 6px 12px; font-size: 12px; font-weight: 500; border-radius: 6px; color: var(--ink-600); }
+    .view-toggle button.active { background: #fff; color: var(--primary-600); box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <a href="inquiries.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1z"/></svg>Admissions</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1z"/></svg>
+        Admissions
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="inquiries.html">Inquiries</a>
+        <a href="applications.html" style="color:var(--primary-600);">Applications</a>
+        <a href="waiting-list.html">Waiting List</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="#">Admissions</a><span class="separator">/</span><span class="current">Applications</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Admission Applications</h1>
+            <p class="page-subtitle">Track applications through the review pipeline</p>
+          </div>
+          <div class="page-actions">
+            <div class="view-toggle">
+              <button class="active" onclick="window.toast('Kanban view','info',1000)">Kanban</button>
+              <button onclick="window.toast('Table view','info',1000)">Table</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="card" style="padding:12px 16px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+            <div style="position:relative;flex:1;min-width:200px;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-400);" width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <input type="text" class="input" style="padding-left:34px;height:36px;font-size:13px;" placeholder="Search applicants...">
+            </div>
+            <select class="select" style="width:auto;min-width:120px;height:36px;font-size:13px;"><option>All grades</option><option>Nursery</option><option>Grade 6</option><option>Grade 8</option></select>
+            <select class="select" style="width:auto;min-width:130px;height:36px;font-size:13px;"><option>All cycles</option><option>2081 Fall</option><option>2081 Spring</option></select>
+          </div>
+        </div>
+
+        <!-- Kanban -->
+        <div class="kanban">
+
+          <!-- Submitted -->
+          <div class="kanban-col">
+            <div class="kanban-col-head">
+              <span class="kanban-col-title">Submitted</span>
+              <span class="kanban-count">12</span>
+            </div>
+
+            <div class="kanban-card">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">
+                <div style="display:flex;gap:8px;align-items:center;">
+                  <div class="avatar avatar-sm avatar-primary">AT</div>
+                  <div>
+                    <p style="font-size:13px;font-weight:600;">Aarav Thapa</p>
+                    <p style="font-size:11px;color:var(--ink-500);">Grade 6 · Nursery</p>
+                  </div>
+                </div>
+              </div>
+              <p style="font-size:11px;color:var(--ink-500);">Received 2 hours ago</p>
+              <div style="display:flex;gap:6px;margin-top:8px;">
+                <span class="badge badge-gray" style="font-size:10px;">Docs: 3/4</span>
+              </div>
+            </div>
+
+            <div class="kanban-card">
+              <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;">
+                <div class="avatar avatar-sm avatar-blue">PS</div>
+                <div>
+                  <p style="font-size:13px;font-weight:600;">Priya Sharma</p>
+                  <p style="font-size:11px;color:var(--ink-500);">Grade 8 · A</p>
+                </div>
+              </div>
+              <p style="font-size:11px;color:var(--ink-500);">Received 5 hours ago</p>
+              <div style="display:flex;gap:6px;margin-top:8px;">
+                <span class="badge badge-gray" style="font-size:10px;">Docs: 4/4</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Under Review -->
+          <div class="kanban-col">
+            <div class="kanban-col-head">
+              <span class="kanban-col-title">Under review</span>
+              <span class="kanban-count">8</span>
+            </div>
+
+            <div class="kanban-card">
+              <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;">
+                <div class="avatar avatar-sm avatar-amber">RK</div>
+                <div>
+                  <p style="font-size:13px;font-weight:600;">Riya Karki</p>
+                  <p style="font-size:11px;color:var(--ink-500);">Grade 4 · B</p>
+                </div>
+              </div>
+              <p style="font-size:11px;color:var(--ink-500);">Assigned to Kamala T.</p>
+              <div style="display:flex;gap:6px;margin-top:8px;">
+                <span class="badge badge-info" style="font-size:10px;">Interview scheduled</span>
+              </div>
+            </div>
+
+            <div class="kanban-card">
+              <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;">
+                <div class="avatar avatar-sm avatar-green">MG</div>
+                <div>
+                  <p style="font-size:13px;font-weight:600;">Manish Gurung</p>
+                  <p style="font-size:11px;color:var(--ink-500);">Grade 11 · Science</p>
+                </div>
+              </div>
+              <p style="font-size:11px;color:var(--ink-500);">Entrance exam: 88/100</p>
+              <div style="display:flex;gap:6px;margin-top:8px;">
+                <span class="badge badge-success" style="font-size:10px;">Strong candidate</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interview -->
+          <div class="kanban-col">
+            <div class="kanban-col-head">
+              <span class="kanban-col-title">Interview</span>
+              <span class="kanban-count">6</span>
+            </div>
+
+            <div class="kanban-card">
+              <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;">
+                <div class="avatar avatar-sm avatar-primary">ST</div>
+                <div>
+                  <p style="font-size:13px;font-weight:600;">Sunil Thapa</p>
+                  <p style="font-size:11px;color:var(--ink-500);">Grade 9 · A</p>
+                </div>
+              </div>
+              <p style="font-size:11px;color:var(--ink-500);">Interview: Tomorrow 10:00 AM</p>
+            </div>
+
+          </div>
+
+          <!-- Selected -->
+          <div class="kanban-col">
+            <div class="kanban-col-head">
+              <span class="kanban-col-title">Selected</span>
+              <span class="kanban-count">4</span>
+            </div>
+
+            <div class="kanban-card">
+              <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;">
+                <div class="avatar avatar-sm avatar-green">AK</div>
+                <div>
+                  <p style="font-size:13px;font-weight:600;">Anish Karki</p>
+                  <p style="font-size:11px;color:var(--ink-500);">Grade 6 · A</p>
+                </div>
+              </div>
+              <p style="font-size:11px;color:#92400E;">Awaiting fee payment</p>
+              <button class="btn btn-primary btn-sm btn-block" style="margin-top:8px;height:28px;font-size:11px;">Approve enrollment</button>
+            </div>
+
+          </div>
+
+          <!-- Enrolled -->
+          <div class="kanban-col">
+            <div class="kanban-col-head">
+              <span class="kanban-col-title">Enrolled</span>
+              <span class="kanban-count">18</span>
+            </div>
+
+            <div class="kanban-card">
+              <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;">
+                <div class="avatar avatar-sm avatar-primary">MK</div>
+                <div>
+                  <p style="font-size:13px;font-weight:600;">Maya Karki</p>
+                  <p style="font-size:11px;color:var(--ink-500);">Grade 11 · Mgmt</p>
+                </div>
+              </div>
+              <p style="font-size:11px;color:#166534;">Enrolled 5 days ago</p>
+            </div>
+
+            <div class="kanban-card">
+              <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;">
+                <div class="avatar avatar-sm avatar-blue">RS</div>
+                <div>
+                  <p style="font-size:13px;font-weight:600;">Rohan Singh</p>
+                  <p style="font-size:11px;color:var(--ink-500);">Grade 5 · C</p>
+                </div>
+              </div>
+              <p style="font-size:11px;color:#166534;">Enrolled 3 days ago</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+<script>
+  document.querySelectorAll('.view-toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.view-toggle button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

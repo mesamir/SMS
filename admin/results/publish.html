@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publish Results · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        Exams &amp; Results
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="list.html">Results</a>
+        <a href="publish.html" style="color:var(--primary-600);">Publish</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Results</a><span class="separator">/</span><span class="current">Publish</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <a href="list.html" class="btn btn-secondary btn-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          </a>
+          <div>
+            <h1 class="page-title">Publish results</h1>
+            <p class="page-subtitle">Review and publish computed results to parents and students</p>
+          </div>
+        </div>
+
+        <!-- Warning banner -->
+        <div style="background:#FEF3C7;color:#92400E;padding:14px 20px;border-radius:10px;font-size:13px;display:flex;gap:12px;margin-bottom:20px;align-items:flex-start;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" style="flex-shrink:0;margin-top:1px;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          <div>
+            <p style="font-weight:600;">Important</p>
+            <p style="margin-top:4px;">Publishing results will make them visible to parents and students through their portals. Published results cannot be edited without a formal revision request. This action will be logged in the audit trail.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:24px;" class="layout">
+          <style>@media (min-width:1024px){.layout{grid-template-columns:2fr 1fr!important;}}</style>
+
+          <div style="display:flex;flex-direction:column;gap:20px;">
+
+            <!-- Select exam -->
+            <div class="card">
+              <div class="card-header"><h2 class="card-title">Select exam</h2></div>
+              <div class="card-body" style="display:grid;gap:16px;">
+                <div>
+                  <label class="label">Exam <span style="color:var(--danger);">*</span></label>
+                  <select class="select">
+                    <option>Mid-Term Examination 2081</option>
+                    <option>First Term 2081</option>
+                    <option>Final Term 2080</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="label">Classes</label>
+                  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;">
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:8px 12px;border:1px solid var(--primary-500);border-radius:8px;background:var(--primary-50);">
+                      <input type="checkbox" class="checkbox" checked> Grade 6
+                    </label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:8px 12px;border:1px solid var(--primary-500);border-radius:8px;background:var(--primary-50);">
+                      <input type="checkbox" class="checkbox" checked> Grade 7
+                    </label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:8px 12px;border:1px solid var(--primary-500);border-radius:8px;background:var(--primary-50);">
+                      <input type="checkbox" class="checkbox" checked> Grade 8
+                    </label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:8px 12px;border:1px solid var(--primary-500);border-radius:8px;background:var(--primary-50);">
+                      <input type="checkbox" class="checkbox" checked> Grade 9
+                    </label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:8px 12px;border:1px solid var(--primary-500);border-radius:8px;background:var(--primary-50);">
+                      <input type="checkbox" class="checkbox" checked> Grade 10
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Publish preview -->
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Publish preview</h2>
+                <p class="card-subtitle">Summary of what will be published</p>
+              </div>
+              <div class="card-body">
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-bottom:16px;">
+                  <div style="text-align:center;padding:14px;background:var(--ink-50);border-radius:8px;">
+                    <p style="font-size:22px;font-weight:700;color:var(--primary-600);">582</p>
+                    <p style="font-size:11px;color:var(--ink-500);text-transform:uppercase;font-weight:600;margin-top:4px;">Students</p>
+                  </div>
+                  <div style="text-align:center;padding:14px;background:var(--ink-50);border-radius:8px;">
+                    <p style="font-size:22px;font-weight:700;color:#166534;">542</p>
+                    <p style="font-size:11px;color:var(--ink-500);text-transform:uppercase;font-weight:600;margin-top:4px;">Ready to publish</p>
+                  </div>
+                  <div style="text-align:center;padding:14px;background:#FEF3C7;border-radius:8px;">
+                    <p style="font-size:22px;font-weight:700;color:#92400E;">40</p>
+                    <p style="font-size:11px;color:#92400E;text-transform:uppercase;font-weight:600;margin-top:4px;">Pending computation</p>
+                  </div>
+                </div>
+
+                <div style="padding:12px 16px;background:#DBEAFE;border-radius:8px;font-size:13px;color:#1E40AF;display:flex;gap:10px;">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" style="flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>Only students with all marks verified will have their results published. The 40 pending students will remain in draft state.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Publishing options -->
+            <div class="card">
+              <div class="card-header"><h2 class="card-title">Publishing options</h2></div>
+              <div class="card-body" style="display:flex;flex-direction:column;gap:14px;">
+                <label style="display:flex;align-items:center;gap:10px;font-size:14px;cursor:pointer;">
+                  <input type="checkbox" class="checkbox" checked>
+                  <div>
+                    <p style="font-weight:500;">Notify parents via SMS + Push</p>
+                    <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Parents will receive a notification with login link to view results</p>
+                  </div>
+                </label>
+                <label style="display:flex;align-items:center;gap:10px;font-size:14px;cursor:pointer;">
+                  <input type="checkbox" class="checkbox" checked>
+                  <div>
+                    <p style="font-weight:500;">Publish to parent &amp; student portals</p>
+                    <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Results become visible in mobile apps and web portal</p>
+                  </div>
+                </label>
+                <label style="display:flex;align-items:center;gap:10px;font-size:14px;cursor:pointer;">
+                  <input type="checkbox" class="checkbox" checked>
+                  <div>
+                    <p style="font-weight:500;">Generate report card PDFs</p>
+                    <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Creates downloadable PDFs for each student</p>
+                  </div>
+                </label>
+                <label style="display:flex;align-items:center;gap:10px;font-size:14px;cursor:pointer;">
+                  <input type="checkbox" class="checkbox">
+                  <div>
+                    <p style="font-weight:500;">Lock results (prevent further edits)</p>
+                    <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Requires principal approval for any changes</p>
+                  </div>
+                </label>
+                <label style="display:flex;align-items:center;gap:10px;font-size:14px;cursor:pointer;">
+                  <input type="checkbox" class="checkbox">
+                  <div>
+                    <p style="font-weight:500;">Schedule publish at specific time</p>
+                    <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Publish results automatically at the chosen date/time</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sidebar -->
+          <div style="display:flex;flex-direction:column;gap:16px;">
+
+            <div class="card" style="padding:20px;">
+              <h3 class="card-title" style="margin-bottom:14px;">Pre-publish checklist</h3>
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <div style="display:flex;gap:10px;align-items:flex-start;">
+                  <div style="width:20px;height:20px;border-radius:50%;background:#DCFCE7;color:#166534;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:700;">✓</div>
+                  <p style="font-size:13px;">All marks entered for Grade 6–10</p>
+                </div>
+                <div style="display:flex;gap:10px;align-items:flex-start;">
+                  <div style="width:20px;height:20px;border-radius:50%;background:#DCFCE7;color:#166534;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:700;">✓</div>
+                  <p style="font-size:13px;">Grade scale configured</p>
+                </div>
+                <div style="display:flex;gap:10px;align-items:flex-start;">
+                  <div style="width:20px;height:20px;border-radius:50%;background:#DCFCE7;color:#166534;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:700;">✓</div>
+                  <p style="font-size:13px;">Results computed for 542 students</p>
+                </div>
+                <div style="display:flex;gap:10px;align-items:flex-start;">
+                  <div style="width:20px;height:20px;border-radius:50%;background:#DCFCE7;color:#166534;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:700;">✓</div>
+                  <p style="font-size:13px;">Ranking calculated</p>
+                </div>
+                <div style="display:flex;gap:10px;align-items:flex-start;">
+                  <div style="width:20px;height:20px;border-radius:50%;background:#FEF3C7;color:#92400E;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:700;">!</div>
+                  <p style="font-size:13px;">40 students still pending computation</p>
+                </div>
+                <div style="display:flex;gap:10px;align-items:flex-start;">
+                  <div style="width:20px;height:20px;border-radius:50%;background:#DCFCE7;color:#166534;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:700;">✓</div>
+                  <p style="font-size:13px;">Audit log ready</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="padding:20px;">
+              <h3 class="card-title" style="margin-bottom:14px;">Audit</h3>
+              <p style="font-size:13px;color:var(--ink-600);">This publish will be logged with:</p>
+              <ul style="margin-top:10px;padding-left:20px;font-size:13px;color:var(--ink-700);line-height:1.8;">
+                <li>Your user ID (Nabin Sharma)</li>
+                <li>Timestamp (2081-06-16 14:23)</li>
+                <li>Student count (582)</li>
+                <li>IP address</li>
+              </ul>
+            </div>
+
+            <div class="card" style="padding:20px;">
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <button class="btn btn-primary btn-block" onclick="window.toast('542 results published successfully. Parents notified.','success');">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                  Publish 542 results
+                </button>
+                <button class="btn btn-secondary btn-block">Save as draft</button>
+                <button class="btn btn-ghost btn-block">Preview parent view</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

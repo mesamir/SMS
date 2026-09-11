@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add Student · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <style>
+    .stepper { display: flex; align-items: center; gap: 6px; margin-bottom: 24px; flex-wrap: wrap; }
+    .step { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: var(--ink-400); }
+    .step.active { color: var(--primary-600); }
+    .step.done { color: #166534; }
+    .step-num { width: 26px; height: 26px; border-radius: 50%; background: var(--ink-100); color: var(--ink-500); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; }
+    .step.active .step-num { background: var(--primary-500); color: #fff; }
+    .step.done .step-num { background: #22C55E; color: #fff; }
+    .step-line { width: 24px; height: 1px; background: var(--ink-200); }
+    .photo-drop { border: 2px dashed var(--ink-200); border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.15s; }
+    .photo-drop:hover { border-color: var(--primary-300); background: var(--primary-50); }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <a href="../schools/list.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16"/></svg>Schools</a>
+      <a href="list.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87"/></svg>Students</a>
+      <a href="../parents/list.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Parents</a>
+      <a href="../teachers/list.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>Teachers</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Students</a><span class="separator">/</span><span class="current">Add New</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <a href="list.html" class="btn btn-secondary btn-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          </a>
+          <div>
+            <h1 class="page-title">Add new student</h1>
+            <p class="page-subtitle">Enroll a student in KTM Main Campus</p>
+          </div>
+        </div>
+
+        <!-- Stepper -->
+        <div class="stepper">
+          <div class="step done"><span class="step-num">✓</span>Basic info</div>
+          <div class="step-line"></div>
+          <div class="step active"><span class="step-num">2</span>Academic</div>
+          <div class="step-line"></div>
+          <div class="step"><span class="step-num">3</span>Guardian</div>
+          <div class="step-line"></div>
+          <div class="step"><span class="step-num">4</span>Documents</div>
+          <div class="step-line"></div>
+          <div class="step"><span class="step-num">5</span>Fee plan</div>
+        </div>
+
+        <form onsubmit="event.preventDefault();window.toast('Student enrolled successfully','success');setTimeout(()=>window.location.href='list.html',1200);">
+          <div style="display:grid;grid-template-columns:1fr;gap:24px;" class="form-layout">
+            <style>@media (min-width:1024px){.form-layout{grid-template-columns:2fr 1fr!important;}}</style>
+
+            <!-- LEFT -->
+            <div style="display:flex;flex-direction:column;gap:20px;">
+
+              <!-- Personal -->
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Personal information</h2>
+                  <p class="card-subtitle">Basic details of the student</p>
+                </div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <style>@media (min-width:640px){.g2{grid-template-columns:1fr 1fr!important;}}</style>
+                    <div>
+                      <label class="label">Full name (English) <span style="color:var(--danger);">*</span></label>
+                      <input type="text" class="input" placeholder="Aarav Shrestha" required>
+                    </div>
+                    <div>
+                      <label class="label">Full name (Nepali)</label>
+                      <input type="text" class="input" placeholder="आरभ श्रेष्ठ" style="font-family:'Mukta',sans-serif;">
+                    </div>
+                  </div>
+
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div>
+                      <label class="label">Date of birth (BS) <span style="color:var(--danger);">*</span></label>
+                      <input type="text" class="input" placeholder="2065-03-15" required style="font-family:'JetBrains Mono',monospace;">
+                      <p class="help">Format: YYYY-MM-DD · Converts to <span style="color:var(--ink-700);">2008-06-28 AD</span></p>
+                    </div>
+                    <div>
+                      <label class="label">Gender <span style="color:var(--danger);">*</span></label>
+                      <select class="select" required>
+                        <option value="">Select</option><option>Male</option><option>Female</option><option>Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g3">
+                    <style>@media (min-width:640px){.g3{grid-template-columns:1fr 1fr 1fr!important;}}</style>
+                    <div>
+                      <label class="label">Blood group</label>
+                      <select class="select"><option>Unknown</option><option>A+</option><option>B+</option><option>O+</option><option>AB+</option><option>A-</option><option>B-</option><option>O-</option><option>AB-</option></select>
+                    </div>
+                    <div>
+                      <label class="label">Religion</label>
+                      <select class="select"><option>Hindu</option><option>Buddhist</option><option>Muslim</option><option>Christian</option><option>Other</option></select>
+                    </div>
+                    <div>
+                      <label class="label">Nationality</label>
+                      <input type="text" class="input" value="Nepali">
+                    </div>
+                  </div>
+
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div>
+                      <label class="label">Mother tongue</label>
+                      <input type="text" class="input" placeholder="Nepali">
+                    </div>
+                    <div>
+                      <label class="label">Ethnicity / Caste</label>
+                      <input type="text" class="input" placeholder="Optional">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Address</h2>
+                </div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div>
+                    <label class="label">Permanent address</label>
+                    <input type="text" class="input" placeholder="Street, Ward, Municipality/Rural Municipality">
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g3">
+                    <div>
+                      <label class="label">District</label>
+                      <select class="select"><option>Lalitpur</option><option>Kathmandu</option><option>Bhaktapur</option><option>Other</option></select>
+                    </div>
+                    <div>
+                      <label class="label">Province</label>
+                      <select class="select"><option>Bagmati</option><option>Gandaki</option><option>Koshi</option><option>Madhesh</option><option>Lumbini</option><option>Karnali</option><option>Sudurpashchim</option></select>
+                    </div>
+                    <div>
+                      <label class="label">Ward no.</label>
+                      <input type="text" class="input" placeholder="3">
+                    </div>
+                  </div>
+                  <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-600);">
+                    <input type="checkbox" class="checkbox"> Same as permanent address
+                  </label>
+                  <div>
+                    <label class="label">Current address (if different)</label>
+                    <input type="text" class="input" placeholder="Leave blank if same">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Academic -->
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Academic details</h2>
+                </div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div>
+                      <label class="label">Admission number</label>
+                      <input type="text" class="input" value="ADM-2081-0006" readonly style="font-family:'JetBrains Mono',monospace;background:var(--ink-50);">
+                      <p class="help">Auto-generated</p>
+                    </div>
+                    <div>
+                      <label class="label">Admission date (BS) <span style="color:var(--danger);">*</span></label>
+                      <input type="text" class="input" value="2081-06-15" required style="font-family:'JetBrains Mono',monospace;">
+                    </div>
+                  </div>
+
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div>
+                      <label class="label">Class <span style="color:var(--danger);">*</span></label>
+                      <select class="select" required>
+                        <option value="">Select class</option>
+                        <option>Nursery</option><option>LKG</option><option>UKG</option>
+                        <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
+                        <option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
+                        <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="label">Section <span style="color:var(--danger);">*</span></label>
+                      <select class="select" required>
+                        <option value="">Select section</option><option>A</option><option>B</option><option>C</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div>
+                      <label class="label">Roll number</label>
+                      <input type="text" class="input" placeholder="Auto-assigned">
+                    </div>
+                    <div>
+                      <label class="label">Stream (Grade 11–12 only)</label>
+                      <select class="select"><option>Not applicable</option><option>Science</option><option>Management</option><option>Humanities</option></select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label class="label">Previous school</label>
+                    <input type="text" class="input" placeholder="Name of previous school (if transferring)">
+                  </div>
+
+                  <div>
+                    <label class="label">Reason for transfer (if applicable)</label>
+                    <textarea class="textarea" placeholder="Optional" rows="2"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Medical -->
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Medical information</h2>
+                  <p class="card-subtitle">Optional but recommended for emergency situations</p>
+                </div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div>
+                    <label class="label">Known allergies</label>
+                    <input type="text" class="input" placeholder="e.g., peanuts, penicillin">
+                  </div>
+                  <div>
+                    <label class="label">Chronic conditions</label>
+                    <textarea class="textarea" placeholder="e.g., asthma, diabetes" rows="2"></textarea>
+                  </div>
+                  <div>
+                    <label class="label">Regular medications</label>
+                    <input type="text" class="input" placeholder="If any">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- RIGHT SIDEBAR -->
+            <div style="display:flex;flex-direction:column;gap:20px;">
+
+              <!-- Photo -->
+              <div class="card" style="padding:20px;">
+                <h3 class="card-title" style="margin-bottom:14px;">Student photo</h3>
+                <div class="photo-drop">
+                  <div style="width:72px;height:72px;margin:0 auto;border-radius:50%;background:var(--primary-100);color:var(--primary-600);display:flex;align-items:center;justify-content:center;">
+                    <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  </div>
+                  <p style="font-size:13px;font-weight:500;margin-top:10px;">Click to upload photo</p>
+                  <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">JPG or PNG · Max 2 MB</p>
+                </div>
+              </div>
+
+              <!-- Guardian info -->
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Primary guardian</h2>
+                </div>
+                <div class="card-body" style="display:flex;flex-direction:column;gap:14px;">
+                  <div>
+                    <label class="label">Full name <span style="color:var(--danger);">*</span></label>
+                    <input type="text" class="input" placeholder="Ramesh Shrestha" required>
+                  </div>
+                  <div>
+                    <label class="label">Relation <span style="color:var(--danger);">*</span></label>
+                    <select class="select" required>
+                      <option>Father</option><option>Mother</option><option>Grandparent</option><option>Guardian</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="label">Phone <span style="color:var(--danger);">*</span></label>
+                    <div class="input-group">
+                      <span class="input-group-prefix">+977</span>
+                      <input type="text" class="input" placeholder="98XXXXXXXX" required>
+                    </div>
+                  </div>
+                  <div>
+                    <label class="label">Alternate phone</label>
+                    <div class="input-group">
+                      <span class="input-group-prefix">+977</span>
+                      <input type="text" class="input" placeholder="98XXXXXXXX">
+                    </div>
+                  </div>
+                  <div>
+                    <label class="label">Email</label>
+                    <input type="email" class="input" placeholder="guardian@example.com">
+                  </div>
+                  <div>
+                    <label class="label">Occupation</label>
+                    <input type="text" class="input" placeholder="Business / Service">
+                  </div>
+                  <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-600);">
+                    <input type="checkbox" class="checkbox" checked>
+                    Create parent portal account
+                  </label>
+                </div>
+              </div>
+
+              <!-- Fee plan -->
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Fee plan</h2>
+                </div>
+                <div class="card-body" style="display:flex;flex-direction:column;gap:14px;">
+                  <div>
+                    <label class="label">Fee structure</label>
+                    <select class="select">
+                      <option>Standard (Grade 8)</option>
+                      <option>Staff ward discount</option>
+                      <option>Scholarship — merit</option>
+                      <option>Custom</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="label">Sibling discount</label>
+                    <select class="select"><option>None</option><option>10% (1 sibling)</option><option>15% (2+ siblings)</option></select>
+                  </div>
+                  <div>
+                    <label class="label">Billing frequency</label>
+                    <select class="select"><option>Monthly</option><option>Quarterly</option><option>Annual</option></select>
+                  </div>
+                  <div style="padding:12px;background:var(--ink-50);border-radius:8px;margin-top:6px;">
+                    <p style="font-size:11px;font-weight:600;color:var(--ink-500);text-transform:uppercase;">Estimated monthly</p>
+                    <p style="font-size:18px;font-weight:700;color:var(--primary-600);margin-top:4px;">NPR 12,500</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Actions -->
+              <div class="card" style="padding:20px;">
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    Enroll student
+                  </button>
+                  <button type="button" class="btn btn-secondary btn-block" onclick="window.toast('Saved as draft','info')">Save as draft</button>
+                  <a href="list.html" class="btn btn-ghost btn-block">Cancel</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+<script src="../../assets/js/form.js"></script>
+</body>
+</html>

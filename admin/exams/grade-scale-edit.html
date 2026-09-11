@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit Grade Scale · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        Exams &amp; Results
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="grade-scales.html" style="color:var(--primary-600);">Grade scales</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="grade-scales.html">Grade Scales</a><span class="separator">/</span><span class="current">Edit</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-secondary btn-sm">Cancel</button>
+        <button class="btn btn-primary btn-sm" onclick="window.toast('Grade scale saved','success')">Save changes</button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <a href="grade-scales.html" class="btn btn-secondary btn-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          </a>
+          <div>
+            <h1 class="page-title">Edit grade scale</h1>
+            <p class="page-subtitle">Default — Letter grades</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:24px;" class="layout">
+          <style>@media (min-width:1024px){.layout{grid-template-columns:1fr 320px!important;}}</style>
+
+          <div style="display:flex;flex-direction:column;gap:20px;">
+
+            <div class="card">
+              <div class="card-header"><h2 class="card-title">Basic info</h2></div>
+              <div class="card-body" style="display:grid;gap:16px;">
+                <div>
+                  <label class="label">Scale name <span style="color:var(--danger);">*</span></label>
+                  <input type="text" class="input" value="Default — Letter grades">
+                </div>
+                <div>
+                  <label class="label">Description</label>
+                  <textarea class="textarea" rows="2">Percentage-based A+ to F grading. Used by default for all exams.</textarea>
+                </div>
+                <div>
+                  <label class="label">Scale type</label>
+                  <select class="select"><option>Percentage-based</option><option>GPA-based</option><option>Pass/Fail</option></select>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
+                <h2 class="card-title">Grade bands</h2>
+                <button class="btn btn-ghost btn-sm" style="color:var(--primary-600);">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                  Add band
+                </button>
+              </div>
+              <div class="card-body" style="display:flex;flex-direction:column;gap:10px;">
+                <!-- Band -->
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1.5fr auto;gap:10px;align-items:center;padding:12px;background:var(--ink-50);border-radius:8px;">
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Grade</label>
+                    <input type="text" class="input" value="A+" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Min %</label>
+                    <input type="number" class="input" value="90" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Max %</label>
+                    <input type="number" class="input" value="100" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Remark</label>
+                    <input type="text" class="input" value="Outstanding" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <button class="btn btn-ghost btn-icon" style="color:var(--danger);margin-top:22px;">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                  </button>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1.5fr auto;gap:10px;align-items:center;padding:12px;background:var(--ink-50);border-radius:8px;">
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Grade</label>
+                    <input type="text" class="input" value="A" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Min %</label>
+                    <input type="number" class="input" value="80" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Max %</label>
+                    <input type="number" class="input" value="89" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Remark</label>
+                    <input type="text" class="input" value="Excellent" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <button class="btn btn-ghost btn-icon" style="color:var(--danger);margin-top:22px;">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7"/></svg>
+                  </button>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1.5fr auto;gap:10px;align-items:center;padding:12px;background:var(--ink-50);border-radius:8px;">
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Grade</label>
+                    <input type="text" class="input" value="B+" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Min %</label>
+                    <input type="number" class="input" value="70" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Max %</label>
+                    <input type="number" class="input" value="79" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Remark</label>
+                    <input type="text" class="input" value="Very good" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <button class="btn btn-ghost btn-icon" style="color:var(--danger);margin-top:22px;">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142"/></svg>
+                  </button>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1.5fr auto;gap:10px;align-items:center;padding:12px;background:var(--ink-50);border-radius:8px;">
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Grade</label>
+                    <input type="text" class="input" value="B" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Min %</label>
+                    <input type="number" class="input" value="60" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Max %</label>
+                    <input type="number" class="input" value="69" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Remark</label>
+                    <input type="text" class="input" value="Good" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <button class="btn btn-ghost btn-icon" style="color:var(--danger);margin-top:22px;">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142"/></svg>
+                  </button>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1.5fr auto;gap:10px;align-items:center;padding:12px;background:var(--ink-50);border-radius:8px;">
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Grade</label>
+                    <input type="text" class="input" value="C" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Min %</label>
+                    <input type="number" class="input" value="50" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Max %</label>
+                    <input type="number" class="input" value="59" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Remark</label>
+                    <input type="text" class="input" value="Satisfactory" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <button class="btn btn-ghost btn-icon" style="color:var(--danger);margin-top:22px;">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142"/></svg>
+                  </button>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1.5fr auto;gap:10px;align-items:center;padding:12px;background:var(--ink-50);border-radius:8px;">
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Grade</label>
+                    <input type="text" class="input" value="D" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Min %</label>
+                    <input type="number" class="input" value="40" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Max %</label>
+                    <input type="number" class="input" value="49" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Remark</label>
+                    <input type="text" class="input" value="Pass" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <button class="btn btn-ghost btn-icon" style="color:var(--danger);margin-top:22px;">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142"/></svg>
+                  </button>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1.5fr auto;gap:10px;align-items:center;padding:12px;background:#FEE2E2;border-radius:8px;">
+                  <div>
+                    <label style="font-size:11px;color:#991B1B;font-weight:600;text-transform:uppercase;">Grade</label>
+                    <input type="text" class="input" value="F" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:#991B1B;font-weight:600;text-transform:uppercase;">Min %</label>
+                    <input type="number" class="input" value="0" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:#991B1B;font-weight:600;text-transform:uppercase;">Max %</label>
+                    <input type="number" class="input" value="39" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <div>
+                    <label style="font-size:11px;color:#991B1B;font-weight:600;text-transform:uppercase;">Remark</label>
+                    <input type="text" class="input" value="Fail" style="height:36px;font-size:13px;margin-top:4px;">
+                  </div>
+                  <button class="btn btn-ghost btn-icon" style="color:var(--danger);margin-top:22px;">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:20px;">
+
+            <div class="card" style="padding:20px;">
+              <h3 class="card-title" style="margin-bottom:12px;">Live preview</h3>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:8px;background:#DCFCE7;">
+                  <span style="font-size:14px;font-weight:500;">A+</span>
+                  <span style="font-size:13px;font-weight:600;">92% → GPA 4.0</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:8px;background:#DCFCE7;">
+                  <span style="font-size:14px;font-weight:500;">A</span>
+                  <span style="font-size:13px;font-weight:600;">85% → GPA 3.6</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:8px;background:#DBEAFE;">
+                  <span style="font-size:14px;font-weight:500;">B+</span>
+                  <span style="font-size:13px;font-weight:600;">75% → GPA 3.2</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:8px;background:#FEF3C7;">
+                  <span style="font-size:14px;font-weight:500;">C</span>
+                  <span style="font-size:13px;font-weight:600;">55% → GPA 2.4</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:8px;background:#FEE2E2;">
+                  <span style="font-size:14px;font-weight:500;">F</span>
+                  <span style="font-size:13px;font-weight:600;">30% → Fail</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="padding:20px;">
+              <h3 class="card-title" style="margin-bottom:12px;">Usage</h3>
+              <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;">
+                <div style="display:flex;justify-content:space-between;">
+                  <span style="color:var(--ink-600);">Exams using this</span>
+                  <strong>6</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                  <span style="color:var(--ink-600);">Results computed</span>
+                  <strong>3,412</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                  <span style="color:var(--ink-600);">Last used</span>
+                  <strong>2 days ago</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="padding:20px;background:#FEF3C7;border-color:#FDE68A;">
+              <div style="display:flex;gap:10px;">
+                <svg width="18" height="18" fill="none" stroke="#92400E" viewBox="0 0 24 24" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                <div>
+                  <p style="font-size:13px;font-weight:600;color:#92400E;">Changing grade bands</p>
+                  <p style="font-size:12px;color:#92400E;margin-top:4px;opacity:0.85;">Modifying these bands will affect future result computations. Existing published results remain unchanged.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="padding:20px;">
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <button class="btn btn-primary btn-block" onclick="window.toast('Grade scale saved','success')">Save changes</button>
+                <button class="btn btn-secondary btn-block">Duplicate scale</button>
+                <a href="grade-scales.html" class="btn btn-ghost btn-block">Cancel</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fee Reports · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2"/></svg>
+        Fees
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="invoices.html">Invoices</a>
+        <a href="outstanding.html">Outstanding</a>
+        <a href="reports.html" style="color:var(--primary-600);">Reports</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="#">Fees</a><span class="separator">/</span><span class="current">Reports</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Fee Reports</h1>
+            <p class="page-subtitle">Collection analytics for academic year 2081</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Export PDF
+            </button>
+            <button class="btn btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Export Excel
+            </button>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;">
+            <div style="flex:1;min-width:180px;">
+              <label class="label">Period</label>
+              <select class="select"><option>Ashoj 2081</option><option>Bhadra 2081</option><option>2081 full year</option></select>
+            </div>
+            <div style="flex:1;min-width:180px;">
+              <label class="label">Branch</label>
+              <select class="select"><option>All branches</option><option>KTM Main</option><option>Pokhara</option></select>
+            </div>
+            <button class="btn btn-primary">Apply</button>
+          </div>
+        </div>
+
+        <!-- KPI -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Invoiced</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;">NPR 1.42 Cr</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">1,248 invoices</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Collected</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">NPR 1.05 Cr</p>
+            <p style="font-size:11px;color:#166534;margin-top:2px;">↑ 12.4% vs last month</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Outstanding</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;color:#92400E;">NPR 37L</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">26% of invoiced</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Collection rate</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;">74%</p>
+            <div class="progress" style="margin-top:6px;"><div class="progress-bar" style="width:74%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Charts -->
+        <div style="display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:20px;" class="lg-2">
+          <style>@media (min-width:1024px){.lg-2{grid-template-columns:2fr 1fr!important;}}</style>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Collection trend</h3>
+              <p class="card-subtitle">Last 6 months</p>
+            </div>
+            <div class="card-body">
+              <div style="height:280px;"><canvas id="collectionChart"></canvas></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">Payment methods</h3></div>
+            <div class="card-body">
+              <div style="height:180px;margin-bottom:16px;"><canvas id="methodsChart"></canvas></div>
+              <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;">
+                <div style="display:flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:2px;background:#C41FB8;"></span><span style="flex:1;">Khalti</span><strong>42%</strong></div>
+                <div style="display:flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:2px;background:#60BB46;"></span><span style="flex:1;">eSewa</span><strong>28%</strong></div>
+                <div style="display:flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:2px;background:#1A3E7A;"></span><span style="flex:1;">ConnectIPS</span><strong>18%</strong></div>
+                <div style="display:flex;align-items:center;gap:8px;"><span style="width:10px;height:10px;border-radius:2px;background:#6B7280;"></span><span style="flex:1;">Cash</span><strong>12%</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Class-wise breakdown -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Class-wise collection</h3>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">Class</th>
+                  <th class="table-th">Students</th>
+                  <th class="table-th">Invoiced</th>
+                  <th class="table-th">Collected</th>
+                  <th class="table-th">Outstanding</th>
+                  <th class="table-th">Collection %</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td"><strong>Nursery</strong></td>
+                  <td class="table-td">48</td>
+                  <td class="table-td">NPR 3.1L</td>
+                  <td class="table-td" style="color:#166534;">NPR 3.0L</td>
+                  <td class="table-td" style="color:#991B1B;">NPR 0.1L</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:80px;"><div class="progress-bar" style="width:97%;background:#22C55E;"></div></div>
+                      <span style="font-weight:600;color:#166534;">97%</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong>Grade 6</strong></td>
+                  <td class="table-td">98</td>
+                  <td class="table-td">NPR 10.8L</td>
+                  <td class="table-td" style="color:#166534;">NPR 8.4L</td>
+                  <td class="table-td" style="color:#991B1B;">NPR 2.4L</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:80px;"><div class="progress-bar" style="width:78%;background:#22C55E;"></div></div>
+                      <span style="font-weight:600;color:#166534;">78%</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong>Grade 7</strong></td>
+                  <td class="table-td">104</td>
+                  <td class="table-td">NPR 11.8L</td>
+                  <td class="table-td" style="color:#166534;">NPR 9.0L</td>
+                  <td class="table-td" style="color:#991B1B;">NPR 2.8L</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:80px;"><div class="progress-bar" style="width:76%;background:#22C55E;"></div></div>
+                      <span style="font-weight:600;color:#166534;">76%</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong>Grade 8</strong></td>
+                  <td class="table-td">126</td>
+                  <td class="table-td">NPR 17.0L</td>
+                  <td class="table-td" style="color:#166534;">NPR 12.2L</td>
+                  <td class="table-td" style="color:#991B1B;">NPR 4.8L</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:80px;"><div class="progress-bar" style="width:72%;background:#F59E0B;"></div></div>
+                      <span style="font-weight:600;color:#92400E;">72%</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong>Grade 9</strong></td>
+                  <td class="table-td">118</td>
+                  <td class="table-td">NPR 17.7L</td>
+                  <td class="table-td" style="color:#166534;">NPR 13.9L</td>
+                  <td class="table-td" style="color:#991B1B;">NPR 3.8L</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:80px;"><div class="progress-bar" style="width:79%;background:#22C55E;"></div></div>
+                      <span style="font-weight:600;color:#166534;">79%</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong>Grade 10</strong></td>
+                  <td class="table-td">136</td>
+                  <td class="table-td">NPR 20.4L</td>
+                  <td class="table-td" style="color:#166534;">NPR 16.2L</td>
+                  <td class="table-td" style="color:#991B1B;">NPR 4.2L</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:80px;"><div class="progress-bar" style="width:79%;background:#22C55E;"></div></div>
+                      <span style="font-weight:600;color:#166534;">79%</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const c1 = document.getElementById('collectionChart');
+    if (c1) {
+      new Chart(c1, {
+        type: 'line',
+        data: {
+          labels: ['Baisakh','Jestha','Ashadh','Shrawan','Bhadra','Ashoj'],
+          datasets: [
+            { label: 'Invoiced', data: [128, 130, 135, 138, 140, 142], borderColor: '#94A3B8', backgroundColor: 'rgba(148,163,184,0.1)', fill: true, tension: 0.4, borderWidth: 2, pointRadius: 4 },
+            { label: 'Collected', data: [118, 122, 128, 130, 132, 105], borderColor: '#C41FB8', backgroundColor: 'rgba(196,31,184,0.1)', fill: true, tension: 0.4, borderWidth: 2, pointRadius: 4 },
+          ],
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { position: 'bottom', labels: { font: { size: 12 }, usePointStyle: true, boxWidth: 8 } } },
+          scales: { x: { grid: { display: false } }, y: { grid: { color: '#E5E7EB' }, border: { display: false }, ticks: { callback: v => v + 'L' } } },
+        },
+      });
+    }
+    const c2 = document.getElementById('methodsChart');
+    if (c2) {
+      new Chart(c2, {
+        type: 'doughnut',
+        data: {
+          labels: ['Khalti', 'eSewa', 'ConnectIPS', 'Cash'],
+          datasets: [{ data: [42, 28, 18, 12], backgroundColor: ['#C41FB8', '#60BB46', '#1A3E7A', '#6B7280'], borderWidth: 0, cutout: '65%' }],
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } },
+      });
+    }
+  });
+</script>
+</body>
+</html>

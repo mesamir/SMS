@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marks Entry · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <style>
+    .marks-input { width: 70px; height: 34px; text-align: center; border: 1px solid var(--ink-200); border-radius: 6px; font-size: 13px; font-weight: 500; font-family: 'JetBrains Mono', monospace; }
+    .marks-input:focus { outline: none; border-color: var(--primary-500); box-shadow: 0 0 0 3px var(--primary-100); }
+    .marks-input.absent { background: #FEE2E2; color: #991B1B; }
+    .marks-input.error { border-color: #EF4444; background: #FEE2E2; }
+    .progress-float { position: sticky; top: 80px; }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        Exams &amp; Results
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="list.html">All exams</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="marks-entry.html" style="color:var(--primary-600);">Marks entry</a>
+        <a href="marks-verification.html">Verification</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Exams</a><span class="separator">/</span><a href="detail.html">Mid-Term 2081</a><span class="separator">/</span><span class="current">Marks entry</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-secondary btn-sm">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+          Import CSV
+        </button>
+        <button class="btn btn-primary btn-sm" onclick="window.toast('Marks saved','success')">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          Save marks
+        </button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Marks Entry</h1>
+            <p class="page-subtitle">Mid-Term 2081 · Mathematics · Grade 8 · Section A</p>
+          </div>
+        </div>
+
+        <!-- Selectors -->
+        <div class="card" style="padding:16px 20px;margin-bottom:16px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;">
+            <div style="flex:1;min-width:140px;">
+              <label class="label">Exam</label>
+              <select class="select"><option>Mid-Term 2081</option></select>
+            </div>
+            <div style="flex:1;min-width:120px;">
+              <label class="label">Class</label>
+              <select class="select"><option>Grade 8</option></select>
+            </div>
+            <div style="flex:1;min-width:100px;">
+              <label class="label">Section</label>
+              <select class="select"><option>A</option><option>B</option><option>C</option></select>
+            </div>
+            <div style="flex:1;min-width:140px;">
+              <label class="label">Subject</label>
+              <select class="select"><option>Mathematics</option><option>Science</option><option>English</option></select>
+            </div>
+            <button class="btn btn-primary">Load</button>
+          </div>
+        </div>
+
+        <!-- Info bar -->
+        <div class="card" style="padding:14px 20px;margin-bottom:16px;background:#DBEAFE;border-color:#BFDBFE;">
+          <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;font-size:13px;color:#1E40AF;">
+            <span><strong>Theory:</strong> 70 marks</span>
+            <span><strong>Practical:</strong> 30 marks</span>
+            <span><strong>Total:</strong> 100 marks</span>
+            <span><strong>Pass:</strong> 40 marks</span>
+            <span style="margin-left:auto;color:#1E40AF;">Press <strong>Tab</strong> to move between fields · <strong>Enter</strong> to save</span>
+          </div>
+        </div>
+
+        <!-- Students -->
+        <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="layout">
+          <style>@media (min-width:1024px){.layout{grid-template-columns:3fr 1fr!important;}}</style>
+
+          <div class="card">
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="table-th" style="width:80px;">Roll</th>
+                    <th class="table-th">Student</th>
+                    <th class="table-th" style="width:100px;">Theory<br><span style="font-weight:400;text-transform:none;">(70)</span></th>
+                    <th class="table-th" style="width:100px;">Practical<br><span style="font-weight:400;text-transform:none;">(30)</span></th>
+                    <th class="table-th" style="width:90px;">Total<br><span style="font-weight:400;text-transform:none;">(100)</span></th>
+                    <th class="table-th" style="width:80px;">Grade</th>
+                    <th class="table-th" style="width:80px;">Absent</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">08-014</td>
+                    <td class="table-td">
+                      <div style="display:flex;align-items:center;gap:8px;">
+                        <div class="avatar avatar-sm avatar-primary">AS</div>
+                        <span style="font-size:13px;font-weight:500;">Aarav Shrestha</span>
+                      </div>
+                    </td>
+                    <td class="table-td"><input type="number" class="marks-input" value="58" min="0" max="70" oninput="calcRow(this)"></td>
+                    <td class="table-td"><input type="number" class="marks-input" value="26" min="0" max="30" oninput="calcRow(this)"></td>
+                    <td class="table-td" style="font-weight:600;">84</td>
+                    <td class="table-td"><span class="badge badge-success">A</span></td>
+                    <td class="table-td" style="text-align:center;"><input type="checkbox" class="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">08-015</td>
+                    <td class="table-td">
+                      <div style="display:flex;align-items:center;gap:8px;">
+                        <div class="avatar avatar-sm avatar-blue">ST</div>
+                        <span style="font-size:13px;font-weight:500;">Sita Thapa</span>
+                      </div>
+                    </td>
+                    <td class="table-td"><input type="number" class="marks-input" value="62" min="0" max="70" oninput="calcRow(this)"></td>
+                    <td class="table-td"><input type="number" class="marks-input" value="28" min="0" max="30" oninput="calcRow(this)"></td>
+                    <td class="table-td" style="font-weight:600;">90</td>
+                    <td class="table-td"><span class="badge badge-success">A+</span></td>
+                    <td class="table-td" style="text-align:center;"><input type="checkbox" class="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">08-016</td>
+                    <td class="table-td">
+                      <div style="display:flex;align-items:center;gap:8px;">
+                        <div class="avatar avatar-sm avatar-amber">BK</div>
+                        <span style="font-size:13px;font-weight:500;">Bikash Karki</span>
+                      </div>
+                    </td>
+                    <td class="table-td"><input type="number" class="marks-input" value="38" min="0" max="70" oninput="calcRow(this)"></td>
+                    <td class="table-td"><input type="number" class="marks-input" value="18" min="0" max="30" oninput="calcRow(this)"></td>
+                    <td class="table-td" style="font-weight:600;">56</td>
+                    <td class="table-td"><span class="badge badge-warning">C</span></td>
+                    <td class="table-td" style="text-align:center;"><input type="checkbox" class="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">08-017</td>
+                    <td class="table-td">
+                      <div style="display:flex;align-items:center;gap:8px;">
+                        <div class="avatar avatar-sm avatar-green">PG</div>
+                        <span style="font-size:13px;font-weight:500;">Priya Gurung</span>
+                      </div>
+                    </td>
+                    <td class="table-td"><input type="number" class="marks-input" value="65" min="0" max="70" oninput="calcRow(this)"></td>
+                    <td class="table-td"><input type="number" class="marks-input" value="29" min="0" max="30" oninput="calcRow(this)"></td>
+                    <td class="table-td" style="font-weight:600;">94</td>
+                    <td class="table-td"><span class="badge badge-success">A+</span></td>
+                    <td class="table-td" style="text-align:center;"><input type="checkbox" class="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">08-018</td>
+                    <td class="table-td">
+                      <div style="display:flex;align-items:center;gap:8px;">
+                        <div class="avatar avatar-sm avatar-primary">RT</div>
+                        <span style="font-size:13px;font-weight:500;">Rohan Tamang</span>
+                      </div>
+                    </td>
+                    <td class="table-td"><input type="number" class="marks-input" value="32" min="0" max="70" oninput="calcRow(this)"></td>
+                    <td class="table-td"><input type="number" class="marks-input" value="14" min="0" max="30" oninput="calcRow(this)"></td>
+                    <td class="table-td" style="font-weight:600;">46</td>
+                    <td class="table-td"><span class="badge badge-danger">D</span></td>
+                    <td class="table-td" style="text-align:center;"><input type="checkbox" class="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">08-019</td>
+                    <td class="table-td">
+                      <div style="display:flex;align-items:center;gap:8px;">
+                        <div class="avatar avatar-sm avatar-blue">AK</div>
+                        <span style="font-size:13px;font-weight:500;">Anish Karki</span>
+                      </div>
+                    </td>
+                    <td class="table-td"><input type="number" class="marks-input" value="0" min="0" max="70" oninput="calcRow(this)" disabled></td>
+                    <td class="table-td"><input type="number" class="marks-input" value="0" min="0" max="30" oninput="calcRow(this)" disabled></td>
+                    <td class="table-td" style="font-weight:600;">0</td>
+                    <td class="table-td"><span class="badge badge-danger">AB</span></td>
+                    <td class="table-td" style="text-align:center;"><input type="checkbox" class="checkbox" checked></td>
+                  </tr>
+                  <tr>
+                    <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">08-020</td>
+                    <td class="table-td">
+                      <div style="display:flex;align-items:center;gap:8px;">
+                        <div class="avatar avatar-sm avatar-amber">SM</div>
+                        <span style="font-size:13px;font-weight:500;">Suman Maharjan</span>
+                      </div>
+                    </td>
+                    <td class="table-td"><input type="number" class="marks-input" value="55" min="0" max="70" oninput="calcRow(this)"></td>
+                    <td class="table-td"><input type="number" class="marks-input" value="24" min="0" max="30" oninput="calcRow(this)"></td>
+                    <td class="table-td" style="font-weight:600;">79</td>
+                    <td class="table-td"><span class="badge badge-info">B+</span></td>
+                    <td class="table-td" style="text-align:center;"><input type="checkbox" class="checkbox"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--ink-100);">
+              <p style="font-size:13px;color:var(--ink-500);">Showing 1–7 of 42 students</p>
+              <div style="display:flex;gap:8px;">
+                <button class="btn btn-secondary btn-sm">Previous 10</button>
+                <button class="btn btn-secondary btn-sm">Next 10</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress sidebar -->
+          <div class="progress-float">
+            <div class="card" style="padding:20px;margin-bottom:16px;">
+              <h3 class="card-title" style="margin-bottom:12px;">Progress</h3>
+              <div style="display:flex;flex-direction:column;gap:14px;">
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;">
+                    <span style="color:var(--ink-600);">Students entered</span>
+                    <strong>7 / 42</strong>
+                  </div>
+                  <div class="progress"><div class="progress-bar" style="width:17%;"></div></div>
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;">
+                    <span style="color:var(--ink-600);">Average score</span>
+                    <strong>74.1</strong>
+                  </div>
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;">
+                    <span style="color:var(--ink-600);">Highest</span>
+                    <strong style="color:#166534;">94 (A+)</strong>
+                  </div>
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;">
+                    <span style="color:var(--ink-600);">Lowest</span>
+                    <strong style="color:#991B1B;">46 (D)</strong>
+                  </div>
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;">
+                    <span style="color:var(--ink-600);">Absent</span>
+                    <strong>1</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="padding:16px;margin-bottom:16px;">
+              <h3 class="card-title" style="margin-bottom:10px;">Distribution</h3>
+              <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;">
+                <div style="display:flex;justify-content:space-between;">
+                  <span>A+ (90+)</span><strong>2</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                  <span>A (80–89)</span><strong>1</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                  <span>B+ (70–79)</span><strong>1</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                  <span>B (60–69)</span><strong>0</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                  <span>C (50–59)</span><strong>1</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                  <span>D (40–49)</span><strong>1</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                  <span>F (&lt;40)</span><strong>0</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="padding:16px;">
+              <button class="btn btn-primary btn-block" onclick="window.toast('Marks submitted for verification','success')">
+                Submit for verification
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+<script>
+  function calcRow(input) {
+    const row = input.closest('tr');
+    const theory = parseFloat(row.cells[2].querySelector('input').value) || 0;
+    const practical = parseFloat(row.cells[3].querySelector('input').value) || 0;
+    const total = theory + practical;
+    row.cells[4].textContent = total;
+    const gradeCell = row.cells[5].querySelector('span');
+    let grade = 'F', badge = 'badge-danger';
+    if (total >= 90) { grade = 'A+'; badge = 'badge-success'; }
+    else if (total >= 80) { grade = 'A'; badge = 'badge-success'; }
+    else if (total >= 70) { grade = 'B+'; badge = 'badge-info'; }
+    else if (total >= 60) { grade = 'B'; badge = 'badge-info'; }
+    else if (total >= 50) { grade = 'C+'; badge = 'badge-warning'; }
+    else if (total >= 40) { grade = 'C'; badge = 'badge-warning'; }
+    else { grade = 'D'; badge = 'badge-danger'; }
+    gradeCell.textContent = grade;
+    gradeCell.className = 'badge ' + badge;
+  }
+</script>
+</body>
+</html>

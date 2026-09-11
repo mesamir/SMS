@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sunita Sharma · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <a href="list.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>Teachers</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Teachers</a><span class="separator">/</span><span class="current">Sunita Sharma</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="card" style="padding:24px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;">
+            <div style="display:flex;align-items:center;gap:16px;">
+              <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--primary-500),var(--primary-700));color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;">SS</div>
+              <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                  <h1 style="font-size:22px;font-weight:700;">Sunita Sharma</h1>
+                  <span class="badge badge-success">Active</span>
+                  <span class="badge badge-primary">Senior Teacher</span>
+                </div>
+                <p style="font-size:13px;color:var(--ink-500);margin-top:4px;">Mathematics Department · Grade 8–10</p>
+                <p style="font-size:12px;color:var(--ink-500);margin-top:2px;font-family:'JetBrains Mono',monospace;">EMP-001 · Joined 15 Baisakh 2078</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <button class="btn btn-secondary">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                View timetable
+              </button>
+              <button class="btn btn-secondary">Edit</button>
+              <div class="dropdown"><button class="btn btn-secondary btn-icon" data-dropdown><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v.01M12 12v.01M12 19v.01"/></svg></button>
+                <div class="dropdown-menu"><a href="#" class="dropdown-item">Assign classes</a><a href="#" class="dropdown-item">Assign subjects</a><a href="#" class="dropdown-item">Reset password</a><div class="dropdown-divider"></div><a href="#" class="dropdown-item dropdown-danger">Deactivate</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabs" style="margin-bottom:20px;">
+          <div class="tab active">Overview</div>
+          <div class="tab">Timetable</div>
+          <div class="tab">Classes</div>
+          <div class="tab">Attendance</div>
+          <div class="tab">Leave</div>
+          <div class="tab">Documents</div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Classes</p><p style="font-size:22px;font-weight:700;margin-top:6px;">8</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Students</p><p style="font-size:22px;font-weight:700;margin-top:6px;">342</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Periods/week</p><p style="font-size:22px;font-weight:700;margin-top:6px;">24</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Attendance</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">97%</p></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="detail-grid">
+          <style>@media (min-width:1024px){.detail-grid{grid-template-columns:2fr 1fr!important;}}</style>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Assigned subjects</h3></div>
+              <div class="table-wrap">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="table-th">Subject</th>
+                      <th class="table-th">Grades</th>
+                      <th class="table-th">Sections</th>
+                      <th class="table-th">Students</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="table-td">Mathematics</td>
+                      <td class="table-td">Grade 8</td>
+                      <td class="table-td">A, B, C</td>
+                      <td class="table-td">126</td>
+                    </tr>
+                    <tr>
+                      <td class="table-td">Mathematics</td>
+                      <td class="table-td">Grade 9</td>
+                      <td class="table-td">A, B</td>
+                      <td class="table-td">80</td>
+                    </tr>
+                    <tr>
+                      <td class="table-td">Optional Mathematics</td>
+                      <td class="table-td">Grade 10</td>
+                      <td class="table-td">A, B, C</td>
+                      <td class="table-td">136</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Recent activity</h3></div>
+              <ul style="list-style:none;">
+                <li style="padding:12px 20px;display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--ink-100);">
+                  <div class="avatar avatar-sm avatar-green">✓</div>
+                  <div style="flex:1;">
+                    <p style="font-size:13px;">Marked <strong>Grade 8-A</strong> attendance (Period 3)</p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Today, 11:30 AM</p>
+                  </div>
+                </li>
+                <li style="padding:12px 20px;display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--ink-100);">
+                  <div class="avatar avatar-sm avatar-primary">📝</div>
+                  <div style="flex:1;">
+                    <p style="font-size:13px;">Entered mid-term marks for Grade 9-A</p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Yesterday</p>
+                  </div>
+                </li>
+                <li style="padding:12px 20px;display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--ink-100);">
+                  <div class="avatar avatar-sm avatar-blue">📚</div>
+                  <div style="flex:1;">
+                    <p style="font-size:13px;">Assigned homework on <strong>Quadratic equations</strong></p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">2 days ago</p>
+                  </div>
+                </li>
+                <li style="padding:12px 20px;display:flex;gap:12px;align-items:center;">
+                  <div class="avatar avatar-sm avatar-amber">📅</div>
+                  <div style="flex:1;">
+                    <p style="font-size:13px;">Applied for <strong>1-day casual leave</strong></p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">3 days ago · Approved</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Employment details</h3></div>
+              <div class="card-body" style="display:flex;flex-direction:column;gap:14px;">
+                <div>
+                  <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Designation</p>
+                  <p style="font-size:13px;margin-top:4px;">Senior Math Teacher</p>
+                </div>
+                <div>
+                  <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Department</p>
+                  <p style="font-size:13px;margin-top:4px;">Mathematics</p>
+                </div>
+                <div>
+                  <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Joining date</p>
+                  <p style="font-size:13px;margin-top:4px;">15 Baisakh 2078 BS (28 Apr 2021)</p>
+                </div>
+                <div>
+                  <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Contract</p>
+                  <p style="font-size:13px;margin-top:4px;">Permanent</p>
+                </div>
+                <div>
+                  <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Branches</p>
+                  <p style="font-size:13px;margin-top:4px;">KTM Main Campus</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Contact</h3></div>
+              <div class="card-body" style="display:flex;flex-direction:column;gap:14px;">
+                <div>
+                  <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Phone</p>
+                  <p style="font-size:13px;margin-top:4px;">+977 9812345678</p>
+                </div>
+                <div>
+                  <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Email</p>
+                  <p style="font-size:13px;margin-top:4px;">sunita.sharma@school.edu.np</p>
+                </div>
+                <div>
+                  <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Address</p>
+                  <p style="font-size:13px;margin-top:4px;line-height:1.5;">Balkumari, Ward 5, Lalitpur, Bagmati</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Leave balance (2081)</h3></div>
+              <div class="card-body" style="display:flex;flex-direction:column;gap:14px;">
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;">
+                    <span style="color:var(--ink-600);">Casual leave</span>
+                    <span><strong>8</strong> / 12</span>
+                  </div>
+                  <div class="progress"><div class="progress-bar" style="width:67%;"></div></div>
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;">
+                    <span style="color:var(--ink-600);">Sick leave</span>
+                    <span><strong>5</strong> / 8</span>
+                  </div>
+                  <div class="progress"><div class="progress-bar" style="width:62%;"></div></div>
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;">
+                    <span style="color:var(--ink-600);">Festival leave</span>
+                    <span><strong>6</strong> / 6</span>
+                  </div>
+                  <div class="progress"><div class="progress-bar progress-success" style="width:100%;"></div></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aarav Shrestha · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <a href="list.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87"/></svg>Students</a>
+      <a href="../parents/list.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Parents</a>
+      <a href="../teachers/list.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>Teachers</a>
+      <a href="../attendance/summary.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Attendance</a>
+      <a href="../fees/invoices.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2"/></svg>Fees</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Students</a><span class="separator">/</span><span class="current">Aarav Shrestha</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <!-- Header card -->
+        <div class="card" style="padding:24px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;">
+            <div style="display:flex;align-items:center;gap:16px;">
+              <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--primary-500),var(--primary-700));color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;">AS</div>
+              <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                  <h1 style="font-size:22px;font-weight:700;">Aarav Shrestha</h1>
+                  <span class="badge badge-success">Active</span>
+                  <span class="badge badge-info">New admission</span>
+                </div>
+                <p style="font-size:13px;color:var(--ink-500);margin-top:4px;">Grade 8 · Section A · Roll 08-014</p>
+                <p style="font-size:12px;color:var(--ink-500);margin-top:2px;font-family:'JetBrains Mono',monospace;">ADM-2081-0001 · Since 15 Baisakh 2081</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <button class="btn btn-secondary">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                Message guardian
+              </button>
+              <button class="btn btn-secondary">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                Print ID card
+              </button>
+              <div class="dropdown">
+                <button class="btn btn-secondary btn-icon" data-dropdown><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v.01M12 12v.01M12 19v.01"/></svg></button>
+                <div class="dropdown-menu">
+                  <a href="edit.html" class="dropdown-item">Edit profile</a>
+                  <a href="#" class="dropdown-item">Transfer student</a>
+                  <a href="#" class="dropdown-item">Promote to next year</a>
+                  <a href="#" class="dropdown-item">Generate certificate</a>
+                  <div class="dropdown-divider"></div>
+                  <a href="#" class="dropdown-item dropdown-item-danger">Withdraw</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs" style="margin-bottom:20px;">
+          <div class="tab active">Overview</div>
+          <div class="tab">Attendance</div>
+          <div class="tab">Fees</div>
+          <div class="tab">Results</div>
+          <div class="tab">Documents</div>
+          <div class="tab">Medical</div>
+          <div class="tab">Timeline</div>
+        </div>
+
+        <!-- KPI strip -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Attendance (YTD)</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">94%</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">186 of 198 days</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Last GPA</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;">3.8</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Grade A</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Fee balance</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">NPR 0</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">All dues cleared</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Homework</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;">3</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Pending submission</p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Behavior</p>
+            <p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">Excellent</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">No incidents</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="detail-grid">
+          <style>@media (min-width:1024px){.detail-grid{grid-template-columns:2fr 1fr!important;}}</style>
+
+          <!-- LEFT -->
+          <div style="display:flex;flex-direction:column;gap:16px;">
+
+            <!-- Personal info -->
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Personal information</h3></div>
+              <div class="card-body">
+                <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="info-grid">
+                  <style>@media (min-width:640px){.info-grid{grid-template-columns:1fr 1fr!important;}}</style>
+                  <div>
+                    <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Full name</p>
+                    <p style="font-size:13px;margin-top:4px;">Aarav Shrestha</p>
+                  </div>
+                  <div>
+                    <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Date of birth</p>
+                    <p style="font-size:13px;margin-top:4px;">2065-03-15 BS (28 June 2008)</p>
+                  </div>
+                  <div>
+                    <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Gender</p>
+                    <p style="font-size:13px;margin-top:4px;">Male</p>
+                  </div>
+                  <div>
+                    <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Blood group</p>
+                    <p style="font-size:13px;margin-top:4px;">O+</p>
+                  </div>
+                  <div>
+                    <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Nationality</p>
+                    <p style="font-size:13px;margin-top:4px;">Nepali</p>
+                  </div>
+                  <div>
+                    <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Religion</p>
+                    <p style="font-size:13px;margin-top:4px;">Hindu</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Address & contact</h3></div>
+              <div class="card-body" style="display:flex;flex-direction:column;gap:14px;">
+                <div style="display:flex;gap:12px;">
+                  <div style="width:32px;height:32px;flex-shrink:0;border-radius:8px;background:var(--ink-100);color:var(--ink-600);display:flex;align-items:center;justify-content:center;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  </div>
+                  <div>
+                    <p style="font-size:12px;color:var(--ink-500);">Permanent address</p>
+                    <p style="font-size:13px;margin-top:2px;">Hattiban, Ward 3, Lalitpur Metropolitan City, Bagmati Province</p>
+                  </div>
+                </div>
+                <div style="display:flex;gap:12px;">
+                  <div style="width:32px;height:32px;flex-shrink:0;border-radius:8px;background:var(--ink-100);color:var(--ink-600);display:flex;align-items:center;justify-content:center;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                  </div>
+                  <div>
+                    <p style="font-size:12px;color:var(--ink-500);">Emergency contact</p>
+                    <p style="font-size:13px;margin-top:2px;">Ramesh Shrestha (Father) · +977 9812345678</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent activity -->
+            <div class="card">
+              <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
+                <h3 class="card-title">Recent activity</h3>
+                <button class="btn btn-ghost btn-sm">View all</button>
+              </div>
+              <ul style="list-style:none;">
+                <li style="padding:12px 20px;display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--ink-100);">
+                  <div class="avatar avatar-sm avatar-green">✓</div>
+                  <div style="flex:1;">
+                    <p style="font-size:13px;">Paid <strong>NPR 12,500</strong> for Ashoj fees via Khalti</p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">12 minutes ago</p>
+                  </div>
+                </li>
+                <li style="padding:12px 20px;display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--ink-100);">
+                  <div class="avatar avatar-sm avatar-primary">📚</div>
+                  <div style="flex:1;">
+                    <p style="font-size:13px;">Submitted <strong>Quadratic equations</strong> homework</p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">2 hours ago</p>
+                  </div>
+                </li>
+                <li style="padding:12px 20px;display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--ink-100);">
+                  <div class="avatar avatar-sm avatar-blue">👤</div>
+                  <div style="flex:1;">
+                    <p style="font-size:13px;">Marked <strong>present</strong> in Period 3 attendance</p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Today, 11:30 AM</p>
+                  </div>
+                </li>
+                <li style="padding:12px 20px;display:flex;gap:12px;align-items:center;">
+                  <div class="avatar avatar-sm avatar-amber">📝</div>
+                  <div style="flex:1;">
+                    <p style="font-size:13px;">Scored <strong>84/100 (A)</strong> in Mathematics mid-term</p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">2 days ago</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- RIGHT -->
+          <div style="display:flex;flex-direction:column;gap:16px;">
+
+            <!-- Guardians -->
+            <div class="card">
+              <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
+                <h3 class="card-title">Guardians</h3>
+                <button class="btn btn-ghost btn-sm">Manage</button>
+              </div>
+              <div class="card-body" style="display:flex;flex-direction:column;gap:14px;">
+                <div style="display:flex;gap:12px;align-items:center;">
+                  <div class="avatar avatar-md avatar-primary">RS</div>
+                  <div style="flex:1;">
+                    <div style="display:flex;gap:6px;align-items:center;">
+                      <p style="font-size:13px;font-weight:500;">Ramesh Shrestha</p>
+                      <span class="badge badge-primary">Primary</span>
+                    </div>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Father · +977 9812345678</p>
+                  </div>
+                </div>
+                <div style="display:flex;gap:12px;align-items:center;">
+                  <div class="avatar avatar-md avatar-blue">GS</div>
+                  <div style="flex:1;">
+                    <p style="font-size:13px;font-weight:500;">Gita Shrestha</p>
+                    <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Mother · +977 9876543210</p>
+                  </div>
+                </div>
+                <button class="btn btn-secondary btn-block btn-sm" style="margin-top:6px;">Add guardian</button>
+              </div>
+            </div>
+
+            <!-- Documents -->
+            <div class="card">
+              <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
+                <h3 class="card-title">Documents</h3>
+                <span class="badge badge-warning">1 missing</span>
+              </div>
+              <div class="card-body" style="display:flex;flex-direction:column;gap:10px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--ink-100);">
+                  <div><p style="font-size:13px;">Birth certificate</p><p style="font-size:11px;color:var(--ink-500);">Uploaded 15 Baisakh 2081</p></div>
+                  <span class="badge badge-success">Verified</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--ink-100);">
+                  <div><p style="font-size:13px;">Previous school report</p><p style="font-size:11px;color:var(--ink-500);">Uploaded 15 Baisakh 2081</p></div>
+                  <span class="badge badge-success">Verified</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;">
+                  <div><p style="font-size:13px;">Citizenship copy</p><p style="font-size:11px;color:var(--ink-500);">Not uploaded</p></div>
+                  <span class="badge badge-warning">Missing</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick links -->
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Quick links</h3></div>
+              <div style="padding:6px;">
+                <a href="../attendance/summary.html" class="dropdown-item" style="padding:10px 12px;">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  Attendance history
+                </a>
+                <a href="../fees/invoices.html" class="dropdown-item" style="padding:10px 12px;">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2"/></svg>
+                  Fee invoices
+                </a>
+                <a href="../exams/results.html" class="dropdown-item" style="padding:10px 12px;">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  Exam results
+                </a>
+                <a href="../homework/list.html" class="dropdown-item" style="padding:10px 12px;">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/></svg>
+                  Homework
+                </a>
+                <a href="#" class="dropdown-item" style="padding:10px 12px;">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806"/></svg>
+                  Generate certificate
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Announcement · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/></svg>
+        Communication
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="announcements.html" style="color:var(--primary-600);">Announcements</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="announcements.html">Announcements</a><span class="separator">/</span><span class="current">Detail</span></nav>
+      </div>
+      <div class="main-header-right">
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="card" style="padding:24px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-start;">
+            <div>
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <h1 style="font-size:22px;font-weight:700;">Dashain vacation announcement</h1>
+                <span class="badge badge-success">Published</span>
+                <span class="badge badge-primary">Everyone</span>
+              </div>
+              <p style="font-size:12px;color:var(--ink-500);margin-top:6px;">Published by Dr. Sunita Sharma · 15 Ashoj 2081 · 8:30 AM</p>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn btn-secondary">Edit</button>
+              <button class="btn btn-secondary">Resend</button>
+              <button class="btn btn-ghost btn-icon"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v.01M12 12v.01M12 19v.01"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Recipients</p><p style="font-size:22px;font-weight:700;margin-top:6px;">1,446</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Delivered</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">1,412</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Read</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:var(--primary-600);">1,358</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Read rate</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">94%</p></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="layout">
+          <style>@media (min-width:1024px){.layout{grid-template-columns:2fr 1fr!important;}}</style>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Content</h3></div>
+              <div class="card-body">
+                <p style="font-size:14px;line-height:1.7;">Dear parents and students,</p>
+                <p style="font-size:14px;line-height:1.7;margin-top:12px;">We wish to inform you that the school will be closed for the Dashain festival from <strong>25 Ashoj to 5 Kartik 2081</strong>. Classes will resume on <strong>6 Kartik 2081</strong> as per the regular schedule.</p>
+                <p style="font-size:14px;line-height:1.7;margin-top:12px;">We wish you and your family a joyful Dashain. Stay safe and enjoy the festivities.</p>
+                <p style="font-size:14px;line-height:1.7;margin-top:12px;">— Dr. Sunita Sharma, Principal</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Delivery channels</h3></div>
+              <div style="padding:8px;">
+                <div style="padding:12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink-100);">
+                  <div style="display:flex;gap:10px;align-items:center;">
+                    <div class="avatar avatar-sm" style="background:var(--primary-100);color:var(--primary-700);">📱</div>
+                    <div><p style="font-size:13px;font-weight:500;">In-app</p><p style="font-size:11px;color:var(--ink-500);">Push notification to mobile apps</p></div>
+                  </div>
+                  <div style="text-align:right;">
+                    <p style="font-size:13px;font-weight:600;color:#166534;">1,412 / 1,446</p>
+                    <p style="font-size:11px;color:var(--ink-500);">97.6% delivered</p>
+                  </div>
+                </div>
+                <div style="padding:12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink-100);">
+                  <div style="display:flex;gap:10px;align-items:center;">
+                    <div class="avatar avatar-sm" style="background:#DBEAFE;color:#1E40AF;">💬</div>
+                    <div><p style="font-size:13px;font-weight:500;">SMS</p><p style="font-size:11px;color:var(--ink-500);">Sent to all registered phones</p></div>
+                  </div>
+                  <div style="text-align:right;">
+                    <p style="font-size:13px;font-weight:600;color:#166534;">1,398 / 1,446</p>
+                    <p style="font-size:11px;color:var(--ink-500);">96.7% delivered</p>
+                  </div>
+                </div>
+                <div style="padding:12px;display:flex;justify-content:space-between;align-items:center;">
+                  <div style="display:flex;gap:10px;align-items:center;">
+                    <div class="avatar avatar-sm" style="background:#FEF3C7;color:#92400E;">📧</div>
+                    <div><p style="font-size:13px;font-weight:500;">Email</p><p style="font-size:11px;color:var(--ink-500);">Optional · sent to those with email</p></div>
+                  </div>
+                  <div style="text-align:right;">
+                    <p style="font-size:13px;font-weight:600;color:var(--ink-500);">Not sent</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Recent readers</h3></div>
+              <div class="table-wrap">
+                <table class="table">
+                  <thead><tr><th class="table-th">Recipient</th><th class="table-th">Type</th><th class="table-th">Read at</th></tr></thead>
+                  <tbody>
+                    <tr><td class="table-td">Ramesh Shrestha</td><td class="table-td"><span class="badge badge-gray">Parent</span></td><td class="table-td" style="font-size:12px;">15 Ashoj · 8:42 AM</td></tr>
+                    <tr><td class="table-td">Gita Thapa</td><td class="table-td"><span class="badge badge-gray">Parent</span></td><td class="table-td" style="font-size:12px;">15 Ashoj · 8:38 AM</td></tr>
+                    <tr><td class="table-td">Aarav Shrestha</td><td class="table-td"><span class="badge badge-info">Student</span></td><td class="table-td" style="font-size:12px;">15 Ashoj · 8:45 AM</td></tr>
+                    <tr><td class="table-td">Sunita Sharma</td><td class="table-td"><span class="badge badge-warning">Staff</span></td><td class="table-td" style="font-size:12px;">15 Ashoj · 9:02 AM</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="card" style="padding:20px;">
+              <h3 class="card-title" style="margin-bottom:12px;">Announcement info</h3>
+              <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;">
+                <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Audience</span><strong>Everyone</strong></div>
+                <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Priority</span><strong>Normal</strong></div>
+                <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Published</span><strong>15 Ashoj 2081</strong></div>
+                <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Expires</span><strong>Never</strong></div>
+                <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">SMS cost</span><strong>NPR 1,446</strong></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Actions</h3></div>
+              <div style="padding:6px;">
+                <a href="announcement-create.html" class="dropdown-item" style="padding:10px 12px;">Edit content</a>
+                <a href="#" class="dropdown-item" style="padding:10px 12px;">Resend to non-readers (88)</a>
+                <a href="#" class="dropdown-item" style="padding:10px 12px;">Duplicate</a>
+                <a href="#" class="dropdown-item" style="padding:10px 12px;">Export read report</a>
+                <a href="#" class="dropdown-item dropdown-item-danger" style="padding:10px 12px;">Delete announcement</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

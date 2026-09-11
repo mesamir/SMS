@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Discrepancies · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18"/></svg>
+        Payments
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="list.html">All payments</a>
+        <a href="reconciliation.html">Reconciliation</a>
+        <a href="discrepancies.html" style="color:var(--primary-600);">Discrepancies</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Payments</a><span class="separator">/</span><span class="current">Discrepancies</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-secondary btn-sm">Export</button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Payment Discrepancies</h1>
+            <p class="page-subtitle">Unresolved mismatches between school records and payment providers</p>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Open</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#991B1B;">3</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Resolved (month)</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">12</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Total amount</p><p style="font-size:22px;font-weight:700;margin-top:6px;">NPR 23,500</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Avg. resolution</p><p style="font-size:22px;font-weight:700;margin-top:6px;">1.4 days</p></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><h3 class="card-title">Open discrepancies</h3></div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">Type</th>
+                  <th class="table-th">TXN ID</th>
+                  <th class="table-th">Provider</th>
+                  <th class="table-th">Amount diff</th>
+                  <th class="table-th">Age</th>
+                  <th class="table-th">Severity</th>
+                  <th class="table-th" style="width:40px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td"><span class="badge badge-danger">Amount mismatch</span></td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">TXN-KH-20241015-0892</td>
+                  <td class="table-td"><span class="badge badge-primary">Khalti</span></td>
+                  <td class="table-td" style="color:#991B1B;font-weight:600;">− NPR 500</td>
+                  <td class="table-td" style="font-size:12px;">2 hours</td>
+                  <td class="table-td"><span class="badge badge-danger">High</span></td>
+                  <td class="table-td"><button class="btn btn-primary btn-sm">Resolve</button></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><span class="badge badge-warning">Missing in school</span></td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">TXN-ES-20241014-0287</td>
+                  <td class="table-td"><span class="badge badge-success">eSewa</span></td>
+                  <td class="table-td" style="color:#92400E;font-weight:600;">+ NPR 8,000</td>
+                  <td class="table-td" style="font-size:12px;">1 day</td>
+                  <td class="table-td"><span class="badge badge-warning">Medium</span></td>
+                  <td class="table-td"><button class="btn btn-primary btn-sm">Import</button></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><span class="badge badge-warning">Missing in provider</span></td>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">TXN-CI-20241013-0088</td>
+                  <td class="table-td"><span class="badge badge-info">ConnectIPS</span></td>
+                  <td class="table-td" style="color:#92400E;font-weight:600;">− NPR 15,000</td>
+                  <td class="table-td" style="font-size:12px;">2 days</td>
+                  <td class="table-td"><span class="badge badge-warning">Medium</span></td>
+                  <td class="table-td"><button class="btn btn-primary btn-sm">Investigate</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+          <div class="card-header"><h3 class="card-title">Recently resolved</h3></div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">TXN ID</th>
+                  <th class="table-th">Provider</th>
+                  <th class="table-th">Resolution</th>
+                  <th class="table-th">Resolved by</th>
+                  <th class="table-th">Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">TXN-KH-20241013-0871</td>
+                  <td class="table-td"><span class="badge badge-primary">Khalti</span></td>
+                  <td class="table-td" style="font-size:13px;">Amount adjusted · provider corrected</td>
+                  <td class="table-td" style="font-size:13px;">Nabin Sharma</td>
+                  <td class="table-td" style="font-size:12px;">Yesterday</td>
+                </tr>
+                <tr>
+                  <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">TXN-ES-20241011-0154</td>
+                  <td class="table-td"><span class="badge badge-success">eSewa</span></td>
+                  <td class="table-td" style="font-size:13px;">Manual import · matched to invoice</td>
+                  <td class="table-td" style="font-size:13px;">Anjali Pradhan</td>
+                  <td class="table-td" style="font-size:12px;">2 days ago</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verify email · School SaaS</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+</head>
+<body style="background:var(--ink-50);">
+<div style="max-width:380px;margin:0 auto;padding:64px 24px;text-align:center;">
+  <div style="width:56px;height:56px;border-radius:16px;background:var(--info-bg);color:var(--info);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+    <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+    </svg>
+  </div>
+  <h1 style="font-size:22px;font-weight:700;">Check your inbox</h1>
+  <p style="font-size:14px;color:var(--ink-500);margin-top:8px;line-height:1.6;">We've sent a verification link to <strong>you@school.edu.np</strong>. Click it to activate your account.</p>
+
+  <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px;">
+    <button class="btn btn-primary btn-block" onclick="window.toast('Verification email resent', 'success')">Resend email</button>
+    <a href="login.html" class="btn btn-secondary btn-block">Back to sign in</a>
+  </div>
+</div>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

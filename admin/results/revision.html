@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Result Revision · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        Exams &amp; Results
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="list.html">Results</a>
+        <a href="revision.html" style="color:var(--primary-600);">Revision</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Results</a><span class="separator">/</span><span class="current">Revision</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <a href="detail.html" class="btn btn-secondary btn-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          </a>
+          <div>
+            <h1 class="page-title">Request result revision</h1>
+            <p class="page-subtitle">Aarav Shrestha · Mid-Term Examination 2081</p>
+          </div>
+        </div>
+
+        <!-- Warning banner -->
+        <div style="background:#FEE2E2;color:#991B1B;padding:14px 20px;border-radius:10px;font-size:13px;display:flex;gap:12px;margin-bottom:20px;align-items:flex-start;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" style="flex-shrink:0;margin-top:1px;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          <div>
+            <p style="font-weight:600;">This result is already published</p>
+            <p style="margin-top:4px;">A revision request will notify the principal for approval. The result will remain visible until the revision is processed. All actions are logged in the audit trail.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:24px;" class="layout">
+          <style>@media (min-width:1024px){.layout{grid-template-columns:2fr 1fr!important;}}</style>
+
+          <div style="display:flex;flex-direction:column;gap:20px;">
+
+            <div class="card">
+              <div class="card-header"><h2 class="card-title">Current values</h2></div>
+              <div class="table-wrap">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="table-th">Subject</th>
+                      <th class="table-th">Current total</th>
+                      <th class="table-th">Current grade</th>
+                      <th class="table-th" style="width:120px;">New marks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="table-td">Mathematics</td>
+                      <td class="table-td">92 / 100</td>
+                      <td class="table-td"><span class="badge badge-success">A+</span></td>
+                      <td class="table-td"><input type="number" class="input" style="height:34px;font-size:13px;" value="92" min="0" max="100"></td>
+                    </tr>
+                    <tr>
+                      <td class="table-td">Science</td>
+                      <td class="table-td">92 / 100</td>
+                      <td class="table-td"><span class="badge badge-success">A+</span></td>
+                      <td class="table-td"><input type="number" class="input" style="height:34px;font-size:13px;" value="92" min="0" max="100"></td>
+                    </tr>
+                    <tr>
+                      <td class="table-td">English</td>
+                      <td class="table-td">86 / 100</td>
+                      <td class="table-td"><span class="badge badge-success">A</span></td>
+                      <td class="table-td"><input type="number" class="input" style="height:34px;font-size:13px;" value="88" min="0" max="100"></td>
+                    </tr>
+                    <tr>
+                      <td class="table-td">Nepali</td>
+                      <td class="table-td">74 / 100</td>
+                      <td class="table-td"><span class="badge badge-info">B+</span></td>
+                      <td class="table-td"><input type="number" class="input" style="height:34px;font-size:13px;" value="74" min="0" max="100"></td>
+                    </tr>
+                    <tr>
+                      <td class="table-td">Social Studies</td>
+                      <td class="table-td">81 / 100</td>
+                      <td class="table-td"><span class="badge badge-success">A</span></td>
+                      <td class="table-td"><input type="number" class="input" style="height:34px;font-size:13px;" value="81" min="0" max="100"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h2 class="card-title">Revision request</h2></div>
+              <div class="card-body" style="display:grid;gap:16px;">
+                <div>
+                  <label class="label">Reason for revision <span style="color:var(--danger);">*</span></label>
+                  <select class="select" required>
+                    <option value="">Select a reason</option>
+                    <option selected>Marking error — English</option>
+                    <option>Data entry error</option>
+                    <option>Subject teacher re-evaluation</option>
+                    <option>Parent appeal</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="label">Detailed explanation <span style="color:var(--danger);">*</span></label>
+                  <textarea class="textarea" rows="4" required>English marks were under-counted by 2 marks due to a totaling error in the essay section. The class teacher reviewed and confirmed the corrected score.</textarea>
+                </div>
+                <div>
+                  <label class="label">Supporting documents</label>
+                  <div style="border:2px dashed var(--ink-200);border-radius:10px;padding:20px;text-align:center;cursor:pointer;">
+                    <svg width="24" height="24" fill="none" stroke="var(--ink-400)" viewBox="0 0 24 24" stroke-width="2" style="margin:0 auto;"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+                    <p style="font-size:13px;color:var(--ink-600);margin-top:6px;">Upload evidence (optional)</p>
+                  </div>
+                </div>
+                <div>
+                  <label class="label">Notify</label>
+                  <div style="display:flex;flex-direction:column;gap:8px;">
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;">
+                      <input type="checkbox" class="checkbox" checked> Principal (for approval)
+                    </label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;">
+                      <input type="checkbox" class="checkbox" checked> Class teacher
+                    </label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;">
+                      <input type="checkbox" class="checkbox"> Parent
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+
+            <div class="card" style="padding:20px;">
+              <h3 class="card-title" style="margin-bottom:14px;">Impact preview</h3>
+              <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;">
+                <div style="display:flex;justify-content:space-between;">
+                  <span style="color:var(--ink-500);">Total change</span>
+                  <strong style="color:#166534;">+2 marks</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                  <span style="color:var(--ink-500);">New total</span>
+                  <strong>844 / 900</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                  <span style="color:var(--ink-500);">New GPA</span>
+                  <strong>3.8 (no change)</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                  <span style="color:var(--ink-500);">Rank change</span>
+                  <strong>No change</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="padding:20px;">
+              <h3 class="card-title" style="margin-bottom:14px;">Approval workflow</h3>
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <div style="display:flex;gap:10px;align-items:flex-start;">
+                  <div style="width:22px;height:22px;border-radius:50%;background:var(--primary-500);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">1</div>
+                  <div>
+                    <p style="font-size:12px;font-weight:600;">Request submitted</p>
+                    <p style="font-size:11px;color:var(--ink-500);">You · just now</p>
+                  </div>
+                </div>
+                <div style="display:flex;gap:10px;align-items:flex-start;">
+                  <div style="width:22px;height:22px;border-radius:50%;background:var(--ink-200);color:var(--ink-500);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">2</div>
+                  <div>
+                    <p style="font-size:12px;font-weight:600;color:var(--ink-500);">Principal review</p>
+                    <p style="font-size:11px;color:var(--ink-400);">Pending</p>
+                  </div>
+                </div>
+                <div style="display:flex;gap:10px;align-items:flex-start;">
+                  <div style="width:22px;height:22px;border-radius:50%;background:var(--ink-200);color:var(--ink-500);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">3</div>
+                  <div>
+                    <p style="font-size:12px;font-weight:600;color:var(--ink-500);">Republish &amp; notify</p>
+                    <p style="font-size:11px;color:var(--ink-400);">Pending</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="padding:20px;">
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <button class="btn btn-primary btn-block" onclick="window.toast('Revision request submitted for approval','success');setTimeout(()=>window.location.href='detail.html',1200);">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Submit revision request
+                </button>
+                <button class="btn btn-secondary btn-block">Save draft</button>
+                <a href="detail.html" class="btn btn-ghost btn-block">Cancel</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Import Students · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <style>
+    .dropzone { border: 2px dashed var(--ink-300); border-radius: 12px; padding: 48px 24px; text-align: center; cursor: pointer; transition: all 0.15s; background: #fff; }
+    .dropzone:hover, .dropzone.dragover { border-color: var(--primary-500); background: var(--primary-50); }
+    .dropzone-icon { width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 16px; background: var(--primary-100); color: var(--primary-600); display: flex; align-items: center; justify-content: center; }
+    .step-panel { display: none; }
+    .step-panel.active { display: block; }
+    .mapping-row { display: grid; grid-template-columns: 1fr 40px 1fr; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--ink-100); }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <a href="list.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87"/></svg>Students</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Students</a><span class="separator">/</span><span class="current">Import</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <a href="list.html" class="btn btn-secondary btn-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          </a>
+          <div>
+            <h1 class="page-title">Import students</h1>
+            <p class="page-subtitle">Bulk import from CSV or Excel file</p>
+          </div>
+        </div>
+
+        <!-- Info banner -->
+        <div style="background:#DBEAFE;color:#1E40AF;padding:14px 20px;border-radius:10px;font-size:13px;display:flex;gap:12px;margin-bottom:20px;align-items:center;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" style="flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>Download the <a href="#" style="color:#1E40AF;text-decoration:underline;font-weight:600;">sample template</a> first to ensure your file matches the required format.</span>
+        </div>
+
+        <!-- Step 1: Upload -->
+        <div class="card" style="padding:24px;margin-bottom:20px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--primary-500);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;">1</div>
+            <h3 class="card-title">Upload file</h3>
+          </div>
+
+          <div class="dropzone" id="dropzone">
+            <div class="dropzone-icon">
+              <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+            </div>
+            <p style="font-size:16px;font-weight:600;">Drop your file here or click to browse</p>
+            <p style="font-size:13px;color:var(--ink-500);margin-top:6px;">Supports .csv, .xlsx, .xls · Max 5 MB</p>
+          </div>
+
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:16px;">
+            <button class="btn btn-secondary" onclick="document.getElementById('dropzone').dispatchEvent(new Event('click'))">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg>
+              Choose file
+            </button>
+            <a href="#" class="btn btn-ghost">Download template</a>
+          </div>
+        </div>
+
+        <!-- Step 2: Map columns -->
+        <div class="card" style="padding:24px;margin-bottom:20px;opacity:0.5;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--ink-200);color:var(--ink-500);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;">2</div>
+            <h3 class="card-title">Map columns</h3>
+          </div>
+
+          <div>
+            <div class="mapping-row" style="font-size:11px;font-weight:600;color:var(--ink-500);text-transform:uppercase;letter-spacing:0.05em;">
+              <span>Your file column</span><span></span><span>System field</span>
+            </div>
+            <div class="mapping-row">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-700);">student_name</span>
+              <span style="text-align:center;color:var(--ink-400);">→</span>
+              <select class="select" style="height:36px;font-size:13px;"><option>Full name (English)</option><option>Full name (Nepali)</option></select>
+            </div>
+            <div class="mapping-row">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-700);">dob</span>
+              <span style="text-align:center;color:var(--ink-400);">→</span>
+              <select class="select" style="height:36px;font-size:13px;"><option>Date of birth (BS)</option><option>Date of birth (AD)</option></select>
+            </div>
+            <div class="mapping-row">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-700);">class_grade</span>
+              <span style="text-align:center;color:var(--ink-400);">→</span>
+              <select class="select" style="height:36px;font-size:13px;"><option>Class</option><option>Section</option></select>
+            </div>
+            <div class="mapping-row">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-700);">father_name</span>
+              <span style="text-align:center;color:var(--ink-400);">→</span>
+              <select class="select" style="height:36px;font-size:13px;"><option>Guardian full name</option><option>Father's name</option></select>
+            </div>
+            <div class="mapping-row">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-700);">phone</span>
+              <span style="text-align:center;color:var(--ink-400);">→</span>
+              <select class="select" style="height:36px;font-size:13px;"><option>Guardian phone</option><option>Student phone</option></select>
+            </div>
+            <div class="mapping-row" style="border-bottom:none;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-700);">—</span>
+              <span style="text-align:center;color:var(--ink-400);">→</span>
+              <select class="select" style="height:36px;font-size:13px;"><option>Ignore this column</option></select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Preview & import -->
+        <div class="card" style="padding:24px;opacity:0.5;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--ink-200);color:var(--ink-500);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;">3</div>
+            <h3 class="card-title">Preview & import</h3>
+          </div>
+
+          <div class="table-wrap" style="border:1px solid var(--ink-200);border-radius:8px;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th" style="padding:10px 14px;">Row</th>
+                  <th class="table-th" style="padding:10px 14px;">Name</th>
+                  <th class="table-th" style="padding:10px 14px;">Class</th>
+                  <th class="table-th" style="padding:10px 14px;">DOB</th>
+                  <th class="table-th" style="padding:10px 14px;">Guardian</th>
+                  <th class="table-th" style="padding:10px 14px;">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td" style="padding:10px 14px;font-family:'JetBrains Mono',monospace;">1</td>
+                  <td class="table-td" style="padding:10px 14px;">Aarav Shrestha</td>
+                  <td class="table-td" style="padding:10px 14px;">Grade 8</td>
+                  <td class="table-td" style="padding:10px 14px;">2065-03-15</td>
+                  <td class="table-td" style="padding:10px 14px;">Ramesh Shrestha</td>
+                  <td class="table-td" style="padding:10px 14px;"><span class="badge badge-success">Valid</span></td>
+                </tr>
+                <tr>
+                  <td class="table-td" style="padding:10px 14px;font-family:'JetBrains Mono',monospace;">2</td>
+                  <td class="table-td" style="padding:10px 14px;">Sita Thapa</td>
+                  <td class="table-td" style="padding:10px 14px;">Grade 8</td>
+                  <td class="table-td" style="padding:10px 14px;">2065-05-22</td>
+                  <td class="table-td" style="padding:10px 14px;">Gita Thapa</td>
+                  <td class="table-td" style="padding:10px 14px;"><span class="badge badge-success">Valid</span></td>
+                </tr>
+                <tr>
+                  <td class="table-td" style="padding:10px 14px;font-family:'JetBrains Mono',monospace;">3</td>
+                  <td class="table-td" style="padding:10px 14px;">—</td>
+                  <td class="table-td" style="padding:10px 14px;">Grade 9</td>
+                  <td class="table-td" style="padding:10px 14px;">2064-02-10</td>
+                  <td class="table-td" style="padding:10px 14px;">Hari Tamang</td>
+                  <td class="table-td" style="padding:10px 14px;"><span class="badge badge-danger">Missing name</span></td>
+                </tr>
+                <tr>
+                  <td class="table-td" style="padding:10px 14px;font-family:'JetBrains Mono',monospace;">4</td>
+                  <td class="table-td" style="padding:10px 14px;">Priya Gurung</td>
+                  <td class="table-td" style="padding:10px 14px;">Grade 9</td>
+                  <td class="table-td" style="padding:10px 14px;">2064-08-05</td>
+                  <td class="table-td" style="padding:10px 14px;">Mohan Gurung</td>
+                  <td class="table-td" style="padding:10px 14px;"><span class="badge badge-success">Valid</span></td>
+                </tr>
+                <tr>
+                  <td class="table-td" style="padding:10px 14px;font-family:'JetBrains Mono',monospace;">5</td>
+                  <td class="table-td" style="padding:10px 14px;">Rohan Tamang</td>
+                  <td class="table-td" style="padding:10px 14px;">Grade 10</td>
+                  <td class="table-td" style="padding:10px 14px;">—</td>
+                  <td class="table-td" style="padding:10px 14px;">Hari Tamang</td>
+                  <td class="table-td" style="padding:10px 14px;"><span class="badge badge-warning">Missing DOB</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;flex-wrap:wrap;gap:12px;">
+            <div style="font-size:13px;color:var(--ink-600);">
+              <strong style="color:#166534;">3 valid rows</strong> · <strong style="color:#92400E;">1 warning</strong> · <strong style="color:#991B1B;">1 error</strong>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn btn-secondary">Skip invalid rows</button>
+              <button class="btn btn-primary" onclick="window.toast('Imported 3 students successfully','success');setTimeout(()=>window.location.href='list.html',1200);">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                Import 3 valid students
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+<script>
+  const dz = document.getElementById('dropzone');
+  dz.addEventListener('click', () => window.toast('File picker opens here','info'));
+  dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('dragover'); });
+  dz.addEventListener('dragleave', () => dz.classList.remove('dragover'));
+  dz.addEventListener('drop', e => { e.preventDefault(); dz.classList.remove('dragover'); window.toast('File received — 25 rows detected','success'); });
+</script>
+</body>
+</html>

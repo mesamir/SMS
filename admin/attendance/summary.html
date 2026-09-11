@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Attendance Summary · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
+        Attendance
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="mark.html">Mark attendance</a>
+        <a href="summary.html" style="color:var(--primary-600);">Summary</a>
+        <a href="leave-requests.html">Leave requests</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="#">Attendance</a><span class="separator">/</span><span class="current">Summary</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Attendance Summary</h1>
+            <p class="page-subtitle">KTM Main Campus · Ashoj 2081</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Export Excel
+            </button>
+            <button class="btn btn-secondary">Print</button>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;">
+            <div style="flex:1;min-width:160px;">
+              <label class="label">Class</label>
+              <select class="select"><option>Grade 8</option><option>All classes</option></select>
+            </div>
+            <div style="flex:1;min-width:140px;">
+              <label class="label">Section</label>
+              <select class="select"><option>All sections</option><option>A</option><option>B</option><option>C</option></select>
+            </div>
+            <div style="flex:1;min-width:200px;">
+              <label class="label">Period</label>
+              <select class="select"><option>Ashoj 2081 (current month)</option><option>Bhadra 2081</option><option>2081 full year</option></select>
+            </div>
+            <button class="btn btn-primary">Apply</button>
+          </div>
+        </div>
+
+        <!-- KPI row -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:16px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Overall attendance</p>
+            <p style="font-size:26px;font-weight:700;margin-top:6px;color:#166534;">93.2%</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">↑ 1.4% vs last month</p>
+          </div>
+          <div class="card" style="padding:16px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Total present</p>
+            <p style="font-size:26px;font-weight:700;margin-top:6px;">4,218</p>
+          </div>
+          <div class="card" style="padding:16px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Total absent</p>
+            <p style="font-size:26px;font-weight:700;margin-top:6px;color:#991B1B;">248</p>
+          </div>
+          <div class="card" style="padding:16px;">
+            <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Chronically absent</p>
+            <p style="font-size:26px;font-weight:700;margin-top:6px;color:#92400E;">12</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">&lt; 80% attendance</p>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="card">
+          <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
+            <h3 class="card-title">Student breakdown</h3>
+            <button class="btn btn-ghost btn-sm">Select columns</button>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th" style="width:40px;"><input type="checkbox" class="checkbox" data-select-all></th>
+                  <th class="table-th">Student</th>
+                  <th class="table-th">Class</th>
+                  <th class="table-th">Present</th>
+                  <th class="table-th">Absent</th>
+                  <th class="table-th">Late</th>
+                  <th class="table-th">Excused</th>
+                  <th class="table-th">Percentage</th>
+                  <th class="table-th">Trend</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-primary">AS</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Aarav Shrestha</p>
+                        <p style="font-size:11px;color:var(--ink-500);">08-014</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 8 · A</td>
+                  <td class="table-td" style="color:#166534;font-weight:500;">178</td>
+                  <td class="table-td" style="color:#991B1B;">8</td>
+                  <td class="table-td" style="color:#92400E;">12</td>
+                  <td class="table-td" style="color:#1E40AF;">0</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:40px;"><div class="progress-bar" style="width:94%;background:#22C55E;"></div></div>
+                      <span style="font-size:12px;font-weight:600;color:#166534;">94%</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-success">↑ 2%</span></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-blue">ST</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Sita Thapa</p>
+                        <p style="font-size:11px;color:var(--ink-500);">08-015</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 8 · A</td>
+                  <td class="table-td" style="color:#166534;font-weight:500;">186</td>
+                  <td class="table-td" style="color:#991B1B;">3</td>
+                  <td class="table-td" style="color:#92400E;">5</td>
+                  <td class="table-td" style="color:#1E40AF;">2</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:40px;"><div class="progress-bar" style="width:98%;background:#22C55E;"></div></div>
+                      <span style="font-size:12px;font-weight:600;color:#166534;">98%</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-success">↑ 0%</span></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-amber">BK</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Bikash Karki</p>
+                        <p style="font-size:11px;color:var(--ink-500);">08-016</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 8 · A</td>
+                  <td class="table-td" style="color:#166534;font-weight:500;">152</td>
+                  <td class="table-td" style="color:#991B1B;">28</td>
+                  <td class="table-td" style="color:#92400E;">12</td>
+                  <td class="table-td" style="color:#1E40AF;">4</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:40px;"><div class="progress-bar" style="width:82%;background:#F59E0B;"></div></div>
+                      <span style="font-size:12px;font-weight:600;color:#92400E;">82%</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-warning">↓ 3%</span></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-green">PG</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Priya Gurung</p>
+                        <p style="font-size:11px;color:var(--ink-500);">08-017</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 8 · A</td>
+                  <td class="table-td" style="color:#166534;font-weight:500;">180</td>
+                  <td class="table-td" style="color:#991B1B;">6</td>
+                  <td class="table-td" style="color:#92400E;">8</td>
+                  <td class="table-td" style="color:#1E40AF;">2</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:40px;"><div class="progress-bar" style="width:95%;background:#22C55E;"></div></div>
+                      <span style="font-size:12px;font-weight:600;color:#166534;">95%</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-success">↑ 1%</span></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><input type="checkbox" class="checkbox"></td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-primary">RT</div>
+                      <div>
+                        <p style="font-weight:500;font-size:13px;">Rohan Tamang</p>
+                        <p style="font-size:11px;color:var(--ink-500);">08-018</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 8 · A</td>
+                  <td class="table-td" style="color:#166534;font-weight:500;">146</td>
+                  <td class="table-td" style="color:#991B1B;">34</td>
+                  <td class="table-td" style="color:#92400E;">16</td>
+                  <td class="table-td" style="color:#1E40AF;">0</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:40px;"><div class="progress-bar" style="width:78%;background:#EF4444;"></div></div>
+                      <span style="font-size:12px;font-weight:600;color:#991B1B;">78%</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-danger">↓ 8%</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--ink-100);">
+            <p style="font-size:14px;color:var(--ink-500);">Showing <strong style="color:var(--ink-700);">1–5</strong> of <strong style="color:var(--ink-700);">42</strong> students</p>
+            <div class="pagination">
+              <button disabled>«</button><button disabled>‹</button>
+              <span style="padding:0 12px;font-size:13px;color:var(--ink-700);">Page <strong>1</strong> of <strong>9</strong></span>
+              <button>›</button><button>»</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+<script src="../../assets/js/table.js"></script>
+</body>
+</html>

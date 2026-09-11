@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create tenant · Platform</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    .platform-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 6px; background: var(--ink-900); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .platform-sidebar { background: #0F172A; border-right-color: #1E293B; }
+    .platform-sidebar .sidebar-logo { background: linear-gradient(135deg, #C41FB8, #7C3AED); }
+    .platform-sidebar .sidebar-brand { color: #fff; }
+    .platform-sidebar .sidebar-brand span { color: #DD6FD0; }
+    .platform-sidebar .sidebar-user { border-bottom-color: #1E293B; }
+    .platform-sidebar .sidebar-user-info .role { color: #64748B; }
+    .platform-sidebar .sidebar-user-info .name { color: #F1F5F9; }
+    .platform-sidebar .sidebar-search { border-bottom-color: #1E293B; }
+    .platform-sidebar .sidebar-search input { background: #1E293B; color: #F1F5F9; }
+    .platform-sidebar .sidebar-search input::placeholder { color: #64748B; }
+    .platform-sidebar .nav-item { color: #94A3B8; }
+    .platform-sidebar .nav-item:hover { background: #1E293B; color: #F1F5F9; }
+    .platform-sidebar .nav-item.active { background: rgba(196,31,184,0.15); color: #DD6FD0; }
+    .platform-sidebar .sidebar-group-label { color: #475569; }
+    .stepper { display: flex; align-items: center; gap: 8px; margin-bottom: 24px; }
+    .step { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--ink-400); }
+    .step.active { color: var(--primary-600); }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--ink-100); color: var(--ink-500); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; }
+    .step.active .step-num { background: var(--primary-500); color: #fff; }
+    .step-line { width: 32px; height: 1px; background: var(--ink-200); }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar platform-sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 8.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+      <span class="sidebar-brand">School<span>SaaS</span></span>
+      <span class="platform-badge" style="margin-left:auto;background:#C41FB8;">Platform</span>
+    </div>
+    <div class="sidebar-user">
+      <div class="avatar avatar-md" style="background:linear-gradient(135deg,#C41FB8,#7C3AED);color:#fff;">SA</div>
+      <div class="sidebar-user-info"><p class="role">Super Admin</p><p class="name">Sujan Adhikari</p></div>
+    </div>
+    <div class="sidebar-search">
+      <div style="position:relative;">
+        <svg style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#64748B;" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" placeholder="Search platform..." style="width:100%;height:36px;padding:0 12px 0 34px;border:1px solid transparent;border-radius:8px;font-size:13px;">
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Platform</p>
+      <a href="dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3m10-11v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>Dashboard</a>
+      <a href="tenants.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5"/></svg>Tenants</a>
+      <a href="plans.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Plans &amp; Pricing</a>
+      <a href="feature-flags.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>Feature Flags</a>
+      <p class="sidebar-group-label">Security</p>
+      <a href="users.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-5.13a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Platform Users</a>
+      <a href="audit-log.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>Audit Log</a>
+      <p class="sidebar-group-label">Operations</p>
+      <a href="system-health.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>System Health</a>
+      <a href="support-tickets.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Support Tickets</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="dashboard.html">Platform</a><span class="separator">/</span><a href="tenants.html">Tenants</a><span class="separator">/</span><span class="current">Create</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg></button>
+        <div class="dropdown">
+          <button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown>
+            <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#C41FB8,#7C3AED);color:#fff;">SA</div>
+            <span style="font-size:13px;font-weight:500;">Sujan</span>
+            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" style="color:var(--ink-400);"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="dropdown-menu"><a href="../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <a href="tenants.html" class="btn btn-secondary btn-icon">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          </a>
+          <div>
+            <h1 class="page-title">Create new tenant</h1>
+            <p class="page-subtitle">Provision a new school group on the platform</p>
+          </div>
+        </div>
+
+        <!-- Stepper -->
+        <div class="stepper">
+          <div class="step active"><span class="step-num">1</span> Organization</div>
+          <div class="step-line"></div>
+          <div class="step"><span class="step-num">2</span> Subscription</div>
+          <div class="step-line"></div>
+          <div class="step"><span class="step-num">3</span> Owner account</div>
+          <div class="step-line"></div>
+          <div class="step"><span class="step-num">4</span> Confirm</div>
+        </div>
+
+        <form onsubmit="event.preventDefault();window.toast('Tenant created successfully','success');setTimeout(()=>window.location.href='tenants.html',1200);">
+          <div style="display:grid;grid-template-columns:1fr;gap:24px;" class="lg-form-grid">
+            <style>@media (min-width:1024px){.lg-form-grid{grid-template-columns:2fr 1fr!important;}}</style>
+
+            <!-- Main column -->
+            <div style="display:flex;flex-direction:column;gap:24px;">
+
+              <!-- Organization info -->
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Organization details</h2>
+                  <p class="card-subtitle">Basic information about the school group</p>
+                </div>
+                <div class="card-body" style="display:grid;grid-template-columns:1fr;gap:16px;">
+                  <style>@media (min-width:640px){.form-2col{grid-template-columns:1fr 1fr!important;}}</style>
+                  <div class="form-2col" style="display:grid;gap:16px;">
+                    <div>
+                      <label class="label">Organization name <span style="color:var(--danger);">*</span></label>
+                      <input type="text" class="input" placeholder="Little Angels Education Network" required>
+                      <p class="help">Official name as registered</p>
+                    </div>
+                    <div>
+                      <label class="label">Short code <span style="color:var(--danger);">*</span></label>
+                      <input type="text" class="input" placeholder="LAEN" required maxlength="10">
+                      <p class="help">Used in reports and identifiers</p>
+                    </div>
+                  </div>
+
+                  <div class="form-2col" style="display:grid;gap:16px;">
+                    <div>
+                      <label class="label">Registration number</label>
+                      <input type="text" class="input" placeholder="PAN / VAT / Company Reg.">
+                    </div>
+                    <div>
+                      <label class="label">Established year</label>
+                      <input type="text" class="input" placeholder="2050 (BS)">
+                    </div>
+                  </div>
+
+                  <div>
+                    <label class="label">Address</label>
+                    <input type="text" class="input" placeholder="Street, Ward, Municipality/District">
+                  </div>
+
+                  <div class="form-2col" style="display:grid;gap:16px;">
+                    <div>
+                      <label class="label">Phone</label>
+                      <div class="input-group">
+                        <span class="input-group-prefix">+977</span>
+                        <input type="text" class="input" placeholder="98XXXXXXXX">
+                      </div>
+                    </div>
+                    <div>
+                      <label class="label">Email</label>
+                      <input type="email" class="input" placeholder="info@littleangels.edu.np">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tenant domain -->
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Tenant domain</h2>
+                  <p class="card-subtitle">This becomes the primary URL for the school</p>
+                </div>
+                <div class="card-body">
+                  <label class="label">Subdomain <span style="color:var(--danger);">*</span></label>
+                  <div class="input-group">
+                    <input type="text" class="input" placeholder="littleangels" style="border-radius:8px 0 0 8px;font-family:'JetBrains Mono',monospace;" required>
+                    <span style="display:inline-flex;align-items:center;padding:0 12px;border:1px solid var(--ink-200);border-left:none;border-radius:0 8px 8px 0;background:var(--ink-50);color:var(--ink-600);font-size:14px;font-family:'JetBrains Mono',monospace;">.schoolsaas.np</span>
+                  </div>
+                  <p class="help">Lowercase, no spaces. Will be checked for availability.</p>
+
+                  <div style="margin-top:16px;">
+                    <label class="label">Custom domain (optional)</label>
+                    <input type="text" class="input" placeholder="erp.littleangels.edu.np">
+                    <p class="help">Requires CNAME configuration. Available on Enterprise plan.</p>
+                  </div>
+
+                  <div style="margin-top:16px;padding:12px 16px;background:#DCFCE7;color:#166534;border-radius:10px;font-size:13px;display:flex;gap:10px;align-items:center;">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    <span><strong>littleangels.schoolsaas.np</strong> is available</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Regional settings -->
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Regional settings</h2>
+                </div>
+                <div class="card-body">
+                  <div class="form-2col" style="display:grid;gap:16px;">
+                    <div>
+                      <label class="label">Default language</label>
+                      <select class="select">
+                        <option>English</option>
+                        <option>Nepali</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="label">Timezone</label>
+                      <select class="select">
+                        <option>Asia/Kathmandu (UTC+5:45)</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="label">Currency</label>
+                      <select class="select">
+                        <option>NPR — Nepalese Rupee</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="label">Calendar system</label>
+                      <select class="select">
+                        <option>Bikram Sambat + Gregorian</option>
+                        <option>Gregorian only</option>
+                        <option>Bikram Sambat only</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div style="display:flex;flex-direction:column;gap:24px;">
+
+              <!-- Plan selection -->
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Subscription plan</h2>
+                </div>
+                <div class="card-body" style="display:flex;flex-direction:column;gap:10px;">
+
+                  <label style="display:block;padding:14px;border:2px solid var(--ink-200);border-radius:10px;cursor:pointer;">
+                    <input type="radio" name="plan" class="radio" style="margin-right:8px;">
+                    <strong style="font-size:14px;">Starter</strong>
+                    <p style="font-size:12px;color:var(--ink-500);margin-top:4px;margin-left:24px;">Up to 300 students · NPR 3,500/mo</p>
+                  </label>
+
+                  <label style="display:block;padding:14px;border:2px solid var(--ink-200);border-radius:10px;cursor:pointer;">
+                    <input type="radio" name="plan" class="radio" style="margin-right:8px;">
+                    <strong style="font-size:14px;">Standard</strong>
+                    <p style="font-size:12px;color:var(--ink-500);margin-top:4px;margin-left:24px;">Up to 800 students · NPR 9,000/mo</p>
+                  </label>
+
+                  <label style="display:block;padding:14px;border:2px solid var(--primary-500);border-radius:10px;background:var(--primary-50);cursor:pointer;">
+                    <input type="radio" name="plan" class="radio" style="margin-right:8px;" checked>
+                    <strong style="font-size:14px;">Professional</strong>
+                    <p style="font-size:12px;color:var(--ink-500);margin-top:4px;margin-left:24px;">Up to 1,500 students · NPR 18,000/mo</p>
+                  </label>
+
+                  <label style="display:block;padding:14px;border:2px solid var(--ink-200);border-radius:10px;cursor:pointer;">
+                    <input type="radio" name="plan" class="radio" style="margin-right:8px;">
+                    <strong style="font-size:14px;">Enterprise</strong>
+                    <p style="font-size:12px;color:var(--ink-500);margin-top:4px;margin-left:24px;">Unlimited · Custom pricing</p>
+                  </label>
+
+                </div>
+              </div>
+
+              <!-- Owner account -->
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Primary owner account</h2>
+                </div>
+                <div class="card-body" style="display:flex;flex-direction:column;gap:14px;">
+                  <div>
+                    <label class="label">Full name <span style="color:var(--danger);">*</span></label>
+                    <input type="text" class="input" placeholder="Bimal Rana" required>
+                  </div>
+                  <div>
+                    <label class="label">Email <span style="color:var(--danger);">*</span></label>
+                    <input type="email" class="input" placeholder="bimal@littleangels.edu.np" required>
+                  </div>
+                  <div>
+                    <label class="label">Phone <span style="color:var(--danger);">*</span></label>
+                    <div class="input-group">
+                      <span class="input-group-prefix">+977</span>
+                      <input type="text" class="input" placeholder="98XXXXXXXX" required>
+                    </div>
+                  </div>
+                  <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-600);">
+                    <input type="checkbox" class="checkbox" checked>
+                    Send welcome email with setup link
+                  </label>
+                </div>
+              </div>
+
+              <!-- Actions -->
+              <div class="card" style="padding:20px;">
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    Create tenant
+                  </button>
+                  <button type="button" class="btn btn-secondary btn-block" onclick="window.toast('Draft saved','info')">Save as draft</button>
+                  <a href="tenants.html" class="btn btn-ghost btn-block">Cancel</a>
+                </div>
+              </div>
+
+              <!-- Summary -->
+              <div class="card" style="padding:16px;background:var(--ink-50);">
+                <p style="font-size:12px;font-weight:600;color:var(--ink-500);text-transform:uppercase;letter-spacing:0.05em;">Estimated first invoice</p>
+                <div style="display:flex;justify-content:space-between;margin-top:10px;font-size:13px;">
+                  <span>Professional plan</span>
+                  <strong>NPR 18,000</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:13px;">
+                  <span>Setup fee (waived)</span>
+                  <span style="text-decoration:line-through;color:var(--ink-400);">NPR 5,000</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid var(--ink-200);font-size:14px;font-weight:600;">
+                  <span>Total</span>
+                  <span style="color:var(--primary-600);">NPR 18,000</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </main>
+
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/sidebar.js"></script>
+<script src="../assets/js/dropdown.js"></script>
+<script src="../assets/js/form.js"></script>
+<script>
+  // Plan selection visual
+  document.querySelectorAll('input[name="plan"]').forEach(r => {
+    r.addEventListener('change', () => {
+      document.querySelectorAll('input[name="plan"]').forEach(x => {
+        const lbl = x.closest('label');
+        if (x.checked) { lbl.style.border = '2px solid var(--primary-500)'; lbl.style.background = 'var(--primary-50)'; }
+        else { lbl.style.border = '2px solid var(--ink-200)'; lbl.style.background = 'transparent'; }
+      });
+    });
+  });
+</script>
+</body>
+</html>

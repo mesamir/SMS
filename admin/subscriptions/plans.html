@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plans · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <style>
+    .plan-card { padding: 28px; border: 2px solid var(--ink-200); border-radius: 16px; background: #fff; position: relative; }
+    .plan-card.featured { border-color: var(--primary-500); box-shadow: 0 10px 25px -5px rgba(196,31,184,0.15); }
+    .featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary-500); color: #fff; padding: 4px 14px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
+    .feature-row { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; font-size: 13px; }
+    .check-icon { width: 18px; height: 18px; flex-shrink: 0; border-radius: 50%; background: #DCFCE7; color: #166534; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; margin-top: 1px; }
+    .x-icon { width: 18px; height: 18px; flex-shrink: 0; border-radius: 50%; background: var(--ink-100); color: var(--ink-400); display: flex; align-items: center; justify-content: center; font-size: 11px; margin-top: 1px; }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2"/></svg>
+        Subscription
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="overview.html">Overview</a>
+        <a href="plans.html" style="color:var(--primary-600);">Plans</a>
+        <a href="usage.html">Usage</a>
+        <a href="billing-history.html">Billing</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="overview.html">Subscription</a><span class="separator">/</span><span class="current">Plans</span></nav>
+      </div>
+      <div class="main-header-right">
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Choose a plan</h1>
+            <p class="page-subtitle">Upgrade, downgrade, or compare plans</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:20px;margin-bottom:32px;" class="plans">
+          <style>@media (min-width:768px){.plans{grid-template-columns:repeat(2,1fr)!important;}}@media (min-width:1200px){.plans{grid-template-columns:repeat(4,1fr)!important;}}</style>
+
+          <div class="plan-card">
+            <p style="font-size:12px;font-weight:600;color:var(--ink-500);text-transform:uppercase;letter-spacing:0.05em;">Starter</p>
+            <p style="font-size:32px;font-weight:700;margin-top:12px;">NPR 3,500<span style="font-size:14px;font-weight:400;color:var(--ink-500);">/mo</span></p>
+            <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Small community schools</p>
+            <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--ink-100);">
+              <div class="feature-row"><span class="check-icon">✓</span>Up to 300 students</div>
+              <div class="feature-row"><span class="check-icon">✓</span>Up to 30 users</div>
+              <div class="feature-row"><span class="check-icon">✓</span>2 GB storage</div>
+              <div class="feature-row"><span class="check-icon">✓</span>Core modules</div>
+              <div class="feature-row"><span class="x-icon">✕</span>Library, transport, hostel</div>
+            </div>
+            <a href="upgrade.html" class="btn btn-secondary btn-block" style="margin-top:20px;">Downgrade</a>
+          </div>
+
+          <div class="plan-card">
+            <p style="font-size:12px;font-weight:600;color:var(--ink-500);text-transform:uppercase;letter-spacing:0.05em;">Standard</p>
+            <p style="font-size:32px;font-weight:700;margin-top:12px;">NPR 9,000<span style="font-size:14px;font-weight:400;color:var(--ink-500);">/mo</span></p>
+            <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Mid-size day schools</p>
+            <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--ink-100);">
+              <div class="feature-row"><span class="check-icon">✓</span>Up to 800 students</div>
+              <div class="feature-row"><span class="check-icon">✓</span>Up to 80 users</div>
+              <div class="feature-row"><span class="check-icon">✓</span>5 GB storage</div>
+              <div class="feature-row"><span class="check-icon">✓</span>Core + library</div>
+              <div class="feature-row"><span class="x-icon">✕</span>Transport, hostel</div>
+            </div>
+            <a href="upgrade.html" class="btn btn-secondary btn-block" style="margin-top:20px;">Switch</a>
+          </div>
+
+          <div class="plan-card featured">
+            <span class="featured-badge">Current plan</span>
+            <p style="font-size:12px;font-weight:600;color:var(--primary-600);text-transform:uppercase;letter-spacing:0.05em;">Professional</p>
+            <p style="font-size:32px;font-weight:700;margin-top:12px;">NPR 18,000<span style="font-size:14px;font-weight:400;color:var(--ink-500);">/mo</span></p>
+            <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Growing multi-branch schools</p>
+            <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--ink-100);">
+              <div class="feature-row"><span class="check-icon">✓</span>Up to 1,500 students</div>
+              <div class="feature-row"><span class="check-icon">✓</span>Up to 200 users</div>
+              <div class="feature-row"><span class="check-icon">✓</span>10 GB storage</div>
+              <div class="feature-row"><span class="check-icon">✓</span>Core + library + transport</div>
+              <div class="feature-row"><span class="check-icon">✓</span>Advanced reports</div>
+              <div class="feature-row"><span class="check-icon">✓</span>SMS (5,000/mo)</div>
+            </div>
+            <button class="btn btn-primary btn-block" style="margin-top:20px;" disabled>Current plan</button>
+          </div>
+
+          <div class="plan-card">
+            <p style="font-size:12px;font-weight:600;color:var(--ink-500);text-transform:uppercase;letter-spacing:0.05em;">Enterprise</p>
+            <p style="font-size:32px;font-weight:700;margin-top:12px;">Custom</p>
+            <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">School groups &amp; chains</p>
+            <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--ink-100);">
+              <div class="feature-row"><span class="check-icon">✓</span>Unlimited students &amp; users</div>
+              <div class="feature-row"><span class="check-icon">✓</span>100 GB+ storage</div>
+              <div class="feature-row"><span class="check-icon">✓</span>All modules unlocked</div>
+              <div class="feature-row"><span class="check-icon">✓</span>Custom domain &amp; SSO</div>
+              <div class="feature-row"><span class="check-icon">✓</span>Dedicated support</div>
+            </div>
+            <a href="upgrade.html" class="btn btn-secondary btn-block" style="margin-top:20px;">Contact sales</a>
+          </div>
+        </div>
+
+        <!-- Comparison -->
+        <div class="card">
+          <div class="card-header"><h3 class="card-title">Feature comparison</h3></div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">Feature</th>
+                  <th class="table-th text-center">Starter</th>
+                  <th class="table-th text-center">Standard</th>
+                  <th class="table-th text-center">Professional</th>
+                  <th class="table-th text-center">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="table-td">Student management</td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td></tr>
+                <tr><td class="table-td">Attendance &amp; timetable</td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td></tr>
+                <tr><td class="table-td">Exams &amp; results</td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td></tr>
+                <tr><td class="table-td">Online fee payments</td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td></tr>
+                <tr><td class="table-td">Library management</td><td class="table-td text-center"><span class="x-icon" style="margin:0 auto;">✕</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td></tr>
+                <tr><td class="table-td">Transport tracking</td><td class="table-td text-center"><span class="x-icon" style="margin:0 auto;">✕</span></td><td class="table-td text-center"><span class="x-icon" style="margin:0 auto;">✕</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td></tr>
+                <tr><td class="table-td">Hostel management</td><td class="table-td text-center"><span class="x-icon" style="margin:0 auto;">✕</span></td><td class="table-td text-center"><span class="x-icon" style="margin:0 auto;">✕</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td></tr>
+                <tr><td class="table-td">Advanced analytics</td><td class="table-td text-center"><span class="x-icon" style="margin:0 auto;">✕</span></td><td class="table-td text-center"><span class="x-icon" style="margin:0 auto;">✕</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td></tr>
+                <tr><td class="table-td">Custom domain &amp; SSO</td><td class="table-td text-center"><span class="x-icon" style="margin:0 auto;">✕</span></td><td class="table-td text-center"><span class="x-icon" style="margin:0 auto;">✕</span></td><td class="table-td text-center"><span class="x-icon" style="margin:0 auto;">✕</span></td><td class="table-td text-center"><span class="check-icon" style="margin:0 auto;">✓</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit Student · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <a href="list.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87"/></svg>Students</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Students</a><span class="separator">/</span><a href="detail.html">Aarav Shrestha</a><span class="separator">/</span><span class="current">Edit</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <a href="detail.html" class="btn btn-secondary btn-icon"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></a>
+          <div>
+            <h1 class="page-title">Edit student</h1>
+            <p class="page-subtitle">Aarav Shrestha · ADM-2081-0001</p>
+          </div>
+        </div>
+
+        <form onsubmit="event.preventDefault();window.toast('Student updated','success');setTimeout(()=>window.location.href='detail.html',1200);">
+          <div style="display:grid;grid-template-columns:1fr;gap:24px;" class="layout">
+            <style>@media (min-width:1024px){.layout{grid-template-columns:2fr 1fr!important;}}</style>
+
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Personal information</h2></div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <style>@media (min-width:640px){.g2{grid-template-columns:1fr 1fr!important;}}</style>
+                    <div><label class="label">Full name (English)</label><input type="text" class="input" value="Aarav Shrestha"></div>
+                    <div><label class="label">Full name (Nepali)</label><input type="text" class="input" value="आरभ श्रेष्ठ" style="font-family:'Mukta',sans-serif;"></div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div><label class="label">Date of birth (BS)</label><input type="text" class="input" value="2065-03-15" style="font-family:'JetBrains Mono',monospace;"></div>
+                    <div><label class="label">Gender</label><select class="select"><option>Male</option><option>Female</option><option>Other</option></select></div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g3">
+                    <style>@media (min-width:640px){.g3{grid-template-columns:1fr 1fr 1fr!important;}}</style>
+                    <div><label class="label">Blood group</label><select class="select"><option>O+</option><option>A+</option><option>B+</option></select></div>
+                    <div><label class="label">Religion</label><select class="select"><option>Hindu</option><option>Buddhist</option><option>Muslim</option></select></div>
+                    <div><label class="label">Nationality</label><input type="text" class="input" value="Nepali"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Address</h2></div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div><label class="label">Permanent address</label><input type="text" class="input" value="Hattiban, Ward 3, Lalitpur Metropolitan City"></div>
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g3">
+                    <div><label class="label">District</label><select class="select"><option>Lalitpur</option><option>Kathmandu</option></select></div>
+                    <div><label class="label">Province</label><select class="select"><option>Bagmati</option><option>Gandaki</option></select></div>
+                    <div><label class="label">Ward no.</label><input type="text" class="input" value="3"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Academic</h2></div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div><label class="label">Class</label><select class="select"><option>Grade 8</option><option>Grade 7</option><option>Grade 9</option></select></div>
+                    <div><label class="label">Section</label><select class="select"><option>A</option><option>B</option><option>C</option></select></div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div><label class="label">Roll number</label><input type="text" class="input" value="08-014" style="font-family:'JetBrains Mono',monospace;"></div>
+                    <div><label class="label">Status</label><select class="select"><option>Active</option><option>Pending</option><option>Transferred</option><option>Withdrawn</option></select></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <div class="card" style="padding:20px;">
+                <h3 class="card-title" style="margin-bottom:12px;">Student photo</h3>
+                <div style="text-align:center;">
+                  <div class="avatar avatar-xl avatar-primary" style="margin:0 auto;">AS</div>
+                  <button type="button" class="btn btn-secondary btn-sm" style="margin-top:12px;">Replace photo</button>
+                </div>
+              </div>
+
+              <div class="card" style="padding:20px;">
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    Save changes
+                  </button>
+                  <a href="detail.html" class="btn btn-secondary btn-block">Cancel</a>
+                </div>
+              </div>
+
+              <div class="card" style="padding:16px;background:#FEE2E2;border-color:#FECACA;">
+                <p style="font-size:11px;color:#991B1B;font-weight:600;text-transform:uppercase;">Danger zone</p>
+                <button type="button" class="btn btn-secondary btn-block btn-sm" style="margin-top:10px;color:#991B1B;">Withdraw student</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

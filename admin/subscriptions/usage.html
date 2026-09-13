@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Usage · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2"/></svg>
+        Subscription
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="overview.html">Overview</a>
+        <a href="plans.html">Plans</a>
+        <a href="usage.html" style="color:var(--primary-600);">Usage</a>
+        <a href="billing-history.html">Billing</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="overview.html">Subscription</a><span class="separator">/</span><span class="current">Usage</span></nav>
+      </div>
+      <div class="main-header-right">
+        <select class="select" style="width:auto;height:32px;font-size:13px;margin-right:8px;"><option>Ashoj 2081</option><option>Bhadra 2081</option></select>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Usage</h1>
+            <p class="page-subtitle">Current month consumption against plan limits</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:20px;">
+          <div class="card" style="padding:20px;">
+            <div style="display:flex;justify-content:space-between;"><span style="font-size:12px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">Students</span><span style="font-size:13px;">1,248 / 1,500</span></div>
+            <div class="progress" style="margin-top:10px;height:10px;"><div class="progress-bar" style="width:83%;"></div></div>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:6px;">252 remaining · 83% used</p>
+          </div>
+          <div class="card" style="padding:20px;">
+            <div style="display:flex;justify-content:space-between;"><span style="font-size:12px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">Users</span><span style="font-size:13px;">186 / 200</span></div>
+            <div class="progress" style="margin-top:10px;height:10px;"><div class="progress-bar" style="width:93%;background:#F59E0B;"></div></div>
+            <p style="font-size:11px;color:#92400E;margin-top:6px;">14 remaining · 93% used</p>
+          </div>
+          <div class="card" style="padding:20px;">
+            <div style="display:flex;justify-content:space-between;"><span style="font-size:12px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">Storage</span><span style="font-size:13px;">4.2 GB / 10 GB</span></div>
+            <div class="progress" style="margin-top:10px;height:10px;"><div class="progress-bar" style="width:42%;background:#22C55E;"></div></div>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:6px;">5.8 GB remaining · 42% used</p>
+          </div>
+          <div class="card" style="padding:20px;">
+            <div style="display:flex;justify-content:space-between;"><span style="font-size:12px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">SMS sent</span><span style="font-size:13px;">3,428 / 5,000</span></div>
+            <div class="progress" style="margin-top:10px;height:10px;"><div class="progress-bar" style="width:69%;"></div></div>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:6px;">1,572 remaining · 69% used</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-header"><h3 class="card-title">Usage history</h3><p class="card-subtitle">Last 6 months</p></div>
+          <div class="card-body"><div style="height:260px;"><canvas id="usageChart"></canvas></div></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><h3 class="card-title">Detailed breakdown</h3></div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">Resource</th>
+                  <th class="table-th">Current</th>
+                  <th class="table-th">Limit</th>
+                  <th class="table-th">% used</th>
+                  <th class="table-th">Trend</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="table-td">Active students</td><td class="table-td">1,248</td><td class="table-td">1,500</td><td class="table-td">83%</td><td class="table-td"><span class="badge badge-success">↑ 28 this month</span></td></tr>
+                <tr><td class="table-td">Active users</td><td class="table-td">186</td><td class="table-td">200</td><td class="table-td" style="color:#92400E;">93%</td><td class="table-td"><span class="badge badge-warning">↑ 6 this month</span></td></tr>
+                <tr><td class="table-td">Storage (GB)</td><td class="table-td">4.2</td><td class="table-td">10</td><td class="table-td">42%</td><td class="table-td"><span class="badge badge-success">↑ 0.3 GB</span></td></tr>
+                <tr><td class="table-td">SMS sent</td><td class="table-td">3,428</td><td class="table-td">5,000</td><td class="table-td">69%</td><td class="table-td"><span class="badge badge-success">↑ 328</span></td></tr>
+                <tr><td class="table-td">PDF reports generated</td><td class="table-td">284</td><td class="table-td">Unlimited</td><td class="table-td">—</td><td class="table-td">—</td></tr>
+                <tr><td class="table-td">API requests</td><td class="table-td">842,318</td><td class="table-td">Unlimited</td><td class="table-td">—</td><td class="table-td"><span class="badge badge-info">Normal</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('usageChart');
+    if (!ctx || !window.Chart) return;
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Baisakh','Jestha','Ashadh','Shrawan','Bhadra','Ashoj'],
+        datasets: [
+          { label: 'Students', data: [1180, 1195, 1205, 1220, 1240, 1248], borderColor: '#C41FB8', tension: 0.4, borderWidth: 2, pointRadius: 3 },
+          { label: 'Users', data: [168, 172, 176, 180, 182, 186], borderColor: '#3B82F6', tension: 0.4, borderWidth: 2, pointRadius: 3 },
+          { label: 'SMS ×100', data: [28, 30, 31, 32, 33, 34], borderColor: '#22C55E', tension: 0.4, borderWidth: 2, pointRadius: 3 },
+        ],
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 8 } } },
+        scales: { x: { grid: { display: false } }, y: { grid: { color: '#E5E7EB' }, border: { display: false } } },
+      },
+    });
+  });
+</script>
+</body>
+</html>

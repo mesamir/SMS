@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review Application · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292"/></svg>
+        Admissions
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="applications.html" style="color:var(--primary-600);">Applications</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="applications.html">Applications</a><span class="separator">/</span><a href="application-detail.html">APP-2081-0842</a><span class="separator">/</span><span class="current">Review</span></nav>
+      </div>
+      <div class="main-header-right">
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="card" style="padding:24px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <h1 style="font-size:22px;font-weight:700;">Priya Sharma</h1>
+                <span class="badge badge-warning">Review pending</span>
+                <span class="badge badge-info">Grade 8</span>
+              </div>
+              <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">APP-2081-0842 · Applied for Grade 8 · Section A</p>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn btn-secondary">Print application</button>
+              <button class="btn btn-secondary">Request docs</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="layout">
+          <style>@media (min-width:1024px){.layout{grid-template-columns:2fr 1fr!important;}}</style>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Application summary</h3></div>
+              <div class="card-body">
+                <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="info">
+                  <style>@media (min-width:640px){.info{grid-template-columns:1fr 1fr!important;}}</style>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Previous school</p><p style="font-size:13px;margin-top:4px;">Gyanodaya Secondary School</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Last GPA</p><p style="font-size:13px;margin-top:4px;">3.6 (Grade A)</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Transfer reason</p><p style="font-size:13px;margin-top:4px;">Family relocated</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Guardian</p><p style="font-size:13px;margin-top:4px;">Anil Sharma (Father)</p></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Documents verified</h3></div>
+              <div class="card-body" style="display:flex;flex-direction:column;gap:8px;">
+                <div style="padding:10px 12px;border:1px solid #BBF7D0;background:#F0FDF4;border-radius:8px;display:flex;justify-content:space-between;align-items:center;font-size:13px;">
+                  <span>Birth certificate</span>
+                  <span class="badge badge-success">✓ Verified</span>
+                </div>
+                <div style="padding:10px 12px;border:1px solid #BBF7D0;background:#F0FDF4;border-radius:8px;display:flex;justify-content:space-between;align-items:center;font-size:13px;">
+                  <span>Grade 7 report card</span>
+                  <span class="badge badge-success">✓ Verified</span>
+                </div>
+                <div style="padding:10px 12px;border:1px solid #BBF7D0;background:#F0FDF4;border-radius:8px;display:flex;justify-content:space-between;align-items:center;font-size:13px;">
+                  <span>Transfer certificate</span>
+                  <span class="badge badge-success">✓ Verified</span>
+                </div>
+                <div style="padding:10px 12px;border:1px solid #BBF7D0;background:#F0FDF4;border-radius:8px;display:flex;justify-content:space-between;align-items:center;font-size:13px;">
+                  <span>Recent photograph</span>
+                  <span class="badge badge-success">✓ Verified</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Interview / Entrance results</h3></div>
+              <div class="card-body" style="display:grid;gap:14px;">
+                <div>
+                  <label class="label">Entrance exam score</label>
+                  <div style="display:flex;gap:8px;align-items:center;">
+                    <input type="number" class="input" value="88" min="0" max="100" style="width:100px;">
+                    <span style="font-size:13px;color:var(--ink-500);">/ 100</span>
+                    <span class="badge badge-success">Strong</span>
+                  </div>
+                </div>
+                <div>
+                  <label class="label">Interview notes</label>
+                  <textarea class="textarea" rows="3">Confident, articulate. Strong academic record. Previous school references positive.</textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Reviewer notes</h3></div>
+              <div class="card-body">
+                <textarea class="textarea" rows="3" placeholder="Internal notes on this decision"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="card" style="padding:20px;">
+              <h3 class="card-title" style="margin-bottom:12px;">Decision</h3>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <button class="btn btn-primary btn-block" onclick="window.toast('Application approved. Student can be enrolled.','success');setTimeout(()=>window.location.href='applications.html',1200);">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Approve &amp; select
+                </button>
+                <button class="btn btn-secondary btn-block" onclick="window.toast('Moved to waiting list','info')">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  Move to waiting list
+                </button>
+                <button class="btn btn-secondary btn-block" style="color:#991B1B;border-color:#FECACA;" onclick="window.toast('Application rejected','info')">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                  Reject application
+                </button>
+              </div>
+            </div>
+
+            <div class="card" style="padding:20px;">
+              <h3 class="card-title" style="margin-bottom:12px;">Bulk action</h3>
+              <button class="btn btn-secondary btn-block btn-sm">Review all pending (12)</button>
+            </div>
+
+            <div class="card" style="padding:16px;background:var(--ink-50);">
+              <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Reviewer</p>
+              <div style="display:flex;gap:10px;align-items:center;margin-top:8px;">
+                <div class="avatar avatar-sm avatar-gradient">N</div>
+                <div><p style="font-size:13px;font-weight:500;">Nabin Sharma</p><p style="font-size:11px;color:var(--ink-500);">Assigned 2 hours ago</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

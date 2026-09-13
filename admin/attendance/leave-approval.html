@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leave Approval · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
+        Attendance
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="leave-requests.html">Leave requests</a>
+        <a href="leave-approval.html" style="color:var(--primary-600);">Approval</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="leave-requests.html">Leave</a><span class="separator">/</span><span class="current">Approve</span></nav>
+      </div>
+      <div class="main-header-right">
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <a href="leave-requests.html" class="btn btn-secondary btn-icon"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></a>
+          <div>
+            <h1 class="page-title">Review leave request</h1>
+            <p class="page-subtitle">Aarav Shrestha · Sick leave · 2 days</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:20px;" class="layout">
+          <style>@media (min-width:1024px){.layout{grid-template-columns:2fr 1fr!important;}}</style>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="card" style="padding:20px;">
+              <div style="display:flex;gap:14px;align-items:center;">
+                <div class="avatar avatar-lg avatar-primary">AS</div>
+                <div>
+                  <p style="font-size:14px;font-weight:600;">Aarav Shrestha</p>
+                  <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Grade 8 · A · Roll 08-014</p>
+                  <p style="font-size:11px;color:var(--ink-500);font-family:'JetBrains Mono',monospace;">ADM-2081-0001</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Request details</h3></div>
+              <div class="card-body" style="display:grid;gap:16px;">
+                <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                  <style>@media (min-width:640px){.g2{grid-template-columns:1fr 1fr!important;}}</style>
+                  <div><p style="font-size:11px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">Type</p><p style="font-size:13px;margin-top:4px;">Sick leave</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">Duration</p><p style="font-size:13px;margin-top:4px;">2 days</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">From</p><p style="font-size:13px;margin-top:4px;">16 Ashoj 2081</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">To</p><p style="font-size:13px;margin-top:4px;">17 Ashoj 2081</p></div>
+                </div>
+                <div>
+                  <p style="font-size:11px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">Reason</p>
+                  <p style="font-size:13px;margin-top:4px;line-height:1.6;">Fever and cold — doctor advised rest for 2 days. Prescription attached.</p>
+                </div>
+                <div style="padding:12px;background:var(--ink-50);border-radius:8px;display:flex;gap:10px;align-items:center;">
+                  <div style="width:32px;height:32px;border-radius:6px;background:#FEE2E2;color:#991B1B;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;">PDF</div>
+                  <div style="flex:1;">
+                    <p style="font-size:13px;">Doctor_prescription.pdf</p>
+                    <p style="font-size:11px;color:var(--ink-500);">420 KB</p>
+                  </div>
+                  <button class="btn btn-secondary btn-sm">View</button>
+                </div>
+                <p style="font-size:11px;color:var(--ink-500);">Requested 3 hours ago by Ramesh Shrestha (Father)</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Attendance context</h3></div>
+              <div class="card-body">
+                <div style="display:grid;grid-template-columns:1fr;gap:14px;" class="g3">
+                  <style>@media (min-width:640px){.g3{grid-template-columns:1fr 1fr 1fr!important;}}</style>
+                  <div><p style="font-size:11px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">Current YTD</p><p style="font-size:18px;font-weight:700;margin-top:4px;color:#166534;">94%</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">Absences</p><p style="font-size:18px;font-weight:700;margin-top:4px;">8</p></div>
+                  <div><p style="font-size:11px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">Prior leaves</p><p style="font-size:18px;font-weight:700;margin-top:4px;">3</p></div>
+                </div>
+                <p style="font-size:12px;color:var(--ink-500);margin-top:12px;">Student has good attendance. This is the 2nd sick leave this year.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h3 class="card-title">Decision notes</h3></div>
+              <div class="card-body">
+                <textarea class="textarea" rows="3" placeholder="Optional notes on the decision"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="card" style="padding:20px;">
+              <h3 class="card-title" style="margin-bottom:12px;">Decision</h3>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <button class="btn btn-primary btn-block" onclick="window.toast('Leave approved. Parent notified.','success');setTimeout(()=>window.location.href='leave-requests.html',1200);">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  Approve leave
+                </button>
+                <button class="btn btn-secondary btn-block" onclick="window.toast('Leave rejected','info')">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                  Reject
+                </button>
+                <button class="btn btn-secondary btn-block">
+                  Request more info
+                </button>
+              </div>
+            </div>
+
+            <div class="card" style="padding:16px;background:#FEF3C7;border-color:#FDE68A;">
+              <p style="font-size:12px;color:#92400E;line-height:1.6;">If approved, the parent and student will be notified immediately. Attendance records for these dates will be marked as <strong>Excused</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

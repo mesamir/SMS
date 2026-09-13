@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Export Students · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <a href="list.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87"/></svg>Students</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Students</a><span class="separator">/</span><span class="current">Export</span></nav>
+      </div>
+      <div class="main-header-right">
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <a href="list.html" class="btn btn-secondary btn-icon"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></a>
+          <div>
+            <h1 class="page-title">Export students</h1>
+            <p class="page-subtitle">Download student data in CSV, Excel, or PDF</p>
+          </div>
+        </div>
+
+        <form onsubmit="event.preventDefault();window.toast('Export started. Download will begin shortly.','success');">
+          <div style="display:grid;grid-template-columns:1fr;gap:24px;" class="layout">
+            <style>@media (min-width:1024px){.layout{grid-template-columns:2fr 1fr!important;}}</style>
+
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Filter records</h2></div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <style>@media (min-width:640px){.g2{grid-template-columns:1fr 1fr!important;}}</style>
+                    <div>
+                      <label class="label">Class</label>
+                      <select class="select"><option>All classes</option><option>Grade 6</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option></select>
+                    </div>
+                    <div>
+                      <label class="label">Section</label>
+                      <select class="select"><option>All sections</option><option>A</option><option>B</option><option>C</option></select>
+                    </div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div>
+                      <label class="label">Status</label>
+                      <select class="select"><option>Active only</option><option>All statuses</option><option>Transferred</option><option>Withdrawn</option></select>
+                    </div>
+                    <div>
+                      <label class="label">Gender</label>
+                      <select class="select"><option>All</option><option>Male</option><option>Female</option></select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Fields to include</h2></div>
+                <div class="card-body">
+                  <div style="display:grid;grid-template-columns:1fr;gap:8px;" class="g3">
+                    <style>@media (min-width:640px){.g3{grid-template-columns:repeat(3,1fr)!important;}}</style>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox" checked> Admission number</label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox" checked> Full name</label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox" checked> Class &amp; Section</label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox" checked> Roll number</label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox" checked> Date of birth</label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox" checked> Gender</label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox" checked> Guardian name</label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox" checked> Guardian phone</label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox"> Address</label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox"> Blood group</label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox"> Attendance %</label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox"> Fee status</label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox"> Last GPA</label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox"> Enrollment date</label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox"> Emergency contact</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <div class="card" style="padding:20px;">
+                <h3 class="card-title" style="margin-bottom:12px;">Export format</h3>
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                  <label style="display:flex;align-items:center;gap:10px;padding:12px;border:2px solid var(--primary-500);background:var(--primary-50);border-radius:8px;cursor:pointer;">
+                    <input type="radio" name="fmt" class="radio" checked>
+                    <div style="flex:1;"><p style="font-size:13px;font-weight:500;">CSV</p><p style="font-size:11px;color:var(--ink-500);">Spreadsheet-friendly</p></div>
+                  </label>
+                  <label style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--ink-200);border-radius:8px;cursor:pointer;">
+                    <input type="radio" name="fmt" class="radio">
+                    <div style="flex:1;"><p style="font-size:13px;font-weight:500;">Excel (XLSX)</p><p style="font-size:11px;color:var(--ink-500);">Formatted spreadsheet</p></div>
+                  </label>
+                  <label style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--ink-200);border-radius:8px;cursor:pointer;">
+                    <input type="radio" name="fmt" class="radio">
+                    <div style="flex:1;"><p style="font-size:13px;font-weight:500;">PDF</p><p style="font-size:11px;color:var(--ink-500);">Print-ready</p></div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="card" style="padding:20px;">
+                <h3 class="card-title" style="margin-bottom:12px;">Preview</h3>
+                <p style="font-size:24px;font-weight:700;">1,248</p>
+                <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">records match this filter</p>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                Export 1,248 records
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

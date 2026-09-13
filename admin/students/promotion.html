@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Promotion · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <a href="list.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87"/></svg>Students</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Students</a><span class="separator">/</span><span class="current">Promotion</span></nav>
+      </div>
+      <div class="main-header-right">
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <a href="list.html" class="btn btn-secondary btn-icon"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></a>
+          <div>
+            <h1 class="page-title">Year-end promotion</h1>
+            <p class="page-subtitle">Promote, repeat, or withdraw students at year end</p>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:24px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--primary-600);">
+            <span style="width:28px;height:28px;border-radius:50%;background:var(--primary-500);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;">1</span>
+            Select year
+          </div>
+          <div style="width:32px;height:1px;background:var(--ink-200);"></div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--ink-400);">
+            <span style="width:28px;height:28px;border-radius:50%;background:var(--ink-100);color:var(--ink-500);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;">2</span>
+            Review
+          </div>
+          <div style="width:32px;height:1px;background:var(--ink-200);"></div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--ink-400);">
+            <span style="width:28px;height:28px;border-radius:50%;background:var(--ink-100);color:var(--ink-500);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;">3</span>
+            Confirm
+          </div>
+        </div>
+
+        <div class="card" style="padding:20px;margin-bottom:20px;">
+          <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g3">
+            <style>@media (min-width:640px){.g3{grid-template-columns:1fr 1fr 1fr!important;}}</style>
+            <div>
+              <label class="label">Promoting from</label>
+              <select class="select">
+                <option>Grade 8 (current)</option>
+                <option>Grade 7</option>
+                <option>Grade 6</option>
+              </select>
+            </div>
+            <div>
+              <label class="label">Promote to</label>
+              <select class="select">
+                <option>Grade 9 (next year)</option>
+              </select>
+            </div>
+            <div>
+              <label class="label">New academic year</label>
+              <select class="select">
+                <option>2082 BS</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Review — 126 students in Grade 8</h3>
+            <p class="card-subtitle">Default action: promote all. Override individual students as needed.</p>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">Student</th>
+                  <th class="table-th">Current class</th>
+                  <th class="table-th">Attendance</th>
+                  <th class="table-th">Last GPA</th>
+                  <th class="table-th" style="min-width:280px;">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-primary">AS</div>
+                      <div><p style="font-weight:500;font-size:13px;">Aarav Shrestha</p><p style="font-size:11px;color:var(--ink-500);">08-014</p></div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 8 · A</td>
+                  <td class="table-td"><span style="color:#166534;font-weight:500;">94%</span></td>
+                  <td class="table-td"><span class="badge badge-success">3.8</span></td>
+                  <td class="table-td">
+                    <div style="display:flex;gap:6px;">
+                      <label style="display:flex;align-items:center;gap:4px;font-size:12px;padding:6px 10px;border:2px solid var(--primary-500);background:var(--primary-50);border-radius:6px;cursor:pointer;"><input type="radio" name="p1" checked> Promote to Grade 9</label>
+                      <label style="display:flex;align-items:center;gap:4px;font-size:12px;padding:6px 10px;border:1px solid var(--ink-200);border-radius:6px;cursor:pointer;"><input type="radio" name="p1"> Repeat</label>
+                      <label style="display:flex;align-items:center;gap:4px;font-size:12px;padding:6px 10px;border:1px solid var(--ink-200);border-radius:6px;cursor:pointer;"><input type="radio" name="p1"> Withdraw</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-blue">ST</div>
+                      <div><p style="font-weight:500;font-size:13px;">Sita Thapa</p><p style="font-size:11px;color:var(--ink-500);">08-015</p></div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 8 · A</td>
+                  <td class="table-td"><span style="color:#166534;font-weight:500;">98%</span></td>
+                  <td class="table-td"><span class="badge badge-success">3.9</span></td>
+                  <td class="table-td">
+                    <div style="display:flex;gap:6px;">
+                      <label style="display:flex;align-items:center;gap:4px;font-size:12px;padding:6px 10px;border:2px solid var(--primary-500);background:var(--primary-50);border-radius:6px;cursor:pointer;"><input type="radio" name="p2" checked> Promote</label>
+                      <label style="display:flex;align-items:center;gap:4px;font-size:12px;padding:6px 10px;border:1px solid var(--ink-200);border-radius:6px;cursor:pointer;"><input type="radio" name="p2"> Repeat</label>
+                      <label style="display:flex;align-items:center;gap:4px;font-size:12px;padding:6px 10px;border:1px solid var(--ink-200);border-radius:6px;cursor:pointer;"><input type="radio" name="p2"> Withdraw</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                      <div class="avatar avatar-sm avatar-amber">BK</div>
+                      <div><p style="font-weight:500;font-size:13px;">Bikash Karki</p><p style="font-size:11px;color:var(--ink-500);">08-016</p></div>
+                    </div>
+                  </td>
+                  <td class="table-td">Grade 8 · A</td>
+                  <td class="table-td"><span style="color:#92400E;font-weight:500;">82%</span></td>
+                  <td class="table-td"><span class="badge badge-warning">2.8</span></td>
+                  <td class="table-td">
+                    <div style="display:flex;gap:6px;">
+                      <label style="display:flex;align-items:center;gap:4px;font-size:12px;padding:6px 10px;border:1px solid var(--ink-200);border-radius:6px;cursor:pointer;"><input type="radio" name="p3"> Promote</label>
+                      <label style="display:flex;align-items:center;gap:4px;font-size:12px;padding:6px 10px;border:2px solid #F59E0B;background:#FEF3C7;border-radius:6px;cursor:pointer;"><input type="radio" name="p3" checked> Repeat</label>
+                      <label style="display:flex;align-items:center;gap:4px;font-size:12px;padding:6px 10px;border:1px solid var(--ink-200);border-radius:6px;cursor:pointer;"><input type="radio" name="p3"> Withdraw</label>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--ink-100);">
+            <p style="font-size:13px;color:var(--ink-500);">Showing 3 of 126 · Default: Promote all</p>
+            <div style="display:flex;gap:8px;">
+              <button class="btn btn-secondary btn-sm">Set all: Promote</button>
+              <button class="btn btn-secondary btn-sm">Set all: Repeat</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px;">
+          <p style="font-size:14px;color:var(--ink-500);">Summary: <strong>124 Promote · 1 Repeat · 1 Withdraw</strong></p>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-secondary">Save draft</button>
+            <button class="btn btn-primary" onclick="window.toast('Promotion processed for 126 students','success')">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Confirm promotion
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

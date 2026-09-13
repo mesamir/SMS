@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Class Attendance · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
+        Attendance
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="summary.html">Summary</a>
+        <a href="class-attendance.html" style="color:var(--primary-600);">Class detail</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="summary.html">Attendance</a><span class="separator">/</span><span class="current">Grade 8 · A</span></nav>
+      </div>
+      <div class="main-header-right">
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Class Attendance Detail</h1>
+            <p class="page-subtitle">Grade 8 · Section A · 42 students</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;">
+            <div style="flex:1;min-width:140px;"><label class="label">Class</label><select class="select"><option>Grade 8</option></select></div>
+            <div style="flex:1;min-width:100px;"><label class="label">Section</label><select class="select"><option>A</option><option>B</option><option>C</option></select></div>
+            <div style="flex:1;min-width:200px;"><label class="label">Period</label><select class="select"><option>Ashoj 2081 (month)</option><option>Bhadra 2081</option></select></div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Overall</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">93.2%</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Students ≥ 90%</p><p style="font-size:22px;font-weight:700;margin-top:6px;">28</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Below 80%</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#991B1B;">4</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Chronic absent</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#92400E;">2</p></div>
+        </div>
+
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-header"><h3 class="card-title">Daily attendance rate — Ashoj 2081</h3></div>
+          <div class="card-body"><div style="height:240px;"><canvas id="dailyChart"></canvas></div></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><h3 class="card-title">Student breakdown</h3></div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr><th class="table-th">Student</th><th class="table-th">Present</th><th class="table-th">Absent</th><th class="table-th">Late</th><th class="table-th">Excused</th><th class="table-th">%</th><th class="table-th">Trend</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="table-td">Aarav Shrestha</td><td class="table-td" style="color:#166534;">178</td><td class="table-td" style="color:#991B1B;">8</td><td class="table-td" style="color:#92400E;">12</td><td class="table-td">0</td><td class="table-td"><strong>94%</strong></td><td class="table-td"><span class="badge badge-success">↑ 2%</span></td></tr>
+                <tr><td class="table-td">Sita Thapa</td><td class="table-td" style="color:#166534;">186</td><td class="table-td" style="color:#991B1B;">3</td><td class="table-td" style="color:#92400E;">5</td><td class="table-td">2</td><td class="table-td"><strong>98%</strong></td><td class="table-td"><span class="badge badge-success">↑ 0%</span></td></tr>
+                <tr><td class="table-td">Bikash Karki</td><td class="table-td" style="color:#166534;">152</td><td class="table-td" style="color:#991B1B;">28</td><td class="table-td" style="color:#92400E;">12</td><td class="table-td">4</td><td class="table-td"><strong style="color:#92400E;">82%</strong></td><td class="table-td"><span class="badge badge-warning">↓ 3%</span></td></tr>
+                <tr><td class="table-td">Priya Gurung</td><td class="table-td" style="color:#166534;">180</td><td class="table-td" style="color:#991B1B;">6</td><td class="table-td" style="color:#92400E;">8</td><td class="table-td">2</td><td class="table-td"><strong>95%</strong></td><td class="table-td"><span class="badge badge-success">↑ 1%</span></td></tr>
+                <tr><td class="table-td">Rohan Tamang</td><td class="table-td" style="color:#166534;">146</td><td class="table-td" style="color:#991B1B;">34</td><td class="table-td" style="color:#92400E;">16</td><td class="table-td">0</td><td class="table-td"><strong style="color:#991B1B;">78%</strong></td><td class="table-td"><span class="badge badge-danger">↓ 8%</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('dailyChart');
+    if (!ctx || !window.Chart) return;
+    const days = Array.from({length: 30}, (_, i) => String(i+1));
+    const rates = days.map(() => 88 + Math.random() * 8);
+    new Chart(ctx, {
+      type: 'line',
+      data: { labels: days, datasets: [{ data: rates, borderColor: '#C41FB8', backgroundColor: 'rgba(196,31,184,0.1)', fill: true, tension: 0.3, borderWidth: 2, pointRadius: 3, pointBackgroundColor: '#C41FB8' }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+        scales: { x: { grid: { display: false }, title: { display: true, text: 'Day of Ashoj', font: { size: 11 } } }, y: { grid: { color: '#E5E7EB' }, border: { display: false }, min: 70, max: 100, ticks: { callback: v => v + '%' } } } },
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teacher Assignments · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <style>
+    .assign-grid { display: grid; grid-template-columns: 180px repeat(6, 1fr); gap: 2px; background: var(--ink-200); border: 1px solid var(--ink-200); border-radius: 12px; overflow: hidden; }
+    .assign-head { background: var(--ink-900); color: #fff; padding: 10px 8px; text-align: center; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+    .assign-class { background: var(--ink-50); padding: 12px; font-size: 12px; font-weight: 600; color: var(--ink-700); display: flex; align-items: center; }
+    .assign-cell { background: #fff; padding: 6px; min-height: 60px; }
+    .assign-cell select { width: 100%; border: none; background: transparent; font-size: 11px; padding: 4px; border-radius: 4px; }
+    .assign-cell select:hover { background: var(--primary-50); }
+    .assign-cell.filled { background: var(--primary-50); }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
+        Teachers
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="list.html">All teachers</a>
+        <a href="assignments.html" style="color:var(--primary-600);">Assignments</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Teachers</a><span class="separator">/</span><span class="current">Assignments</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-secondary btn-sm">Auto-assign</button>
+        <button class="btn btn-primary btn-sm" onclick="window.toast('Assignments saved','success')">Save changes</button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Teacher — Subject assignments</h1>
+            <p class="page-subtitle">Assign subject teachers to each class · Academic year 2081</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;">
+            <div style="flex:1;min-width:200px;">
+              <label class="label">Academic year</label>
+              <select class="select"><option>2081 BS (current)</option></select>
+            </div>
+            <div style="flex:1;min-width:200px;">
+              <label class="label">Branch</label>
+              <select class="select"><option>KTM Main Campus</option></select>
+            </div>
+            <div style="flex:1;min-width:200px;">
+              <label class="label">View</label>
+              <select class="select"><option>By class</option><option>By teacher</option></select>
+            </div>
+          </div>
+        </div>
+
+        <div class="assign-grid">
+          <div class="assign-head">Class</div>
+          <div class="assign-head">Mathematics</div>
+          <div class="assign-head">Science</div>
+          <div class="assign-head">English</div>
+          <div class="assign-head">Nepali</div>
+          <div class="assign-head">Social</div>
+          <div class="assign-head">Computer</div>
+
+          <div class="assign-class">Grade 6 · A</div>
+          <div class="assign-cell filled"><select><option>S. Sharma</option><option>A. Karki</option></select></div>
+          <div class="assign-cell filled"><select><option>R. Rai</option></select></div>
+          <div class="assign-cell filled"><select><option>A. Karki</option></select></div>
+          <div class="assign-cell filled"><select><option>K. Tamang</option></select></div>
+          <div class="assign-cell filled"><select><option>P. Shrestha</option></select></div>
+          <div class="assign-cell filled"><select><option>M. Shakya</option></select></div>
+
+          <div class="assign-class">Grade 6 · B</div>
+          <div class="assign-cell filled"><select><option>S. Sharma</option></select></div>
+          <div class="assign-cell filled"><select><option>R. Rai</option></select></div>
+          <div class="assign-cell filled"><select><option>A. Karki</option></select></div>
+          <div class="assign-cell filled"><select><option>K. Tamang</option></select></div>
+          <div class="assign-cell filled"><select><option>P. Shrestha</option></select></div>
+          <div class="assign-cell filled"><select><option>M. Shakya</option></select></div>
+
+          <div class="assign-class">Grade 7 · A</div>
+          <div class="assign-cell filled"><select><option>S. Sharma</option></select></div>
+          <div class="assign-cell filled"><select><option>R. Rai</option></select></div>
+          <div class="assign-cell filled"><select><option>A. Karki</option></select></div>
+          <div class="assign-cell filled"><select><option>K. Tamang</option></select></div>
+          <div class="assign-cell filled"><select><option>P. Shrestha</option></select></div>
+          <div class="assign-cell filled"><select><option>M. Shakya</option></select></div>
+
+          <div class="assign-class">Grade 8 · A</div>
+          <div class="assign-cell filled"><select><option>S. Sharma</option></select></div>
+          <div class="assign-cell filled"><select><option>R. Rai</option></select></div>
+          <div class="assign-cell filled"><select><option>A. Karki</option></select></div>
+          <div class="assign-cell filled"><select><option>K. Tamang</option></select></div>
+          <div class="assign-cell filled"><select><option>P. Shrestha</option></select></div>
+          <div class="assign-cell filled"><select><option>M. Shakya</option></select></div>
+
+          <div class="assign-class">Grade 8 · B</div>
+          <div class="assign-cell filled"><select><option>S. Sharma</option></select></div>
+          <div class="assign-cell filled"><select><option>R. Rai</option></select></div>
+          <div class="assign-cell filled"><select><option>A. Karki</option></select></div>
+          <div class="assign-cell filled"><select><option>K. Tamang</option></select></div>
+          <div class="assign-cell filled"><select><option>P. Shrestha</option></select></div>
+          <div class="assign-cell"><select><option>— Assign —</option><option>M. Shakya</option></select></div>
+
+          <div class="assign-class">Grade 9 · A</div>
+          <div class="assign-cell filled"><select><option>S. Sharma</option></select></div>
+          <div class="assign-cell filled"><select><option>R. Rai</option></select></div>
+          <div class="assign-cell filled"><select><option>A. Karki</option></select></div>
+          <div class="assign-cell filled"><select><option>K. Tamang</option></select></div>
+          <div class="assign-cell filled"><select><option>P. Shrestha</option></select></div>
+          <div class="assign-cell filled"><select><option>M. Shakya</option></select></div>
+
+          <div class="assign-class">Grade 10 · A</div>
+          <div class="assign-cell filled"><select><option>S. Sharma</option></select></div>
+          <div class="assign-cell filled"><select><option>R. Rai</option></select></div>
+          <div class="assign-cell filled"><select><option>A. Karki</option></select></div>
+          <div class="assign-cell filled"><select><option>K. Tamang</option></select></div>
+          <div class="assign-cell filled"><select><option>P. Shrestha</option></select></div>
+          <div class="assign-cell filled"><select><option>M. Shakya</option></select></div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px;">
+          <p style="font-size:13px;color:var(--ink-500);">42 of 48 assignments complete · 6 pending</p>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-secondary">Reset</button>
+            <button class="btn btn-primary" onclick="window.toast('Assignments saved','success')">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

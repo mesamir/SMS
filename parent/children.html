@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>My Children · Parent</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    .mobile-page { max-width: 480px; margin: 0 auto; min-height: 100vh; padding-bottom: 80px; background: var(--ink-50); }
+    .child-card { background: #fff; border-radius: 16px; padding: 20px; border: 1px solid var(--ink-200); margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+
+<div class="mobile-page">
+
+  <header style="position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--ink-100);">
+    <div style="padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="dashboard.html" class="btn btn-ghost btn-icon">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      </a>
+      <p style="font-size:15px;font-weight:600;">My Children</p>
+      <div style="width:36px;"></div>
+    </div>
+  </header>
+
+  <div style="padding:20px;">
+
+    <!-- Child 1 -->
+    <div class="child-card" style="border: 2px solid var(--primary-500); background: var(--primary-50);">
+      <div style="display:flex;gap:14px;align-items:center;margin-bottom:16px;">
+        <div class="avatar avatar-xl avatar-primary">AS</div>
+        <div style="flex:1;">
+          <p style="font-size:16px;font-weight:700;margin:0;">Aarav Shrestha</p>
+          <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Grade 8 · Section A · Roll 08-014</p>
+          <p style="font-size:11px;color:var(--ink-500);font-family:'JetBrains Mono',monospace;margin-top:2px;">ADM-2081-0001</p>
+        </div>
+        <span class="badge badge-success">Active</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+        <div style="background:#fff;border-radius:10px;padding:10px;text-align:center;">
+          <p style="font-size:18px;font-weight:700;color:#166534;margin:0;">94%</p>
+          <p style="font-size:10px;color:var(--ink-500);margin-top:2px;">Attendance</p>
+        </div>
+        <div style="background:#fff;border-radius:10px;padding:10px;text-align:center;">
+          <p style="font-size:18px;font-weight:700;color:var(--primary-600);margin:0;">3.8</p>
+          <p style="font-size:10px;color:var(--ink-500);margin-top:2px;">GPA</p>
+        </div>
+        <div style="background:#fff;border-radius:10px;padding:10px;text-align:center;">
+          <p style="font-size:18px;font-weight:700;color:#1E40AF;margin:0;">#3</p>
+          <p style="font-size:10px;color:var(--ink-500);margin-top:2px;">Rank</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:8px;margin-top:16px;">
+        <a href="attendance.html" class="btn btn-primary btn-sm" style="flex:1;">View details</a>
+        <a href="fees.html" class="btn btn-secondary btn-sm" style="flex:1;">Pay fees</a>
+      </div>
+    </div>
+
+    <!-- Child 2 -->
+    <div class="child-card">
+      <div style="display:flex;gap:14px;align-items:center;margin-bottom:16px;">
+        <div class="avatar avatar-xl avatar-blue">SS</div>
+        <div style="flex:1;">
+          <p style="font-size:16px;font-weight:700;margin:0;">Sita Shrestha</p>
+          <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Grade 5 · Section B · Roll 05-022</p>
+          <p style="font-size:11px;color:var(--ink-500);font-family:'JetBrains Mono',monospace;margin-top:2px;">ADM-2081-0058</p>
+        </div>
+        <span class="badge badge-success">Active</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+        <div style="background:var(--ink-50);border-radius:10px;padding:10px;text-align:center;">
+          <p style="font-size:18px;font-weight:700;color:#166534;margin:0;">98%</p>
+          <p style="font-size:10px;color:var(--ink-500);margin-top:2px;">Attendance</p>
+        </div>
+        <div style="background:var(--ink-50);border-radius:10px;padding:10px;text-align:center;">
+          <p style="font-size:18px;font-weight:700;color:var(--primary-600);margin:0;">3.9</p>
+          <p style="font-size:10px;color:var(--ink-500);margin-top:2px;">GPA</p>
+        </div>
+        <div style="background:var(--ink-50);border-radius:10px;padding:10px;text-align:center;">
+          <p style="font-size:18px;font-weight:700;color:#1E40AF;margin:0;">#1</p>
+          <p style="font-size:10px;color:var(--ink-500);margin-top:2px;">Rank</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:8px;margin-top:16px;">
+        <a href="attendance.html" class="btn btn-secondary btn-sm" style="flex:1;">View details</a>
+        <a href="fees.html" class="btn btn-secondary btn-sm" style="flex:1;">Pay fees</a>
+      </div>
+    </div>
+
+    <div style="text-align:center;padding:20px 0;">
+      <p style="font-size:12px;color:var(--ink-500);">Have another child at this school?</p>
+      <button class="btn btn-secondary btn-sm" style="margin-top:8px;">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        Link another child
+      </button>
+    </div>
+
+  </div>
+
+  <nav class="mobile-nav" style="max-width:480px;margin:0 auto;">
+    <div class="mobile-nav-grid">
+      <a href="dashboard.html" class="mobile-nav-item active">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3m10-11v10a1 1 0 01-1 1h-3"/></svg>
+        Home
+      </a>
+      <a href="attendance.html" class="mobile-nav-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
+        Attendance
+      </a>
+      <a href="fees.html" class="mobile-nav-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2"/></svg>
+        Fees
+      </a>
+      <a href="results.html" class="mobile-nav-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6"/></svg>
+        Results
+      </a>
+      <a href="messages.html" class="mobile-nav-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01"/></svg>
+        Chat
+      </a>
+    </div>
+  </nav>
+
+</div>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

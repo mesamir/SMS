@@ -8,10 +8,11 @@
   <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/pages.css">
   <style>
-    .mobile-page { max-width: 480px; margin: 0 auto; min-height: 100vh; padding-bottom: 80px; }
+    .mobile-page { max-width: 480px; margin: 0 auto; min-height: 100vh; padding-bottom: 80px; background: var(--ink-50); }
     .child-pill { flex-shrink: 0; display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--ink-200); border-radius: 12px; padding: 10px 12px; min-width: 180px; cursor: pointer; transition: all 0.15s; }
-    .child-pill.active { border: 2px solid var(--primary-500); }
-    .fee-card { border-radius: 12px; background: linear-gradient(135deg, var(--primary-500), var(--primary-700)); color: #fff; padding: 20px; box-shadow: 0 10px 25px -5px rgba(196,31,184,0.3); }
+    .child-pill.active { border: 2px solid var(--primary-500); background: var(--primary-50); }
+    .fee-card { border-radius: 16px; background: linear-gradient(135deg, #C41FB8, #8A137F); color: #fff; padding: 24px; box-shadow: 0 10px 25px -5px rgba(196,31,184,0.3); }
+    .quick-stat { background: #fff; border-radius: 12px; padding: 12px; text-align: center; border: 1px solid var(--ink-200); }
   </style>
 </head>
 <body>
@@ -22,10 +23,10 @@
   <header style="position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--ink-100);">
     <div style="padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;">
       <div style="display:flex;align-items:center;gap:10px;">
-        <div class="avatar avatar-sm" style="background:linear-gradient(135deg,var(--primary-500),var(--primary-700));color:#fff;">SS</div>
+        <div class="avatar avatar-sm" style="background:linear-gradient(135deg,#C41FB8,#8A137F);color:#fff;">RS</div>
         <div>
-          <p style="font-size:11px;color:var(--ink-500);line-height:1;">Welcome back,</p>
-          <p style="font-size:14px;font-weight:600;line-height:1.2;">Ramesh Shrestha</p>
+          <p style="font-size:11px;color:var(--ink-500);line-height:1;margin:0;">Welcome back,</p>
+          <p style="font-size:14px;font-weight:600;line-height:1.2;margin:2px 0 0;">Ramesh Shrestha</p>
         </div>
       </div>
       <button class="btn btn-ghost btn-icon" style="position:relative;">
@@ -41,15 +42,15 @@
       <div class="child-pill active">
         <div class="avatar avatar-md avatar-primary">AS</div>
         <div>
-          <p style="font-size:14px;font-weight:600;line-height:1.2;">Aarav Shrestha</p>
-          <p style="font-size:12px;color:var(--ink-500);line-height:1.2;">Grade 8 · A</p>
+          <p style="font-size:14px;font-weight:600;line-height:1.2;margin:0;">Aarav Shrestha</p>
+          <p style="font-size:12px;color:var(--ink-500);line-height:1.2;margin:2px 0 0;">Grade 8 · A</p>
         </div>
       </div>
       <div class="child-pill">
         <div class="avatar avatar-md avatar-blue">SS</div>
         <div>
-          <p style="font-size:14px;font-weight:600;line-height:1.2;">Sita Shrestha</p>
-          <p style="font-size:12px;color:var(--ink-500);line-height:1.2;">Grade 5 · B</p>
+          <p style="font-size:14px;font-weight:600;line-height:1.2;margin:0;">Sita Shrestha</p>
+          <p style="font-size:12px;color:var(--ink-500);line-height:1.2;margin:2px 0 0;">Grade 5 · B</p>
         </div>
       </div>
     </div>
@@ -60,7 +61,7 @@
     <div class="fee-card">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;">
         <div>
-          <p style="font-size:12px;opacity:0.7;font-weight:500;">Ashoj fees due</p>
+          <p style="font-size:12px;opacity:0.7;font-weight:500;margin:0;">Ashoj fees due</p>
           <p style="font-size:30px;font-weight:700;margin-top:4px;">NPR 12,500</p>
           <p style="font-size:12px;opacity:0.7;margin-top:4px;">Due by 30 Ashoj 2081</p>
         </div>
@@ -68,73 +69,103 @@
           <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>
       </div>
-      <a href="pay-fees.html" class="btn btn-block" style="margin-top:16px;background:#fff;color:var(--primary-600);">Pay now</a>
+      <a href="pay-fees.html" class="btn" style="margin-top:16px;background:#fff;color:var(--primary-600);width:100%;height:44px;font-weight:600;">Pay now</a>
     </div>
   </div>
 
-  <!-- Stats -->
+  <!-- Quick stats -->
   <div style="padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
-    <div class="card" style="padding:12px;text-align:center;">
-      <p style="font-size:24px;font-weight:700;color:#166534;">94%</p>
+    <div class="quick-stat">
+      <p style="font-size:24px;font-weight:700;color:#166534;margin:0;">94%</p>
       <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Attendance</p>
     </div>
-    <div class="card" style="padding:12px;text-align:center;">
-      <p style="font-size:24px;font-weight:700;color:var(--primary-600);">A+</p>
+    <div class="quick-stat">
+      <p style="font-size:24px;font-weight:700;color:var(--primary-600);margin:0;">A+</p>
       <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Last result</p>
     </div>
-    <div class="card" style="padding:12px;text-align:center;">
-      <p style="font-size:24px;font-weight:700;color:#1E40AF;">3</p>
+    <div class="quick-stat">
+      <p style="font-size:24px;font-weight:700;color:#1E40AF;margin:0;">3</p>
       <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Homework</p>
+    </div>
+  </div>
+
+  <!-- Quick actions -->
+  <div style="padding:20px 20px 0;">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+      <a href="attendance.html" style="background:#fff;border:1px solid var(--ink-200);border-radius:12px;padding:12px 6px;text-align:center;">
+        <div style="width:36px;height:36px;margin:0 auto;border-radius:10px;background:#DCFCE7;color:#166534;display:flex;align-items:center;justify-content:center;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <p style="font-size:11px;font-weight:500;margin-top:6px;">Attendance</p>
+      </a>
+      <a href="results.html" style="background:#fff;border:1px solid var(--ink-200);border-radius:12px;padding:12px 6px;text-align:center;">
+        <div style="width:36px;height:36px;margin:0 auto;border-radius:10px;background:var(--primary-100);color:var(--primary-600);display:flex;align-items:center;justify-content:center;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <p style="font-size:11px;font-weight:500;margin-top:6px;">Results</p>
+      </a>
+      <a href="homework.html" style="background:#fff;border:1px solid var(--ink-200);border-radius:12px;padding:12px 6px;text-align:center;">
+        <div style="width:36px;height:36px;margin:0 auto;border-radius:10px;background:#FEF3C7;color:#92400E;display:flex;align-items:center;justify-content:center;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/></svg>
+        </div>
+        <p style="font-size:11px;font-weight:500;margin-top:6px;">Homework</p>
+      </a>
+      <a href="fees.html" style="background:#fff;border:1px solid var(--ink-200);border-radius:12px;padding:12px 6px;text-align:center;">
+        <div style="width:36px;height:36px;margin:0 auto;border-radius:10px;background:#DBEAFE;color:#1E40AF;display:flex;align-items:center;justify-content:center;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2"/></svg>
+        </div>
+        <p style="font-size:11px;font-weight:500;margin-top:6px;">Fees</p>
+      </a>
     </div>
   </div>
 
   <!-- Today's classes -->
   <div style="padding:20px;">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-      <h2 style="font-size:16px;font-weight:600;">Today's classes</h2>
+      <h2 style="font-size:16px;font-weight:600;margin:0;">Today's classes</h2>
       <a href="timetable.html" style="font-size:13px;font-weight:500;color:var(--primary-600);">See all</a>
     </div>
     <div class="card">
       <div style="padding:16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--ink-100);">
-        <div style="width:4px;align-self:stretch;border-radius:9999px;background:var(--primary-500);"></div>
+        <div style="width:4px;align-self:stretch;border-radius:9999px;background:#C41FB8;"></div>
         <div style="width:56px;text-align:center;">
-          <p style="font-size:11px;color:var(--ink-500);">Period 1</p>
-          <p style="font-size:12px;font-weight:500;">10:00</p>
+          <p style="font-size:11px;color:var(--ink-500);margin:0;">Period 1</p>
+          <p style="font-size:12px;font-weight:500;margin:2px 0 0;">10:00</p>
         </div>
         <div style="flex:1;">
-          <p style="font-size:14px;font-weight:500;">Mathematics</p>
-          <p style="font-size:12px;color:var(--ink-500);">Mr. Sharma · Room 201</p>
+          <p style="font-size:14px;font-weight:500;margin:0;">Mathematics</p>
+          <p style="font-size:12px;color:var(--ink-500);margin:2px 0 0;">Mr. Sharma · Room 201</p>
         </div>
       </div>
       <div style="padding:16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--ink-100);">
-        <div style="width:4px;align-self:stretch;border-radius:9999px;background:#3B82F6;"></div>
+        <div style="width:4px;align-self:stretch;border-radius:9999px;background:#22C55E;"></div>
         <div style="width:56px;text-align:center;">
-          <p style="font-size:11px;color:var(--ink-500);">Period 2</p>
-          <p style="font-size:12px;font-weight:500;">10:45</p>
+          <p style="font-size:11px;color:var(--ink-500);margin:0;">Period 2</p>
+          <p style="font-size:12px;font-weight:500;margin:2px 0 0;">10:45</p>
         </div>
         <div style="flex:1;">
-          <p style="font-size:14px;font-weight:500;">Science</p>
-          <p style="font-size:12px;color:var(--ink-500);">Mrs. Rai · Lab 1</p>
+          <p style="font-size:14px;font-weight:500;margin:0;">Science</p>
+          <p style="font-size:12px;color:var(--ink-500);margin:2px 0 0;">Mrs. Rai · Lab 1</p>
         </div>
       </div>
       <div style="padding:16px;display:flex;align-items:center;gap:12px;">
         <div style="width:4px;align-self:stretch;border-radius:9999px;background:#F59E0B;"></div>
         <div style="width:56px;text-align:center;">
-          <p style="font-size:11px;color:var(--ink-500);">Period 3</p>
-          <p style="font-size:12px;font-weight:500;">11:30</p>
+          <p style="font-size:11px;color:var(--ink-500);margin:0;">Period 3</p>
+          <p style="font-size:12px;font-weight:500;margin:2px 0 0;">11:30</p>
         </div>
         <div style="flex:1;">
-          <p style="font-size:14px;font-weight:500;">Nepali</p>
-          <p style="font-size:12px;color:var(--ink-500);">Mrs. Tamang · Room 201</p>
+          <p style="font-size:14px;font-weight:500;margin:0;">Nepali</p>
+          <p style="font-size:12px;color:var(--ink-500);margin:2px 0 0;">Mrs. Tamang · Room 201</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Notices -->
+  <!-- Recent notices -->
   <div style="padding:0 20px 20px;">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-      <h2 style="font-size:16px;font-weight:600;">Notices</h2>
+      <h2 style="font-size:16px;font-weight:600;margin:0;">Notices</h2>
       <a href="notices.html" style="font-size:13px;font-weight:500;color:var(--primary-600);">See all</a>
     </div>
     <div class="card" style="padding:16px;">
@@ -143,7 +174,7 @@
           <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
         </div>
         <div style="flex:1;">
-          <p style="font-size:14px;font-weight:500;">Dashain vacation</p>
+          <p style="font-size:14px;font-weight:500;margin:0;">Dashain vacation</p>
           <p style="font-size:13px;color:var(--ink-600);margin-top:4px;">School will be closed from 25 Ashoj to 5 Kartik.</p>
           <p style="font-size:11px;color:var(--ink-400);margin-top:8px;">2 hours ago</p>
         </div>
@@ -152,7 +183,7 @@
   </div>
 
   <!-- Bottom nav -->
-  <nav class="mobile-nav">
+  <nav class="mobile-nav" style="max-width:480px;margin:0 auto;">
     <div class="mobile-nav-grid">
       <a href="dashboard.html" class="mobile-nav-item active">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3m10-11v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Attendance · Parent</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    .mobile-page { max-width: 480px; margin: 0 auto; min-height: 100vh; padding-bottom: 80px; background: var(--ink-50); }
+    .heatmap { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+    .hm-cell { aspect-ratio: 1; border-radius: 6px; background: var(--ink-100); }
+    .hm-present { background: #22C55E; }
+    .hm-absent { background: #EF4444; }
+    .hm-late { background: #F59E0B; }
+    .hm-excused { background: #3B82F6; }
+    .hm-future { background: #F9FAFB; }
+    .hm-holiday { background: var(--ink-200); }
+  </style>
+</head>
+<body>
+
+<div class="mobile-page">
+
+  <header style="position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--ink-100);">
+    <div style="padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="dashboard.html" class="btn btn-ghost btn-icon">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      </a>
+      <p style="font-size:15px;font-weight:600;">Attendance</p>
+      <div style="width:36px;"></div>
+    </div>
+    <!-- Child selector -->
+    <div style="padding:0 20px 12px;">
+      <div style="display:flex;gap:8px;overflow-x:auto;">
+        <button class="btn btn-primary btn-sm" style="flex-shrink:0;">Aarav · Grade 8A</button>
+        <button class="btn btn-secondary btn-sm" style="flex-shrink:0;">Sita · Grade 5B</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Summary stats -->
+  <div style="padding:20px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
+    <div class="card" style="padding:16px;">
+      <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;margin:0;">Overall</p>
+      <p style="font-size:26px;font-weight:700;color:#166534;margin-top:6px;">94%</p>
+      <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">186 / 198 days</p>
+    </div>
+    <div class="card" style="padding:16px;">
+      <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;margin:0;">This month</p>
+      <p style="font-size:26px;font-weight:700;margin-top:6px;">96%</p>
+      <p style="font-size:11px;color:#166534;margin-top:2px;">↑ 2% vs last</p>
+    </div>
+  </div>
+
+  <!-- Breakdown -->
+  <div style="padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+    <div style="background:#fff;border:1px solid var(--ink-200);border-radius:10px;padding:10px;text-align:center;">
+      <p style="font-size:18px;font-weight:700;color:#166534;margin:0;">178</p>
+      <p style="font-size:10px;color:var(--ink-500);margin-top:2px;">Present</p>
+    </div>
+    <div style="background:#fff;border:1px solid var(--ink-200);border-radius:10px;padding:10px;text-align:center;">
+      <p style="font-size:18px;font-weight:700;color:#991B1B;margin:0;">8</p>
+      <p style="font-size:10px;color:var(--ink-500);margin-top:2px;">Absent</p>
+    </div>
+    <div style="background:#fff;border:1px solid var(--ink-200);border-radius:10px;padding:10px;text-align:center;">
+      <p style="font-size:18px;font-weight:700;color:#92400E;margin:0;">12</p>
+      <p style="font-size:10px;color:var(--ink-500);margin-top:2px;">Late</p>
+    </div>
+  </div>
+
+  <!-- Calendar -->
+  <div style="padding:20px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+      <h3 style="font-size:14px;font-weight:600;margin:0;">Ashoj 2081</h3>
+      <div style="display:flex;gap:8px;font-size:10px;color:var(--ink-500);">
+        <span style="display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:2px;background:#22C55E;"></span>P</span>
+        <span style="display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:2px;background:#EF4444;"></span>A</span>
+        <span style="display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:2px;background:#F59E0B;"></span>L</span>
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px;">
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px;text-align:center;font-size:9px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">
+        <div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
+      </div>
+      <div class="heatmap">
+        <div class="hm-cell hm-holiday"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-late"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-holiday"></div>
+
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-absent"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-late"></div>
+        <div class="hm-cell hm-holiday"></div>
+
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-excused"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-holiday"></div>
+
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-present"></div>
+        <div class="hm-cell hm-future"></div>
+        <div class="hm-cell hm-future"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent records -->
+  <div style="padding:0 20px 20px;">
+    <h3 style="font-size:14px;font-weight:600;margin:0 0 10px;">Recent records</h3>
+    <div class="card">
+      <div style="padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink-100);">
+        <div><p style="font-size:13px;font-weight:500;margin:0;">15 Ashoj 2081</p><p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Full day</p></div>
+        <span class="badge badge-success">Present</span>
+      </div>
+      <div style="padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink-100);">
+        <div><p style="font-size:13px;font-weight:500;margin:0;">14 Ashoj 2081</p><p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Full day</p></div>
+        <span class="badge badge-success">Present</span>
+      </div>
+      <div style="padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink-100);">
+        <div><p style="font-size:13px;font-weight:500;margin:0;">13 Ashoj 2081</p><p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Arrived 10:20 AM</p></div>
+        <span class="badge badge-warning">Late</span>
+      </div>
+      <div style="padding:12px 16px;display:flex;justify-content:space-between;align-items:center;">
+        <div><p style="font-size:13px;font-weight:500;margin:0;">10 Ashoj 2081</p><p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Approved leave</p></div>
+        <span class="badge badge-info">Excused</span>
+      </div>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" style="max-width:480px;margin:0 auto;">
+    <div class="mobile-nav-grid">
+      <a href="dashboard.html" class="mobile-nav-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3m10-11v10a1 1 0 01-1 1h-3"/></svg>
+        Home
+      </a>
+      <a href="attendance.html" class="mobile-nav-item active">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Attendance
+      </a>
+      <a href="fees.html" class="mobile-nav-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2"/></svg>
+        Fees
+      </a>
+      <a href="results.html" class="mobile-nav-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6"/></svg>
+        Results
+      </a>
+      <a href="messages.html" class="mobile-nav-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01"/></svg>
+        Chat
+      </a>
+    </div>
+  </nav>
+
+</div>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

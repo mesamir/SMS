@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile · Teacher</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    @media (max-width: 1023px) { .teacher-sidebar { display: none; } }
+    @media (min-width: 1024px) { .teacher-mobile-nav { display: none; } }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar teacher-sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-primary">SS</div><div class="sidebar-user-info"><p class="role">Teacher</p><p class="name">Sunita Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main</p>
+      <a href="dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9"/></svg>Dashboard</a>
+      <a href="class-students.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2"/></svg>My Classes</a>
+      <a href="attendance-mark.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Attendance</a>
+      <a href="attendance-summary.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7"/></svg>Attendance Summary</a>
+      <a href="timetable.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3"/></svg>Timetable</a>
+      <a href="homework-list.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12"/></svg>Homework</a>
+      <a href="marks-entry.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11"/></svg>Marks Entry</a>
+      <a href="messages.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01"/></svg>Messages</a>
+      <a href="leave-request.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3"/></svg>Leave</a>
+      <a href="notices.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5.882V19.24"/></svg>Notices</a>
+      <p class="sidebar-group-label">Account</p>
+      <a href="profile.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Profile</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="dashboard.html">Home</a><span class="separator">/</span><span class="current">Profile</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-primary btn-sm" onclick="window.toast('Profile saved','success')">Save changes</button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-primary">SS</div><span style="font-size:13px;font-weight:500;">Sunita</span></button>
+          <div class="dropdown-menu"><a href="../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+
+        <!-- Profile header -->
+        <div class="card" style="padding:24px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;">
+            <div style="display:flex;align-items:center;gap:16px;">
+              <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--primary-500),var(--primary-700));color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;">SS</div>
+              <div>
+                <h1 style="font-size:22px;font-weight:700;">Sunita Sharma</h1>
+                <p style="font-size:13px;color:var(--ink-500);margin-top:4px;">Senior Math Teacher · Mathematics Department</p>
+                <p style="font-size:12px;color:var(--ink-500);margin-top:2px;font-family:'JetBrains Mono',monospace;">EMP-001 · KTM Main Campus</p>
+              </div>
+            </div>
+            <button class="btn btn-secondary">Change photo</button>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:20px;" class="layout">
+          <style>@media (min-width:1024px){.layout{grid-template-columns:2fr 1fr!important;}}</style>
+
+          <div style="display:flex;flex-direction:column;gap:20px;">
+
+            <div class="card">
+              <div class="card-header"><h2 class="card-title">Personal information</h2></div>
+              <div class="card-body" style="display:grid;gap:16px;">
+                <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                  <style>@media (min-width:640px){.g2{grid-template-columns:1fr 1fr!important;}}</style>
+                  <div><label class="label">Full name</label><input type="text" class="input" value="Sunita Sharma"></div>
+                  <div><label class="label">Employee ID</label><input type="text" class="input" value="EMP-001" readonly style="background:var(--ink-50);font-family:'JetBrains Mono',monospace;"></div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                  <div>
+                    <label class="label">Phone</label>
+                    <div class="input-group"><span class="input-group-prefix">+977</span><input type="text" class="input" value="9812345678"></div>
+                  </div>
+                  <div><label class="label">Email</label><input type="email" class="input" value="sunita.sharma@littleangels.edu.np"></div>
+                </div>
+                <div><label class="label">Address</label><input type="text" class="input" value="Balkumari, Ward 5, Lalitpur"></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h2 class="card-title">Change password</h2></div>
+              <div class="card-body" style="display:grid;gap:16px;">
+                <div><label class="label">Current password</label><input type="password" class="input" placeholder="••••••••"></div>
+                <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                  <div><label class="label">New password</label><input type="password" class="input" placeholder="••••••••"></div>
+                  <div><label class="label">Confirm new password</label><input type="password" class="input" placeholder="••••••••"></div>
+                </div>
+                <div style="display:flex;justify-content:flex-end;">
+                  <button class="btn btn-primary" onclick="window.toast('Password updated','success')">Update password</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:20px;">
+
+            <div class="card" style="padding:20px;">
+              <h3 class="card-title" style="margin-bottom:12px;">Employment details</h3>
+              <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;">
+                <div><p style="font-size:11px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">Designation</p><p style="margin-top:4px;">Senior Math Teacher</p></div>
+                <div><p style="font-size:11px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">Department</p><p style="margin-top:4px;">Mathematics</p></div>
+                <div><p style="font-size:11px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">Joining date</p><p style="margin-top:4px;">15 Baisakh 2078</p></div>
+                <div><p style="font-size:11px;color:var(--ink-500);text-transform:uppercase;font-weight:600;">Contract</p><p style="margin-top:4px;">Permanent</p></div>
+              </div>
+            </div>
+
+            <div class="card" style="padding:20px;">
+              <h3 class="card-title" style="margin-bottom:12px;">Quick links</h3>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <a href="leave-request.html" class="dropdown-item" style="padding:10px 12px;">My leave balance</a>
+                <a href="class-students.html" class="dropdown-item" style="padding:10px 12px;">My classes</a>
+                <a href="timetable.html" class="dropdown-item" style="padding:10px 12px;">My timetable</a>
+                <a href="#" class="dropdown-item" style="padding:10px 12px;">My documents</a>
+              </div>
+            </div>
+
+            <div class="card" style="padding:20px;">
+              <h3 class="card-title" style="margin-bottom:12px;">Security</h3>
+              <div style="display:flex;flex-direction:column;gap:12px;font-size:13px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <span style="color:var(--ink-600);">Two-factor authentication</span>
+                  <span class="badge badge-success">Enabled</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <span style="color:var(--ink-600);">Last login</span>
+                  <span style="font-size:12px;">Today 8:24 AM</span>
+                </div>
+                <button class="btn btn-secondary btn-block btn-sm">Manage sessions</button>
+              </div>
+            </div>
+
+            <div class="card" style="padding:20px;background:#FEF2F2;border-color:#FECACA;">
+              <p style="font-size:11px;color:#991B1B;font-weight:600;text-transform:uppercase;">Danger zone</p>
+              <p style="font-size:12px;color:#991B1B;margin-top:8px;opacity:0.85;">This action cannot be undone.</p>
+              <button class="btn btn-secondary btn-block btn-sm" style="margin-top:10px;color:#991B1B;">Sign out from all devices</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<nav class="mobile-nav teacher-mobile-nav">
+  <div class="mobile-nav-grid">
+    <a href="dashboard.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9"/></svg>Home</a>
+    <a href="attendance-mark.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Attendance</a>
+    <a href="homework-list.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12"/></svg>Homework</a>
+    <a href="marks-entry.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11"/></svg>Marks</a>
+    <a href="profile.html" class="mobile-nav-item active"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Profile</a>
+  </div>
+</nav>
+
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/sidebar.js"></script>
+<script src="../assets/js/dropdown.js"></script>
+</body>
+</html>

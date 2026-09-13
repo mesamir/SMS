@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homework · Teacher</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    @media (max-width: 1023px) { .teacher-sidebar { display: none; } }
+    @media (min-width: 1024px) { .teacher-mobile-nav { display: none; } }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar teacher-sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-primary">SS</div><div class="sidebar-user-info"><p class="role">Teacher</p><p class="name">Sunita Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main</p>
+      <a href="dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9"/></svg>Dashboard</a>
+      <a href="class-students.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2"/></svg>My Classes</a>
+      <a href="attendance-mark.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Attendance</a>
+      <a href="attendance-summary.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7"/></svg>Attendance Summary</a>
+      <a href="timetable.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3"/></svg>Timetable</a>
+      <a href="homework-list.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12"/></svg>Homework</a>
+      <a href="marks-entry.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11"/></svg>Marks Entry</a>
+      <a href="messages.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01"/></svg>Messages</a>
+      <a href="leave-request.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3"/></svg>Leave</a>
+      <a href="notices.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5.882V19.24"/></svg>Notices</a>
+      <p class="sidebar-group-label">Account</p>
+      <a href="profile.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Profile</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="dashboard.html">Home</a><span class="separator">/</span><span class="current">Homework</span></nav>
+      </div>
+      <div class="main-header-right">
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-primary">SS</div><span style="font-size:13px;font-weight:500;">Sunita</span></button>
+          <div class="dropdown-menu"><a href="../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Homework</h1>
+            <p class="page-subtitle">Assignments you've created</p>
+          </div>
+          <div class="page-actions">
+            <a href="homework-create.html" class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              New assignment
+            </a>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px;">
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Active</p><p style="font-size:22px;font-weight:700;margin-top:6px;">5</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Due today</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#92400E;">1</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">To grade</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:var(--primary-600);">3</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Graded</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">12</p></div>
+        </div>
+
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+            <div style="position:relative;flex:1;min-width:240px;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-400);" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              <input type="text" class="input" style="padding-left:36px;" placeholder="Search homework...">
+            </div>
+            <select class="select" style="width:auto;min-width:140px;"><option>All classes</option><option>Grade 8-A</option><option>Grade 9-A</option><option>Grade 10-A</option></select>
+            <select class="select" style="width:auto;min-width:140px;"><option>All statuses</option><option>Active</option><option>Due today</option><option>Graded</option></select>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th">Assignment</th>
+                  <th class="table-th">Class</th>
+                  <th class="table-th">Due</th>
+                  <th class="table-th">Submissions</th>
+                  <th class="table-th">Status</th>
+                  <th class="table-th" style="width:40px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td">
+                    <p style="font-weight:500;font-size:13px;">Quadratic equations practice</p>
+                    <p style="font-size:11px;color:var(--ink-500);">20 problems · PDF attached</p>
+                  </td>
+                  <td class="table-td">Grade 8 · A</td>
+                  <td class="table-td" style="font-size:12px;">17 Ashoj</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:40px;"><div class="progress-bar" style="width:78%;"></div></div>
+                      <span style="font-size:12px;">33/42</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-success">Active</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="homework-submissions.html" class="dropdown-item">Submissions</a><a href="#" class="dropdown-item">Edit</a><a href="#" class="dropdown-item">Send reminder</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td">
+                    <p style="font-weight:500;font-size:13px;">Algebra revision worksheet</p>
+                    <p style="font-size:11px;color:var(--ink-500);">Chapter 4–5 problems</p>
+                  </td>
+                  <td class="table-td">Grade 9 · A</td>
+                  <td class="table-td" style="font-size:12px;color:#92400E;">Today</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:40px;"><div class="progress-bar" style="width:55%;background:#F59E0B;"></div></div>
+                      <span style="font-size:12px;">22/41</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-warning">Due today</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="homework-submissions.html" class="dropdown-item">Submissions</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td">
+                    <p style="font-weight:500;font-size:13px;">Linear equations set</p>
+                    <p style="font-size:11px;color:var(--ink-500);">15 problems</p>
+                  </td>
+                  <td class="table-td">Grade 8 · B</td>
+                  <td class="table-td" style="font-size:12px;">14 Ashoj</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:40px;"><div class="progress-bar" style="width:100%;background:#22C55E;"></div></div>
+                      <span style="font-size:12px;">44/44</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-primary">To grade</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="homework-submissions.html" class="dropdown-item">Grade now</a></div></div></td>
+                </tr>
+                <tr>
+                  <td class="table-td">
+                    <p style="font-weight:500;font-size:13px;">Trigonometric identities</p>
+                    <p style="font-size:11px;color:var(--ink-500);">Practice set</p>
+                  </td>
+                  <td class="table-td">Grade 10 · A</td>
+                  <td class="table-td" style="font-size:12px;">10 Ashoj</td>
+                  <td class="table-td">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div class="progress" style="width:40px;"><div class="progress-bar" style="width:100%;background:#22C55E;"></div></div>
+                      <span style="font-size:12px;">38/38</span>
+                    </div>
+                  </td>
+                  <td class="table-td"><span class="badge badge-gray">Graded</span></td>
+                  <td class="table-td"><div class="dropdown"><button class="btn btn-ghost btn-icon" data-dropdown><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                    <div class="dropdown-menu"><a href="homework-submissions.html" class="dropdown-item">View grades</a></div></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+
+<nav class="mobile-nav teacher-mobile-nav">
+  <div class="mobile-nav-grid">
+    <a href="dashboard.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9"/></svg>Home</a>
+    <a href="attendance-mark.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Attendance</a>
+    <a href="homework-list.html" class="mobile-nav-item active"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12"/></svg>Homework</a>
+    <a href="marks-entry.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11"/></svg>Marks</a>
+    <a href="profile.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Profile</a>
+  </div>
+</nav>
+
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/sidebar.js"></script>
+<script src="../assets/js/dropdown.js"></script>
+</body>
+</html>

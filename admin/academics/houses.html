@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Houses · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+  <style>
+    .house-card { padding: 20px; border-radius: 12px; color: #fff; position: relative; overflow: hidden; }
+    .house-card::after { content: ''; position: absolute; right: -30px; top: -30px; width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+    .house-1 { background: linear-gradient(135deg, #DC2626, #991B1B); }
+    .house-2 { background: linear-gradient(135deg, #2563EB, #1E40AF); }
+    .house-3 { background: linear-gradient(135deg, #16A34A, #166534); }
+    .house-4 { background: linear-gradient(135deg, #F59E0B, #92400E); }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
+        Academics
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="departments.html">Departments</a>
+        <a href="houses.html" style="color:var(--primary-600);">Houses</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="#">Academics</a><span class="separator">/</span><span class="current">Houses</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-primary btn-sm">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          New house
+        </button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Houses</h1>
+            <p class="page-subtitle">House system for co-curricular activities</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              House points
+            </button>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:20px;">
+
+          <div class="house-card house-1">
+            <h3 style="font-size:20px;font-weight:700;">Red House</h3>
+            <p style="font-size:12px;opacity:0.85;margin-top:4px;">Crimson · House color</p>
+            <div style="margin-top:20px;display:flex;gap:20px;">
+              <div><p style="font-size:11px;opacity:0.8;text-transform:uppercase;font-weight:600;">Members</p><p style="font-size:20px;font-weight:700;margin-top:2px;">312</p></div>
+              <div><p style="font-size:11px;opacity:0.8;text-transform:uppercase;font-weight:600;">Points</p><p style="font-size:20px;font-weight:700;margin-top:2px;">2,840</p></div>
+            </div>
+            <p style="font-size:11px;margin-top:14px;opacity:0.85;">House captain: Aarav Shrestha (Grade 10)</p>
+          </div>
+
+          <div class="house-card house-2">
+            <h3 style="font-size:20px;font-weight:700;">Blue House</h3>
+            <p style="font-size:12px;opacity:0.85;margin-top:4px;">Azure · House color</p>
+            <div style="margin-top:20px;display:flex;gap:20px;">
+              <div><p style="font-size:11px;opacity:0.8;text-transform:uppercase;font-weight:600;">Members</p><p style="font-size:20px;font-weight:700;margin-top:2px;">308</p></div>
+              <div><p style="font-size:11px;opacity:0.8;text-transform:uppercase;font-weight:600;">Points</p><p style="font-size:20px;font-weight:700;margin-top:2px;">3,120</p></div>
+            </div>
+            <p style="font-size:11px;margin-top:14px;opacity:0.85;">House captain: Sita Thapa (Grade 9)</p>
+          </div>
+
+          <div class="house-card house-3">
+            <h3 style="font-size:20px;font-weight:700;">Green House</h3>
+            <p style="font-size:12px;opacity:0.85;margin-top:4px;">Emerald · House color</p>
+            <div style="margin-top:20px;display:flex;gap:20px;">
+              <div><p style="font-size:11px;opacity:0.8;text-transform:uppercase;font-weight:600;">Members</p><p style="font-size:20px;font-weight:700;margin-top:2px;">318</p></div>
+              <div><p style="font-size:11px;opacity:0.8;text-transform:uppercase;font-weight:600;">Points</p><p style="font-size:20px;font-weight:700;margin-top:2px;">2,680</p></div>
+            </div>
+            <p style="font-size:11px;margin-top:14px;opacity:0.85;">House captain: Priya Gurung (Grade 10)</p>
+          </div>
+
+          <div class="house-card house-4">
+            <h3 style="font-size:20px;font-weight:700;">Yellow House</h3>
+            <p style="font-size:12px;opacity:0.85;margin-top:4px;">Amber · House color</p>
+            <div style="margin-top:20px;display:flex;gap:20px;">
+              <div><p style="font-size:11px;opacity:0.8;text-transform:uppercase;font-weight:600;">Members</p><p style="font-size:20px;font-weight:700;margin-top:2px;">310</p></div>
+              <div><p style="font-size:11px;opacity:0.8;text-transform:uppercase;font-weight:600;">Points</p><p style="font-size:20px;font-weight:700;margin-top:2px;">2,960</p></div>
+            </div>
+            <p style="font-size:11px;margin-top:14px;opacity:0.85;">House captain: Anish Karki (Grade 10)</p>
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
+            <h3 class="card-title">House points leaderboard</h3>
+            <span class="badge badge-primary">Ashoj 2081</span>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table-th" style="width:80px;">Rank</th>
+                  <th class="table-th">House</th>
+                  <th class="table-th">Members</th>
+                  <th class="table-th">Academic</th>
+                  <th class="table-th">Sports</th>
+                  <th class="table-th">Culture</th>
+                  <th class="table-th">Behavior</th>
+                  <th class="table-th">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-td"><strong>🥇 1</strong></td>
+                  <td class="table-td"><span style="display:inline-flex;align-items:center;gap:8px;"><span style="width:12px;height:12px;border-radius:3px;background:#2563EB;"></span><strong>Blue House</strong></span></td>
+                  <td class="table-td">308</td>
+                  <td class="table-td">980</td>
+                  <td class="table-td">820</td>
+                  <td class="table-td">680</td>
+                  <td class="table-td">640</td>
+                  <td class="table-td"><strong style="color:#166534;">3,120</strong></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong>🥈 2</strong></td>
+                  <td class="table-td"><span style="display:inline-flex;align-items:center;gap:8px;"><span style="width:12px;height:12px;border-radius:3px;background:#F59E0B;"></span><strong>Yellow House</strong></span></td>
+                  <td class="table-td">310</td>
+                  <td class="table-td">940</td>
+                  <td class="table-td">780</td>
+                  <td class="table-td">640</td>
+                  <td class="table-td">600</td>
+                  <td class="table-td"><strong>2,960</strong></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong>🥉 3</strong></td>
+                  <td class="table-td"><span style="display:inline-flex;align-items:center;gap:8px;"><span style="width:12px;height:12px;border-radius:3px;background:#DC2626;"></span><strong>Red House</strong></span></td>
+                  <td class="table-td">312</td>
+                  <td class="table-td">920</td>
+                  <td class="table-td">760</td>
+                  <td class="table-td">620</td>
+                  <td class="table-td">540</td>
+                  <td class="table-td"><strong>2,840</strong></td>
+                </tr>
+                <tr>
+                  <td class="table-td"><strong>4</strong></td>
+                  <td class="table-td"><span style="display:inline-flex;align-items:center;gap:8px;"><span style="width:12px;height:12px;border-radius:3px;background:#16A34A;"></span><strong>Green House</strong></span></td>
+                  <td class="table-td">318</td>
+                  <td class="table-td">880</td>
+                  <td class="table-td">720</td>
+                  <td class="table-td">600</td>
+                  <td class="table-td">480</td>
+                  <td class="table-td"><strong>2,680</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

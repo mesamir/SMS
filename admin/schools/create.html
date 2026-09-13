@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add School · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16"/></svg>
+        Schools
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="list.html">All schools</a>
+        <a href="create.html" style="color:var(--primary-600);">Add school</a>
+        <a href="settings.html">Settings</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="list.html">Schools</a><span class="separator">/</span><span class="current">Create</span></nav>
+      </div>
+      <div class="main-header-right">
+        <button class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405"/></svg></button>
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <a href="list.html" class="btn btn-secondary btn-icon"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></a>
+          <div>
+            <h1 class="page-title">Add new school</h1>
+            <p class="page-subtitle">Register a branch, campus, or annex</p>
+          </div>
+        </div>
+
+        <form onsubmit="event.preventDefault();window.toast('School created','success');setTimeout(()=>window.location.href='list.html',1200);">
+          <div style="display:grid;grid-template-columns:1fr;gap:24px;" class="layout">
+            <style>@media (min-width:1024px){.layout{grid-template-columns:2fr 1fr!important;}}</style>
+
+            <div style="display:flex;flex-direction:column;gap:20px;">
+
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Basic information</h2></div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <style>@media (min-width:640px){.g2{grid-template-columns:1fr 1fr!important;}}</style>
+                    <div><label class="label">School name <span style="color:var(--danger);">*</span></label><input type="text" class="input" placeholder="e.g., Pokhara Branch" required></div>
+                    <div><label class="label">Short code <span style="color:var(--danger);">*</span></label><input type="text" class="input" placeholder="PKR-02" required maxlength="10" style="font-family:'JetBrains Mono',monospace;"></div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div>
+                      <label class="label">School type <span style="color:var(--danger);">*</span></label>
+                      <select class="select" required><option value="">Select type</option><option>Main campus</option><option>Branch</option><option>Annex</option></select>
+                    </div>
+                    <div><label class="label">Established (BS)</label><input type="text" class="input" placeholder="2075-01-15" style="font-family:'JetBrains Mono',monospace;"></div>
+                  </div>
+                  <div>
+                    <label class="label">Parent organization</label>
+                    <select class="select"><option>Little Angels Education Network</option></select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Contact information</h2></div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div><label class="label">Full address</label><input type="text" class="input" placeholder="Street, Ward, Municipality/District"></div>
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div><label class="label">District</label><select class="select"><option>Kaski</option><option>Kathmandu</option><option>Lalitpur</option><option>Morang</option></select></div>
+                    <div><label class="label">Province</label><select class="select"><option>Gandaki</option><option>Bagmati</option><option>Koshi</option></select></div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div>
+                      <label class="label">Primary phone</label>
+                      <div class="input-group"><span class="input-group-prefix">+977</span><input type="text" class="input" placeholder="98XXXXXXXX"></div>
+                    </div>
+                    <div><label class="label">Email</label><input type="email" class="input" placeholder="pokhara@littleangels.edu.np"></div>
+                  </div>
+                  <div><label class="label">Website</label><input type="text" class="input" placeholder="https://pokhara.littleangels.edu.np"></div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Leadership</h2></div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div><label class="label">Principal name</label><input type="text" class="input" placeholder="Anil Karki"></div>
+                    <div>
+                      <label class="label">Principal phone</label>
+                      <div class="input-group"><span class="input-group-prefix">+977</span><input type="text" class="input" placeholder="98XXXXXXXX"></div>
+                    </div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div><label class="label">Principal email</label><input type="email" class="input" placeholder="principal@littleangels.edu.np"></div>
+                    <div><label class="label">Admin contact</label><input type="text" class="input" placeholder="Administrator name"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Academic configuration</h2></div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div>
+                      <label class="label">Grade span</label>
+                      <div style="display:flex;gap:8px;align-items:center;">
+                        <select class="select" style="flex:1;"><option>Nursery</option><option>KG</option><option>Grade 1</option></select>
+                        <span style="color:var(--ink-500);font-size:13px;">to</span>
+                        <select class="select" style="flex:1;"><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option></select>
+                      </div>
+                    </div>
+                    <div><label class="label">Medium of instruction</label><select class="select"><option>English</option><option>Nepali</option><option>Both</option></select></div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div><label class="label">Shift system</label><select class="select"><option>Full day (single shift)</option><option>Morning shift</option><option>Two shifts</option></select></div>
+                    <div><label class="label">Working days</label><select class="select"><option>Sunday to Friday</option><option>Sunday to Thursday</option></select></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:20px;">
+
+              <div class="card" style="padding:20px;">
+                <h3 class="card-title" style="margin-bottom:14px;">School logo</h3>
+                <div style="border:2px dashed var(--ink-200);border-radius:12px;padding:24px;text-align:center;cursor:pointer;">
+                  <div style="width:64px;height:64px;margin:0 auto;border-radius:12px;background:var(--primary-100);color:var(--primary-600);display:flex;align-items:center;justify-content:center;">
+                    <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
+                  </div>
+                  <p style="font-size:13px;font-weight:500;margin-top:10px;">Upload logo</p>
+                  <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">PNG or SVG up to 1 MB</p>
+                </div>
+              </div>
+
+              <div class="card" style="padding:20px;">
+                <h3 class="card-title" style="margin-bottom:14px;">Enable features</h3>
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                  <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox" checked> Transport</label>
+                  <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox" checked> Hostel</label>
+                  <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox" checked> Library</label>
+                  <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox"> Sports academy</label>
+                  <label style="display:flex;align-items:center;gap:8px;font-size:13px;"><input type="checkbox" class="checkbox"> Health clinic</label>
+                </div>
+              </div>
+
+              <div class="card" style="padding:20px;">
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    Create school
+                  </button>
+                  <button type="button" class="btn btn-secondary btn-block" onclick="window.toast('Draft saved','info')">Save as draft</button>
+                  <a href="list.html" class="btn btn-ghost btn-block">Cancel</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

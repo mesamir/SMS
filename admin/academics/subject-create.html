@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Subject · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
+        Academics
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="subjects.html">Subjects</a>
+        <a href="subject-create.html" style="color:var(--primary-600);">Create</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="subjects.html">Subjects</a><span class="separator">/</span><span class="current">Create</span></nav>
+      </div>
+      <div class="main-header-right">
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <a href="subjects.html" class="btn btn-secondary btn-icon"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></a>
+          <div>
+            <h1 class="page-title">Create subject</h1>
+            <p class="page-subtitle">Add a subject to the school curriculum</p>
+          </div>
+        </div>
+
+        <form onsubmit="event.preventDefault();window.toast('Subject created','success');setTimeout(()=>window.location.href='subjects.html',1200);">
+          <div style="display:grid;grid-template-columns:1fr;gap:24px;" class="layout">
+            <style>@media (min-width:1024px){.layout{grid-template-columns:2fr 1fr!important;}}</style>
+
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Subject details</h2></div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <style>@media (min-width:640px){.g2{grid-template-columns:1fr 1fr!important;}}</style>
+                    <div>
+                      <label class="label">Subject name <span style="color:var(--danger);">*</span></label>
+                      <input type="text" class="input" placeholder="e.g., Physics" required>
+                    </div>
+                    <div>
+                      <label class="label">Subject code <span style="color:var(--danger);">*</span></label>
+                      <input type="text" class="input" placeholder="PHY" required maxlength="10" style="font-family:'JetBrains Mono',monospace;">
+                    </div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div>
+                      <label class="label">Subject type <span style="color:var(--danger);">*</span></label>
+                      <select class="select" required>
+                        <option>Core</option>
+                        <option>Optional</option>
+                        <option>Elective</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="label">Category</label>
+                      <select class="select">
+                        <option>Languages</option>
+                        <option>Mathematics</option>
+                        <option>Science</option>
+                        <option>Social Studies</option>
+                        <option>Computer</option>
+                        <option>Arts</option>
+                        <option>Health &amp; Physical</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Applicable grades</h2></div>
+                <div class="card-body">
+                  <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--ink-200);border-radius:6px;"><input type="checkbox" class="checkbox"> Nursery</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--ink-200);border-radius:6px;"><input type="checkbox" class="checkbox"> LKG</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--ink-200);border-radius:6px;"><input type="checkbox" class="checkbox"> UKG</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--ink-200);border-radius:6px;"><input type="checkbox" class="checkbox"> Grade 1</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--ink-200);border-radius:6px;"><input type="checkbox" class="checkbox"> Grade 2</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--ink-200);border-radius:6px;"><input type="checkbox" class="checkbox"> Grade 3</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--ink-200);border-radius:6px;"><input type="checkbox" class="checkbox"> Grade 4</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--ink-200);border-radius:6px;"><input type="checkbox" class="checkbox"> Grade 5</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--ink-200);border-radius:6px;"><input type="checkbox" class="checkbox"> Grade 6</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--primary-500);background:var(--primary-50);border-radius:6px;"><input type="checkbox" class="checkbox" checked> Grade 7</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--primary-500);background:var(--primary-50);border-radius:6px;"><input type="checkbox" class="checkbox" checked> Grade 8</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--primary-500);background:var(--primary-50);border-radius:6px;"><input type="checkbox" class="checkbox" checked> Grade 9</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--primary-500);background:var(--primary-50);border-radius:6px;"><input type="checkbox" class="checkbox" checked> Grade 10</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--ink-200);border-radius:6px;"><input type="checkbox" class="checkbox"> Grade 11</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border:1px solid var(--ink-200);border-radius:6px;"><input type="checkbox" class="checkbox"> Grade 12</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Marks configuration</h2></div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g3">
+                    <style>@media (min-width:640px){.g3{grid-template-columns:1fr 1fr 1fr!important;}}</style>
+                    <div><label class="label">Full marks</label><input type="number" class="input" value="100"></div>
+                    <div><label class="label">Pass marks</label><input type="number" class="input" value="40"></div>
+                    <div><label class="label">Credit hours</label><input type="number" class="input" value="4"></div>
+                  </div>
+                  <div>
+                    <label class="label">Has practical component</label>
+                    <label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-top:6px;">
+                      <input type="checkbox" class="checkbox"> Yes — enable practical marks
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <div class="card" style="padding:20px;">
+                <h3 class="card-title" style="margin-bottom:12px;">Summary</h3>
+                <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;">
+                  <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Type</span><strong>Core</strong></div>
+                  <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Applies to</span><strong>4 grades</strong></div>
+                  <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Full marks</span><strong>100</strong></div>
+                  <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Pass marks</span><strong>40</strong></div>
+                </div>
+              </div>
+
+              <div class="card" style="padding:20px;">
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                  <button type="submit" class="btn btn-primary btn-block">Create subject</button>
+                  <a href="subjects.html" class="btn btn-secondary btn-block">Cancel</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

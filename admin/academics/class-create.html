@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Class · Admin</title>
+  <link rel="stylesheet" href="../../assets/css/theme.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-header"><div class="sidebar-logo"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg></div><span class="sidebar-brand">School<span>SaaS</span></span></div>
+    <div class="sidebar-user"><div class="avatar avatar-md avatar-gradient">N</div><div class="sidebar-user-info"><p class="role">Welcome back,</p><p class="name">Nabin Sharma</p></div></div>
+    <nav class="sidebar-nav">
+      <p class="sidebar-group-label">Main Menu</p>
+      <a href="../dashboard.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3"/></svg>Dashboard</a>
+      <div class="nav-item open" data-toggle>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
+        Academics
+        <svg class="nav-chevron" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </div>
+      <div class="nav-submenu">
+        <a href="classes.html">Classes</a>
+        <a href="class-create.html" style="color:var(--primary-600);">Create</a>
+      </div>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <div class="main-header-left">
+        <button class="hamburger btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <nav class="breadcrumbs"><a href="../dashboard.html">Dashboard</a><span class="separator">/</span><a href="classes.html">Classes</a><span class="separator">/</span><span class="current">Create</span></nav>
+      </div>
+      <div class="main-header-right">
+        <div class="dropdown"><button style="display:flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:9999px;" data-dropdown><div class="avatar avatar-sm avatar-gradient">N</div><span style="font-size:13px;font-weight:500;">Nabin</span></button>
+          <div class="dropdown-menu"><a href="../../auth/login.html" class="dropdown-item dropdown-item-danger">Sign out</a></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="main-content-inner">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+          <a href="classes.html" class="btn btn-secondary btn-icon"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></a>
+          <div>
+            <h1 class="page-title">Create class</h1>
+            <p class="page-subtitle">Add a new class / grade to the academic structure</p>
+          </div>
+        </div>
+
+        <form onsubmit="event.preventDefault();window.toast('Class created','success');setTimeout(()=>window.location.href='classes.html',1200);">
+          <div style="display:grid;grid-template-columns:1fr;gap:24px;" class="layout">
+            <style>@media (min-width:1024px){.layout{grid-template-columns:2fr 1fr!important;}}</style>
+
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Class details</h2></div>
+                <div class="card-body" style="display:grid;gap:16px;">
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <style>@media (min-width:640px){.g2{grid-template-columns:1fr 1fr!important;}}</style>
+                    <div>
+                      <label class="label">Class name <span style="color:var(--danger);">*</span></label>
+                      <input type="text" class="input" placeholder="e.g., Grade 11" required>
+                    </div>
+                    <div>
+                      <label class="label">Numeric grade</label>
+                      <input type="number" class="input" placeholder="11" min="0" max="12">
+                      <p class="help">For sorting; use 0 for Nursery/LKG/UKG</p>
+                    </div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div>
+                      <label class="label">Level <span style="color:var(--danger);">*</span></label>
+                      <select class="select" required>
+                        <option value="">Select level</option>
+                        <option>Pre-primary</option>
+                        <option>Primary</option>
+                        <option>Lower secondary</option>
+                        <option>Secondary</option>
+                        <option>Higher secondary</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="label">Stream (for Grade 11–12)</label>
+                      <select class="select"><option>Not applicable</option><option>Science</option><option>Management</option><option>Humanities</option><option>Education</option></select>
+                    </div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr;gap:16px;" class="g2">
+                    <div>
+                      <label class="label">Section capacity</label>
+                      <input type="number" class="input" value="45">
+                    </div>
+                    <div>
+                      <label class="label">Number of sections</label>
+                      <select class="select"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option></select>
+                      <p class="help">Auto-creates sections A, B, C</p>
+                    </div>
+                  </div>
+                  <div>
+                    <label class="label">Default room</label>
+                    <select class="select"><option>Assign later</option><option>Room 201</option><option>Room 202</option><option>Room 203</option></select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header"><h2 class="card-title">Subjects</h2></div>
+                <div class="card-body">
+                  <p style="font-size:12px;color:var(--ink-500);margin-bottom:12px;">Select which subjects this class studies. Subject details can be configured later.</p>
+                  <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:8px 12px;border:1px solid var(--primary-500);background:var(--primary-50);border-radius:8px;"><input type="checkbox" class="checkbox" checked> Mathematics</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:8px 12px;border:1px solid var(--primary-500);background:var(--primary-50);border-radius:8px;"><input type="checkbox" class="checkbox" checked> English</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:8px 12px;border:1px solid var(--primary-500);background:var(--primary-50);border-radius:8px;"><input type="checkbox" class="checkbox" checked> Nepali</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:8px 12px;border:1px solid var(--primary-500);background:var(--primary-50);border-radius:8px;"><input type="checkbox" class="checkbox" checked> Science</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:8px 12px;border:1px solid var(--primary-500);background:var(--primary-50);border-radius:8px;"><input type="checkbox" class="checkbox" checked> Social Studies</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:8px 12px;border:1px solid var(--primary-500);background:var(--primary-50);border-radius:8px;"><input type="checkbox" class="checkbox" checked> Computer Science</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:8px 12px;border:1px solid var(--ink-200);border-radius:8px;"><input type="checkbox" class="checkbox"> Optional Mathematics</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:8px 12px;border:1px solid var(--ink-200);border-radius:8px;"><input type="checkbox" class="checkbox"> Health &amp; Physical Ed.</label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:13px;padding:8px 12px;border:1px solid var(--ink-200);border-radius:8px;"><input type="checkbox" class="checkbox"> Moral Education</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <div class="card" style="padding:20px;">
+                <h3 class="card-title" style="margin-bottom:12px;">Summary</h3>
+                <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;">
+                  <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Level</span><strong>Higher secondary</strong></div>
+                  <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Sections</span><strong>3 (A, B, C)</strong></div>
+                  <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Subjects</span><strong>6</strong></div>
+                  <div style="display:flex;justify-content:space-between;"><span style="color:var(--ink-500);">Capacity</span><strong>135 students</strong></div>
+                </div>
+              </div>
+
+              <div class="card" style="padding:20px;">
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                  <button type="submit" class="btn btn-primary btn-block">Create class</button>
+                  <a href="classes.html" class="btn btn-secondary btn-block">Cancel</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer class="main-footer">© 2026 <span style="font-weight:500;color:var(--primary-600);">School SaaS</span>. All rights reserved.</footer>
+  </div>
+</div>
+<script src="../../assets/js/app.js"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/dropdown.js"></script>
+</body>
+</html>

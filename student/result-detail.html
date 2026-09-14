@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Result Detail · Student</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    .mobile-page { max-width: 480px; margin: 0 auto; min-height: 100vh; padding-bottom: 40px; background: var(--ink-50); }
+    .grade-circle { width: 60px; height: 60px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+
+<div class="mobile-page">
+
+  <header style="position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--ink-100);padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;">
+    <a href="results.html" class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></a>
+    <p style="font-size:15px;font-weight:700;">Mid-Term 2081</p>
+    <button class="btn btn-ghost btn-icon" onclick="window.toast('Downloading marksheet...','info')"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg></button>
+  </header>
+
+  <!-- Student summary -->
+  <div style="padding:20px;">
+    <div class="card" style="padding:18px;background:linear-gradient(135deg,var(--primary-50),#fff);border-color:var(--primary-200);">
+      <div style="display:flex;gap:14px;align-items:center;">
+        <div class="avatar avatar-lg avatar-primary" style="flex-shrink:0;">AS</div>
+        <div style="flex:1;min-width:0;">
+          <p style="font-size:15px;font-weight:700;margin:0;">Aarav Shrestha</p>
+          <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Grade 8 · A · Roll 08-014</p>
+          <p style="font-size:11px;color:var(--ink-500);font-family:'JetBrains Mono',monospace;margin-top:2px;">ADM-2081-0001</p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--ink-100);">
+        <div style="text-align:center;">
+          <p style="font-size:10px;color:var(--ink-500);text-transform:uppercase;font-weight:600;letter-spacing:0.04em;margin:0;">Grade</p>
+          <p style="font-size:18px;font-weight:800;color:#166534;margin-top:4px;">A</p>
+        </div>
+        <div style="text-align:center;">
+          <p style="font-size:10px;color:var(--ink-500);text-transform:uppercase;font-weight:600;letter-spacing:0.04em;margin:0;">GPA</p>
+          <p style="font-size:18px;font-weight:800;color:var(--primary-600);margin-top:4px;">3.8</p>
+        </div>
+        <div style="text-align:center;">
+          <p style="font-size:10px;color:var(--ink-500);text-transform:uppercase;font-weight:600;letter-spacing:0.04em;margin:0;">Percent</p>
+          <p style="font-size:18px;font-weight:800;margin-top:4px;">93.6%</p>
+        </div>
+        <div style="text-align:center;">
+          <p style="font-size:10px;color:var(--ink-500);text-transform:uppercase;font-weight:600;letter-spacing:0.04em;margin:0;">Rank</p>
+          <p style="font-size:18px;font-weight:800;margin-top:4px;">#3</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subject-wise marks -->
+  <div style="padding:0 20px 20px;">
+    <h3 style="font-size:14px;font-weight:700;margin:0 0 10px;">Subject-wise marks</h3>
+    <div class="card">
+
+      <!-- Header -->
+      <div style="padding:12px 16px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink-500);border-bottom:1px solid var(--ink-100);background:var(--ink-50);">
+        <div>Subject</div>
+        <div style="text-align:center;">Marks</div>
+        <div style="text-align:center;">%</div>
+        <div style="text-align:center;">Grade</div>
+      </div>
+
+      <div style="padding:12px 16px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;align-items:center;border-bottom:1px solid var(--ink-100);">
+        <div><p style="font-size:13px;font-weight:600;margin:0;">Mathematics</p></div>
+        <div style="text-align:center;font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;">92/100</div>
+        <div style="text-align:center;font-size:12px;">92%</div>
+        <div style="text-align:center;"><span class="badge badge-success">A+</span></div>
+      </div>
+
+      <div style="padding:12px 16px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;align-items:center;border-bottom:1px solid var(--ink-100);">
+        <div><p style="font-size:13px;font-weight:600;margin:0;">Science</p></div>
+        <div style="text-align:center;font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;">92/100</div>
+        <div style="text-align:center;font-size:12px;">92%</div>
+        <div style="text-align:center;"><span class="badge badge-success">A+</span></div>
+      </div>
+
+      <div style="padding:12px 16px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;align-items:center;border-bottom:1px solid var(--ink-100);">
+        <div><p style="font-size:13px;font-weight:600;margin:0;">Computer Science</p></div>
+        <div style="text-align:center;font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;">89/100</div>
+        <div style="text-align:center;font-size:12px;">89%</div>
+        <div style="text-align:center;"><span class="badge badge-success">A</span></div>
+      </div>
+
+      <div style="padding:12px 16px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;align-items:center;border-bottom:1px solid var(--ink-100);">
+        <div><p style="font-size:13px;font-weight:600;margin:0;">English</p></div>
+        <div style="text-align:center;font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;">86/100</div>
+        <div style="text-align:center;font-size:12px;">86%</div>
+        <div style="text-align:center;"><span class="badge badge-success">A</span></div>
+      </div>
+
+      <div style="padding:12px 16px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;align-items:center;border-bottom:1px solid var(--ink-100);">
+        <div><p style="font-size:13px;font-weight:600;margin:0;">Social Studies</p></div>
+        <div style="text-align:center;font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;">81/100</div>
+        <div style="text-align:center;font-size:12px;">81%</div>
+        <div style="text-align:center;"><span class="badge badge-success">A</span></div>
+      </div>
+
+      <div style="padding:12px 16px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;align-items:center;border-bottom:1px solid var(--ink-100);">
+        <div><p style="font-size:13px;font-weight:600;margin:0;">Moral Education</p></div>
+        <div style="text-align:center;font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;">80/100</div>
+        <div style="text-align:center;font-size:12px;">80%</div>
+        <div style="text-align:center;"><span class="badge badge-success">A</span></div>
+      </div>
+
+      <div style="padding:12px 16px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;align-items:center;border-bottom:1px solid var(--ink-100);">
+        <div><p style="font-size:13px;font-weight:600;margin:0;">Nepali</p></div>
+        <div style="text-align:center;font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;">74/100</div>
+        <div style="text-align:center;font-size:12px;">74%</div>
+        <div style="text-align:center;"><span class="badge badge-info">B+</span></div>
+      </div>
+
+      <div style="padding:12px 16px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;align-items:center;border-bottom:1px solid var(--ink-100);">
+        <div><p style="font-size:13px;font-weight:600;margin:0;">Optional Math</p></div>
+        <div style="text-align:center;font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;">93/100</div>
+        <div style="text-align:center;font-size:12px;">93%</div>
+        <div style="text-align:center;"><span class="badge badge-success">A+</span></div>
+      </div>
+
+      <div style="padding:12px 16px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;align-items:center;">
+        <div><p style="font-size:13px;font-weight:600;margin:0;">Health &amp; PE</p></div>
+        <div style="text-align:center;font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;">65/100</div>
+        <div style="text-align:center;font-size:12px;">65%</div>
+        <div style="text-align:center;"><span class="badge badge-warning">B</span></div>
+      </div>
+
+      <!-- Total -->
+      <div style="padding:14px 16px;display:flex;justify-content:space-between;align-items:center;background:var(--primary-50);border-top:2px solid var(--primary-500);">
+        <p style="font-size:14px;font-weight:700;margin:0;">Total</p>
+        <p style="font-size:16px;font-weight:800;color:var(--primary-600);margin:0;">842 / 900</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Grade summary -->
+  <div style="padding:0 20px 20px;">
+    <h3 style="font-size:14px;font-weight:700;margin:0 0 10px;">Grade breakdown</h3>
+    <div class="card" style="padding:16px;">
+      <div style="display:flex;gap:12px;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--ink-100);">
+        <div class="grade-circle" style="background:#DCFCE7;color:#166534;">
+          <p style="font-size:16px;font-weight:800;line-height:1;margin:0;">A+</p>
+          <p style="font-size:9px;margin-top:2px;">3 subj</p>
+        </div>
+        <div style="flex:1;">
+          <p style="font-size:13px;font-weight:600;margin:0;">Outstanding</p>
+          <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">90–100% · Grade point 4.0</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--ink-100);">
+        <div class="grade-circle" style="background:#DCFCE7;color:#166534;">
+          <p style="font-size:16px;font-weight:800;line-height:1;margin:0;">A</p>
+          <p style="font-size:9px;margin-top:2px;">4 subj</p>
+        </div>
+        <div style="flex:1;">
+          <p style="font-size:13px;font-weight:600;margin:0;">Excellent</p>
+          <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">80–89% · Grade point 3.6</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--ink-100);">
+        <div class="grade-circle" style="background:#DBEAFE;color:#1E40AF;">
+          <p style="font-size:16px;font-weight:800;line-height:1;margin:0;">B+</p>
+          <p style="font-size:9px;margin-top:2px;">1 subj</p>
+        </div>
+        <div style="flex:1;">
+          <p style="font-size:13px;font-weight:600;margin:0;">Very Good</p>
+          <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">70–79% · Grade point 3.2</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center;padding:12px 0 0;">
+        <div class="grade-circle" style="background:#FEF3C7;color:#92400E;">
+          <p style="font-size:16px;font-weight:800;line-height:1;margin:0;">B</p>
+          <p style="font-size:9px;margin-top:2px;">1 subj</p>
+        </div>
+        <div style="flex:1;">
+          <p style="font-size:13px;font-weight:600;margin:0;">Good</p>
+          <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">60–69% · Grade point 2.8</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Teacher remarks -->
+  <div style="padding:0 20px 20px;">
+    <div class="card" style="padding:16px;">
+      <p style="font-size:11px;color:var(--ink-500);font-weight:700;text-transform:uppercase;letter-spacing:0.04em;margin:0;">Class teacher remarks</p>
+      <p style="font-size:13px;color:var(--ink-700);margin-top:10px;line-height:1.7;">
+        Aarav has consistently demonstrated strong analytical skills, particularly in Mathematics and Science. His problem-solving abilities are exemplary. Continue this excellent work!
+      </p>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid var(--ink-100);">
+        <div class="avatar avatar-sm avatar-primary">KT</div>
+        <div>
+          <p style="font-size:12px;font-weight:600;margin:0;">Kamala Tamang</p>
+          <p style="font-size:10px;color:var(--ink-500);margin-top:1px;">Class Teacher · Grade 8A</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Download button -->
+  <div style="padding:0 20px 40px;">
+    <button class="btn btn-primary btn-block btn-lg" onclick="window.toast('Downloading report card PDF...','info')">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+      Download report card (PDF)
+    </button>
+  </div>
+
+</div>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

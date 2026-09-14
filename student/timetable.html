@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Timetable · Student</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    .mobile-page { max-width: 480px; margin: 0 auto; min-height: 100vh; padding-bottom: 80px; background: var(--ink-50); }
+    .day-chip { padding: 8px 14px; border-radius: 10px; font-size: 12px; font-weight: 600; background: #fff; border: 1px solid var(--ink-200); color: var(--ink-600); flex-shrink: 0; text-align: center; min-width: 46px; }
+    .day-chip.active { background: var(--primary-500); color: #fff; border-color: var(--primary-500); }
+    .day-chip small { display: block; font-size: 9px; font-weight: 500; opacity: 0.75; margin-bottom: 2px; }
+    .period-card { display: flex; gap: 12px; padding: 14px; border-radius: 12px; background: #fff; border: 1px solid var(--ink-200); margin-bottom: 10px; }
+    .period-card.current { border-color: var(--primary-500); background: var(--primary-50); box-shadow: 0 4px 14px -6px rgba(196,31,184,0.35); }
+    .period-bar { width: 4px; border-radius: 9999px; align-self: stretch; }
+    .recess-card { display: flex; gap: 12px; padding: 12px 14px; border-radius: 12px; background: #FEF3C7; margin-bottom: 10px; align-items: center; }
+  </style>
+</head>
+<body>
+
+<div class="mobile-page">
+
+  <header style="position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--ink-100);">
+    <div style="padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="dashboard.html" class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></a>
+      <p style="font-size:15px;font-weight:700;">Timetable</p>
+      <div style="width:36px;"></div>
+    </div>
+
+    <!-- Day selector -->
+    <div style="padding:0 20px 14px;">
+      <div style="display:flex;gap:8px;overflow-x:auto;">
+        <button class="day-chip"><small>Sun</small>12</button>
+        <button class="day-chip"><small>Mon</small>13</button>
+        <button class="day-chip"><small>Tue</small>14</button>
+        <button class="day-chip active"><small>Wed</small>15</button>
+        <button class="day-chip"><small>Thu</small>16</button>
+        <button class="day-chip"><small>Fri</small>17</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Today header -->
+  <div style="padding:16px 20px 4px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <p style="font-size:12px;color:var(--ink-500);margin:0;">Wednesday, 15 Ashoj 2081</p>
+        <p style="font-size:16px;font-weight:700;margin-top:2px;">6 periods today</p>
+      </div>
+      <span class="badge badge-primary">Day 3</span>
+    </div>
+  </div>
+
+  <!-- Periods -->
+  <div style="padding:16px 20px 20px;">
+
+    <div class="period-card current">
+      <div class="period-bar" style="background:#C41FB8;"></div>
+      <div style="width:52px;text-align:center;">
+        <p style="font-size:10px;color:var(--primary-600);font-weight:700;margin:0;text-transform:uppercase;">Now</p>
+        <p style="font-size:12px;font-weight:600;margin:2px 0 0;font-family:'JetBrains Mono',monospace;">10:00</p>
+        <p style="font-size:10px;color:var(--ink-500);margin-top:2px;">10:45</p>
+      </div>
+      <div style="flex:1;">
+        <p style="font-size:14px;font-weight:600;margin:0;">Mathematics</p>
+        <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Mr. Sharma · Room 201</p>
+        <div style="display:flex;gap:6px;margin-top:8px;">
+          <span class="badge badge-primary" style="font-size:10px;">Live now</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="period-card">
+      <div class="period-bar" style="background:#22C55E;"></div>
+      <div style="width:52px;text-align:center;">
+        <p style="font-size:10px;color:var(--ink-500);margin:0;">P2</p>
+        <p style="font-size:12px;font-weight:600;margin:2px 0 0;font-family:'JetBrains Mono',monospace;">10:45</p>
+        <p style="font-size:10px;color:var(--ink-500);margin-top:2px;">11:30</p>
+      </div>
+      <div style="flex:1;">
+        <p style="font-size:14px;font-weight:600;margin:0;">Science</p>
+        <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Mrs. Rai · Lab 1</p>
+      </div>
+    </div>
+
+    <div class="period-card">
+      <div class="period-bar" style="background:#F59E0B;"></div>
+      <div style="width:52px;text-align:center;">
+        <p style="font-size:10px;color:var(--ink-500);margin:0;">P3</p>
+        <p style="font-size:12px;font-weight:600;margin:2px 0 0;font-family:'JetBrains Mono',monospace;">11:30</p>
+        <p style="font-size:10px;color:var(--ink-500);margin-top:2px;">12:15</p>
+      </div>
+      <div style="flex:1;">
+        <p style="font-size:14px;font-weight:600;margin:0;">Nepali</p>
+        <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Mrs. Tamang · Room 201</p>
+      </div>
+    </div>
+
+    <div class="recess-card">
+      <div style="width:52px;text-align:center;">
+        <p style="font-size:10px;color:#92400E;font-weight:700;margin:0;">RECESS</p>
+        <p style="font-size:12px;font-weight:700;margin:2px 0 0;font-family:'JetBrains Mono',monospace;color:#92400E;">12:15</p>
+      </div>
+      <div style="flex:1;">
+        <p style="font-size:13px;font-weight:700;color:#92400E;margin:0;">30 minutes break</p>
+      </div>
+      <svg width="20" height="20" fill="none" stroke="#92400E" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/></svg>
+    </div>
+
+    <div class="period-card">
+      <div class="period-bar" style="background:#3B82F6;"></div>
+      <div style="width:52px;text-align:center;">
+        <p style="font-size:10px;color:var(--ink-500);margin:0;">P4</p>
+        <p style="font-size:12px;font-weight:600;margin:2px 0 0;font-family:'JetBrains Mono',monospace;">12:45</p>
+        <p style="font-size:10px;color:var(--ink-500);margin-top:2px;">1:30</p>
+      </div>
+      <div style="flex:1;">
+        <p style="font-size:14px;font-weight:600;margin:0;">Computer Science</p>
+        <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Mrs. Shakya · Lab 2</p>
+      </div>
+    </div>
+
+    <div class="period-card">
+      <div class="period-bar" style="background:#EF4444;"></div>
+      <div style="width:52px;text-align:center;">
+        <p style="font-size:10px;color:var(--ink-500);margin:0;">P5</p>
+        <p style="font-size:12px;font-weight:600;margin:2px 0 0;font-family:'JetBrains Mono',monospace;">1:30</p>
+        <p style="font-size:10px;color:var(--ink-500);margin-top:2px;">2:15</p>
+      </div>
+      <div style="flex:1;">
+        <p style="font-size:14px;font-weight:600;margin:0;">Social Studies</p>
+        <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Mrs. Shrestha · Room 201</p>
+      </div>
+    </div>
+
+    <div class="period-card">
+      <div class="period-bar" style="background:#8B5CF6;"></div>
+      <div style="width:52px;text-align:center;">
+        <p style="font-size:10px;color:var(--ink-500);margin:0;">P6</p>
+        <p style="font-size:12px;font-weight:600;margin:2px 0 0;font-family:'JetBrains Mono',monospace;">2:15</p>
+        <p style="font-size:10px;color:var(--ink-500);margin-top:2px;">3:00</p>
+      </div>
+      <div style="flex:1;">
+        <p style="font-size:14px;font-weight:600;margin:0;">Health &amp; PE</p>
+        <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Mr. Karki · Playground</p>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="mobile-nav" style="max-width:480px;margin:0 auto;">
+    <div class="mobile-nav-grid">
+      <a href="dashboard.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9"/></svg>Home</a>
+      <a href="timetable.html" class="mobile-nav-item active"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Timetable</a>
+      <a href="homework.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>Homework</a>
+      <a href="results.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6"/></svg>Results</a>
+      <a href="profile.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>Profile</a>
+    </div>
+  </nav>
+
+</div>
+
+<script src="../assets/js/app.js"></script>
+<script>
+  document.querySelectorAll('.day-chip').forEach(c => {
+    c.addEventListener('click', () => {
+      document.querySelectorAll('.day-chip').forEach(x => x.classList.remove('active'));
+      c.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

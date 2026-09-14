@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Submit Homework · Student</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    .mobile-page { max-width: 480px; margin: 0 auto; min-height: 100vh; padding-bottom: 100px; background: var(--ink-50); }
+    .dropzone { padding: 28px 20px; border: 2px dashed var(--ink-300); border-radius: 14px; background: #fff; text-align: center; cursor: pointer; transition: all 0.15s; }
+    .dropzone:hover { border-color: var(--primary-500); background: var(--primary-50); }
+    .file-row { display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--ink-50); border: 1px solid var(--ink-200); border-radius: 10px; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+<div class="mobile-page">
+
+  <header style="position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--ink-100);padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;">
+    <a href="homework-detail.html" class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></a>
+    <p style="font-size:15px;font-weight:700;">Submit homework</p>
+    <div style="width:36px;"></div>
+  </header>
+
+  <!-- Homework summary -->
+  <div style="padding:20px;">
+    <div class="card" style="padding:14px;">
+      <div style="display:flex;gap:12px;align-items:center;">
+        <div style="width:40px;height:40px;border-radius:10px;background:#DCFCE7;color:#166534;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+        </div>
+        <div style="flex:1;">
+          <p style="font-size:14px;font-weight:600;margin:0;">Photosynthesis lab report</p>
+          <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Science · Due today 3:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upload files -->
+  <div style="padding:0 20px 20px;">
+    <label class="label">Upload files <span style="color:var(--danger);">*</span></label>
+    <label class="dropzone">
+      <svg width="36" height="36" fill="none" stroke="var(--primary-500)" viewBox="0 0 24 24" stroke-width="2" style="margin:0 auto;"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+      <p style="font-size:14px;font-weight:600;margin-top:10px;">Tap to upload</p>
+      <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">PDF, DOCX, JPG, PNG · Max 10MB each</p>
+      <input type="file" multiple hidden onchange="window.toast('File selected','success')">
+    </label>
+
+    <!-- Uploaded files -->
+    <div style="margin-top:14px;">
+      <div class="file-row">
+        <div style="width:32px;height:32px;border-radius:8px;background:#FEE2E2;color:#991B1B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+        </div>
+        <div style="flex:1;min-width:0;">
+          <p style="font-size:13px;font-weight:600;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Photosynthesis_Report.pdf</p>
+          <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">2.4 MB</p>
+        </div>
+        <button style="width:28px;height:28px;border-radius:50%;background:#FEE2E2;color:#991B1B;display:flex;align-items:center;justify-content:center;flex-shrink:0;" onclick="this.closest('.file-row').remove();">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notes to teacher -->
+  <div style="padding:0 20px 20px;">
+    <label class="label">Notes to teacher <span style="color:var(--ink-400);font-weight:400;">(optional)</span></label>
+    <textarea class="textarea" placeholder="Add any comments or questions for your teacher..." rows="4"></textarea>
+  </div>
+
+  <!-- Confirm checkbox -->
+  <div style="padding:0 20px 20px;">
+    <label style="display:flex;gap:10px;align-items:flex-start;padding:14px;background:#fff;border:1px solid var(--ink-200);border-radius:12px;cursor:pointer;">
+      <input type="checkbox" class="checkbox" style="margin-top:2px;" checked>
+      <span style="font-size:13px;color:var(--ink-700);line-height:1.5;">I confirm this is my own original work and I have not copied from others.</span>
+    </label>
+  </div>
+
+  <!-- Info -->
+  <div style="padding:0 20px 40px;">
+    <div style="background:#DBEAFE;color:#1E40AF;padding:12px 14px;border-radius:10px;font-size:12px;display:flex;gap:10px;">
+      <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" style="flex-shrink:0;margin-top:1px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <span>You can resubmit before the deadline. After submitting, your teacher will be notified.</span>
+    </div>
+  </div>
+
+  <!-- Sticky CTA -->
+  <div style="position:fixed;bottom:0;left:0;right:0;max-width:480px;margin:0 auto;padding:16px 20px;background:#fff;border-top:1px solid var(--ink-100);">
+    <button class="btn btn-primary btn-block btn-lg" onclick="window.toast('Homework submitted successfully','success');setTimeout(()=>window.location.href='homework.html',1500);">
+      Submit assignment
+    </button>
+  </div>
+
+</div>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

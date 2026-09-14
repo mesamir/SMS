@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Attendance · Student</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    .mobile-page { max-width: 480px; margin: 0 auto; min-height: 100vh; padding-bottom: 80px; background: var(--ink-50); }
+    .heatmap { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+    .hm-cell { aspect-ratio: 1; border-radius: 6px; background: var(--ink-100); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.85); }
+    .hm-present { background: #22C55E; }
+    .hm-absent { background: #EF4444; }
+    .hm-late { background: #F59E0B; }
+    .hm-excused { background: #3B82F6; }
+    .hm-holiday { background: var(--ink-200); color: transparent; }
+    .hm-future { background: #F9FAFB; color: var(--ink-400); border: 1px solid var(--ink-100); }
+    .stat-card { background: #fff; border: 1px solid var(--ink-200); border-radius: 14px; padding: 14px; }
+  </style>
+</head>
+<body>
+
+<div class="mobile-page">
+
+  <header style="position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--ink-100);padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;">
+    <a href="dashboard.html" class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></a>
+    <p style="font-size:15px;font-weight:700;">Attendance</p>
+    <div style="width:36px;"></div>
+  </header>
+
+  <!-- Hero -->
+  <div style="padding:20px;">
+    <div class="card" style="padding:20px;background:linear-gradient(135deg,#DCFCE7 0%,#fff 100%);border-color:#BBF7D0;">
+      <p style="font-size:12px;color:#166534;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;margin:0;">Overall attendance</p>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-top:6px;">
+        <p style="font-size:42px;font-weight:800;color:#166534;line-height:1;margin:0;">94%</p>
+        <span class="badge badge-success" style="font-size:11px;">↑ 2%</span>
+      </div>
+      <p style="font-size:12px;color:#166534;margin-top:6px;opacity:0.8;">186 of 198 days · This academic year</p>
+      <div class="progress" style="margin-top:14px;background:rgba(22,101,52,0.15);"><div class="progress-bar progress-success" style="width:94%;"></div></div>
+    </div>
+  </div>
+
+  <!-- Breakdown -->
+  <div style="padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+    <div class="stat-card">
+      <div style="display:flex;align-items:center;gap:6px;">
+        <span style="width:8px;height:8px;border-radius:2px;background:#22C55E;"></span>
+        <p style="font-size:11px;color:var(--ink-500);margin:0;font-weight:600;">Present</p>
+      </div>
+      <p style="font-size:20px;font-weight:800;color:#166534;margin-top:6px;">178</p>
+    </div>
+    <div class="stat-card">
+      <div style="display:flex;align-items:center;gap:6px;">
+        <span style="width:8px;height:8px;border-radius:2px;background:#EF4444;"></span>
+        <p style="font-size:11px;color:var(--ink-500);margin:0;font-weight:600;">Absent</p>
+      </div>
+      <p style="font-size:20px;font-weight:800;color:#991B1B;margin-top:6px;">8</p>
+    </div>
+    <div class="stat-card">
+      <div style="display:flex;align-items:center;gap:6px;">
+        <span style="width:8px;height:8px;border-radius:2px;background:#F59E0B;"></span>
+        <p style="font-size:11px;color:var(--ink-500);margin:0;font-weight:600;">Late</p>
+      </div>
+      <p style="font-size:20px;font-weight:800;color:#92400E;margin-top:6px;">12</p>
+    </div>
+  </div>
+
+  <!-- Calendar -->
+  <div style="padding:20px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+      <h3 style="font-size:14px;font-weight:700;margin:0;">Ashoj 2081</h3>
+      <div style="display:flex;gap:8px;font-size:10px;color:var(--ink-500);">
+        <span style="display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:2px;background:#22C55E;"></span>P</span>
+        <span style="display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:2px;background:#EF4444;"></span>A</span>
+        <span style="display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:2px;background:#F59E0B;"></span>L</span>
+        <span style="display:flex;align-items:center;gap:3px;"><span style="width:8px;height:8px;border-radius:2px;background:#3B82F6;"></span>E</span>
+      </div>
+    </div>
+
+    <div class="card" style="padding:14px;">
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px;text-align:center;font-size:9px;color:var(--ink-500);text-transform:uppercase;font-weight:700;">
+        <div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
+      </div>
+      <div class="heatmap">
+        <div class="hm-cell hm-holiday"></div>
+        <div class="hm-cell hm-present">1</div>
+        <div class="hm-cell hm-present">2</div>
+        <div class="hm-cell hm-present">3</div>
+        <div class="hm-cell hm-present">4</div>
+        <div class="hm-cell hm-present">5</div>
+        <div class="hm-cell hm-present">6</div>
+
+        <div class="hm-cell hm-present">7</div>
+        <div class="hm-cell hm-present">8</div>
+        <div class="hm-cell hm-present">9</div>
+        <div class="hm-cell hm-late">10</div>
+        <div class="hm-cell hm-present">11</div>
+        <div class="hm-cell hm-present">12</div>
+        <div class="hm-cell hm-holiday"></div>
+
+        <div class="hm-cell hm-present">13</div>
+        <div class="hm-cell hm-absent">14</div>
+        <div class="hm-cell hm-present">15</div>
+        <div class="hm-cell hm-present">16</div>
+        <div class="hm-cell hm-present">17</div>
+        <div class="hm-cell hm-late">18</div>
+        <div class="hm-cell hm-holiday"></div>
+
+        <div class="hm-cell hm-present">19</div>
+        <div class="hm-cell hm-present">20</div>
+        <div class="hm-cell hm-present">21</div>
+        <div class="hm-cell hm-present">22</div>
+        <div class="hm-cell hm-excused">23</div>
+        <div class="hm-cell hm-present">24</div>
+        <div class="hm-cell hm-holiday"></div>
+
+        <div class="hm-cell hm-present">25</div>
+        <div class="hm-cell hm-present">26</div>
+        <div class="hm-cell hm-present">27</div>
+        <div class="hm-cell hm-future">28</div>
+        <div class="hm-cell hm-future">29</div>
+        <div class="hm-cell hm-future">30</div>
+        <div class="hm-cell hm-holiday"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent records -->
+  <div style="padding:0 20px 20px;">
+    <h3 style="font-size:14px;font-weight:700;margin:0 0 10px;">Recent records</h3>
+    <div class="card">
+      <div style="padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink-100);">
+        <div>
+          <p style="font-size:13px;font-weight:600;margin:0;">27 Ashoj 2081</p>
+          <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Full day</p>
+        </div>
+        <span class="badge badge-success">Present</span>
+      </div>
+      <div style="padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink-100);">
+        <div>
+          <p style="font-size:13px;font-weight:600;margin:0;">26 Ashoj 2081</p>
+          <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Full day</p>
+        </div>
+        <span class="badge badge-success">Present</span>
+      </div>
+      <div style="padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink-100);">
+        <div>
+          <p style="font-size:13px;font-weight:600;margin:0;">25 Ashoj 2081</p>
+          <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Arrived 10:18 AM</p>
+        </div>
+        <span class="badge badge-warning">Late</span>
+      </div>
+      <div style="padding:12px 16px;display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <p style="font-size:13px;font-weight:600;margin:0;">23 Ashoj 2081</p>
+          <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Approved leave (medical)</p>
+        </div>
+        <span class="badge badge-info">Excused</span>
+      </div>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" style="max-width:480px;margin:0 auto;">
+    <div class="mobile-nav-grid">
+      <a href="dashboard.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9"/></svg>Home</a>
+      <a href="timetable.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Timetable</a>
+      <a href="homework.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>Homework</a>
+      <a href="results.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6"/></svg>Results</a>
+      <a href="profile.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>Profile</a>
+    </div>
+  </nav>
+
+</div>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

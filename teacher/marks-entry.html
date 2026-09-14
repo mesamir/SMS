@@ -12,6 +12,7 @@
     @media (min-width: 1024px) { .teacher-mobile-nav { display: none; } }
     .marks-input { width: 68px; height: 34px; text-align: center; border: 1px solid var(--ink-200); border-radius: 6px; font-size: 13px; font-weight: 500; font-family: 'JetBrains Mono', monospace; }
     .marks-input:focus { outline: none; border-color: var(--primary-500); box-shadow: 0 0 0 3px var(--primary-100); }
+    .marks-input.input-invalid { border-color: var(--danger); background: #FEF2F2; }
   </style>
 </head>
 <body>
@@ -95,42 +96,42 @@
                 <tr>
                   <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">08-014</td>
                   <td class="table-td"><div style="display:flex;gap:8px;align-items:center;"><div class="avatar avatar-sm avatar-primary">AS</div><span style="font-size:13px;font-weight:500;">Aarav Shrestha</span></div></td>
-                  <td class="table-td"><input type="number" class="marks-input" value="58" min="0" max="70"></td>
-                  <td class="table-td"><input type="number" class="marks-input" value="26" min="0" max="30"></td>
-                  <td class="table-td" style="font-weight:600;">84</td>
+                  <td class="table-td"><input type="number" class="marks-input" data-max="70" value="58" min="0" max="70"></td>
+                  <td class="table-td"><input type="number" class="marks-input" data-max="30" value="26" min="0" max="30"></td>
+                  <td class="table-td" data-total style="font-weight:600;">84</td>
                   <td class="table-td"><span class="badge badge-success">A</span></td>
                 </tr>
                 <tr>
                   <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">08-015</td>
                   <td class="table-td"><div style="display:flex;gap:8px;align-items:center;"><div class="avatar avatar-sm avatar-blue">ST</div><span style="font-size:13px;font-weight:500;">Sita Thapa</span></div></td>
-                  <td class="table-td"><input type="number" class="marks-input" value="62" min="0" max="70"></td>
-                  <td class="table-td"><input type="number" class="marks-input" value="28" min="0" max="30"></td>
-                  <td class="table-td" style="font-weight:600;">90</td>
+                  <td class="table-td"><input type="number" class="marks-input" data-max="70" value="62" min="0" max="70"></td>
+                  <td class="table-td"><input type="number" class="marks-input" data-max="30" value="28" min="0" max="30"></td>
+                  <td class="table-td" data-total style="font-weight:600;">90</td>
                   <td class="table-td"><span class="badge badge-success">A+</span></td>
                 </tr>
                 <tr>
                   <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">08-016</td>
                   <td class="table-td"><div style="display:flex;gap:8px;align-items:center;"><div class="avatar avatar-sm avatar-amber">BK</div><span style="font-size:13px;font-weight:500;">Bikash Karki</span></div></td>
-                  <td class="table-td"><input type="number" class="marks-input" value="38" min="0" max="70"></td>
-                  <td class="table-td"><input type="number" class="marks-input" value="18" min="0" max="30"></td>
-                  <td class="table-td" style="font-weight:600;">56</td>
-                  <td class="table-td"><span class="badge badge-warning">C</span></td>
+                  <td class="table-td"><input type="number" class="marks-input" data-max="70" value="38" min="0" max="70"></td>
+                  <td class="table-td"><input type="number" class="marks-input" data-max="30" value="18" min="0" max="30"></td>
+                  <td class="table-td" data-total style="font-weight:600;">56</td>
+                  <td class="table-td"><span class="badge badge-warning">C+</span></td>
                 </tr>
                 <tr>
                   <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">08-017</td>
                   <td class="table-td"><div style="display:flex;gap:8px;align-items:center;"><div class="avatar avatar-sm avatar-green">PG</div><span style="font-size:13px;font-weight:500;">Priya Gurung</span></div></td>
-                  <td class="table-td"><input type="number" class="marks-input" value="65" min="0" max="70"></td>
-                  <td class="table-td"><input type="number" class="marks-input" value="29" min="0" max="30"></td>
-                  <td class="table-td" style="font-weight:600;">94</td>
+                  <td class="table-td"><input type="number" class="marks-input" data-max="70" value="65" min="0" max="70"></td>
+                  <td class="table-td"><input type="number" class="marks-input" data-max="30" value="29" min="0" max="30"></td>
+                  <td class="table-td" data-total style="font-weight:600;">94</td>
                   <td class="table-td"><span class="badge badge-success">A+</span></td>
                 </tr>
                 <tr>
                   <td class="table-td" style="font-family:'JetBrains Mono',monospace;font-size:12px;">08-018</td>
                   <td class="table-td"><div style="display:flex;gap:8px;align-items:center;"><div class="avatar avatar-sm avatar-primary">RT</div><span style="font-size:13px;font-weight:500;">Rohan Tamang</span></div></td>
-                  <td class="table-td"><input type="number" class="marks-input" value="32" min="0" max="70"></td>
-                  <td class="table-td"><input type="number" class="marks-input" value="14" min="0" max="30"></td>
-                  <td class="table-td" style="font-weight:600;">46</td>
-                  <td class="table-td"><span class="badge badge-danger">D</span></td>
+                  <td class="table-td"><input type="number" class="marks-input" data-max="70" value="32" min="0" max="70"></td>
+                  <td class="table-td"><input type="number" class="marks-input" data-max="30" value="14" min="0" max="30"></td>
+                  <td class="table-td" data-total style="font-weight:600;">46</td>
+                  <td class="table-td"><span class="badge badge-warning">C</span></td>
                 </tr>
               </tbody>
             </table>
@@ -171,23 +172,64 @@
 <script src="../assets/js/dropdown.js"></script>
 
 <script>
+  /* ─── Grade scale (Nepal standard) ─── */
+  function getGrade(total) {
+    if (total >= 90) return { grade: 'A+', badge: 'badge-success' };
+    if (total >= 80) return { grade: 'A',  badge: 'badge-success' };
+    if (total >= 70) return { grade: 'B+', badge: 'badge-info' };
+    if (total >= 60) return { grade: 'B',  badge: 'badge-info' };
+    if (total >= 50) return { grade: 'C+', badge: 'badge-warning' };
+    if (total >= 40) return { grade: 'C',  badge: 'badge-warning' };
+    if (total >= 30) return { grade: 'D+', badge: 'badge-danger' };
+    if (total >= 20) return { grade: 'D',  badge: 'badge-danger' };
+    return { grade: 'E', badge: 'badge-danger' };
+  }
+
+  /* ─── Recalculate a single row ─── */
   function calcRow(input) {
     const row = input.closest('tr');
-    const theory = parseFloat(row.cells[2].querySelector('input').value) || 0;
-    const practical = parseFloat(row.cells[3].querySelector('input').value) || 0;
+    const theoryInput = row.querySelectorAll('.marks-input')[0];
+    const practicalInput = row.querySelectorAll('.marks-input')[1];
+    const totalCell = row.querySelector('[data-total]');
+    const gradeSpan = row.querySelector('td:last-child span');
+
+    // Clamp to allowed max
+    let theory = parseFloat(theoryInput.value) || 0;
+    let practical = parseFloat(practicalInput.value) || 0;
+
+    if (theory > 70) { theory = 70; theoryInput.value = 70; }
+    if (theory < 0)  { theory = 0;  theoryInput.value = 0; }
+    if (practical > 30) { practical = 30; practicalInput.value = 30; }
+    if (practical < 0)  { practical = 0;  practicalInput.value = 0; }
+
+    // Visual cue for out-of-range
+    theoryInput.classList.toggle('input-invalid', theoryInput.value < 0 || theoryInput.value > 70);
+    practicalInput.classList.toggle('input-invalid', practicalInput.value < 0 || practicalInput.value > 30);
+
     const total = theory + practical;
-    row.cells[4].textContent = total;
-    const gradeCell = row.cells[5].querySelector('span');
-    let grade = 'F', badge = 'badge-danger';
-    if (total >= 90) { grade = 'A+'; badge = 'badge-success'; }
-    else if (total >= 80) { grade = 'A'; badge = 'badge-success'; }
-    else if (total >= 70) { grade = 'B+'; badge = 'badge-info'; }
-    else if (total >= 60) { grade = 'B'; badge = 'badge-info'; }
-    else if (total >= 50) { grade = 'C+'; badge = 'badge-warning'; }
-    else if (total >= 40) { grade = 'C'; badge = 'badge-warning'; }
-    gradeCell.textContent = grade;
-    gradeCell.className = 'badge ' + badge;
+    totalCell.textContent = total;
+
+    const { grade, badge } = getGrade(total);
+    gradeSpan.textContent = grade;
+    gradeSpan.className = 'badge ' + badge;
   }
+
+  /* ─── Wire up listeners (this was the missing piece) ─── */
+  document.querySelectorAll('.marks-input').forEach(input => {
+    input.addEventListener('input', () => calcRow(input));
+    input.addEventListener('change', () => calcRow(input));
+  });
+
+  /* ─── Enter key saves current row ─── */
+  document.querySelectorAll('.marks-input').forEach(input => {
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        calcRow(input);
+        window.toast('Row saved', 'success', 1200);
+      }
+    });
+  });
 </script>
 </body>
 </html>

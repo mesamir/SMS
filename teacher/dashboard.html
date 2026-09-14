@@ -29,6 +29,7 @@
       <a href="dashboard.html" class="nav-item active"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3m10-11v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>Dashboard</a>
       <a href="class-students.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-5.13a4 4 0 11-8 0 4 4 0 018 0z"/></svg>My Classes</a>
       <a href="attendance-mark.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Attendance</a>
+      <a href="attendance-summary.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7"/></svg>Attendance Summary</a>
       <a href="timetable.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Timetable</a>
       <a href="homework-list.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>Homework</a>
       <a href="marks-entry.html" class="nav-item"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>Marks Entry</a>
@@ -61,25 +62,26 @@
         <div class="page-header">
           <div>
             <h1 class="page-title">Good morning, Sunita</h1>
-            <p class="page-subtitle">Wednesday, 15 Ashoj 2081 · 4 classes today</p>
+            <p class="page-subtitle">Wednesday, 15 Ashoj 2081 · 3 classes today</p>
           </div>
         </div>
 
         <!-- Today's summary -->
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px;">
-          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Classes today</p><p style="font-size:22px;font-weight:700;margin-top:6px;">4</p></div>
-          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Students</p><p style="font-size:22px;font-weight:700;margin-top:6px;">168</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Classes today</p><p style="font-size:22px;font-weight:700;margin-top:6px;">3</p></div>
+          <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Students</p><p style="font-size:22px;font-weight:700;margin-top:6px;">123</p></div>
           <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Attendance</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#166534;">94%</p></div>
           <div class="card" style="padding:14px;"><p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;">Homework pending</p><p style="font-size:22px;font-weight:700;margin-top:6px;color:#92400E;">3</p></div>
         </div>
 
-        <!-- Today's schedule -->
+        <!-- Today's schedule (synced with timetable.html — Wednesday column) -->
         <div class="card" style="margin-bottom:20px;">
           <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
             <div><h3 class="card-title">Today's schedule</h3><p class="card-subtitle">Wed, 15 Ashoj 2081</p></div>
             <a href="timetable.html" class="btn btn-ghost btn-sm">Full week</a>
           </div>
           <ul style="list-style:none;">
+
             <li style="padding:14px 20px;border-bottom:1px solid var(--ink-100);display:flex;gap:14px;align-items:center;">
               <div style="width:64px;text-align:center;flex-shrink:0;">
                 <p style="font-size:11px;color:var(--ink-500);">Period 1</p>
@@ -87,47 +89,73 @@
               </div>
               <div style="width:4px;align-self:stretch;border-radius:9999px;background:#2563EB;"></div>
               <div style="flex:1;">
-                <p style="font-size:14px;font-weight:500;">Mathematics · Grade 8-A</p>
-                <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Room 201 · 42 students</p>
+                <p style="font-size:14px;font-weight:500;">Mathematics · Grade 9-A</p>
+                <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Room 301 · 41 students</p>
               </div>
+              <span class="badge badge-primary">Live now</span>
               <a href="attendance-mark.html" class="btn btn-primary btn-sm">Mark</a>
             </li>
+
             <li style="padding:14px 20px;border-bottom:1px solid var(--ink-100);display:flex;gap:14px;align-items:center;">
               <div style="width:64px;text-align:center;flex-shrink:0;">
                 <p style="font-size:11px;color:var(--ink-500);">Period 2</p>
                 <p style="font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;">10:45</p>
               </div>
-              <div style="width:4px;align-self:stretch;border-radius:9999px;background:#22C55E;"></div>
+              <div style="width:4px;align-self:stretch;border-radius:9999px;background:var(--ink-300);"></div>
               <div style="flex:1;">
-                <p style="font-size:14px;font-weight:500;">Mathematics · Grade 8-B</p>
-                <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Room 202 · 44 students</p>
+                <p style="font-size:14px;font-weight:500;color:var(--ink-500);">Free period</p>
+                <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">No class scheduled</p>
               </div>
-              <a href="attendance-mark.html" class="btn btn-primary btn-sm">Mark</a>
             </li>
+
+            <li style="padding:14px 20px;border-bottom:1px solid var(--ink-100);display:flex;gap:14px;align-items:center;background:#FEF3C7;">
+              <div style="width:64px;text-align:center;flex-shrink:0;">
+                <p style="font-size:10px;color:#92400E;font-weight:700;">RECESS</p>
+                <p style="font-size:13px;font-weight:700;font-family:'JetBrains Mono',monospace;color:#92400E;">11:30</p>
+              </div>
+              <div style="flex:1;">
+                <p style="font-size:12px;font-weight:700;color:#92400E;">Break · 30 minutes</p>
+              </div>
+            </li>
+
             <li style="padding:14px 20px;border-bottom:1px solid var(--ink-100);display:flex;gap:14px;align-items:center;">
               <div style="width:64px;text-align:center;flex-shrink:0;">
                 <p style="font-size:11px;color:var(--ink-500);">Period 3</p>
-                <p style="font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;">11:30</p>
+                <p style="font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;">12:00</p>
               </div>
-              <div style="width:4px;align-self:stretch;border-radius:9999px;background:#F59E0B;"></div>
+              <div style="width:4px;align-self:stretch;border-radius:9999px;background:#C41FB8;"></div>
               <div style="flex:1;">
-                <p style="font-size:14px;font-weight:500;">Optional Math · Grade 10-A</p>
-                <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Room 401 · 38 students</p>
+                <p style="font-size:14px;font-weight:500;">Mathematics · Grade 8-C</p>
+                <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Room 203 · 40 students</p>
               </div>
               <a href="attendance-mark.html" class="btn btn-primary btn-sm">Mark</a>
             </li>
-            <li style="padding:14px 20px;display:flex;gap:14px;align-items:center;">
+
+            <li style="padding:14px 20px;border-bottom:1px solid var(--ink-100);display:flex;gap:14px;align-items:center;">
               <div style="width:64px;text-align:center;flex-shrink:0;">
                 <p style="font-size:11px;color:var(--ink-500);">Period 4</p>
                 <p style="font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;">12:45</p>
               </div>
-              <div style="width:4px;align-self:stretch;border-radius:9999px;background:#C41FB8;"></div>
+              <div style="width:4px;align-self:stretch;border-radius:9999px;background:var(--ink-300);"></div>
               <div style="flex:1;">
-                <p style="font-size:14px;font-weight:500;">Mathematics · Grade 9-A</p>
-                <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Room 301 · 41 students</p>
+                <p style="font-size:14px;font-weight:500;color:var(--ink-500);">Free period</p>
+                <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">No class scheduled</p>
+              </div>
+            </li>
+
+            <li style="padding:14px 20px;display:flex;gap:14px;align-items:center;">
+              <div style="width:64px;text-align:center;flex-shrink:0;">
+                <p style="font-size:11px;color:var(--ink-500);">Period 5</p>
+                <p style="font-size:13px;font-weight:600;font-family:'JetBrains Mono',monospace;">1:30</p>
+              </div>
+              <div style="width:4px;align-self:stretch;border-radius:9999px;background:#22C55E;"></div>
+              <div style="flex:1;">
+                <p style="font-size:14px;font-weight:500;">Mathematics · Grade 8-A</p>
+                <p style="font-size:12px;color:var(--ink-500);margin-top:2px;">Room 201 · 42 students</p>
               </div>
               <a href="attendance-mark.html" class="btn btn-primary btn-sm">Mark</a>
             </li>
+
           </ul>
         </div>
 

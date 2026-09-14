@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Payment Failed · Parent</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    .mobile-page { max-width: 480px; margin: 0 auto; min-height: 100vh; background: var(--ink-50); }
+    .fail-icon { width: 88px; height: 88px; border-radius: 50%; background: #FEE2E2; color: #991B1B; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
+  </style>
+</head>
+<body>
+
+<div class="mobile-page">
+
+  <header style="padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--ink-100);">
+    <a href="pay-fees.html" class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></a>
+    <p style="font-size:15px;font-weight:600;">Payment</p>
+    <div style="width:36px;"></div>
+  </header>
+
+  <div style="padding:40px 20px 20px;text-align:center;">
+    <div class="fail-icon">
+      <svg width="44" height="44" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </div>
+    <h1 style="font-size:22px;font-weight:700;margin-top:20px;">Payment failed</h1>
+    <p style="font-size:14px;color:var(--ink-500);margin-top:6px;">We couldn't complete your transaction.</p>
+    <p style="font-size:30px;font-weight:700;color:#991B1B;margin-top:20px;">NPR 12,500</p>
+  </div>
+
+  <div style="padding:0 20px;">
+    <div style="background:#FEE2E2;border:1px solid #FECACA;border-radius:12px;padding:14px;display:flex;gap:10px;">
+      <svg width="20" height="20" fill="none" stroke="#991B1B" viewBox="0 0 24 24" stroke-width="2" style="flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:#991B1B;margin:0;">Error code: INSUFFICIENT_BALANCE</p>
+        <p style="font-size:12px;color:#991B1B;margin-top:4px;line-height:1.5;">The payment provider reported insufficient balance in your Khalti wallet.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:16px 20px;">
+    <div class="card" style="padding:16px;">
+      <div style="display:flex;justify-content:space-between;padding:8px 0;font-size:13px;">
+        <span style="color:var(--ink-500);">Student</span>
+        <span style="font-weight:500;">Aarav Shrestha</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;font-size:13px;border-top:1px solid var(--ink-100);">
+        <span style="color:var(--ink-500);">Invoice</span>
+        <span style="font-weight:500;font-family:'JetBrains Mono',monospace;">INV-2081-08652</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;font-size:13px;border-top:1px solid var(--ink-100);">
+        <span style="color:var(--ink-500);">Attempted</span>
+        <span style="font-weight:500;">15 Ashoj 2081, 10:42 AM</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:16px 20px 40px;">
+    <h3 style="font-size:14px;font-weight:600;margin:0 0 10px;">What you can do</h3>
+    <div class="card" style="padding:16px;">
+      <div style="display:flex;gap:10px;padding:8px 0;">
+        <span style="width:20px;height:20px;flex-shrink:0;border-radius:50%;background:var(--primary-100);color:var(--primary-600);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">1</span>
+        <p style="font-size:13px;color:var(--ink-700);margin:0;">Check your Khalti wallet balance and top up if needed.</p>
+      </div>
+      <div style="display:flex;gap:10px;padding:8px 0;border-top:1px solid var(--ink-100);margin-top:4px;">
+        <span style="width:20px;height:20px;flex-shrink:0;border-radius:50%;background:var(--primary-100);color:var(--primary-600);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">2</span>
+        <p style="font-size:13px;color:var(--ink-700);margin:0;">Try a different payment method (eSewa or ConnectIPS).</p>
+      </div>
+      <div style="display:flex;gap:10px;padding:8px 0;border-top:1px solid var(--ink-100);margin-top:4px;">
+        <span style="width:20px;height:20px;flex-shrink:0;border-radius:50%;background:var(--primary-100);color:var(--primary-600);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">3</span>
+        <p style="font-size:13px;color:var(--ink-700);margin:0;">Contact the school office if the issue persists.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 20px 40px;display:flex;flex-direction:column;gap:10px;">
+    <a href="pay-fees.html" class="btn btn-primary btn-block btn-lg">Try again</a>
+    <a href="fees.html" class="btn btn-secondary btn-block">Back to fees</a>
+  </div>
+
+</div>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

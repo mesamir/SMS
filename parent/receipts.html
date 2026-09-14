@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Receipts · Parent</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    .mobile-page { max-width: 480px; margin: 0 auto; min-height: 100vh; padding-bottom: 80px; background: var(--ink-50); }
+  </style>
+</head>
+<body>
+
+<div class="mobile-page">
+
+  <header style="position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--ink-100);">
+    <div style="padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="fees.html" class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></a>
+      <p style="font-size:15px;font-weight:600;">Receipts</p>
+      <button class="btn btn-ghost btn-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg></button>
+    </div>
+    <div style="padding:0 20px 12px;">
+      <div style="display:flex;gap:8px;overflow-x:auto;">
+        <button class="btn btn-primary btn-sm" style="flex-shrink:0;">All children</button>
+        <button class="btn btn-secondary btn-sm" style="flex-shrink:0;">Aarav</button>
+        <button class="btn btn-secondary btn-sm" style="flex-shrink:0;">Sita</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Summary -->
+  <div style="padding:20px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
+    <div class="card" style="padding:14px;">
+      <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;margin:0;">Total paid (2081)</p>
+      <p style="font-size:20px;font-weight:700;color:#166534;margin-top:6px;">NPR 1,37,500</p>
+    </div>
+    <div class="card" style="padding:14px;">
+      <p style="font-size:11px;color:var(--ink-500);font-weight:600;text-transform:uppercase;margin:0;">Receipts</p>
+      <p style="font-size:20px;font-weight:700;margin-top:6px;">11</p>
+    </div>
+  </div>
+
+  <!-- Receipts list -->
+  <div style="padding:0 20px 20px;">
+    <div class="card">
+      <div style="padding:14px 16px;border-bottom:1px solid var(--ink-100);">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="badge badge-success">Paid</span>
+              <p style="font-size:14px;font-weight:600;margin:0;">Ashoj 2081</p>
+            </div>
+            <p style="font-size:11px;color:var(--ink-500);font-family:'JetBrains Mono',monospace;margin-top:6px;">RCPT-2081-00814</p>
+            <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Aarav Shrestha · Grade 8A</p>
+          </div>
+          <div style="text-align:right;">
+            <p style="font-size:16px;font-weight:700;margin:0;">NPR 12,500</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">15 Ashoj</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px;">
+          <button class="btn btn-secondary btn-sm" style="flex:1;" onclick="window.toast('Downloading receipt...','info')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            PDF
+          </button>
+          <button class="btn btn-secondary btn-sm" style="flex:1;" onclick="window.toast('Receipt link copied','success')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            Share
+          </button>
+        </div>
+      </div>
+
+      <div style="padding:14px 16px;border-bottom:1px solid var(--ink-100);">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="badge badge-success">Paid</span>
+              <p style="font-size:14px;font-weight:600;margin:0;">Bhadra 2081</p>
+            </div>
+            <p style="font-size:11px;color:var(--ink-500);font-family:'JetBrains Mono',monospace;margin-top:6px;">RCPT-2081-00741</p>
+            <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Aarav Shrestha · Grade 8A</p>
+          </div>
+          <div style="text-align:right;">
+            <p style="font-size:16px;font-weight:700;margin:0;">NPR 12,500</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">8 Bhadra</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px;">
+          <button class="btn btn-secondary btn-sm" style="flex:1;">PDF</button>
+          <button class="btn btn-secondary btn-sm" style="flex:1;">Share</button>
+        </div>
+      </div>
+
+      <div style="padding:14px 16px;border-bottom:1px solid var(--ink-100);">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="badge badge-success">Paid</span>
+              <p style="font-size:14px;font-weight:600;margin:0;">Shrawan 2081</p>
+            </div>
+            <p style="font-size:11px;color:var(--ink-500);font-family:'JetBrains Mono',monospace;margin-top:6px;">RCPT-2081-00658</p>
+            <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Sita Shrestha · Grade 5B</p>
+          </div>
+          <div style="text-align:right;">
+            <p style="font-size:16px;font-weight:700;margin:0;">NPR 11,000</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">4 Shrawan</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:14px 16px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="badge badge-success">Paid</span>
+              <p style="font-size:14px;font-weight:600;margin:0;">Ashadh 2081</p>
+            </div>
+            <p style="font-size:11px;color:var(--ink-500);font-family:'JetBrains Mono',monospace;margin-top:6px;">RCPT-2081-00587</p>
+            <p style="font-size:12px;color:var(--ink-500);margin-top:4px;">Aarav Shrestha · Grade 8A</p>
+          </div>
+          <div style="text-align:right;">
+            <p style="font-size:16px;font-weight:700;margin:0;">NPR 12,500</p>
+            <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">2 Ashadh</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" style="max-width:480px;margin:0 auto;">
+    <div class="mobile-nav-grid">
+      <a href="dashboard.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9"/></svg>Home</a>
+      <a href="attendance.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Attendance</a>
+      <a href="fees.html" class="mobile-nav-item active"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2"/></svg>Fees</a>
+      <a href="results.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6"/></svg>Results</a>
+      <a href="messages.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01"/></svg>Chat</a>
+    </div>
+  </nav>
+
+</div>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

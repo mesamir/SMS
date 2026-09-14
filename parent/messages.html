@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Messages · Parent</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    .mobile-page { max-width: 480px; margin: 0 auto; min-height: 100vh; padding-bottom: 80px; background: var(--ink-50); }
+    .convo { display: flex; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--ink-100); cursor: pointer; transition: background 0.1s; }
+    .convo:hover { background: var(--ink-50); }
+    .convo.unread { background: var(--primary-50); }
+    .convo.unread:hover { background: var(--primary-100); }
+  </style>
+</head>
+<body>
+
+<div class="mobile-page">
+
+  <header style="position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--ink-100);">
+    <div style="padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="dashboard.html" class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></a>
+      <p style="font-size:15px;font-weight:600;">Messages</p>
+      <button class="btn btn-ghost btn-icon" onclick="window.toast('New message composer','info')">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+      </button>
+    </div>
+    <div style="padding:0 20px 12px;">
+      <div style="position:relative;">
+        <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink-400);" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" placeholder="Search conversations..." class="input" style="padding-left:36px;height:38px;">
+      </div>
+    </div>
+  </header>
+
+  <div class="card" style="border-radius:0;border-left:none;border-right:none;">
+
+    <!-- Unread conversation -->
+    <a href="message-thread.html" class="convo unread">
+      <div class="avatar avatar-md avatar-primary" style="flex-shrink:0;">KT</div>
+      <div style="flex:1;min-width:0;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;">
+          <p style="font-size:14px;font-weight:600;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Kamala Tamang</p>
+          <span style="font-size:11px;color:var(--primary-600);font-weight:600;flex-shrink:0;">10:42</span>
+        </div>
+        <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Class Teacher · Grade 8A</p>
+        <p style="font-size:13px;color:var(--ink-700);margin-top:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Aarav has shown great improvement in Mathematics this term...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+          <span class="badge badge-primary" style="font-size:10px;padding:2px 8px;">2 new</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="message-thread.html" class="convo unread">
+      <div class="avatar avatar-md avatar-gradient" style="flex-shrink:0;">SA</div>
+      <div style="flex:1;min-width:0;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;">
+          <p style="font-size:14px;font-weight:600;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">School Admin</p>
+          <span style="font-size:11px;color:var(--primary-600);font-weight:600;flex-shrink:0;">Yesterday</span>
+        </div>
+        <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">School Office</p>
+        <p style="font-size:13px;color:var(--ink-700);margin-top:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Reminder: Ashoj fees are due by 30 Ashoj 2081.</p>
+      </div>
+    </a>
+
+    <a href="message-thread.html" class="convo">
+      <div class="avatar avatar-md avatar-blue" style="flex-shrink:0;">RR</div>
+      <div style="flex:1;min-width:0;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;">
+          <p style="font-size:14px;font-weight:600;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Ramesh Rai</p>
+          <span style="font-size:11px;color:var(--ink-500);flex-shrink:0;">Mon</span>
+        </div>
+        <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Science Teacher</p>
+        <p style="font-size:13px;color:var(--ink-500);margin-top:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Aarav's lab report has been graded. Check submissions.</p>
+      </div>
+    </a>
+
+    <a href="message-thread.html" class="convo">
+      <div class="avatar avatar-md avatar-green" style="flex-shrink:0;">SS</div>
+      <div style="flex:1;min-width:0;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;">
+          <p style="font-size:14px;font-weight:600;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Sunita Sharma</p>
+          <span style="font-size:11px;color:var(--ink-500);flex-shrink:0;">Sun</span>
+        </div>
+        <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Senior Math Teacher</p>
+        <p style="font-size:13px;color:var(--ink-500);margin-top:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Thank you for attending the PTM yesterday.</p>
+      </div>
+    </a>
+
+    <a href="message-thread.html" class="convo">
+      <div class="avatar avatar-md avatar-amber" style="flex-shrink:0;">LH</div>
+      <div style="flex:1;min-width:0;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;">
+          <p style="font-size:14px;font-weight:600;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Laxmi Hamal</p>
+          <span style="font-size:11px;color:var(--ink-500);flex-shrink:0;">12 Ashoj</span>
+        </div>
+        <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Transport Coordinator</p>
+        <p style="font-size:13px;color:var(--ink-500);margin-top:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Bus route 4 will be delayed by 15 minutes tomorrow.</p>
+      </div>
+    </a>
+
+  </div>
+
+  <nav class="mobile-nav" style="max-width:480px;margin:0 auto;">
+    <div class="mobile-nav-grid">
+      <a href="dashboard.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9"/></svg>Home</a>
+      <a href="attendance.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>Attendance</a>
+      <a href="fees.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2"/></svg>Fees</a>
+      <a href="results.html" class="mobile-nav-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6"/></svg>Results</a>
+      <a href="messages.html" class="mobile-nav-item active"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01"/></svg>Chat</a>
+    </div>
+  </nav>
+
+</div>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

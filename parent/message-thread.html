@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Chat · Kamala Tamang</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    .mobile-page { max-width: 480px; margin: 0 auto; min-height: 100vh; background: var(--ink-50); display: flex; flex-direction: column; }
+    .thread-body { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 12px; padding-bottom: 100px; }
+    .bubble { max-width: 78%; padding: 10px 14px; border-radius: 16px; font-size: 14px; line-height: 1.5; }
+    .bubble-in { background: #fff; color: var(--ink-900); border: 1px solid var(--ink-200); border-bottom-left-radius: 4px; align-self: flex-start; }
+    .bubble-out { background: var(--primary-500); color: #fff; border-bottom-right-radius: 4px; align-self: flex-end; }
+    .bubble-time { font-size: 10px; opacity: 0.7; margin-top: 4px; display: block; }
+    .composer { position: fixed; bottom: 0; left: 0; right: 0; max-width: 480px; margin: 0 auto; background: #fff; border-top: 1px solid var(--ink-200); padding: 12px 16px; display: flex; gap: 8px; align-items: flex-end; }
+  </style>
+</head>
+<body>
+
+<div class="mobile-page">
+
+  <!-- Header -->
+  <header style="position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--ink-100);padding:0 16px;height:60px;display:flex;align-items:center;gap:12px;">
+    <a href="messages.html" class="btn btn-ghost btn-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></a>
+    <div class="avatar avatar-sm avatar-primary">KT</div>
+    <div style="flex:1;min-width:0;">
+      <p style="font-size:14px;font-weight:600;margin:0;line-height:1.2;">Kamala Tamang</p>
+      <p style="font-size:11px;color:var(--ink-500);margin-top:2px;">Grade 8A · Class Teacher</p>
+    </div>
+    <button class="btn btn-ghost btn-icon"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></button>
+  </header>
+
+  <!-- Thread -->
+  <div class="thread-body">
+    <div style="text-align:center;">
+      <span style="font-size:11px;color:var(--ink-500);background:var(--ink-100);padding:4px 10px;border-radius:9999px;">Today</span>
+    </div>
+
+    <div class="bubble bubble-in">
+      Good morning! I wanted to share some good news about Aarav's progress.
+      <span class="bubble-time">10:38 AM</span>
+    </div>
+
+    <div class="bubble bubble-in">
+      His recent Mathematics unit test score was 92% — the highest in the class! He has been very consistent this term.
+      <span class="bubble-time">10:39 AM</span>
+    </div>
+
+    <div class="bubble bubble-out">
+      That's wonderful to hear! Thank you for letting me know. He's been studying very hard at home too.
+      <span class="bubble-time">10:40 AM</span>
+    </div>
+
+    <div class="bubble bubble-in">
+      Very glad to hear that. Please encourage him to keep this up — he's on track for an A+ in the final exam.
+      <span class="bubble-time">10:41 AM</span>
+    </div>
+
+    <div class="bubble bubble-in">
+      Also, could you please sign the Science lab report that was sent home yesterday? It's due back by Friday.
+      <span class="bubble-time">10:42 AM</span>
+    </div>
+
+    <div class="bubble bubble-out">
+      Sure, I'll sign it tonight and send it back tomorrow morning.
+      <span class="bubble-time">10:43 AM</span>
+    </div>
+
+    <div style="text-align:center;margin-top:8px;">
+      <span style="font-size:11px;color:var(--ink-500);background:var(--ink-100);padding:4px 10px;border-radius:9999px;">Kamala is typing…</span>
+    </div>
+  </div>
+
+  <!-- Composer -->
+  <div class="composer">
+    <button class="btn btn-ghost btn-icon" style="flex-shrink:0;">
+      <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg>
+    </button>
+    <textarea id="msgInput" class="textarea" placeholder="Type a message..." rows="1" style="min-height:40px;max-height:120px;flex:1;resize:none;padding:10px 12px;"></textarea>
+    <button class="btn btn-primary btn-icon" style="flex-shrink:0;" onclick="sendMessage()">
+      <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+    </button>
+  </div>
+
+</div>
+
+<script src="../assets/js/app.js"></script>
+<script>
+  function sendMessage() {
+    const input = document.getElementById('msgInput');
+    const text = input.value.trim();
+    if (!text) return;
+    const body = document.querySelector('.thread-body');
+    const typing = body.querySelector('div:last-child');
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble bubble-out';
+    const time = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    bubble.innerHTML = `${text}<span class="bubble-time">${time}</span>`;
+    body.insertBefore(bubble, typing);
+    input.value = '';
+    body.scrollTop = body.scrollHeight;
+    window.toast('Message sent', 'success');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Payment Successful · Parent</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <style>
+    .mobile-page { max-width: 480px; margin: 0 auto; min-height: 100vh; background: var(--ink-50); }
+    .success-icon { width: 88px; height: 88px; border-radius: 50%; background: #DCFCE7; color: #166534; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
+    @keyframes pop { 0% { transform: scale(0.4); opacity: 0; } 60% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
+    .success-icon { animation: pop 0.5s ease-out; }
+  </style>
+</head>
+<body>
+
+<div class="mobile-page">
+
+  <header style="padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--ink-100);">
+    <div style="width:36px;"></div>
+    <p style="font-size:15px;font-weight:600;">Payment</p>
+    <div style="width:36px;"></div>
+  </header>
+
+  <div style="padding:40px 20px 20px;text-align:center;">
+    <div class="success-icon">
+      <svg width="44" height="44" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+    </div>
+    <h1 style="font-size:22px;font-weight:700;margin-top:20px;">Payment successful</h1>
+    <p style="font-size:14px;color:var(--ink-500);margin-top:6px;">Your payment has been received.</p>
+    <p style="font-size:30px;font-weight:700;color:var(--primary-600);margin-top:20px;">NPR 12,500</p>
+  </div>
+
+  <div style="padding:0 20px;">
+    <div class="card" style="padding:16px;">
+      <div style="display:flex;justify-content:space-between;padding:8px 0;font-size:13px;">
+        <span style="color:var(--ink-500);">Student</span>
+        <span style="font-weight:500;">Aarav Shrestha</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;font-size:13px;border-top:1px solid var(--ink-100);">
+        <span style="color:var(--ink-500);">Invoice</span>
+        <span style="font-weight:500;font-family:'JetBrains Mono',monospace;">INV-2081-08652</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;font-size:13px;border-top:1px solid var(--ink-100);">
+        <span style="color:var(--ink-500);">Method</span>
+        <span style="font-weight:500;">Khalti</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;font-size:13px;border-top:1px solid var(--ink-100);">
+        <span style="color:var(--ink-500);">Transaction ID</span>
+        <span style="font-weight:500;font-family:'JetBrains Mono',monospace;">TXN-20241015-0042</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;font-size:13px;border-top:1px solid var(--ink-100);">
+        <span style="color:var(--ink-500);">Date & time</span>
+        <span style="font-weight:500;">15 Ashoj 2081, 10:42 AM</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:20px;display:flex;flex-direction:column;gap:10px;">
+    <a href="receipts.html" class="btn btn-primary btn-block btn-lg">View receipt</a>
+    <a href="dashboard.html" class="btn btn-secondary btn-block">Back to home</a>
+  </div>
+
+  <div style="padding:0 20px 40px;text-align:center;">
+    <p style="font-size:12px;color:var(--ink-500);line-height:1.6;">A receipt has been sent to your email and is available in the Receipts section.</p>
+  </div>
+
+</div>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>
